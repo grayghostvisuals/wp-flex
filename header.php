@@ -94,7 +94,7 @@
   
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="//static.grayghostvisuals.com/js/libs/jquery-1.6.4.min.js"><\/script>')</script>
+  <script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/js/libs/jquery-1.6.4.min.js"><\/script>')</script>
   
   <!-- EnhanceJS get started at 
        http://code.google.com/p/enhancejs courtesy of The Filament Group -->
@@ -120,12 +120,6 @@
   <script>
   Modernizr.load([]);//end Modernizr.load
   </script>
-  
-  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6. chromium.org/developers/how-tos/chrome-frame-getting-started -->
-  <!--[if lt IE 7 ]>
-  <script defer src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-  <script defer>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
   
   <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
   <?php wp_head(); //required for all wordpress themes ?>
