@@ -92,10 +92,6 @@
          for optimal performance, create your own custom Modernizr build: www.modernizr.com/download/ -->
   <script src="<?php echo get_template_directory_uri(); ?>/js/libs/modernizr.js?v=2.0.6.min"></script>
   
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/js/libs/jquery-1.6.4.min.js"><\/script>')</script>
-  
   <!-- EnhanceJS get started at 
        http://code.google.com/p/enhancejs courtesy of The Filament Group -->
   <script src="//static.grayghostvisuals.com/js/libs/enhance.js?v=20120112"></script>
