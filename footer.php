@@ -1,14 +1,10 @@
 <div id="footer-wrap">
-  <footer id="main-footer" role="contentinfo">
+  <footer id="site-footer" role="contentinfo">
   
     <section id="footer-sidebars" class="clearfix">
       <?php if ( function_exists('dynamic_sidebar') ) : ?>
       <?php dynamic_sidebar('footer widget') ?>
       <?php endif; ?>
-    </section>
-  
-    <!-- creator authorship "I would appreciate it if you keep the credit links below or notify me of any code or visual changes to the original work"-->
-    <section id="authorship" class="clearfix">
     </section>
   
     <!--xxxxxxxxxxxxxxxxxx custom footer Vcard xxxxxxxxxxxxxxxxxx-->
@@ -28,14 +24,14 @@
         <?php if( $options['street'] && $options['locality'] && $options['region'] && $options['postal'] ): ?>
         <li class="adr"><small><span class="street-address"><?php echo ( $options['street'] ); ?></span>, <span class="locality"><?php echo ( $options['locality'] ); ?></span>, <span class="region"><abbr title="<?php echo ( $options['region'] ); ?>"><?php echo ( $options['region'] ); ?></abbr></span> <span class="postal-code"><?php echo ( $options['postal'] ); ?></span></small></li>
         <?php else : ?>
-        <li class="adr"><small><span>555 Fake Street</span>, <span>City Name</span>, <span><abbr title="">NY</abbr></span> <span>55555</span> </small></li>
+        <li class="adr"><small>555 Fake Street, City Name, NY 55555</small></li>
         <?php endif; ?>
         
         <!-- vcard tel -->
         <?php if( $options['teltype'] && $options['telvalue'] ): ?>
         <li class="tel"><small><span class="type"><?php echo ( $options['teltype'] ); ?></span>: <span class="value"><?php echo ( $options['telvalue'] ); ?></span></small></li>
         <?php else : ?>
-        <li class="tel"><small><span>Office</span>: <span>(555)555.5555</span></small></li>
+        <li class="tel"><small>Office: 555&ndash;555-5555</small></li>
         <?php endif; ?>
         
         <!-- vcard url fn org -->
@@ -46,7 +42,7 @@
         <?php endif; ?>
         
         <!-- vcard add to address book -->
-        <li class="add-vcard"><small><a href="http://h2vx.com/vcf/<?php echo ( $options['addrbook'] ); ?>" rel="vcard">&bull; Add Us To Your Address Book</a> </small></li>
+        <li class="add-vcard"><small><a href="http://h2vx.com/vcf/<?php echo ( $options['addrbook'] ); ?>" rel="vcard">&bull; Add Us To Your Address Book</a></small></li>
       </ul>
     </section>
     <?php endif; ?>
@@ -55,16 +51,16 @@
       <?php $options = get_option( 'themename_theme_options' ); ?>
       
 	  <?php if( $options[ 'facebookurl' ] ) : ?>
-      <article class="footer-fb-widget">
-        <div class="fb-like" data-href="<?php echo ( $options[ 'facebookurl' ] ); ?>" data-send="false" data-layout="button_count" data-show-faces="false"> </div>
+      <article id="footer-fb-widget">
+        <div class="fb-like-button" data-href="<?php echo ( $options[ 'facebookurl' ] ); ?>" data-send="false" data-layout="button_count" data-show-faces="false"></div>
       </article>
 	  <?php endif; ?>
       
 	  <?php $options = get_option( 'themename_theme_options' ); ?>
       
 	  <?php if( $options[ 'twitterurl' ] ) : ?>
-      <article class="footer-twitter-follow-widget">
-        <div id="footer-twitter-snippet"> <a href="https://twitter.com/<?php echo ( $options[ 'twitterurl' ] ); ?>" class="twitter-follow-button">follow @<?php echo( $options[ 'twitterurl' ] ); ?></a> </div>
+      <article id="footer-twitter-widget">
+        <div class="twitter-button"><a href="https://twitter.com/<?php echo ( $options[ 'twitterurl' ] ); ?>" class="twitter-follow-button">follow @<?php echo( $options[ 'twitterurl' ] ); ?></a></div>
       </article>
       <?php endif; ?>
     
@@ -73,12 +69,13 @@
   </footer>
 
 </div>
+
   <!-- JavaScript at the bottom for fast page loading -->
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/js/libs/jquery.min.js?v=1.6.4"><\/script>')</script>
   
-  <!-- scripts concatenated and minified via ant build script-->
+  <!-- global scripts and plugins -->
   <script src="<?php echo get_template_directory_uri(); ?>/js/plugins.js?v=0.0.0"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/script.js?v=0.0.0"></script>
   <!-- end scripts-->
