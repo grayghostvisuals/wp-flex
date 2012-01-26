@@ -3,9 +3,13 @@
 <!--[if lt IE 7]><html class="no-js ie6 oldie" <?php language_attributes(); ?>><![endif]-->
 <!--[if IE 7]><html class="no-js ie7 oldie" <?php language_attributes(); ?>><![endif]-->
 <!--[if IE 8]><html class="no-js ie8 oldie" <?php language_attributes(); ?>><![endif]-->
+
+<!-- consider adding a cache manifest simply add this attribute to the html tag
+	 manifest="cache.manifest"
+-->
 <!--[if gt IE 8]><!--><html class="no-js" <?php language_attributes(); ?>><!--<![endif]-->
 <head>
-  <!-- character encoding -->
+  <!-- character encoding utf-8 -->
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   
   <!-- google chrome frame -->
@@ -15,7 +19,34 @@
   <title><?php esc_attr( bloginfo( 'name' ) ); ?>:<?php esc_attr( bloginfo( 'description' ) ); ?>:<?php esc_attr( wp_title() ); ?></title>
   
   <!-- Typekit Asynchronous Snippet -->
-  <script>TypekitConfig={kitId:'xxxxxx',scriptTimeout:3000};(function(){var h=document.getElementsByTagName('html')[0];h.className+'wf-loading';var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g,'');h.className+='wf-inactive';},TypekitConfig.scriptTimeout);var tk=document.createElement('script');tk.src='//use.typekit.com/'+TypekitConfig.kitId+'.js';tk.type='text/javascript';tk.async='true';tk.onload=tk.onreadystatechange=function(){var rs=this.readyState;if(rs&&rs!='complete'&&rs!='loaded')return;clearTimeout(t);try{Typekit.load(TypekitConfig);}catch(e){}};var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(tk,s);})();</script>
+  <script>
+  TypekitConfig = {
+  	kitId: 'xxxxxx', //add your kit unique id
+  	scriptTimeout: 3000};
+  	(function(){
+  		var h = document.getElementsByTagName('html')[0];
+  		h.className + 'wf-loading';
+  		var t = setTimeout(function(){
+  			h.className = h.className.replace(/(\s|^)wf-loading(\s|$)/g,'');
+  			h.className += 'wf-inactive';
+  			},
+  			TypekitConfig.scriptTimeout);
+  			var tk=document.createElement('script');
+  			tk.src='//use.typekit.com/' + TypekitConfig.kitId + '.js';
+  			tk.type='text/javascript';
+  			tk.async='true';
+  			tk.onload = tk.onreadystatechange = function(){
+  				var rs = this.readyState;
+  				if( rs && rs != 'complete' && rs!= 'loaded')
+  				return;
+  				clearTimeout(t);
+  				try{ Typekit.load(TypekitConfig) }
+  				catch(e){}
+  				};
+  				var s = document.getElementsByTagName('script')[0];
+  				s.parentNode.insertBefore(tk,s);
+  				})();
+ </script>
   <!-- End Typekit Asynchronous Snippet -->
   
   <!-- search engine robots meta instructions -->
@@ -46,14 +77,13 @@
   <!-- Sets whether a web application runs in full-screen mode -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   
-  <!-- open graph meta tags
+  <!-- open graph meta tags -->
   <meta property="og:title" content="" />
   <meta property="og:type" content="" />
   <meta property="og:url" content="" />
   <meta property="og:image" content="" />
   <meta property="og:site_name" content="" />
   <meta property="fb:admins" content="1" />
-  end facebook open graph meta tags -->
   
   <!-- CSS: implied media="all" -->
   <link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=0.0.0" />
@@ -118,17 +148,19 @@
   </script>
   
   <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
-  <?php wp_head(); //required for all wordpress themes ?>
-  
+  <?php wp_head(); //required for all wordpress themes and placed at the end of the head tag element ?>
 </head>
 
 <!-- start body element -->
 <?php if ( is_single() ) : ?>
 <body <?php body_class(); ?> id="themename-single">
+
 <?php elseif ( is_home() ) : ?>
 <body <?php body_class(); ?> id="themename-index">
+
 <?php else : ?>
 <body <?php body_class(); ?> id="themename-<?php the_title(); ?>">
+
 <?php endif; ?>
 
 <div id="mast-contain">
@@ -141,11 +173,11 @@
       
       <h2 id="site-descr"><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
       
-      <nav id="nav-prime" role="navigation">
+      <nav id="site-nav" role="navigation">
         <ol id="nav-list">
           <?php 
 				//wp_list_pages arguments as an array
-				$nav_theme-name = array(
+				$nav_theme_name = array(
 					'depth'        => 0,
 					'show_date'    => '',
 					'date_format'  => get_option('date_format'),
@@ -161,17 +193,21 @@
 					'walker' => '' ); 
 		?>
         
-          <?php if( wp_list_pages($nav_theme-name) ) : while ( wp_list_pages( $nav_theme-name ) ) : ?>
-          <?php wp_list_pages( $nav_theme-name ); ?>
-          <?php endwhile; //end while wp_list_pages ?>
-          <?php endif; //end if wp_list_pages ?>
+          <?php if( wp_list_pages($nav_theme_name) ) : while ( wp_list_pages( $nav_theme_name ) ) : ?>
+          <?php wp_list_pages( $nav_theme_name ); ?>
+          
+          
+      	  <?php endwhile; //end while wp_list_pages ?>
+          
+      	  
+  	 	 <?php endif; //end if wp_list_pages ?>
         </ol>
       </nav>
     </header>
     
-    <article id="widgetRSS">
-      <div id="rssfeed"><a href="<?php bloginfo('rss2_url') ?>">RSS FEED</a></div>
-      <!-- end /div#rss -->
+    <article id="rss">
+      <div><a href="<?php bloginfo('rss2_url') ?>">RSS FEED</a></div>
+      <!-- end /div -->
     </article>
     
     <?php include TEMPLATEPATH . '/searchform.php' ?>
