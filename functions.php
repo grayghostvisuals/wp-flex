@@ -5,7 +5,7 @@ add_action( 'after_setup_theme', 'theme-name_setup' );
 require_once ( get_template_directory() . '/theme-options.php' );
 
 //if !theme-name_setup
-if ( !function_exists( 'theme-name_setup' ) ):
+if ( ! function_exists( 'theme-name_setup' ) ):
  
 //theme-name_setup
 function theme-name_setup() {
@@ -19,7 +19,7 @@ endif;
 add_action( 'widgets_init' , 'theme-name_widget' );
 
 //if content_width not set
-if ( !isset( $content_width ) ) :
+if ( ! isset( $content_width ) ) :
 $content_width = 960;
 endif;
 
@@ -28,21 +28,21 @@ function theme-name_widget(){
 	
   //call register_sidebar wp method as array
   register_sidebar( array(
-						  'ID'				=> 'theme-name_sidebar',
-						  'name' 			=> 'theme-name Sidebar',
-						  'before_widget' 	=> '<article id="%1$s" class="widget %2$s">',
-						  'after_widget' 	=> '</article>',
-						  'before_title' 	=> '<h3 class="widget-title">',
-						  'after_title' 	=> '</h3>',
+						 'ID'				=> 'theme-name_sidebar',
+						 'name' 			=> 'theme-name Sidebar',
+						 'before_widget' 	=> '<article id="%1$s" class="widget %2$s">',
+						 'after_widget' 	=> '</article>',
+						 'before_title' 	=> '<h3 class="widget-title">',
+						 'after_title' 	=> '</h3>',
 						));//end primary sidebar
   
   register_sidebar(array(
-						  'ID'				=> 'footer_widget',
-						  'name' 			=> 'Footer Widget',
-						  'before_widget' 	=> '<article id="%1$s" class="footerwidget %2$s">',
-						  'after_widget' 	=> '</article>',
-						  'before_title' 	=> '<h3 class="widget-title">',
-						  'after_title' 	=> '</h3>',
+						 'ID'				=> 'footer_widget',
+						 'name' 			=> 'Footer Widget',
+						 'before_widget' 	=> '<article id="%1$s" class="footerwidget %2$s">',
+						 'after_widget' 	=> '</article>',
+						 'before_title' 	=> '<h3 class="widget-title">',
+						 'after_title' 	=> '</h3>',
 						));//end footer widget
 	
 };
