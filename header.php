@@ -58,7 +58,7 @@
   <meta property="fb:admins" content="1" />
   
   <!-- CSS: implied media="all" -->
-  <link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=0.0.0" />
+  <link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
   
   <!-- General Favicon -->
   <link rel="shortcut-icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" />
@@ -101,7 +101,7 @@
   
   <div role="banner">
     <header>
-      <h1><a href="<?php echo home_url()  ?>"><?php esc_attr( bloginfo( 'name' ) ) ?></a></h1>
+      <h1><a href="<?php echo home_url();  ?>"><?php esc_attr( bloginfo( 'name' ) ); ?></a></h1>
       <h2><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
       
       <!-- http://codex.wordpress.org/Function_Reference/wp_nav_menu -->
