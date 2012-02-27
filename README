@@ -1,8 +1,8 @@
-WP-Flex is a responsive wordpress framework that is robust and built with progressive enhancement in mind. WP-Flex combines @Media Queries, Modernizr for feature detection and on top of it all also includes EnhanceJS by The Filament Group.  
+WP-Flex is a responsive wordpress framework combining @Media Queries, Modernizr and some bobs and bits from Twitter's Bootstrap.  
 
-Stop re-inventing the wheel with your Wordpress theme designs and start with a great foundation that includes the best of the best boilerplate ideas out there including HTML5 Boilerplate, Golden Grid System and LESS Framework, @Media Queries, Modernizr and EnhanceJS.
+Start with a great foundation that includes the best of the best boilerplate ideas out there including HTML5 Boilerplate, Jon Korpi's Golden Grid System and Twitter Bootstrap.
 
-There are as well many Wordpress Blank Theme Frameworks by really smart folks like.....
+There are many other Blank Wordpress Theme Frameworks by really smart folks smarter than myself and they are:
 
 1. Matt Murtaugh's HTML5 Reset Wordpress Theme 
    http://html5reset.org/#wordpress
@@ -10,5 +10,5 @@ There are as well many Wordpress Blank Theme Frameworks by really smart folks li
 2. Digging Into Wordpress' BLANK Wordpress Theme 
    http://digwp.com/2010/02/blank-wordpress-theme. 
 
-Surely you can always visit the Wordpress Codex and give it a shot yourself -thats what I did :)p
+Surely you can always visit the Wordpress Codex for more customization and give it a shot yourself -thats what I did :)p
 
