@@ -1,7 +1,5 @@
-<div id="footer-wrap">
-  <footer id="site-footer" role="contentinfo">
-  
-    <section id="footer-sidebars" class="clearfix">
+ <footer role="contentinfo">
+    <section>
       <?php if ( function_exists('dynamic_sidebar') ) : ?>
       <?php dynamic_sidebar('footer widget') ?>
       <?php endif; ?>
@@ -47,11 +45,11 @@
     </section>
     <?php endif; ?>
     
-    <section id="footer-socials" class="clearfix">
+    <section id="footer-socials">
       <?php $options = get_option( 'themename_theme_options' ); ?>
       
 	  <?php if( $options[ 'facebookurl' ] ) : ?>
-      <article id="footer-fb-widget">
+      <article id="footer-fb">
         <div class="fb-like-button" data-href="<?php echo ( $options[ 'facebookurl' ] ); ?>" data-send="false" data-layout="button_count" data-show-faces="false"></div>
       </article>
 	  <?php endif; ?>
@@ -59,13 +57,12 @@
 	  <?php $options = get_option( 'themename_theme_options' ); ?>
       
 	  <?php if( $options[ 'twitterurl' ] ) : ?>
-      <article id="footer-twitter-widget">
+      <article id="footer-twitter">
         <div class="twitter-button"><a href="https://twitter.com/<?php echo ( $options[ 'twitterurl' ] ); ?>" class="twitter-follow-button">follow @<?php echo( $options[ 'twitterurl' ] ); ?></a></div>
       </article>
       <?php endif; ?>
     
     </section>
-  
   </footer>
 
 </div>
@@ -93,14 +90,7 @@
   g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
   s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>
-  
-  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
-         chromium.org/developers/how-tos/chrome-frame-getting-started -->
-  <!--[if lt IE 7 ]>
-  <script defer src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-  <script defer>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
-    
+   
   <?php 
   /* 
    * Always have wp_footer() just before the closing </body>
