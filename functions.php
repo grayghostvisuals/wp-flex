@@ -2,7 +2,8 @@
 //themename custom function setup
 add_action( 'after_setup_theme', 'themename_setup' );
 
-//require_once ( get_template_directory() . '/theme-options.php' );
+//themename options
+include_once ( get_template_directory() . '/theme-options.php' );
 
 //if !themename_setup
 if ( ! function_exists( 'themename_setup' ) ) :
