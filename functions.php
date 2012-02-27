@@ -33,7 +33,7 @@ function theme-name_widget(){
 						 'before_widget' 	=> '<article id="%1$s" class="widget %2$s">',
 						 'after_widget' 	=> '</article>',
 						 'before_title' 	=> '<h3 class="widget-title">',
-						 'after_title' 	=> '</h3>',
+						 'after_title' 		=> '</h3>',
 						));//end primary sidebar
   
   register_sidebar(array(
@@ -42,7 +42,7 @@ function theme-name_widget(){
 						 'before_widget' 	=> '<article id="%1$s" class="footerwidget %2$s">',
 						 'after_widget' 	=> '</article>',
 						 'before_title' 	=> '<h3 class="widget-title">',
-						 'after_title' 	=> '</h3>',
+						 'after_title' 		=> '</h3>',
 						));//end footer widget
 	
 };
