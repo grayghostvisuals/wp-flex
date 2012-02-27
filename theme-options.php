@@ -29,7 +29,7 @@ function theme_options_add_page() {
 	// 4. menu URI slug name
 	// 5. function to be called to output the content for page
 
-add_theme_page( __( 'theme-name Options'), __( 'theme-name' ), 'edit_theme_options', 'theme-nameoptions', 'ridiculousReview_theme_options_layout' );
+add_theme_page( __( 'theme-name Options'), __( 'theme-name' ), 'edit_theme_options', 'theme-nameoptions', 'theme-name_theme_options_layout' );
 
 };
 
