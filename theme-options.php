@@ -29,7 +29,7 @@ function theme_options_add_page() {
 	// 4. menu URI slug name
 	// 5. function to be called to output the content for page
 
-add_theme_page( __( 'themename Options'), __( 'themename' ), 'edit_theme_options', 'themenameoptions', 'themename_theme_options_layout' );
+add_theme_page( __( 'themename Options'), __( 'themename' ), 'edit_theme_options', 'themename_options', 'themename_theme_options_layout' );
 
 };
 
@@ -43,7 +43,7 @@ function themename_theme_options_layout() {
 	?>
     
 <!-- begin theme-name options page layout -->
-<div class="wrap" style="background: rgb(0,80,100); margin: 0 auto; padding: 2em 5em; width: 80%;">
+<div class="wrap">
 
 <?php 
 //displays the screen icon next to the title on the theme options page
@@ -51,7 +51,7 @@ function themename_theme_options_layout() {
 screen_icon(); 
 ?>
 
-<h2 style="color: orange"><?php echo get_current_theme(); ?></h2>
+<h2><?php echo get_current_theme(); ?></h2>
   
   <?php //if settings are updated correctly do the following ?>
   <?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
@@ -72,7 +72,7 @@ screen_icon();
 	?>
     
 	<?php $options = get_option( 'themename_theme_options' ); ?>
-    <table class="form-table" style="background: #F7F7F7; border-radius: 20px;">
+    <table class="form-table">
       <tr valign="top">
         <th valign="top" scope="row"><strong>Theme Name Options</strong></th>
       </tr>
@@ -84,7 +84,7 @@ screen_icon();
       
       <!-- facebook -->
       <tr valign="top">
-        <th valign="top" scope="row"><strong style="color: #B0AAAA;"></strong></th>
+        <th valign="top" scope="row"><strong></strong></th>
         <td><input type="text" class="regular-text" placeholder="" name="themename_theme_options[var-name]" value="<?php esc_attr_e( $options['var-name'] ); ?>" /></td>
       </tr>
       
@@ -95,7 +95,7 @@ screen_icon();
       
       <!-- name -->
       <tr valign="top">
-        <th valign="top" scope="row"><strong style="color: #B0AAAA;">Organization</strong><br />
+        <th valign="top" scope="row"><strong>Organization</strong><br />
           1. ex.<em>John J. Doe or Pete's Pancake House</em> </th>
         <td> 1.
           <input type="text" class="regular-text" name="themename_theme_options[fnorg]" value="<?php esc_attr_e( $options[ 'fnorg' ] ); ?>" placeholder="John J. Doe or Pete's Pancake House" /></td>
@@ -103,11 +103,11 @@ screen_icon();
       
       <!-- address -->
       <tr valign="top">
-        <th valign="top" scope="row"> <strong style="color: #B0AAAA;">Street Address</strong><br />
+        <th valign="top" scope="row"><strong>Street Address</strong><br />
           2. <em>555 Fake Street</em><br />
           3. <em>City Name</em><br />
-          4. <em>State</em> <strong>Abbreviated Please!</strong><br />
-          5. <em>Postal Code</em> </th>
+          4. <em>State</em><strong>Abbreviated Please!</strong><br />
+          5. <em>Postal Code</em></th>
         <td> 2.
           <input type="text" class="regular-text" name="themename_theme_options[street]" value="<?php esc_attr_e( $options[ 'street' ]); ?>"placeholder="555 Fake Street" />
           <br />
@@ -123,10 +123,10 @@ screen_icon();
       
       <!-- phone -->
       <tr valign="top">
-        <th valign="top" scope="row"> <strong style="color: #B0AAAA;">Phone</strong><br />
+        <th valign="top" scope="row"> <strong>Phone</strong><br />
           6. <em>headquarters type: ex.) Office, Home, Work</em><br />
           7. <em>Telephone Number</em> </th>
-        <td> 6.
+        <td>6.
           <input type="text" class="regular-text" name="themename_theme_options[teltype]" value="<?php esc_attr_e( $options[ 'teltype' ]); ?>" placeholder="Office" />
           <br />
           7.
@@ -134,14 +134,14 @@ screen_icon();
       </tr>
       
       <tr valign="top">
-        <th valign="top" scope="row"> <strong style="color: #B0AAAA;">URL</strong><br />
-          8. <em>ex.) www.my_own_url.com</em> </th>
-        <td> 8.
+        <th valign="top" scope="row"> <strong>URL</strong><br />
+          8.<em>ex.) www.my_own_url.com</em> </th>
+        <td>
           <input type="text" class="regular-text" name="themename_theme_options[url]" value="<?php esc_attr_e( $options[ 'url' ]); ?>" placeholder="www.my_own_url.com" /></td>
       </tr>
       
       <tr valign="top">
-        <th valign="top" scope="row"> <strong>ADD TO ADDRESS BOOK LINK</strong><br />
+        <th valign="top" scope="row"><strong>ADD TO ADDRESS BOOK LINK</strong><br />
           9. <em>ex.) your_url.com</em><br />
           <strong>NO WWW PLEASE</strong> </th>
         <td> 9.
@@ -155,7 +155,7 @@ screen_icon();
   </form>
 </div>
 
-<?php } //end theme-name_theme_options_layout() ?>
+<?php } //end themename_theme_options_layout() ?>
 
 <?php 
 //Sanitize and validate input. Accepts an array, return a sanitized array. 
