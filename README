@@ -1,14 +1,31 @@
-WP-Flex is a blank responsive wordpress framework.  
-Includes the best boilerplate ideas out there,
+WP-Flex is a blank-responsive wordpress theme foundation.  
+Includes bits and pieces from some of the best boilerplate 
+frameworks such as the following listed;
 
-1. HTML5 Boilerplate by Paul Irish
-2. The Golden Grid System by Jon Korpi
-3. Twitter Bootstrap by Twitter
+1. HTML5 Boilerplate 
+   https://github.com/h5bp
+   http://html5boilerplate.com
+2. The Golden Grid System
+   https://github.com/jonikorpi/Golden-Grid-System
+   http://goldengridsystem.com
+3. Twitter Bootstrap
+   https://github.com/twitter/bootstrap
+   http://twitter.github.com/bootstrap
 
-Some other really great Blank Wordpress Theme Frameworks by smarter folks than myself. They are,
+Other Goodies Included.......
+1. Fit Text
+   https://github.com/grayghostvisuals/FitText.js
+   http://fittextjs.com
+
+
+More inspiring and great Blank Wordpress Theme Frameworks to get you going,
 
 1. Matt Murtaugh's HTML5 Reset Wordpress Theme    ===================>  http://html5reset.org/#wordpress
 2. Digging Into Wordpress' BLANK Wordpress Theme  ===================>  http://digwp.com/2010/02/blank-wordpress-theme. 
 
+
 Surely you can always visit the Wordpress Codex for more customization and give it a shot yourself 
 -thats what I did :)p
+
+http://codex.wordpress.org
+http://wordpress.org
