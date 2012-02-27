@@ -3,7 +3,6 @@
 <!--[if lt IE 7]><html class="no-js ie6 oldie" <?php language_attributes(); ?>><![endif]-->
 <!--[if IE 7]><html class="no-js ie7 oldie" <?php language_attributes(); ?>><![endif]-->
 <!--[if IE 8]><html class="no-js ie8 oldie" <?php language_attributes(); ?>><![endif]-->
-
 <!-- consider adding a cache manifest simply add this attribute to the html tag
 	 manifest="cache.manifest"
 -->
@@ -11,7 +10,6 @@
 <head>
   <!-- character encoding utf-8 -->
   <meta charset="<?php bloginfo( 'charset' ); ?>">
-  
   <!-- google chrome frame -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   
@@ -68,7 +66,7 @@
   <?php endif; ?>
   
   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0">
   
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -88,27 +86,19 @@
   <!-- CSS: implied media="all" -->
   <link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=0.0.0" />
   
-  <!-- favicon reference -->
-  <link rel="shortcut-icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" />
-  
   <!-- General Favicon -->
   <link rel="shortcut-icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" />
-  
   <!-- 
   Apple Favicons 
   Apple Developers Documentation    	
   http://developer.apple.com/library/ios/#documentation/userexperience/conceptual/mobilehig/IconsImages/IconsImages.html#//apple_ref/doc/uid/TP40006556-CH14-SW1  \
   -->
-  
   <!-- iPhone 3G, iPod Touch and Android -->
   <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon-precomposed.png">
-  
   <!-- iPad Favicon -->
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon-72x72-precomposed.png">
-  
   <!-- iPhone 4 Retina Favicon -->
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon-114x114-precomposed.png">
-  
   <!-- Opera Speed Dial Favicons -->
   <link rel="icon" type="image/png" href="path/to/195x195image.png">
     
@@ -122,31 +112,6 @@
          for optimal performance, create your own custom Modernizr build: www.modernizr.com/download/ -->
   <script src="<?php echo get_template_directory_uri(); ?>/js/libs/modernizr.js?v=2.0.6.min"></script>
   
-  <!-- EnhanceJS get started at 
-       http://code.google.com/p/enhancejs courtesy of The Filament Group -->
-  <script src="//static.grayghostvisuals.com/js/libs/enhance.js?v=20120112"></script>
-  <script>
-      //root directory
-      var rootDir = 'path/to/your/directory';
-      
-      //EnhanceJS
-      enhance({
-          loadStyles: [
-                       { media : '-ejs-desktop', href: rootDir + '/css/enhanced.css?v=0.0.0' },
-                       { media : '-ejs-handheld', href: rootDir + '/css/handheld.css?v=0.0.0' }
-                       ],
-          loadScripts: [
-                       { media : '-ejs-desktop', src: rootDir + '/js/screen.js?v=0.0.0' },
-                       { media : '-ejs-handheld', src: rootDir + '/js/handheld.js?v=0.0.0' }
-                       ]
-      });
-      //end enhance
-  </script>
-  
-  <script>
-  Modernizr.load([]);//end Modernizr.load
-  </script>
-  
   <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
   <?php wp_head(); //required for all wordpress themes and placed at the end of the head tag element ?>
 </head>
@@ -154,27 +119,19 @@
 <!-- start body element -->
 <?php if ( is_single() ) : ?>
 <body <?php body_class(); ?> id="themename-single">
-
 <?php elseif ( is_home() ) : ?>
 <body <?php body_class(); ?> id="themename-index">
-
 <?php else : ?>
 <body <?php body_class(); ?> id="themename-<?php the_title(); ?>">
-
 <?php endif; ?>
-
-<div id="mast-contain">
   
-  <div id="mast-head" role="banner">
-  
-    <header id="site-header">
-    
-      <h1 id="branding"><a href="<?php echo home_url()  ?>"><?php bloginfo( 'name' ) ?></a></h1>
+  <div role="banner">
+    <header>
+      <h1><a href="<?php echo home_url()  ?>"><?php bloginfo( 'name' ) ?></a></h1>
+      <h2><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
       
-      <h2 id="site-descr"><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
-      
-      <nav id="site-nav" role="navigation">
-        <ol id="nav-list">
+      <nav role="navigation">
+        <ol>
           <?php 
 				//wp_list_pages arguments as an array
 				$nav_theme_name = array(
@@ -196,23 +153,18 @@
           <?php if( wp_list_pages($nav_theme_name) ) : while ( wp_list_pages( $nav_theme_name ) ) : ?>
           <?php wp_list_pages( $nav_theme_name ); ?>
           
-          
       	  <?php endwhile; //end while wp_list_pages ?>
-          
       	  
   	 	 <?php endif; //end if wp_list_pages ?>
         </ol>
       </nav>
     </header>
     
-    <article id="rss">
-      <div><a href="<?php bloginfo('rss2_url') ?>">RSS FEED</a></div>
-      <!-- end /div -->
+    <article>
+      <div><a href="<?php bloginfo('rss2_url') ?>">RSS Feed</a></div>
     </article>
     
     <?php include TEMPLATEPATH . '/searchform.php' ?>
 
   </div>
   <!-- end /div#mast-head -->
-</div>
-<!-- end /div#mast-contain -->
