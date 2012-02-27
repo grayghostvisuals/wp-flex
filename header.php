@@ -10,6 +10,7 @@
 <head>
   <!-- character encoding utf-8 -->
   <meta charset="<?php bloginfo( 'charset' ); ?>">
+  
   <!-- google chrome frame -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   
@@ -118,46 +119,52 @@
 
 <!-- start body element -->
 <?php if ( is_single() ) : ?>
-<body <?php body_class(); ?> id="themename-single">
+<body <?php body_class(); ?> id="theme-name-single">
 <?php elseif ( is_home() ) : ?>
-<body <?php body_class(); ?> id="themename-index">
+<body <?php body_class(); ?> id="theme-name-index">
 <?php else : ?>
-<body <?php body_class(); ?> id="themename-<?php the_title(); ?>">
+<body <?php body_class(); ?> id="theme-name-<?php the_title(); ?>">
 <?php endif; ?>
   
   <div role="banner">
     <header>
-      <h1><a href="<?php echo home_url()  ?>"><?php bloginfo( 'name' ) ?></a></h1>
+      <h1><a href="<?php echo home_url()  ?>"><?php esc_attr( bloginfo( 'name' ) ) ?></a></h1>
       <h2><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
       
+      <!-- http://codex.wordpress.org/Function_Reference/wp_nav_menu -->
+      <?php if ( ! isset( wp_nav_menu() ) ) : ?>
       <nav role="navigation">
         <ol>
-          <?php 
+          	<?php 
 				//wp_list_pages arguments as an array
-				$nav_theme_name = array(
-					'depth'        => 0,
-					'show_date'    => '',
-					'date_format'  => get_option('date_format'),
-					'child_of'     => 0,
-					'exclude'      => '',
-					'include'      => '',
-					'title_li'     => __(''),
-					'echo'         => 1,
-					'authors'      => '',
-					'sort_column'  => 'menu_order',
-					'link_before'  => '',
-					'link_after'   => '',
-					'walker' => '' ); 
-		?>
+				$nav_theme-name = array(
+										'depth'        => 0,
+										'show_date'    => '',
+										'date_format'  => get_option('date_format'),
+										'child_of'     => 0,
+										'exclude'      => '',
+										'include'      => '',
+										'title_li'     => __(''),
+										'echo'         => 1,
+										'authors'      => '',
+										'sort_column'  => 'menu_order',
+										'link_before'  => '',
+										'link_after'   => '',
+										'walker' => '' 
+										); 
+		  	?>
         
-          <?php if( wp_list_pages($nav_theme_name) ) : while ( wp_list_pages( $nav_theme_name ) ) : ?>
-          <?php wp_list_pages( $nav_theme_name ); ?>
-          
+          <?php if( wp_list_pages($nav_theme-name) ) : while ( wp_list_pages( $nav_theme-name ) ) : ?>
+          <?php wp_list_pages( $nav_theme-name ); ?>
       	  <?php endwhile; //end while wp_list_pages ?>
-      	  
   	 	 <?php endif; //end if wp_list_pages ?>
         </ol>
       </nav>
+      <?php endif; ?>
+      
+      <?php if ( isset( wp_nav_menu() ) ) : ?>
+      	<?php wp_nav_menu(); ?>
+      <?php endif; ?>
     </header>
     
     <article>
