@@ -50,15 +50,18 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   
   <!-- open graph meta tags -->
-  <meta property="og:title" content="" />
-  <meta property="og:type" content="" />
-  <meta property="og:url" content="" />
-  <meta property="og:image" content="" />
-  <meta property="og:site_name" content="" />
-  <meta property="fb:admins" content="1" />
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="">
+  <meta property="fb:admins" content="">
   
-  <!-- CSS: implied media="all" -->
-  <link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+  <!-- bootstrap css -->
+  <link rel="stylesheet" media="screen" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css">
+  
+  <!-- css -->
+  <link rel="stylesheet" media="screen" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
   
   <!-- General Favicon -->
   <link rel="shortcut-icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" />
@@ -92,20 +95,23 @@
 
 <!-- start body element -->
 <?php if ( is_single() ) : ?>
-<body <?php body_class(); ?> id="theme-name-single">
+<body <?php body_class(); ?> id="themename-single">
 <?php elseif ( is_home() ) : ?>
-<body <?php body_class(); ?> id="theme-name-index">
+<body <?php body_class(); ?> id="themename-index">
 <?php else : ?>
-<body <?php body_class(); ?> id="theme-name-<?php the_title(); ?>">
+<body <?php body_class(); ?> id="themename-<?php the_title(); ?>">
 <?php endif; ?>
-  
-  <div role="banner">
-    <header>
+
+  	<div class="navbar">
+  	<div class="navbar-inner">
+    
+    <header role="banner">
       <h1><a href="<?php echo home_url();  ?>"><?php esc_attr( bloginfo( 'name' ) ); ?></a></h1>
       <h2><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
       
       <!-- http://codex.wordpress.org/Function_Reference/wp_nav_menu -->
-      <?php //if ( ! isset( wp_nav_menu() ) ) : ?>
+      <?php wp_nav_menu(); ?>
+        
       <nav role="navigation">
         <ol>
           	<?php 
@@ -134,17 +140,14 @@
         </ol>
       </nav>
       <?php //endif; ?>
-      
-      <?php //if ( isset( wp_nav_menu() ) ) : ?>
-      	<?php //wp_nav_menu(); ?>
-      <?php //endif; ?>
+     
     </header>
     
     <article>
-      <div><a href="<?php bloginfo('rss2_url') ?>">RSS Feed</a></div>
+    	<div><a href="<?php bloginfo('rss2_url') ?>">RSS Feed</a></div>
     </article>
     
     <?php include TEMPLATEPATH . '/searchform.php' ?>
-
-  </div>
-  <!-- end /div#mast-head -->
+    
+    </div>
+    </div>
