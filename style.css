@@ -2,10 +2,27 @@
 Theme Name: 
 Theme URI: 
 Description: 
+
 Author: 
 Author URI:
+
 Version:
+Tags:
+
+License:
+License URI:
+
+General comments (optional).
 */
+
+/*
+ *
+ * http://codex.wordpress.org/CSS_Coding_Standards
+ * REMINDERS
+ * -Use lowercase and separate words with hyphens when naming selectors. Avoid camelcase and underscores
+ * -Prefixed vendor-specific properties pairs should appear directly before the generic property they refer to
+ *
+ */
 
 /*
  * HTML5 Boilerplate Resets
@@ -209,12 +226,12 @@ input:invalid, textarea:invalid { background-color: #f0dddd; }
 
 table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
+/* END HTML5 BOILERPLATE RESETS */
 
 
+/* =Golden Grid Typography
+-------------------------------------------------------------- */
 
-/* =============================================================================
-   Author Typography
-   ========================================================================== */
 /*
 *
 *	Zoomable baseline grid
@@ -264,9 +281,8 @@ h2 { font-weight: normal; }
 }
 
 
-/* ===== primary styles =====================================================
-   Author:
-   ========================================================================== */
+/* =Golden Grid Scaffolding
+-------------------------------------------------------------- */
 
 /*
 *
@@ -324,6 +340,20 @@ h3 { margin: 1.5em 0 1.5em; }
   line-height: 1.1428571428571428em;
   margin: 1.1428571428571428em 0 0.5714285714285714em;
 }
+
+
+/* =Name of section
+-------------------------------------------------------------- */
+/* =Name of section
+-------------------------------------------------------------- */
+/* =Name of section
+-------------------------------------------------------------- */
+/* =Name of section
+-------------------------------------------------------------- */
+/* =Name of section
+-------------------------------------------------------------- */
+/* =Name of section
+-------------------------------------------------------------- */
 
 
 
