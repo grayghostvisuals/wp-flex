@@ -36,174 +36,128 @@ add_theme_page( __( 'theme-name Options'), __( 'theme-name' ), 'edit_theme_optio
 //creates the option page. 
 //this is the function called through add_theme _page
 function theme-name_theme_options_layout() {
-
 	//if request is not set do the following
-
 	if ( ! isset( $_REQUEST['settings-updated'] ) ) :
-
 		$_REQUEST['settings-updated'] = false;
-		
 	endif; //endif ! isset()
 	?>
+    
+<!-- begin theme-name options page layout -->
+<div class="wrap" style="background: rgb(0,80,100); margin: 0 auto; padding: 2em 5em; width: 80%;">
 
-	<!-- begin ridiculous review options page layout -->
-	<div class="wrap" style="background: rgb(0,80,100); margin: 0 auto; padding: 2em 5em; width: 80%;">
+<?php 
+//displays the screen icon next to the title on the theme options page
+//retrieve current theme name get_current_theme()
+screen_icon(); 
+?>
 
-		<?php 
-		//displays the screen icon next to the title on the theme options page
-		//retrieve current theme name get_current_theme()
-		screen_icon(); 
-		?>
-        
-		<h2 style="color: orange"><?php echo get_current_theme(); ?></h2>
+<h2 style="color: orange"><?php echo get_current_theme(); ?></h2>
+  
+  <?php //if settings are updated correctly do the following ?>
+  <?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
+  
+  <!-- theme options update message -->
+  <div class="updated fade">
+    <p><img src="<?php echo get_template_directory_uri(); ?>/img/check20.png" alt="" /><strong>
+      <?php _e( 'theme-name Options Saved Partner', 'theme-name' ); ?>
+      </strong></p>
+  </div>
+  <?php endif; //end if false !==$REQUEST ?>
+  
+  <!-- begin form for theme options page -->
+  <form method="post" action="options.php">
+    <?php
+		//must match register_settings field
+		settings_fields( 'theme-name_options' ); 
+	?>
+    
+	<?php $options = get_option( 'theme-name_theme_options' ); ?>
+    <table class="form-table" style="background: #F7F7F7; border-radius: 20px;">
+      <tr valign="top">
+        <th valign="top" scope="row"> <strong>Theme-Name Options</strong> </th>
+      </tr>
+      
+      <!--  ///////////////////  option /////////////////////////// -->
+      <tr valign="top">
+        <th valign="top" scope="row"> <strong></strong> </th>
+      </tr>
+      
+      <!-- facebook -->
+      <tr valign="top">
+        <th valign="top" scope="row"> <strong style="color: #B0AAAA;"></strong> </th>
+        <td><input type="text" class="regular-text" placeholder="" name="theme-name_theme_options[var-name]" value="<?php esc_attr_e( $options['var-name'] ); ?>" /></td>
+      </tr>
+      
+      <!--  /////////////////// VCard option /////////////////////////// -->
+      <tr valign="top">
+        <th valign="top" scope="row"> <strong>theme-name VCard</strong> </th>
+      </tr>
+      
+      <!-- name -->
+      <tr valign="top">
+        <th valign="top" scope="row"> <strong style="color: #B0AAAA;">Organization</strong><br />
+          1. ex.<em>John J. Doe or Pete's Pancake House</em> </th>
+        <td> 1.
+          <input type="text" class="regular-text" name="theme-name_theme_options[fnorg]" value="<?php esc_attr_e( $options[ 'fnorg' ] ); ?>" placeholder="John J. Doe or Pete's Pancake House" /></td>
+      </tr>
+      
+      <!-- address -->
+      <tr valign="top">
+        <th valign="top" scope="row"> <strong style="color: #B0AAAA;">Street Address</strong><br />
+          2. <em>555 Fake Street</em><br />
+          3. <em>City Name</em><br />
+          4. <em>State</em> <strong>Abbreviated Please!</strong><br />
+          5. <em>Postal Code</em> </th>
+        <td> 2.
+          <input type="text" class="regular-text" name="theme-name_theme_options[street]" value="<?php esc_attr_e( $options[ 'street' ]); ?>"placeholder="555 Fake Street" />
+          <br />
+          3.
+          <input type="text" class="regular-text" name="theme-name_theme_options[locality]" value="<?php esc_attr_e( $options[ 'locality' ]); ?>"placeholder="City Name" />
+          <br />
+          4.
+          <input type="text" class="regular-text" name="theme-name_theme_options[region]" value="<?php esc_attr_e( $options[ 'region' ]); ?>"placeholder="State" />
+          <br />
+          5.
+          <input type="text" class="regular-text" name="theme-name_theme_options[postal]" value="<?php esc_attr_e( $options[ 'postal' ]); ?>"placeholder="Postal Code" /></td>
+      </tr>
+      
+      <!-- phone -->
+      <tr valign="top">
+        <th valign="top" scope="row"> <strong style="color: #B0AAAA;">Phone</strong><br />
+          6. <em>headquarters type: ex.) Office, Home, Work</em><br />
+          7. <em>Telephone Number</em> </th>
+        <td> 6.
+          <input type="text" class="regular-text" name="theme-name_theme_options[teltype]" value="<?php esc_attr_e( $options[ 'teltype' ]); ?>" placeholder="Office" />
+          <br />
+          7.
+          <input type="text" class="regular-text" name="theme-name_theme_options[telvalue]" value="<?php esc_attr_e( $options[ 'telvalue' ]); ?>" placeholder="555-555-5555" /></td>
+      </tr>
+      
+      <tr valign="top">
+        <th valign="top" scope="row"> <strong style="color: #B0AAAA;">URL</strong><br />
+          8. <em>ex.) www.my_own_url.com</em> </th>
+        <td> 8.
+          <input type="text" class="regular-text" name="theme-name_theme_options[url]" value="<?php esc_attr_e( $options[ 'url' ]); ?>" placeholder="www.my_own_url.com" /></td>
+      </tr>
+      
+      <tr valign="top">
+        <th valign="top" scope="row"> <strong>ADD TO ADDRESS BOOK LINK</strong><br />
+          9. <em>ex.) your_url.com</em><br />
+          <strong>NO WWW PLEASE</strong> </th>
+        <td> 9.
+          <input type="text" class="regular-text" name="theme-name_theme_options[addrbook]" value="<?php esc_attr_e( $options[ 'addrbook' ]); ?>" placeholder="www.my_own_url.com" /></td>
+      </tr>
+    </table>
+    
+    <p class="submit">
+      <input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'theme-name' ); ?>" />
+    </p>
+  </form>
+</div>
 
-		<?php //if settings are updated correctly do the following ?>
-		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
+<?php } //end theme-name_theme_options_layout() ?>
 
-		<!-- theme options update message -->
-
-		<div class="updated fade"><p><img src="<?php echo get_template_directory_uri(); ?>/img/check20.png" alt="" /><strong><?php _e( 'theme-name Options Saved Partner', 'theme-name' ); ?></strong></p></div>
-
-		<?php endif; //end if false !==$REQUEST ?>
-
-		<!-- begin form for theme options page -->
-		<form method="post" action="options.php">
-
-			<?php
-			//must match register_settings field
-			settings_fields( 'theme-name_options' ); ?>
-			<?php $options = get_option( 'theme-name_theme_options' ); ?>
-
-			<table class="form-table" style="background: #F7F7F7; border-radius: 20px;">
-
-			<tr valign="top">
-				<th valign="top" scope="row">
-					<strong>Theme-Name Options</strong>
-				</th>
-			</tr>
-            
-            <?php ///////////////////  option /////////////////////////// ?>
-				
-				<tr valign="top">
-					<th valign="top" scope="row">
-						<strong></strong>
-					</th>
-				</tr>
-				
-				<!-- facebook -->
-				<tr valign="top">
-					<th valign="top" scope="row">
-						<strong style="color: #B0AAAA;"></strong>
-					</th>
-					
-					<td>
-						<input type="text" class="regular-text" placeholder="" name="theme-name_theme_options[var-name]" value="<?php esc_attr_e( $options['var-name'] ); ?>" />
-					</td>
-				</tr>
-                
-            
-				<?php /////////////////// VCard option /////////////////////////// ?>
-
-
-				<tr valign="top">
-					<th valign="top" scope="row">
-						<strong>theme-name VCard</strong>
-					</th>
-				</tr>
-
-				<!-- name -->
-				<tr valign="top">
-					<th valign="top" scope="row">
-						<strong style="color: #B0AAAA;">Organization</strong><br />
-                        1. ex.<em>John J. Doe or Pete's Pancake House</em>
-					</th>
-
-					<td>
-						1. <input type="text" class="regular-text" name="theme-name_theme_options[fnorg]" value="<?php esc_attr_e( $options[ 'fnorg' ] ); ?>" placeholder="John J. Doe or Pete's Pancake House" />
-					</td>
-				</tr>
-
-				<!-- address -->
-				<tr valign="top">
-					<th valign="top" scope="row">
-                    
-						<strong style="color: #B0AAAA;">Street Address</strong><br />
-
-                        2. <em>555 Fake Street</em><br />
-
-                        3.	<em>City Name</em><br />
-
-                        4.	<em>State</em> <strong>Abbreviated Please!</strong><br />
-
-                        5.	<em>Postal Code</em>
-
-					</th>
-                    
-					<td>
-                        2. <input type="text" class="regular-text" name="theme-name_theme_options[street]" value="<?php esc_attr_e( $options[ 'street' ]); ?>"placeholder="555 Fake Street" /><br />
-
-                        3. <input type="text" class="regular-text" name="theme-name_theme_options[locality]" value="<?php esc_attr_e( $options[ 'locality' ]); ?>"placeholder="City Name" /><br />
-
-                        4. <input type="text" class="regular-text" name="theme-name_theme_options[region]" value="<?php esc_attr_e( $options[ 'region' ]); ?>"placeholder="State" /><br />
-                        
-                        5. <input type="text" class="regular-text" name="theme-name_theme_options[postal]" value="<?php esc_attr_e( $options[ 'postal' ]); ?>"placeholder="Postal Code" />
-					</td>
-				</tr>
-
-				<!-- phone -->
-				<tr valign="top">
-					<th valign="top" scope="row">
-						<strong style="color: #B0AAAA;">Phone</strong><br />
-                        6. <em>headquarters type: ex.) Office, Home, Work</em><br />
-                        7. <em>Telephone Number</em>
-					</th>
-
-					<td>
-						6. <input type="text" class="regular-text" name="theme-name_theme_options[teltype]" value="<?php esc_attr_e( $options[ 'teltype' ]); ?>" placeholder="Office" /><br />
-
-                        7. <input type="text" class="regular-text" name="theme-name_theme_options[telvalue]" value="<?php esc_attr_e( $options[ 'telvalue' ]); ?>" placeholder="555-555-5555" />
-					</td>
-				</tr>
-
-                <tr valign="top">
-                	<th valign="top" scope="row">
-                    	<strong style="color: #B0AAAA;">URL</strong><br />
-                        8. <em>ex.) www.my_own_url.com</em>
-
-                    </th>
-                    
-                    <td>
-
-                    	8. <input type="text" class="regular-text" name="theme-name_theme_options[url]" value="<?php esc_attr_e( $options[ 'url' ]); ?>" placeholder="www.my_own_url.com" />
-
-                    </td>
-
-                </tr>
-
-                <tr valign="top">
-                	<th valign="top" scope="row">
-                    	<strong>ADD TO ADDRESS BOOK LINK</strong><br />
-                        9. <em>ex.) your_url.com</em><br /><strong>NO WWW PLEASE</strong>
-                    </th>
-
-                    <td>
-
-                    	9. <input type="text" class="regular-text" name="theme-name_theme_options[addrbook]" value="<?php esc_attr_e( $options[ 'addrbook' ]); ?>" placeholder="www.my_own_url.com" />
-
-                    </td>
-
-                </tr>
-
-			</table>
-
-			<p class="submit"><input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'theme-name' ); ?>" /></p>
-
-		</form>
-
-	</div>
-
-	<?php } //end ridiculousReview_theme_options_layout()
-
+<?php 
 //Sanitize and validate input. Accepts an array, return a sanitized array. 
 function theme-name_options_validate( $input ) {
 
@@ -245,5 +199,5 @@ function theme-name_options_validate( $input ) {
 
 	return $input;
 
-};//end ridiculousReview_options_validate
+};//end theme-name_options_validate
 ?>
