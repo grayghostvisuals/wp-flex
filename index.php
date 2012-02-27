@@ -14,8 +14,12 @@
           </figure>
 		  <?php endif; //end if has_post_thumbnail ?>
           
-          <h1><span><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?> blog post entry"><?php the_title(); ?></a></span></h1>
-          <small><span>posted by: <?php the_author(); ?></span> on <time datetime="%3$s" pubdate><?php the_time( get_option( 'date_format' ) ); ?></time></small> 
+          <h1>
+          	<span><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?> blog post entry"><?php the_title(); ?></a></span>
+          </h1>
+          	<small>
+            	<span>posted by: <?php the_author(); ?></span> on <time datetime="%3$s" pubdate><?php the_time( get_option( 'date_format' ) ); ?></time>
+            </small> 
           </header>
           
         <section>
@@ -24,9 +28,13 @@
         
         <!-- post footer -->
         <foote>
-          <div><span><a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?>Comments</a></span></div>
+          <div>
+          	<span><a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?>Comments</a></span>
+          </div>
           
-          <div><span>Tagged: <?php the_tags('Tags', ','); ?></span> <span>Posted in: <?php the_category(',') ?></span></div>
+          <div>
+          	<span>Tagged: <?php the_tags('Tags', ','); ?></span> <span>Posted in: <?php the_category(',') ?></span>
+          </div>
         </footer>
       </article>
       
@@ -62,4 +70,5 @@
 
 </div>
 <!--! end /div#container -->
+
 <?php get_footer(); ?>
