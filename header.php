@@ -110,7 +110,7 @@
         <ol>
           	<?php 
 				//wp_list_pages arguments as an array
-				$nav_theme-name = array(
+				$nav_themename = array(
 										'depth'        => 0,
 										'show_date'    => '',
 										'date_format'  => get_option('date_format'),
@@ -127,8 +127,8 @@
 										); 
 		  	?>
         
-          <?php if( wp_list_pages($nav_theme-name) ) : while ( wp_list_pages( $nav_theme-name ) ) : ?>
-          <?php wp_list_pages( $nav_theme-name ); ?>
+          <?php if( wp_list_pages($nav_themename) ) : while ( wp_list_pages( $nav_themename ) ) : ?>
+          <?php wp_list_pages( $nav_themename ); ?>
       	  <?php endwhile; //end while wp_list_pages ?>
   	 	 <?php endif; //end if wp_list_pages ?>
         </ol>
