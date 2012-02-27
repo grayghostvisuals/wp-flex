@@ -18,34 +18,7 @@
   <title><?php esc_attr( bloginfo( 'name' ) ); ?>:<?php esc_attr( bloginfo( 'description' ) ); ?>:<?php esc_attr( wp_title() ); ?></title>
   
   <!-- Typekit Asynchronous Snippet -->
-  <script>
-  TypekitConfig = {
-  	kitId: 'xxxxxx', //add your kit unique id
-  	scriptTimeout: 3000};
-  	(function(){
-  		var h = document.getElementsByTagName('html')[0];
-  		h.className + 'wf-loading';
-  		var t = setTimeout(function(){
-  			h.className = h.className.replace(/(\s|^)wf-loading(\s|$)/g,'');
-  			h.className += 'wf-inactive';
-  			},
-  			TypekitConfig.scriptTimeout);
-  			var tk=document.createElement('script');
-  			tk.src='//use.typekit.com/' + TypekitConfig.kitId + '.js';
-  			tk.type='text/javascript';
-  			tk.async='true';
-  			tk.onload = tk.onreadystatechange = function(){
-  				var rs = this.readyState;
-  				if( rs && rs != 'complete' && rs!= 'loaded')
-  				return;
-  				clearTimeout(t);
-  				try{ Typekit.load(TypekitConfig) }
-  				catch(e){}
-  				};
-  				var s = document.getElementsByTagName('script')[0];
-  				s.parentNode.insertBefore(tk,s);
-  				})();
- </script>
+  <!--<script src="<?php /*uncomment for tk glory => */ /*echo get_template_directory_uri();*/ ?>/js/tk-async.js"></script>-->
   <!-- End Typekit Asynchronous Snippet -->
   
   <!-- search engine robots meta instructions -->
@@ -57,7 +30,7 @@
   
   <!-- seo meta data -->
   <?php if ( is_home() || is_404() || is_search() ) : ?>
-  <meta name="description" content="<?php bloginfo( 'description' ); ?>" /><!-- general useage meta tag description -->
+  <meta name="description" content="<?php esc_attr( bloginfo( 'description' ) ); ?>" /><!-- general useage meta tag description -->
   <?php elseif ( is_single() ) : ?>
   <meta name="description" content="" /><!-- should be unique for single page -->
   <?php elseif ( is_archive() ) : ?>
@@ -111,7 +84,7 @@
   
   <!-- All JavaScript at the bottom, except this Modernizr. Modernizr enables HTML5 elements & feature detects; 
          for optimal performance, create your own custom Modernizr build: www.modernizr.com/download/ -->
-  <script src="<?php echo get_template_directory_uri(); ?>/js/libs/modernizr.js?v=2.0.6.min"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/js/libs/modernizr.js"></script>
   
   <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
   <?php wp_head(); //required for all wordpress themes and placed at the end of the head tag element ?>
@@ -132,7 +105,7 @@
       <h2><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
       
       <!-- http://codex.wordpress.org/Function_Reference/wp_nav_menu -->
-      <?php if ( ! isset( wp_nav_menu() ) ) : ?>
+      <?php //if ( ! isset( wp_nav_menu() ) ) : ?>
       <nav role="navigation">
         <ol>
           	<?php 
@@ -160,11 +133,11 @@
   	 	 <?php endif; //end if wp_list_pages ?>
         </ol>
       </nav>
-      <?php endif; ?>
+      <?php //endif; ?>
       
-      <?php if ( isset( wp_nav_menu() ) ) : ?>
-      	<?php wp_nav_menu(); ?>
-      <?php endif; ?>
+      <?php //if ( isset( wp_nav_menu() ) ) : ?>
+      	<?php //wp_nav_menu(); ?>
+      <?php //endif; ?>
     </header>
     
     <article>

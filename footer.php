@@ -6,7 +6,7 @@
     </section>
   
     <!--xxxxxxxxxxxxxxxxxx custom footer Vcard xxxxxxxxxxxxxxxxxx-->
-    <?php $options = get_option( 'themename_theme_options' ); ?>
+    <?php $options = get_option( 'theme-name_theme_options' ); ?>
     <?php if( $options || empty($options) ): ?>
   
     <!-- vcard fn org -->
@@ -46,7 +46,7 @@
     <?php endif; ?>
     
     <section id="footer-socials">
-      <?php $options = get_option( 'themename_theme_options' ); ?>
+      <?php $options = get_option( 'theme-name_theme_options' ); ?>
       
 	  <?php if( $options[ 'facebookurl' ] ) : ?>
       <article id="footer-fb">
@@ -54,7 +54,7 @@
       </article>
 	  <?php endif; ?>
       
-	  <?php $options = get_option( 'themename_theme_options' ); ?>
+	  <?php $options = get_option( 'theme-name_theme_options' ); ?>
       
 	  <?php if( $options[ 'twitterurl' ] ) : ?>
       <article id="footer-twitter">
@@ -70,11 +70,11 @@
   <!-- JavaScript at the bottom for fast page loading -->
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/js/libs/jquery.min.js?v=1.6.4"><\/script>')</script>
+  <script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/js/libs/jquery.min.js"><\/script>')</script>
   
   <!-- global scripts and plugins -->
-  <script src="<?php echo get_template_directory_uri(); ?>/js/plugins.js?v=0.0.0"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/js/script.js?v=0.0.0"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/js/plugins.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/js/script.js"></script>
   <!-- end scripts-->
   
   <!-- Asynchronous Google Analytics snippet. mathiasbynens.be/notes/async-analytics-snippet -->
