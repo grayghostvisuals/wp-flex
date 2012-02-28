@@ -1,17 +1,22 @@
 WP-Flex is a blank, responsive wordpress theme foundation. A tested
 and safe WP theme submission foundational structure. This boilerplate
-framework for Wordpress was testing and Debugged with the required
-Theme Unit Test XML file(also included) along with the main WP.config file
-set to WPCONFIG, true as specified per WP requirements.  
+framework for Wordpress has been tested and debugged with the required
+theme-unit-test.xml file( also included ) along with the main wp-config.php 
+file set to true as per Wordpress requirement.
 
-WPF includes:
+# debugging with wp-config.php 
+# default = false 
+# define('WP_DEBUG', true); 
+
+
+# WPF Includes:
 
 1. HTML5 Boilerplate 
    http://html5boilerplate.com
    https://github.com/h5bp/html5-boilerplate
 
 
-Other Goodies Included.......
+# Other Goodies Included.......
 
 1. wp-flex-readme.txt
    A must have for theme submission. Describes the ins and outs
@@ -36,7 +41,7 @@ Other Goodies Included.......
    for theme submission by Wordpress  
 
 
-More inspiring and wonderful blank Wordpress theme frameworks to get you going,
+# More inspiring and wonderful blank Wordpress theme frameworks to get you going,
 
 1. Matt Murtaugh's HTML5 Reset Wordpress Theme
    http://html5reset.org/#wordpress
