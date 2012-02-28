@@ -15,7 +15,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
   
   <!-- title -->
-  <title><?php esc_attr( bloginfo( 'name' ) ); ?>:<?php esc_attr( bloginfo( 'description' ) ); ?>:<?php esc_attr( wp_title() ); ?></title>
+  <title><?php esc_attr( bloginfo( 'name' ) ); ?>:<?php esc_attr( bloginfo( 'description' ) ); ?>, <?php esc_attr( wp_title() ); ?></title>
   
   <!-- Typekit Asynchronous Snippet -->
   <!--<script src="<?php /*uncomment for tk glory => */ /*echo get_template_directory_uri();*/ ?>/js/tk-async.js"></script>-->
