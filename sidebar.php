@@ -1,4 +1,4 @@
-<?php  if( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar() ) : ?>
+<?php  if( ! function_exists( 'dynamic_sidebar' ) || ! dynamic_sidebar() ) : ?>
 
 <p>these are the default widgets not your custom ones</p>
 
@@ -14,15 +14,17 @@
 
 <article>
   <h3>Categories</h3>
-  <ul><?php wp_list_categories('show_count=1&title_li='); ?></ul>
+  <ul>
+  	<?php wp_list_categories('show_count=1&title_li='); ?>
+  </ul>
 </article>
 
 <article>
-  <?php wp_list_bookmarks(); ?>
+<?php wp_list_bookmarks(); ?>
 </article>
 
 <article>
-  <h3>Tag Cloud</h3>
-  <?php wp_tag_cloud(); ?>
+	<h3>Tag Cloud</h3>
+	<?php wp_tag_cloud(); ?>
 </article>
 <?php endif; ?>

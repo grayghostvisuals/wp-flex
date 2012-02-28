@@ -3,7 +3,7 @@
 add_action( 'after_setup_theme', 'themename_setup' );
 
 //themename options
-include_once( get_template_directory() . '/theme-options.php' );
+include_once( get_template_directory() . '/themeoptions.php' );
 
 //if !themename_setup
 if ( ! function_exists( 'themename_setup' ) ) :
@@ -17,6 +17,7 @@ wp_enqueue_script( 'comment-reply' );
 endif;
 
 //trigger the theme-name widget function
+//required for theme submission
 add_action( 'widgets_init' , 'themename_widget' );
 
 //if content_width not set

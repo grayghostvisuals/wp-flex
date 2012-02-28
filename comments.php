@@ -28,25 +28,27 @@ die('please do not load this page directly mate');
 		//comment array
 		//see developer docs http://codex.wordpress.org/Function_Reference/wp_list_comments
 		$theme_comment_array = array(
-    					'walker' 			=> null,
-    					'max_depth' 		=> '',
-    					'style' 			=> 'ol', 
-    					'callback' 			=> null,
-    					'end-callback' 		=> null,
-    					'type' 				=> 'all',
-						'reply_text'		=> 'shout back',
-    					'page' 				=> '',
-    					'per_page' 			=> '',
-    					'avatar_size' 		=> 32,
-    					'reverse_top_level' => true,
-    					'reverse_children' 	=> true 
-    					); 
+									  'walker' 				=> null,
+									  'max_depth' 			=> '',
+									  'style' 				=> 'ol', 
+									  'callback' 			=> null,
+									  'end-callback' 		=> null,
+									  'type' 				=> 'all',
+									  'reply_text'			=> 'shout back',
+									  'page' 				=> '',
+									  'per_page' 			=> '',
+									  'avatar_size' 		=> 32,
+									  'reverse_top_level' 	=> true,
+									  'reverse_children' 	=> true 
+									); 
 
 		?>
-    <?php if ($comment->comment_approved == '0') : ?>
+        
+    <?php if ( $comment->comment_approved == '0' ) : ?>
     <p class="moderating"><em><?php _e('Your rant, suggestion, or comment is awaiting moderation from our head cheese. Please be patient') ?></em></p>
     <?php endif; ?>
-    <?php wp_list_comments($theme_comment_array) ?>
+    
+    <?php wp_list_comments( $theme_comment_array ) ?>
   </ol>
   
   <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
@@ -69,6 +71,7 @@ die('please do not load this page directly mate');
   <?php endif; //endif !comments_open ?>
   <?php endif; //endif have_comments ?>
   
+  <?php //required for theme submission and functionality of comments ?>
   <?php comment_form(); ?>
   
 </section>

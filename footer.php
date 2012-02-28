@@ -1,4 +1,5 @@
  <footer role="contentinfo">
+    
     <section>
       <?php if ( function_exists('dynamic_sidebar') ) : ?>
       <?php dynamic_sidebar('footer widget') ?>
