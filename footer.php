@@ -21,7 +21,7 @@
         
         <!-- vcard adr -->
         <?php if( $options['street'] && $options['locality'] && $options['region'] && $options['postal'] ): ?>
-        <li class="adr"><small><span class="street-address"><?php echo ( $options['street'] ); ?></span>, <span class="locality"><?php echo ( $options['locality'] ); ?></span>, <span class="region"><abbr title="<?php echo ( $options['region'] ); ?>"><?php echo ( $options['region'] ); ?></abbr></span> <span class="postal-code"><?php echo ( $options['postal'] ); ?></span></small></li>
+        <li class="adr"><small><span class="street-address"><?php echo ( $options['street'] ); ?></span>, <span class="locality"><?php echo ( $options['locality'] ); ?></span>, <span class="region"><abbr title="<?php echo ( $options['region'] ); ?>"><?php echo ( $options['region'] ); ?></abbr></span> 	`		<span class="postal-code"><?php echo ( $options['postal'] ); ?></span></small></li>
         <?php else : ?>
         <li class="adr"><small>555 Fake Street, City Name, NY 55555</small></li>
         <?php endif; ?>
@@ -62,6 +62,12 @@
         <div class="twitter-button"><a href="https://twitter.com/<?php echo ( $options[ 'twitterurl' ] ); ?>" class="twitter-follow-button">follow @<?php echo( $options[ 'twitterurl' ] ); ?></a></div>
       </article>
       <?php endif; ?>
+      
+      <!-- It is completely optional, but if you like WP-Flex I would appreciate it if you keep the credit link at the bottom -->
+      <section>
+      <small>Created with the WP-Flex boilerplate foundation by gray ghost visuals <a href="" rel="external">http://grayghostvisuals.com</a></small>
+      </section>
+      <!-- It is completely optional, but if you like WP-Flex I would appreciate it if you keep the credit link at the bottom -->
     
     </section>
   </footer>
