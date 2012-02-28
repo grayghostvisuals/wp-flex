@@ -57,9 +57,6 @@
   <meta property="og:site_name" content="">
   <meta property="fb:admins" content="">
   
-  <!-- bootstrap css -->
-  <link rel="stylesheet" media="screen" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css">
-  
   <!-- css -->
   <link rel="stylesheet" media="screen" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
   
@@ -93,7 +90,7 @@
   <?php wp_head(); //required for all wordpress themes and placed at the end of the head tag element ?>
 </head>
 
-<!-- start body element -->
+<!-- body element tag -->
 <?php if ( is_single() ) : ?>
 <body <?php body_class(); ?> id="themename-single">
 <?php elseif ( is_home() ) : ?>
@@ -101,9 +98,6 @@
 <?php else : ?>
 <body <?php body_class(); ?> id="themename-<?php the_title(); ?>">
 <?php endif; ?>
-
-  	<div class="navbar">
-  	<div class="navbar-inner">
     
     <header role="banner">
       <h1><a href="<?php echo home_url();  ?>"><?php esc_attr( bloginfo( 'name' ) ); ?></a></h1>
@@ -112,30 +106,33 @@
       <!-- http://codex.wordpress.org/Function_Reference/wp_nav_menu -->
       <?php //wp_nav_menu(); ?>
       <nav role="navigation">
-        <ol class="nav">
+        <ol>
           	<?php 
 				//wp_list_pages arguments as an array
 				$nav_themename = array(
-										'depth'        	=> 2,
-										'show_date'    	=> '',
-										'date_format'  	=> get_option('date_format'),
-										'child_of'     	=> 0,
-										'exclude'      	=> '',
-										'include'      	=> '',
-										'title_li'     	=> __(''),
-										'echo'         	=> 1,
-										'authors'      	=> '',
-										'sort_column'  	=> 'menu_order',
-										'link_before'  	=> '',
-										'link_after'   	=> '',
-										'walker' 		=> '' 
-										); 
+									   'depth'        	=> 2,
+									   'show_date'    	=> '',
+									   'date_format'  	=> get_option('date_format'),
+									   'child_of'     	=> 0,
+									   'exclude'      	=> '',
+									   'include'      	=> '',
+									   'title_li'     	=> __(''),
+									   'echo'         	=> 1,
+									   'authors'      	=> '',
+									   'sort_column'  	=> 'menu_order',
+									   'link_before'  	=> '',
+									   'link_after'   	=> '',
+									   'walker' 		=> '' 
+									); 
 		  	?>
-        
-          <?php if( wp_list_pages($nav_themename) ) : while ( wp_list_pages( $nav_themename ) ) : ?>
-          <?php wp_list_pages( $nav_themename ); ?>
+		           
+          <?php 
+		  //begin wp_list_pages loop
+		  if( wp_list_pages($nav_themename) ) : while ( wp_list_pages( $nav_themename ) ) : 
+		  ?>
+          <?php wp_list_pages( $nav_themename ); //list items from the array above ?>
       	  <?php endwhile; //end while wp_list_pages ?>
-  	 	 <?php endif; //end if wp_list_pages ?>
+  	 	  <?php endif; //end if wp_list_pages ?>
         </ol>
       </nav>
       <?php //endif; ?>
@@ -147,6 +144,3 @@
     </article>
     
     <?php include TEMPLATEPATH . '/searchform.php' ?>
-    
-    </div>
-    </div>

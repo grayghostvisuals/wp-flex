@@ -16,13 +16,18 @@ General comments (optional).
 */
 
 /*
- *
+ * The Wordpress CSS Codex
  * http://codex.wordpress.org/CSS_Coding_Standards
+ *
  * REMINDERS
  * -Use lowercase and separate words with hyphens when naming selectors. Avoid camelcase and underscores
  * -Prefixed vendor-specific properties pairs should appear directly before the generic property they refer to
  *
  */
+
+
+/* =HTML5 Boilerplate Resets
+------------------------------------------------------------------------------- */
 
 /*
  * HTML5 Boilerplate Resets
@@ -33,7 +38,6 @@ General comments (optional).
  *
  * Detailed information about this CSS: h5bp.com/css
  *
- * ==|== normalize ==========================================================
  */
 
 
@@ -226,282 +230,23 @@ input:invalid, textarea:invalid { background-color: #f0dddd; }
 
 table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
-/* END HTML5 BOILERPLATE RESETS */
 
 
-/* =Golden Grid Typography
--------------------------------------------------------------- */
-
-/*
-*
-*	Zoomable baseline grid
-*	type size presets
-*
-*/
-
-body {
-  /* 16px / 24px */
-  font-size: 1em;
-  line-height: 1.5em;
-}
-.small {
-  /* 13px / 18px */
-  font-size: 0.8125em;
-  line-height: 1.3846153846153846em;
-}
-.normal, h3 {
-  /* 16px / 24px */
-  font-size: 1em;
-  line-height: 1.5em;
-  /* 24 */
-
-}
-.large, h2, h1 {
-  /* 26 / 36px */
-  font-size: 1.625em;
-  line-height: 1.3846153846153846em;
-}
-
-h2 { font-weight: normal; }
-
-.huge {
-  /* 42px / 48px */
-  font-size: 2.625em;
-  line-height: 1.1428571428571428em;
-}
-.massive {
-  /* 68px / 72px */
-  font-size: 4.25em;
-  line-height: 1.0588235294117647em;
-}
-.gigantic {
-  /* 110px / 120px */
-  font-size: 6.875em;
-  line-height: 1.0909090909090908em;
-}
-
-
-/* =Golden Grid Scaffolding
--------------------------------------------------------------- */
-
-/*
-*
-*  Four-column grid active
-*  ----------------------------------------
-*  Margin   | #  1   2   3   4   |   Margin
-*  5.55555% | %  25  50  75  100 | 5.55555%
-*
-*/
-body>header { 
-width: 100%; 
-background: blue; 
-margin:0;  
-padding:0; 
-}
-
-body>header h1,body>header h2 { background: yellow; margin: 0 auto; width: 89%;}
-
-#twoway {margin: 0 5.555555555555555%;}
-
-/*header,*/#twoway {
-  margin: 0 5.555555555555555%;
-}
-
-h1, h2 { margin: 0.9230769230769231em 0 1.3846153846153846em; }
-
-h3 { margin: 1.5em 0 1.5em; }
-
-/*
-*  Simple elastic gutters
-*  Note: box-sizing will not work in IE6-8
-*/
-.wrapper {
-  padding: 0 0.75em;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/*
-*
-*  Fixes for IE6-8
-*  http://jonikorpi.com/leaving-old-IE-behind/
-*
-*/
-.ie body {
-  width: 40em;
-  margin: 0 auto;
-  font-size: 1.0625em;
-}
-.ie h1 {
-  /* 42px / 48px */
-  font-size: 2.625em;
-  line-height: 1.1428571428571428em;
-  margin: 1.1428571428571428em 0 0.5714285714285714em;
-}
-
-
-/* =Name of section
--------------------------------------------------------------- */
-/* =Name of section
--------------------------------------------------------------- */
-/* =Name of section
--------------------------------------------------------------- */
-/* =Name of section
--------------------------------------------------------------- */
-/* =Name of section
--------------------------------------------------------------- */
-/* =Name of section
--------------------------------------------------------------- */
-
-
-
-/* ==|== media queries ======================================================
-   PLACEHOLDER Media Queries for Responsive Design.
-   These override the primary ('mobile first') styles
-   Modify as content requires.
+/* =============================================================================
+   Responsive Embedded Media
    ========================================================================== */
    
-/* @media screen and (min-width: 640px) */
-@media screen and (min-width: 40em) {
-  body {
-    /* Zoom baseline grid to 17/16 = 1.0625 */
-    font-size: 1.0625em;
-  }
-  
-  h1 {
-    /* 42px / 48px */
-    font-size: 2.625em;
-    line-height: 1.1428571428571428em;
-    margin: 1.1428571428571428em 0 0.5714285714285714em;
-  }
-  
-  body>header h1 { width: 89%;}
-}
-
-/* @media screen and (min-width: 640px) */
-@media screen and (min-width: 40em) {
-  body {
-    /* Zoom baseline grid to 17/16 = 1.0625 */
-    font-size: 1.0625em;
-  }
-  h1 {
-    /* 42px / 48px */
-    font-size: 2.625em;
-    line-height: 1.1428571428571428em;
-    margin: 1.1428571428571428em 0 0.5714285714285714em;
-  }
-}
-
-/*
-*
-*  Eight-column grid active
-*  ----------------------------------------------------------------------
-*  Margin   | #  1     2     3     4     5     6     7     8   |   Margin
-*  5.55555% | %  12.5  25.0  37.5  50.0  62.5  75.0  87.5  100 | 5.55555%
-*	
-*
-*/
-/* @media screen and (min-width: 720px) */
-@media screen and (min-width: 45em) {
-  body {
-    /* Reset baseline grid to 16/16 = 1 */
-    font-size: 1em;
-  }
-  #twoway .wrapper {
-    float: left;
-    width: 50%;
-  }
-}
-
-/* @media screen and (min-width: 888px) */
-@media screen and (min-width: 55.5em) {
-  body {
-    /* Zoom baseline grid to 17/16 = 1.0625 */ 
-    font-size: 1.0625em;
-  }
-  
-  body>header h1 { width: 66%;}
-}
-
-/* @media screen and (min-width: 984px) */
-@media screen and (min-width: 61.5em) {
-  body {
-    /* Reset baseline grid to 16/16 = 1.0 */
-    font-size: 1em;
-  }
-  header, #twoway {
-    margin: 0 16.666666666666664%;
-  }
-}
-
-/* @media screen and (min-width: 1200px) */
-@media screen and (min-width: 75em) {
-  body {
-    /* Zoom baseline grid to 17/16 = 1.0625 */ 
-    font-size: 1.0625em;
-  }
-}
-
-/* @media screen and (min-width: 1392px) */
-@media screen and (min-width: 87em) {
-  body {
-    /* Reset baseline grid to 16/16 = 1.0 */
-    font-size: 1em;
-  }
-  header, #twoway {
-    margin: 0 27.77777777777778%;
-  }
-}
-
-/* @media screen and (min-width: 1680px) */
-@media screen and (min-width: 105em) {
-  body {
-    /* Zoom baseline grid to 17/16 = 1.0625 */ 
-    font-size: 1.0625em;
-  }
-}
-
-/*
-*
-*  Sixteen-column grid active
-*  ----------------------------------------------------------------------------------------------------------------------
-*  Margin   | #  1     2     3     4     5     6     7     8     9     10    11    12    13    14    15    16  |   Margin
-*  5.55555% | %  6.25  12.5  18.75 25.0  31.25 37.5  43.75 50.0  56.25 62.5  68.75 75.0  81.25 87.5  93.75 100 | 5.55555%
-*	
-*
-*/
-/* @media screen and (min-width: 1872px) */
-@media screen and (min-width: 117em) {
-  header, #twoway {
-    margin: 0 5.555555555555555%;
-  }
-  header .wrapper {
-    width: 37.5%;
-    margin-left: 25%;
-  }
-  #twoway .wrapper {
-    width: 25%;
-  }
-  #twoway .wrapper:first-child {
-    margin-left: 25%;
-  }
-}
-
-/* @media screen and (min-width: 2080px) */
-@media screen and (min-width: 130em) {
-  body {
-    /* Zoom baseline grid to 18/16 = 1.125 */  
-    font-size: 1.125em;
-    max-width: 160em;
-  }
+img,
+object,
+video { 
+	max-width: 100%; 
+	height: auto;
 }
 
 
 /* =WordPress Core classes 
 	http://codex.wordpress.org/CSS#WordPress_Generated_Classes
--------------------------------------------------------------- */
+------------------------------------------------------------------------------- */
 
 /**** Wordpress Fluid Images */
 img[class*="align"], 
@@ -620,7 +365,7 @@ img.attachment-full {}
 
 /* =WordPress Required Core classes 
 	http://codex.wordpress.org/CSS#WordPress_Generated_Classes
--------------------------------------------------------------- */
+------------------------------------------------------------------------------- */
 
 .alignnone {
     margin: 5px 20px 20px 0;
@@ -703,6 +448,87 @@ a img.aligncenter {
 }
 
 
+/* =Responsive Typography
+------------------------------------------------------------------------------- */
+
+/*
+*
+*	Zoomable baseline grid
+*	type size presets
+*
+*/
+
+body {
+  /* 16px / 24px */
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+small,
+.small {
+  /* 13px / 18px */
+  font-size: 0.8125em;
+  line-height: 1.3846153846153846em;
+}
+
+h3,
+.normal {
+  /* 16px / 24px */
+  font-size: 1em;
+  line-height: 1.5em;
+  /* 24 */
+
+}
+ 
+h1, 
+h2,
+.large {
+  /* 26 / 36px */
+  font-size: 1.625em;
+  line-height: 1.3846153846153846em;
+}
+
+h2 { font-weight: normal; }
+
+.huge {
+  /* 42px / 48px */
+  font-size: 2.625em;
+  line-height: 1.1428571428571428em;
+}
+
+.massive {
+  /* 68px / 72px */
+  font-size: 4.25em;
+  line-height: 1.0588235294117647em;
+}
+
+.gigantic {
+  /* 110px / 120px */
+  font-size: 6.875em;
+  line-height: 1.0909090909090908em;
+}
+
+
+/* =Author Typography
+------------------------------------------------------------------------------- */
+
+/* =Author Layout
+------------------------------------------------------------------------------- */
+
+/* =Name of section
+------------------------------------------------------------------------------- */
+/* =Name of section
+------------------------------------------------------------------------------- */
+/* =Name of section
+------------------------------------------------------------------------------- */
+/* =Name of section
+------------------------------------------------------------------------------- */
+/* =Name of section
+------------------------------------------------------------------------------- */
+/* =Name of section
+------------------------------------------------------------------------------- */
+
+
 
 
 /* ==|== non-semantic helper classes ========================================
@@ -729,7 +555,6 @@ a img.aligncenter {
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { *zoom: 1; }
-
 
 
 /* ==|== print styles =======================================================

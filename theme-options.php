@@ -47,7 +47,7 @@ function themename_theme_options_layout() {
 	?>
 
 	<!-- begin ridiculous review options page layout -->
-	<div class="wrap" style="background: rgb(0,80,100); margin: 0 auto; padding: 2em 5em; width: 80%;">
+	<div class="wrap" style="">
 
 		<?php 
 		//displays the screen icon next to the title on the theme options page
@@ -55,14 +55,15 @@ function themename_theme_options_layout() {
 		screen_icon(); 
 		?>
         
-		<h2 style="color: orange"><?php echo get_current_theme(); ?></h2>
+		<h2><?php echo get_current_theme(); ?></h2>
 
 		<?php //if settings are updated correctly do the following ?>
 		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
 
 		<!-- theme options update message -->
-
-		<div class="updated fade"><p><img src="<?php echo get_template_directory_uri(); ?>/img/check20.png" alt="" /><strong><?php _e( 'themename Options Saved Partner', 'themename' ); ?></strong></p></div>
+		<div class="updated fade">
+        	<p><strong><?php _e( 'themename Options Saved Partner', 'themename' ); ?></strong></p>
+        </div>
 
 		<?php endif; //end if false !==$REQUEST ?>
 
@@ -72,17 +73,27 @@ function themename_theme_options_layout() {
 			<?php
 			//must match register_settings field
 			settings_fields( 'themename_options' ); ?>
+            
+            <?php //themename options fetch ?> 
 			<?php $options = get_option( 'themename_theme_options' ); ?>
 
-			<table class="form-table" style="background: #F7F7F7; border-radius: 20px;">
-
+			<table class="form-table">
+			<thead>
 			<tr valign="top">
 				<th valign="top" scope="row">
-					<strong>Ridiculous Review Options</strong>
+					<strong>ThemeName Options</strong>
 				</th>
 			</tr>
+            </thead>
             
-            <?php /////////////////// magic dust social networking option /////////////////////////// ?>
+            <tfoot>
+            	<tr>
+                	<td>Welcome to your custom options template dude</td>
+                </tr>
+            </tfoot>
+            
+            <tbody>
+            <?php /////////////////// themename social networking option /////////////////////////// ?>
 				
 				<tr valign="top">
 					<th valign="top" scope="row">
@@ -93,7 +104,7 @@ function themename_theme_options_layout() {
 				<!-- facebook -->
 				<tr valign="top">
 					<th valign="top" scope="row">
-						<strong style="color: #B0AAAA;">Facebook URL</strong><br />
+						<strong>Facebook URL</strong><br />
 						<em>http://www.facebook.com/fb_slug</em>
 					</th>
 					
@@ -103,12 +114,11 @@ function themename_theme_options_layout() {
 				</tr>
                 
                 <!-- twitter option-->
-
 				<tr valign="top">
 
 					<th valign="top" scope="row">
 
-						<strong style="color: #B0AAAA;">Twitter Name</strong><br />
+						<strong>Twitter Name</strong><br />
 
 						<em>do not include the @ symbol</em>
 
@@ -124,19 +134,19 @@ function themename_theme_options_layout() {
 
 				</tr>
             
-				<?php /////////////////// magic dust custom VCard option /////////////////////////// ?>
+				<?php /////////////////// themename custom VCard option /////////////////////////// ?>
 
 
 				<tr valign="top">
 					<th valign="top" scope="row">
-						<strong>Ridiculous Review VCard</strong>
+						<strong>ThemeName VCard</strong>
 					</th>
 				</tr>
 
 				<!-- name -->
 				<tr valign="top">
 					<th valign="top" scope="row">
-						<strong style="color: #B0AAAA;">Organization</strong><br />
+						<strong>Organization</strong><br />
                         1. ex.<em>John J. Doe or Pete's Pancake House</em>
 					</th>
 
@@ -149,7 +159,7 @@ function themename_theme_options_layout() {
 				<tr valign="top">
 					<th valign="top" scope="row">
                     
-						<strong style="color: #B0AAAA;">Street Address</strong><br />
+						<strong>Street Address</strong><br />
 
                         2. <em>555 Fake Street</em><br />
 
@@ -175,7 +185,7 @@ function themename_theme_options_layout() {
 				<!-- phone -->
 				<tr valign="top">
 					<th valign="top" scope="row">
-						<strong style="color: #B0AAAA;">Phone</strong><br />
+						<strong>Phone</strong><br />
                         6. <em>headquarters type: ex.) Office, Home, Work</em><br />
                         7. <em>Telephone Number</em>
 					</th>
@@ -189,7 +199,7 @@ function themename_theme_options_layout() {
 
                 <tr valign="top">
                 	<th valign="top" scope="row">
-                    	<strong style="color: #B0AAAA;">URL</strong><br />
+                    	<strong>URL</strong><br />
                         8. <em>ex.) www.my_own_url.com</em>
 
                     </th>
@@ -215,6 +225,8 @@ function themename_theme_options_layout() {
                     </td>
 
                 </tr>
+                
+                </tbody>
 
 			</table>
 
