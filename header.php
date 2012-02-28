@@ -39,8 +39,8 @@
   <meta name="description" content="" /><!-- the fallback meta description -->
   <?php endif; ?>
   
-  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0">
+  <!-- Mobile viewport optimized: h5bp.com/viewport -->
+  <meta name="viewport" content="width=device-width">
   
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -57,24 +57,10 @@
   <meta property="og:site_name" content="">
   <meta property="fb:admins" content="">
   
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+  
   <!-- css -->
   <link rel="stylesheet" media="screen" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-  
-  <!-- General Favicon -->
-  <link rel="shortcut-icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" />
-  <!-- 
-  Apple Favicons 
-  Apple Developers Documentation    	
-  http://developer.apple.com/library/ios/#documentation/userexperience/conceptual/mobilehig/IconsImages/IconsImages.html#//apple_ref/doc/uid/TP40006556-CH14-SW1  \
-  -->
-  <!-- iPhone 3G, iPod Touch and Android -->
-  <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon-precomposed.png">
-  <!-- iPad Favicon -->
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon-72x72-precomposed.png">
-  <!-- iPhone 4 Retina Favicon -->
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon-114x114-precomposed.png">
-  <!-- Opera Speed Dial Favicons -->
-  <link rel="icon" type="image/png" href="path/to/195x195image.png">
     
   <!-- pingback url -->
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -86,7 +72,9 @@
          for optimal performance, create your own custom Modernizr build: www.modernizr.com/download/ -->
   <script src="<?php echo get_template_directory_uri(); ?>/js/libs/modernizr.js"></script>
   
-  <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+  <?php //required comment functionality ?>
+  <?php if ( is_singular() ) { wp_enqueue_script( 'comment-reply' ); } ?>
+  
   <?php wp_head(); //required for all wordpress themes and placed at the end of the head tag element ?>
 </head>
 
@@ -104,7 +92,6 @@
       <h2><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
       
       <!-- http://codex.wordpress.org/Function_Reference/wp_nav_menu -->
-      <?php //wp_nav_menu(); ?>
       <nav role="navigation">
         <ol>
           	<?php 
@@ -143,4 +130,5 @@
     	<div><a href="<?php bloginfo('rss2_url') ?>">RSS Feed</a></div>
     </article>
     
-    <?php include TEMPLATEPATH . '/searchform.php' ?>
+    <?php //required call for search-form ?>
+    <?php get_search_form(); ?>

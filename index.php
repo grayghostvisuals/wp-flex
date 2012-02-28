@@ -18,22 +18,22 @@
           
           <h1><span><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?> blog post entry"><?php the_title(); ?></a></span></h1>
           
-          <small><span>posted by: <?php the_author(); ?></span> on <time datetime="%3$s" pubdate><?php the_time( get_option( 'date_format' ) ); ?></time></small>
+          <small><span>posted by: <?php the_author(); ?></span> on <time datetime="%3$s" pubdate><a href="<?php the_permalink(); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a></time></small>
            
           </header>
           
-        <section>
+        <div class="clearfix">
           <?php the_content( '<span>read more &raquo;</span>' ); ?>
-        </section>
+        </div>
         
         <!-- post footer -->
         <footer>
           <div>
-          	<span><a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?>Comments</a></span>
+          	<span><a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?> Comments</a></span>
           </div>
           
           <div>
-          	<span>Tagged: <?php the_tags('Tags', ','); ?></span> <span>Posted in: <?php the_category(',') ?></span>
+          	<span>Tagged: <?php the_tags('', ','); ?></span> <span>Posted in: <?php the_category(',') ?></span>
           </div>
         </footer>
       </article>

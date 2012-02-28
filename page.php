@@ -8,10 +8,16 @@
       <header>
         <h1><span><?php the_title(); ?></span></h1>
       </header>
+      <div class="clearfix">
 	  <?php the_content(); ?>
-	  <?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages &raquo;' ), 'after' => '</div>' ) ); ?>
+      </div>
+	  <?php wp_link_pages( array( 'before' => '<div>' . __( 'Pages &raquo;' ), 'after' => '</div>' ) ); ?>
     </section>
 	<?php endwhile; //end while have_posts ?>
+    
+    <!-- begin comments template !IMPORTANT FOR THEME SUBMISSION -->
+    <?php comments_template(); ?>
+    <!-- end comments template !IMPORTANT FOR THEME SUBMISSION -->
     
 	<?php else : ?>
     <p><?php echo ( 'sorry, this page does not exist' ); ?></p>

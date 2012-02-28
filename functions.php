@@ -48,12 +48,15 @@ function themename_widget(){
 	
 };
 
-//add editor style sheet
-add_editor_style('editor-style.css');
 
 //enables post and comment RSS feed links to head
 //required for theme submission
 add_theme_support( 'automatic-feed-links' );
+
+//add editor style sheet
+add_editor_style();
+//This theme allows users to set a custom background
+add_custom_background();
 
 //enables post-thumbnail support
 //enables for Posts and "movie" post type but not for Pages
