@@ -499,6 +499,211 @@ h3 { margin: 1.5em 0 1.5em; }
 }
 
 
+/* =WordPress Core classes 
+	http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+-------------------------------------------------------------- */
+
+/**** Wordpress Fluid Images */
+img[class*="align"], 
+img[class*="wp-image-"] {
+	/* Make sure images with WordPress-added height and width attributes are scaled correctly */
+    height: auto
+}
+
+.wp-caption, 
+.wp-caption img {
+	max-width: 100%
+}
+
+img.size-full {
+	max-width: 100%;
+	/* Prevent stretching of full-size images with height and width attributes in IE8 */
+    width: auto
+}
+/**** END Wordpress Fluid Images */
+
+.entry-content img.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0
+}
+
+.widget {}
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx WP POST THUMBNAILS */
+
+img.wp-post-image {}
+img.attachment-thumbnail {}
+img.attachment-medium {}
+img.attachment-large {}
+img.attachment-full {}
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx WP 404 ERRORS */
+
+.error404 {}
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx WP PAGE CONTENT */
+
+.more-link {}
+
+.posttitle {}
+
+
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx WP COMMENT */
+
+/* comment form */
+#commentform {}
+#commentform {}
+#commentform span[class="required"] {}
+
+/* moderation response text */
+.moderating {
+	color: red
+}
+
+/* coments list reset */
+.commentlist, 
+.commentlist ul, 
+.commentlist .children {
+	margin: 0;
+	padding: 0;
+	list-style-type: none
+}
+
+/* comment form inputs  */
+#commentform input {
+	display: block;
+}
+
+/* avatars */
+.avatar {
+	display: block
+}
+
+/* comment form user comment text */
+.comment {}
+.comment p {}
+
+/* comment form global meta data */
+.comment-meta a {}
+
+/* comment threads parent even */
+.comment.thread-even {}
+
+/* comment threads parent odd */
+.comment.thread-odd {}
+
+/* comment threads children even */
+.comment .children .comment.even {}
+.comment .children .comment.odd.depth-2 p {}
+
+/* comment threads children odd */
+.comment .children .comment.odd {}
+.comment .children .comment.odd.depth-3 {}
+.comment .children .comment.odd.depth-3 p {}
+
+/* comment threads author-admin all */
+.comment.byuser.comment-author-admin,
+.comment .children .byuser.comment-author-admin {}
+
+/* comment form reply anchor */
+.reply a {}
+.reply a:active {}
+
+/* no user comments styling */
+.nocomments {}
+
+
+/* =WordPress Required Core classes 
+	http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+-------------------------------------------------------------- */
+
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter, div.aligncenter {
+    display:block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float:left;
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+a img.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float:left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin:0;
+    max-width: 98.5%;
+    padding:0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size:11px;
+    line-height:17px;
+    margin:0;
+    padding:0 4px 5px;
+}
+
+
+
 
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.
