@@ -1,25 +1,39 @@
-WP-Flex is a blank, responsive wordpress theme foundation.  
-WPF includes bits and pieces from some of the best boilerplate 
-frameworks out there, such as...
+WP-Flex is a blank, responsive wordpress theme foundation. A tested
+and safe WP theme submission foundational structure. This boilerplate
+framework for Wordpress was testing and Debugged with the required
+Theme Unit Test XML file(also included) along with the main WP.config file
+set to WPCONFIG, true as specified per WP requirements.  
+
+WPF includes:
 
 1. HTML5 Boilerplate 
    http://html5boilerplate.com
    https://github.com/h5bp/html5-boilerplate
 
-2. The Golden Grid System
-   http://goldengridsystem.com
-   https://github.com/jonikorpi/Golden-Grid-System
-
-3. Twitter Bootstrap
-   http://twitter.github.com/bootstrap
-   https://github.com/twitter/bootstrap
-
 
 Other Goodies Included.......
 
-1. Fit Text
-   http://fittextjs.com
-   https://github.com/davatron5000/FitText.js
+1. wp-flex-readme.txt
+   A must have for theme submission. Describes the ins and outs
+   to users what is great and what still needs work with your theme.
+   ( A reccomendation from Wordpress )
+
+2. Super dooooper awesome PHP comments with web URI refs included for
+   theme submissions and the process regarding that feature
+
+3. Required WP CSS classes for theme submissions, comment thread styling 
+   classes
+
+4. CSS flags as reccommended by Wordpress Theme Submission Codex.
+
+5. theme-unit-test.xml for theme testing with multiple users, comment threading 
+   style classes (5 deep), responsive embedded media styles for WP themes(img's can
+   include their own custom classes by default)
+
+6. Blank theme-options.php template
+
+7. Foundational functions.php scaffolding with all required fucntionality 
+   for theme submission by Wordpress  
 
 
 More inspiring and wonderful blank Wordpress theme frameworks to get you going,
@@ -28,7 +42,7 @@ More inspiring and wonderful blank Wordpress theme frameworks to get you going,
    http://html5reset.org/#wordpress
 
 2. Digging Into Wordpress' BLANK Wordpress Theme
-   http://digwp.com/2010/02/blank-wordpress-theme. 
+   http://digwp.com/2010/02/blank-wordpress-theme.  
 
 
 Surely you can always visit the Wordpress Codex for more customization and give it a shot yourself 
