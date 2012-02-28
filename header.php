@@ -110,26 +110,25 @@
       <h2><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
       
       <!-- http://codex.wordpress.org/Function_Reference/wp_nav_menu -->
-      <?php wp_nav_menu(); ?>
-        
+      <?php //wp_nav_menu(); ?>
       <nav role="navigation">
-        <ol>
+        <ol class="nav">
           	<?php 
 				//wp_list_pages arguments as an array
 				$nav_themename = array(
-										'depth'        => 0,
-										'show_date'    => '',
-										'date_format'  => get_option('date_format'),
-										'child_of'     => 0,
-										'exclude'      => '',
-										'include'      => '',
-										'title_li'     => __(''),
-										'echo'         => 1,
-										'authors'      => '',
-										'sort_column'  => 'menu_order',
-										'link_before'  => '',
-										'link_after'   => '',
-										'walker' => '' 
+										'depth'        	=> 2,
+										'show_date'    	=> '',
+										'date_format'  	=> get_option('date_format'),
+										'child_of'     	=> 0,
+										'exclude'      	=> '',
+										'include'      	=> '',
+										'title_li'     	=> __(''),
+										'echo'         	=> 1,
+										'authors'      	=> '',
+										'sort_column'  	=> 'menu_order',
+										'link_before'  	=> '',
+										'link_after'   	=> '',
+										'walker' 		=> '' 
 										); 
 		  	?>
         

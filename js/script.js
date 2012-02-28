@@ -1,5 +1,7 @@
 $(document).ready(function() {
 	
+	$('.nav li').addClass('dropdown')
+	
 	//===================================================================================================================== Progressive Enhancements
 	
 	function elementSupportsAttribute(element,attribute){
