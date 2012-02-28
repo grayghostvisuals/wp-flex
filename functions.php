@@ -49,9 +49,10 @@ function themename_widget(){
 };
 
 //add editor style sheet
-add_editor_style();
+add_editor_style('editor-style.css');
 
 //enables post and comment RSS feed links to head
+//required for theme submission
 add_theme_support( 'automatic-feed-links' );
 
 //enables post-thumbnail support
