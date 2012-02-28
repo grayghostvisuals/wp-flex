@@ -1,8 +1,10 @@
 <?php
-if( !empty( $_SERVER[ 'SCRIPT_FILENAME' ] ) && 'comments.php' == basename( $_SERVER[ 'SCRIPT_FILENAME' ] ) ) :
+if( ! empty( $_SERVER[ 'SCRIPT_FILENAME' ] ) && 'comments.php' == basename( $_SERVER[ 'SCRIPT_FILENAME' ] ) )
 die('please do not load this page directly mate');
 ?>
+
 <section class="comments">
+
   <?php if ( post_password_required() ) : ?>
   <p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.' ); ?></p>
   <?php return; ?>
@@ -11,10 +13,11 @@ die('please do not load this page directly mate');
   <!-- begin comment count -->
   <?php if ( have_comments() ) : ?>
   <h3 id="comments-title"><?php printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number() ), number_format_i18n( get_comments_number() ), '<em>' . get_the_title() . '</em>' ); ?></h3>
+  
   <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // check if there comments to navigate through ?>
   <div class="comment-pagination">
-    <?php previous_comments_link( _e( '<span class="meta-nav">&larr;</span>' ) ); ?>
-    <?php next_comments_link( _e( '<span class="meta-nav">&rarr;</span>' ) ); ?>
+    <?php previous_comments_link( _e( '<span>&larr;</span>' ) ); ?>
+    <?php next_comments_link( _e( '<span>&rarr;</span>' ) ); ?>
   </div>
   <!-- .comment-pagination -->
   <?php endif; //end check for comment navigation ?>
@@ -47,21 +50,26 @@ die('please do not load this page directly mate');
   </ol>
   
   <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+  
   <div class="comment-pagination">
-    <?php previous_comments_link( _e( '<span class="meta-nav">&larr;</span>' ) ); ?>
-    <?php next_comments_link( _e( '<span class="meta-nav">&rarr;</span>' ) ); ?>
+    <?php previous_comments_link( _e( '<span>&larr;</span>' ) ); ?>
+    <?php next_comments_link( _e( '<span>&rarr;</span>' ) ); ?>
   </div>
   <!-- .comment-pagination -->
+  
   <?php endif; // check for comment navigation ?>
   <?php else : 
 	//If there are no comments and comments are closed,
 	//let's leave a little note, shall we?
 
-	if ( !comments_open() ) :
+	if ( ! comments_open() ) :
    ?>
   <p class="nocomments"><?php _e( 'comments are closed. you\'re too late unfortunately mate' ); ?></p>
+  
   <?php endif; //endif !comments_open ?>
   <?php endif; //endif have_comments ?>
+  
   <?php comment_form(); ?>
+  
 </section>
 <!-- end /section.comments -->
