@@ -45,7 +45,7 @@
       
         <header>
           <h1><span><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?> blog post entry"><?php the_title(); ?></a></span></h1>
-          <?php include ( TEMPLATEPATH . '/inc/meta.php' ); ?>
+          <?php get_template_part( TEMPLATEPATH . '/inc/meta.php' ); ?>
         </header>
          
         <div class="clearfix">

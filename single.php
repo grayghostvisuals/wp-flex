@@ -7,7 +7,7 @@
       <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
         <header>
           <h1><span><?php the_title(); ?></span></h1>
-          <?php include ( TEMPLATEPATH . '/inc/meta.php' ); ?>
+          <?php get_template_part( TEMPLATEPATH . '/inc/meta.php' ); ?>
         </header>
         
         <div class="clearfix">
