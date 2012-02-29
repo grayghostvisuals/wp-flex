@@ -1,48 +1,39 @@
 <?php 
 
-//Ridiculous Review Custom Options
-//triggered before any other hook when a user accesses the admin area
-//only can be used to callback a specified function which is dgs_options_init
+// themename Custom Options
+// triggered before any other hook when a user accesses the admin area
+// only can be used to callback a specified function which is dgs_options_init
 add_action( 'admin_init', 'themename_options_init' );
 add_action( 'admin_menu', 'theme_options_add_page' );
 
-//ridiculous review options initialization
+// themename options initialization
 function themename_options_init(){
-
-	// lets us generate wp-admin page by registering theme settings
-	// and providing a few callbacks to control the output
-	
-	// 1. A settings group name can be found under form element => settings_fields( 'ridiculousReview_options' )
-	// 2. Name of option to sanitize which can be found in the form options name = attribute_value
-	// 3. The sanitizing callback for the entered inputs
-
-	register_setting( 'themename_options', 'themename_theme_options', 'themename_options_validate' );
+// lets us generate wp-admin page by registering theme settings
+// and providing a few callbacks to control the output
+// 1. A settings group name can be found under form element => settings_fields( 'themename_options' )
+// 2. Name of option to sanitize which can be found in the form options name = attribute_value
+// 3. The sanitizing callback for the entered inputs
+register_setting( 'themename_options', 'themename_theme_options', 'themename_options_validate' );
 
 };
 
-//load page with menu and add this sub-menu to the appearance panel in the WP admin dashboard
+// load page with menu and add this sub-menu to the appearance panel in the WP admin dashboard
 function theme_options_add_page() {
-
-	// 1. text to be displayed in the title tags of the page when the menu is selected
-	// 2. text used for WP admin dashboard appearance menu sub-title
-	// 3. capability required for this menu to be displayed to the user.
-	// 4. menu URI slug name
-	// 5. function to be called to output the content for page
-
-add_theme_page( __( 'themename Options'), __( 'themename' ), 'edit_theme_options', 'themenameoptions', 'themename_theme_options_layout' );
-
+// 1. text to be displayed in the title tags of the page when the menu is selected
+// 2. text used for WP admin dashboard appearance menu sub-title
+// 3. capability required for this menu to be displayed to the user.
+// 4. menu URI slug name
+// 5. function to be called to output the content for page
+add_theme_page( __( 'themename Options'), __( 'themename' ), 'edit_theme_options', 'themename-options', 'themename_theme_options_layout' );
 };
 
-//creates the option page. 
-//this is the function called through add_theme _page
+// creates the option page. 
+// this is the function called through add_theme _page
 function themename_theme_options_layout() {
 
-	//if request is not set do the following
-
+	// if request is not set do the following
 	if ( ! isset( $_REQUEST['settings-updated'] ) ) :
-
 		$_REQUEST['settings-updated'] = false;
-		
 	endif; //endif ! isset()
 	?>
 
@@ -61,18 +52,13 @@ function themename_theme_options_layout() {
 		<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
 
 		<!-- theme options update message -->
-		<div class="updated fade">
-        	<p><strong><?php _e( 'themename Options Saved Partner', 'themename' ); ?></strong></p>
-        </div>
-
+		<div class="updated fade"><strong><?php _e( 'themename Options Saved Partner', 'themename' ); ?></strong></div>
 		<?php endif; //end if false !==$REQUEST ?>
 
 		<!-- begin form for theme options page -->
 		<form method="post" action="options.php">
 
-			<?php
-			//must match register_settings field
-			settings_fields( 'themename_options' ); ?>
+			<?php settings_fields( 'themename_options' ); //must match register_settings field ?>
             
             <?php //themename options fetch ?> 
 			<?php $options = get_option( 'themename_theme_options' ); ?>
@@ -80,9 +66,7 @@ function themename_theme_options_layout() {
 			<table class="form-table">
 			<thead>
 			<tr valign="top">
-				<th valign="top" scope="row">
-					<strong>ThemeName Options</strong>
-				</th>
+				<td valign="top" scope="row"><strong>themename Options</strong></td>
 			</tr>
             </thead>
             
@@ -97,62 +81,36 @@ function themename_theme_options_layout() {
 				
 				<tr valign="top">
 					<th valign="top" scope="row">
-						<strong>SOCIAL NETWORKS</strong>
+						<strong>Social Networks</strong>
 					</th>
 				</tr>
 				
 				<!-- facebook -->
 				<tr valign="top">
-					<th valign="top" scope="row">
-						<strong>Facebook URL</strong><br />
-						<em>http://www.facebook.com/fb_slug</em>
-					</th>
+					<th valign="top" scope="row"><strong>Facebook URL</strong> <em>http://www.facebook.com/fb_slug</em></th>
 					
-					<td>
-						<input type="text" class="regular-text" placeholder="http://www.facebook.com/fb_slug" name="themename_theme_options[facebookurl]" value="<?php esc_attr_e( $options['facebookurl'] ); ?>" />
-					</td>
+					<td><input type="text" class="regular-text" placeholder="http://www.facebook.com/fb_slug" name="themename_theme_options[facebookurl]" value="<?php esc_attr_e( $options['facebookurl'] ); ?>" /></td>
 				</tr>
                 
                 <!-- twitter option-->
 				<tr valign="top">
+					<th valign="top" scope="row"><strong>Twitter Name</strong><em>do not include the @ symbol</em></th>
 
-					<th valign="top" scope="row">
-
-						<strong>Twitter Name</strong><br />
-
-						<em>do not include the @ symbol</em>
-
-					</th>
-
-					
-
-					<td>
-
-						<input type="text" class="regular-text" placeholder="twitter name with no @ symbol" name="themename_theme_options[twitterurl]" value="<?php esc_attr_e( $options['twitterurl'] ); ?>" />
-
-					</td>
-
+					<td><input type="text" class="regular-text" placeholder="twitter name with no @ symbol" name="themename_theme_options[twitterurl]" value="<?php esc_attr_e( $options['twitterurl'] ); ?>" /></td>
 				</tr>
             
 				<?php /////////////////// themename custom VCard option /////////////////////////// ?>
 
 
 				<tr valign="top">
-					<th valign="top" scope="row">
-						<strong>ThemeName VCard</strong>
-					</th>
+					<th valign="top" scope="row"><strong>ThemeName VCard</strong></th>
 				</tr>
 
 				<!-- name -->
 				<tr valign="top">
-					<th valign="top" scope="row">
-						<strong>Organization</strong><br />
-                        1. ex.<em>John J. Doe or Pete's Pancake House</em>
+					<th valign="top" scope="row"><strong>Organization</strong> 1. ex.<em>John J. Doe or Pete's Pancake House</em>
 					</th>
-
-					<td>
-						1. <input type="text" class="regular-text" name="themename_theme_options[fnorg]" value="<?php esc_attr_e( $options[ 'fnorg' ] ); ?>" placeholder="John J. Doe or Pete's Pancake House" />
-					</td>
+					<td>1. <input type="text" class="regular-text" name="themename_theme_options[fnorg]" value="<?php esc_attr_e( $options[ 'fnorg' ] ); ?>" placeholder="John J. Doe or Pete's Pancake House" /></td>
 				</tr>
 
 				<!-- address -->
@@ -273,9 +231,6 @@ function themename_options_validate( $input ) {
 	
 	// Twitter Option Cleanse
 	$input['twitterurl'] = wp_filter_nohtml_kses( $input['twitterurl'] );
-	
-	// Twitter Option Cleanse
-	$input['flickrurl'] = wp_filter_nohtml_kses( $input['flickrurl'] );
 
 	return $input;
 
