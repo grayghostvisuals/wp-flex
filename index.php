@@ -17,7 +17,7 @@
 		  <?php endif; //end if has_post_thumbnail ?>
           
           <h1><span><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?> blog post entry"><?php the_title(); ?></a></span></h1>
-          <?php get_template_part( 'inc/meta.php' ); ?>
+		  <?php get_template_part( 'inc/meta'); ?>
            
           </header>
           
