@@ -33,7 +33,7 @@ FILE HIERARCHY
 	    
 	8.  comments.php 	=============================== displays comments board and loads comment respond form
 	 
-        9.  404.php 		======================================== displays customized 404 error page ( no sidebar )
+    9.  404.php 		======================================== displays customized 404 error page ( no sidebar )
 
 	10. pageblank.php 	======================================== a secret page for those designers that wish to experiment with a custom blank page ( no sidebar )
     
