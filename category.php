@@ -14,17 +14,15 @@
           <small><span>Posted by: <?php the_author(); ?></span> on <time datetime="%3$s" pubdate><?php the_time( get_option( 'date_format' ) ); ?></time></small> 
          </header>
          
-         <section class="post-txt">
-		  <?php the_content( '<span>read more</span>' ); ?>
-        </section>
+        <div class="clearfix">
+          <?php the_content( '<span>read more &raquo;</span>' ); ?>
+        </div>
         
         <footer>
-          <div>
-            <p><a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?>Comments</a></p>
-          </div>
+          <div><a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?>Comments</a></p></div>
           
           <div>
-            <p><span>Posted In &raquo;<?php the_category( ',' ); ?></span> Tagged: <span><?php the_tags( 'Post Tags &raquo;' . ' ',',' ); ?></span></p>
+            <span>Posted In &raquo;<?php the_category( ',' ); ?></span> Tagged: <span><?php the_tags( 'Post Tags &raquo;' . ' ',',' ); ?></span>
           </div>
         </footer>
       

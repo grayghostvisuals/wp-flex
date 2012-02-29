@@ -48,13 +48,13 @@
           <small><span>Posted by: <?php the_author(); ?></span> on <time datetime="%3$s" pubdate><?php the_time( get_option( 'date_format' ) ); ?></time></small> 
         </header>
          
-        <section>  
-		  <?php the_content( '<span>read more</span>' ); ?>
-        </section>
+        <div class="clearfix">
+          <?php the_content( '<span>read more &raquo;</span>' ); ?>
+        </div>
         
         <footer>
-          <div><p><a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?>Comments</a></p></div>
-          <div><p><span>Posted in:<?php the_category( ',' ); ?></span> <span>Tagged: <?php the_tags( 'Post Tags &raquo;' . ' ',',' ); ?></span></p></div>
+          <div><a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?>Comments</a></div>
+          <div><span>Posted in:<?php the_category( ',' ); ?></span> <span>Tagged: <?php the_tags( 'Post Tags &raquo;' . ' ',',' ); ?></span></div>
         </footer>
         
       </article>
