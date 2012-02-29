@@ -338,6 +338,10 @@ a img.aligncenter {
 
 .gallery-caption {}
 
+/* stops too many categories from breaking layout */
+.tags ul li,
+.cats ul li{ display: inline; }
+
 
 /* =WordPress - Additional Styling Classes 
 	http://codex.wordpress.org/CSS#WordPress_Generated_Classes

@@ -29,7 +29,8 @@ function themename_header_style() {
             background: url(<?php header_image(); ?>);
         }
     </style><?php
-}
+}//end function themename_header_style
+
 // gets included in the admin header
 function themename_admin_header_style() {
     ?><style type="text/css">
@@ -38,8 +39,9 @@ function themename_admin_header_style() {
             height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
             background: no-repeat;
         }
-    </style><?php
-}
+    </style>
+<?php } //end function themename_admin_header_style
+
 //custom theme image header
 add_custom_image_header('themename_header_style', 'themename_admin_header_style');
 

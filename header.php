@@ -89,8 +89,25 @@
 <?php endif; ?>
     
     <header role="banner">
-      <h1><a href="<?php echo home_url();  ?>"><?php esc_attr( bloginfo( 'name' ) ); ?></a></h1>
-      <h2><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
+      
+      <?php 
+	  	//Custom header
+		// Check if this is a post or page, if it has a thumbnail, and if it's a big one
+		if ( is_singular() && has_post_thumbnail( $post->ID ) && ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' )) && $image[1] >= HEADER_IMAGE_WIDTH ) : ?>
+		
+		<?php echo get_the_post_thumbnail( $post->ID, 'post-thumbnail', array('usemap' => '#Map') ); // We have a new header image! ?>
+        <h1><a href="<?php echo home_url();  ?>"><?php esc_attr( bloginfo( 'name' ) ); ?></a></h1>
+      	<h2><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
+        <img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" usemap="#Map" />
+		
+		<?php else : ?>
+        <h1><a href="<?php echo home_url();  ?>"><?php esc_attr( bloginfo( 'name' ) ); ?></a></h1>
+      	<h2><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
+        
+	  <?php endif; ?>
+      <!-- end header custom image -->
+
+      
       
       <!-- http://codex.wordpress.org/Function_Reference/wp_nav_menu -->
       <nav role="navigation">
