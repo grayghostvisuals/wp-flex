@@ -1,0 +1,59 @@
+CACHE MANIFEST
+#
+# Version Control
+# v0.0.0 00-00-0000
+#
+# Handy Dandy Developer Tools
+# CHROME chrome://appcache-internals
+# FIREFOX about:cache
+# Charles - Web Debugging Proxy App
+# http://charlesproxy.com
+#
+# CACHE explicit entries
+# NETWORK URL online whitelist entries
+# FALLBACK ish entries (i.e. "In case shit happens")
+
+
+CACHE:
+# Google Fonts or
+# Typekit
+# http://use.typekit.com/xxx#xxx.js
+
+# Styles
+http://[ your_url ]/wp-content/themes/themename/style.css
+
+# Images
+
+# Modernizr
+
+# jQuery Local
+js/libraries/jquery-1.7.1.min.js
+
+# JS
+js/plugins.js
+js/scripts.js
+
+
+NETWORK:
+# jQuery CDN
+http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js
+
+# Google Analytics
+http://www.google-analytics.com/ga.js
+
+# Typekit
+# http://use.typekit.com/x/xxx#xxx-x.css?base64encryption_goes_here
+
+# Wordpress Template Files
+./header.php
+./archive.php
+./category.php
+./comments.php
+./footer.php
+./index.php
+./page.php
+./sidebar.php
+./single.php
+./themeoptions.php
+
+FALLBACK:
