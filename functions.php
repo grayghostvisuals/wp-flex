@@ -56,7 +56,9 @@ add_theme_support( 'automatic-feed-links' );
 
 //add editor style sheet
 add_editor_style();
-//This theme allows users to set a custom background
+//custom theme image header
+//add_custom_image_header();
+//allows users to set a custom background
 add_custom_background();
 
 //enables post-thumbnail support

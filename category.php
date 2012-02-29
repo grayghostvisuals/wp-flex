@@ -4,7 +4,7 @@
 
   <div role="main">
     <section>
-      <h1><?php printf( __( 'Category Archives: %s' ), '<span>' . single_cat_title( '', false ) . '</span>' );?></h1>
+      <h1><?php printf( 'Category Archives: %s', '<span>' . single_cat_title( '', false ) . '</span>' );?></h1>
       
 	  <?php if( have_posts() ) : while( have_posts() ) : the_post()?>
       <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">

@@ -23,16 +23,16 @@
     
       <h1>
         <?php if ( is_day() ) : ?>
-        <?php printf( __( 'Daily Archives: <span>%s</span>' ), get_the_date() ); ?>
+        <?php printf( 'Daily Archives: <span>%s</span>', get_the_date() ); ?>
         
         <?php elseif ( is_month() ) : ?>
-        <?php printf( __( 'Monthly Archives: <span>%s</span>' ), get_the_date( 'F Y' ) ); ?>
+        <?php printf( 'Monthly Archives: <span>%s</span>', get_the_date( 'F Y' ) ); ?>
         
         <?php elseif ( is_year() ) : ?>
-        <?php printf( __( 'Yearly Archives: <span>%s</span>' ), get_the_date( 'Y' ) ); ?>
+        <?php printf( 'Yearly Archives: <span>%s</span>', get_the_date( 'Y' ) ); ?>
         
         <?php elseif ( is_tag() ) : ?>
-        <?php printf( __( single_tag_title( 'Tag Archives : ' ) . ' ' . '<span>%s</span>' ), get_the_date( 'F Y' ) ); ?>
+        <?php printf( single_tag_title( 'Tag Archives : ' ) . ' ' . '<span>%s</span>', get_the_date( 'F Y' ) ); ?>
         
 		<?php else : ?>
         <?php echo ( 'The Archives' ); ?>

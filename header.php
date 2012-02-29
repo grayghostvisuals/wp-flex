@@ -75,6 +75,7 @@
   <?php //required comment functionality ?>
   <?php if ( is_singular() ) { wp_enqueue_script( 'comment-reply' ); } ?>
   
+  <?php comments_popup_script(); ?>
   <?php wp_head(); //required for all wordpress themes and placed at the end of the head tag element ?>
 </head>
 
@@ -103,7 +104,7 @@
 									   'child_of'     	=> 0,
 									   'exclude'      	=> '',
 									   'include'      	=> '',
-									   'title_li'     	=> __(''),
+									   'title_li'     	=> '',
 									   'echo'         	=> 1,
 									   'authors'      	=> '',
 									   'sort_column'  	=> 'menu_order',

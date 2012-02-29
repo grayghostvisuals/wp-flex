@@ -24,7 +24,7 @@ function theme_options_add_page() {
 // 3. capability required for this menu to be displayed to the user.
 // 4. menu URI slug name
 // 5. function to be called to output the content for page
-add_theme_page( __( 'themename Options'), __( 'themename' ), 'edit_theme_options', 'themename-options', 'themename_theme_options_layout' );
+add_theme_page( 'themename Options', 'themename', 'edit_theme_options', 'themename-options', 'themename_theme_options_layout' );
 };
 
 // creates the option page. 

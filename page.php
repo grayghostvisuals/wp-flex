@@ -11,7 +11,7 @@
       <div class="clearfix">
 	  <?php the_content(); ?>
       </div>
-	  <?php wp_link_pages( array( 'before' => '<div>' . __( 'Pages &raquo;' ), 'after' => '</div>' ) ); ?>
+	  <?php wp_link_pages( array( 'before' => '<div>' . 'Pages &raquo;', 'after' => '</div>' ) ); ?>
     </section>
 	<?php endwhile; //end while have_posts ?>
     

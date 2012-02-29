@@ -6,7 +6,7 @@ die('please do not load this page directly mate');
 <section class="comments">
 
   <?php if ( post_password_required() ) : ?>
-  <p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.' ); ?></p>
+  <p class="nopassword"><?php echo( 'This post is password protected. Enter the password to view any comments.' ); ?></p>
   <?php return; ?>
   <?php endif; ?>
   
@@ -16,8 +16,8 @@ die('please do not load this page directly mate');
   
   <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // check if there comments to navigate through ?>
   <div class="comment-pagination">
-    <?php previous_comments_link( _e( '<span>&larr;</span>' ) ); ?>
-    <?php next_comments_link( _e( '<span>&rarr;</span>' ) ); ?>
+    <?php previous_comments_link( '<span>&larr;</span>' ); ?>
+    <?php next_comments_link( '<span>&rarr;</span>' ); ?>
   </div>
   <!-- .comment-pagination -->
   <?php endif; //end check for comment navigation ?>
@@ -45,7 +45,7 @@ die('please do not load this page directly mate');
 	?>
         
     <?php if ( $comment -> comment_approved == '0' ) : ?>
-    <p class="moderating"><em><?php _e('Your rant, suggestion, or comment is awaiting moderation from our head cheese. Please be patient') ?></em></p>
+    <p class="moderating"><em><?php echo('Your rant, suggestion, or comment is awaiting moderation from our head cheese. Please be patient') ?></em></p>
     <?php endif; ?>
     
     <?php wp_list_comments( $themename_comment_array ) ?>
@@ -54,8 +54,8 @@ die('please do not load this page directly mate');
   <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
   
   <div class="comment-pagination">
-    <?php previous_comments_link( _e( '<span>&larr;</span>' ) ); ?>
-    <?php next_comments_link( _e( '<span>&rarr;</span>' ) ); ?>
+    <?php previous_comments_link( '<span>&larr;</span>' ); ?>
+    <?php next_comments_link( '<span>&rarr;</span>' ); ?>
   </div>
   <!-- .comment-pagination -->
   
@@ -66,7 +66,7 @@ die('please do not load this page directly mate');
 
 	if ( ! comments_open() ) :
    ?>
-  <p class="nocomments"><?php _e( 'comments are closed. you\'re too late unfortunately mate' ); ?></p>
+  <p class="nocomments"><?php echo( 'comments are closed. you\'re too late unfortunately mate' ); ?></p>
   
   <?php endif; //endif !comments_open ?>
   <?php endif; //endif have_comments ?>

@@ -60,8 +60,8 @@
 		'end_size'     => 1,
 		'mid_size'     => 2,
 		'prev_next'    => True,
-		'prev_text'    => __('<!--[if lte IE 8]><span>&laquo; Previous</span><![endif]--><!--[if gt IE 8]><!--><button>&laquo; Previous</button><!--<![endif]-->'),
-		'next_text'    => __('<!--[if lte IE 8]><span id="iebtn-nxt">Next &raquo;</span><![endif]--><!--[if gt IE 8]><!--><button>Next &raquo;</button><!--<![endif]-->'),
+		'prev_text'    => '<!--[if lte IE 8]><span>&laquo; Previous</span><![endif]--><!--[if gt IE 8]><!--><button>&laquo; Previous</button><!--<![endif]-->',
+		'next_text'    => '<!--[if lte IE 8]><span id="iebtn-nxt">Next &raquo;</span><![endif]--><!--[if gt IE 8]><!--><button>Next &raquo;</button><!--<![endif]-->',
 		'type'         => 'plain',
 		'add_args'     => False,
 		'add_fragment' => '' 
