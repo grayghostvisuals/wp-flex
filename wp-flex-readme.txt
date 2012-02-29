@@ -1,5 +1,10 @@
 SiteName ::
+<your themename here>
+
 Documentation :: 
+<themename further docs>
+
+WP Codex Theme Review ::
 http://codex.wordpress.org/Theme_Review
 
 ! IMPORTANT !
@@ -12,25 +17,25 @@ DEFAULT ABILITIES
 
 FILE HIERARCHY
 
-	1.  index.php 		========================================== contains feed for recent posts
+	1.  index.php 		========================================== contains feed for recent posts ( no sidebar )
 	
-	2.  single.php 		=================================== strictly for displaying single posts
+	2.  single.php 		=================================== strictly for displaying single posts ( w/sidebar )
 	
-	3.  page.php 		================ blank template for site pages(does not include a sidebar)
+	3.  page.php 		================ single site pages ( no sidebar )
 	
-	4.  sidebar.php 	=================================================== dynamic widget area
+	4.  sidebar.php 	=================================================== dynamic widget area w/defaults
 	
-	5.  search.php 		================================================ displays search results
+	5.  search.php 		================================================ displays search results ( w/sidebar )
 	
-	6.  archives.php 	===== displays post archive results for either month, year, day or tag
+	6.  archives.php 	===== displays post archive results for either month, year, day or tag ( w/sidebar )
 	
-	7.  categories.php 	=================================== displays post categories archive
+	7.  categories.php 	=================================== displays post categories archive ( w/sidebar )
 	    
-	8.  comments.php 	=============================== displays comments board and loads form
+	8.  comments.php 	=============================== displays comments board and loads comment respond form
 	 
-    9.  404.php 		======================================== displays customized 404 error page
+        9.  404.php 		======================================== displays customized 404 error page ( no sidebar )
 
-	10. temp_page.php 	======================================== a secret page for those designers that wish to experiment with a custom blank page. Enjoy!
+	10. pageblank.php 	======================================== a secret page for those designers that wish to experiment with a custom blank page ( no sidebar )
     
     
 DEFICIENCIES
