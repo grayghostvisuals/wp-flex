@@ -34,16 +34,13 @@
 	  <?php else : //if no posts were found do this ?>
       	<p><?php echo ( 'Holy smokes! This is totally crazy. No posts match anything even remotely close to that in our database. Sorry Mon Frere, try again' ); ?></p>
       <?php endif; //end if have_posts condition ?>
+      <!-- end loop -->
     </section>
     
     <!-- begin comments template !IMPORTANT FOR THEME SUBMISSION -->
     <?php comments_template(); ?>
     <!-- end comments template !IMPORTANT FOR THEME SUBMISSION -->
-    <?php else : ?>
-    <p><?php echo ( 'sorry, no posts matched your criteria' ); ?></p>
-    <?php endif; ?>
     
-    <!-- end loop -->
   </div>
   
   <section role="complementary">
