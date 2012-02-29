@@ -53,8 +53,24 @@
         </div>
         
         <footer>
-          <div><a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?>Comments</a></div>
-          <div><span>Posted in:<?php the_category( ',' ); ?></span> <span>Tagged: <?php the_tags( 'Post Tags &raquo;' . ' ',',' ); ?></span></div>
+          <div class="meta-tags">
+          	<span><a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?> Comments</a></span>
+          </div>
+          
+          <div>
+          	<ul>
+          	<li class="tags"><?php _e( 'Tagged:', 'zenlite');?>
+            	<ul>
+                	<li><?php the_tags( ',</li> <li>'); ?></li>
+                </ul>
+    		</li>
+            <li class="cats"><?php _e('Filed under:', 'zenlite');?>
+            	<ul>
+                	<li><?php the_category(',</li> <li>') ?></li>
+            	</ul>
+            </li>
+            </ul>
+          </div>
         </footer>
         
       </article>
