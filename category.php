@@ -11,7 +11,7 @@
       
         <header>
           <h1><span><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?> blog post entry"><?php the_title(); ?></a></span></h1>
-          <small><span>Posted by: <?php the_author(); ?></span> on <time datetime="%3$s" pubdate><?php the_time( get_option( 'date_format' ) ); ?></time></small> 
+          <?php include ( TEMPLATEPATH . '/inc/meta.php' ); ?>
          </header>
          
         <div class="clearfix">
@@ -30,7 +30,11 @@
       
 	  <?php endwhile; //end while have_posts ?>
       
-	  <?php endif; //end if have_posts ?>
+	  <!-- post loop error message -->
+	  <?php else : //if no posts were found do this ?>
+      	<p><?php echo ( 'Holy smokes! This is totally crazy. No posts match anything even remotely close to that in our database. Sorry Mon Frere, try again' ); ?></p>
+      <?php endif; //end if have_posts condition ?>
+      
     </section>
     
     <div><p><?php posts_nav_link( '&#8734;', '&laquo; Go Forward In Time', 'Go Back In Time &raquo;'); ?></p></div>

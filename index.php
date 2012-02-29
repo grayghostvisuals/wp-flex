@@ -17,8 +17,7 @@
 		  <?php endif; //end if has_post_thumbnail ?>
           
           <h1><span><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?> blog post entry"><?php the_title(); ?></a></span></h1>
-          
-          <small><span>posted by: <?php the_author(); ?></span> on <time datetime="%3$s" pubdate><a href="<?php the_permalink(); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a></time></small>
+          <?php include ( TEMPLATEPATH . '/inc/meta.php' ); ?>
            
           </header>
           

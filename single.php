@@ -7,7 +7,7 @@
       <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
         <header>
           <h1><span><?php the_title(); ?></span></h1>
-          <small>posted by: <span><?php the_author(); ?></span> on <time datetime="%3$s" pubdate><a href="<?php the_permalink(); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a></time></small>
+          <?php include ( TEMPLATEPATH . '/inc/meta.php' ); ?>
         </header>
         
         <div class="clearfix">
@@ -29,6 +29,11 @@
       
       <div><span><?php previous_post_link('%link','&laquo;Previous Category Post', TRUE); ?></span> | <span><?php next_post_link('%link','Next Category Post&raquo;', TRUE); ?></span></div>
       <?php endwhile; ?>
+      
+      <!-- post loop error message -->
+	  <?php else : //if no posts were found do this ?>
+      	<p><?php echo ( 'Holy smokes! This is totally crazy. No posts match anything even remotely close to that in our database. Sorry Mon Frere, try again' ); ?></p>
+      <?php endif; //end if have_posts condition ?>
     </section>
     
     <!-- begin comments template !IMPORTANT FOR THEME SUBMISSION -->
