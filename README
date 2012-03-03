@@ -10,6 +10,12 @@ file set to true as per Wordpress requirement.
 # debug mode
 # define('WP_DEBUG', true); 
 
+# A few suggestions before making your theme submission
+# 1. Remove the following hidden files from the WP-Flex directory
+# as per the Theme Check Plugin Review http://pross.org.uk/theme-check/
+#
+# WARNING: remove hidden files .ds_store .git .htaccess 
+# REQUIRED: Please remove any extraneous directories like .git or .svn from the ZIP file before uploading it.
 
 # Includes:
 
