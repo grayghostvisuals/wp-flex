@@ -1,9 +1,9 @@
 <?php get_header(); ?>
-
 <div id="container">
   <div role="main">
     <section>
       <?php if ( have_posts() ) : while( have_posts() ) : the_post(); ?>
+      
       <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
         <header>
           <h1><span><?php the_title(); ?></span></h1>
@@ -11,10 +11,17 @@
         </header>
         
         <div class="clearfix">
-          <?php the_content(); ?>
-          <?php wp_link_pages( array( 'before' => '<div>' . 'Pages &raquo', 'after' => '</div>' ) ); ?>
+          
+        <?php the_content(); ?>
+           
+        <?php
+          wp_link_pages( array( 
+          	'before' => '<div>' . 'Pages &raquo',
+          	'after'  => '</div>' 
+          )); 
+         ?>
+          
         </div>
-        
         
         <footer>
           <div class="meta-tags">
@@ -38,7 +45,10 @@
         </footer>
       </article>
       
-      <div><span><?php previous_post_link('%link','&laquo;Previous Category Post', TRUE); ?></span> | <span><?php next_post_link('%link','Next Category Post&raquo;', TRUE); ?></span></div>
+      <div>
+      <span><?php previous_post_link( '%link', '&laquo;Previous Category Post', TRUE ); ?></span>
+      <span><?php next_post_link( '%link', 'Next Category Post&raquo;', TRUE ); ?></span>
+      </div>
       <?php endwhile; ?>
       
       <!-- post loop error message -->
