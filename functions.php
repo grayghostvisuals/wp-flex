@@ -1,9 +1,9 @@
 <?php 
 //Custom Image Header Constants
-define('HEADER_TEXTCOLOR', '');
-define('HEADER_IMAGE', '%s/img/default_header.jpg'); // %s is the template dir uri
-define('HEADER_IMAGE_WIDTH', 775); // use width and height appropriate for your theme
-define('HEADER_IMAGE_HEIGHT', 200);
+define( 'HEADER_TEXTCOLOR', '' );
+define( 'HEADER_IMAGE', '%s/img/default_header.jpg' ); //%s is the template dir uri
+define( 'HEADER_IMAGE_WIDTH', 775 ); //use width and height appropriate for your theme
+define( 'HEADER_IMAGE_HEIGHT', 200 );
 
 //themename custom function setup
 add_action( 'after_setup_theme', 'themename_setup' );
@@ -71,28 +71,28 @@ endif;
 
 //themename widget setup
 function themename_widget(){
-	
-  //call register_sidebar wp method as array
-  register_sidebar( array(
-						 'ID'				=> 'themename_sidebar',
-						 'name' 			=> 'themename Sidebar',
-						 'before_widget' 	=> '<article id="%1$s" class="widget %2$s">',
-						 'after_widget' 	=> '</article>',
-						 'before_title' 	=> '<h3 class="widget-title">',
-						 'after_title' 		=> '</h3>',
-						));//end primary sidebar
+
+//call register_sidebar wp method as array
+register_sidebar( array(
+'ID'			=> 'themename_sidebar',
+'name' 			=> 'themename Sidebar',
+'before_widget' => '<article id="%1$s" class="widget %2$s">',
+'after_widget' 	=> '</article>',
+'before_title' 	=> '<h3 class="widget-title">',
+'after_title' 	=> '</h3>',
+));//end primary sidebar
   
-  //call to register footer sidebar widgets
-  register_sidebar(array(
-						 'ID'				=> 'fw',
-						 'name' 			=> 'Footer Widget',
-						 'before_widget' 	=> '<article id="%1$s" class="fwidget %2$s">',
-						 'after_widget' 	=> '</article>',
-						 'before_title' 	=> '<h3 class="widget-title">',
-						 'after_title' 		=> '</h3>',
-						));//end footer widget
-	
-};
+//call to register footer sidebar widgets
+register_sidebar( array(
+'ID'				=> 'fw',
+'name' 				=> 'Footer Widget',
+'before_widget' 	=> '<article id="%1$s" class="fwidget %2$s">',
+'after_widget' 		=> '</article>',
+'before_title' 		=> '<h3 class="widget-title">',
+'after_title' 		=> '</h3>',
+)); //end footer widget
+
+}; //end themename_widget
 
 }//end themename_setup
 endif;//end ! function_exists( 'themename_setup' )
