@@ -1,24 +1,29 @@
-WP-Flex is a blank, responsive wordpress theme foundation. A tested
-and safe WP theme submission foundational structure. This boilerplate
-framework for Wordpress has been tested and debugged with the required
-theme-unit-test.xml file( also included ) along with the main wp-config.php 
-file set to true as per Wordpress requirement.
+WP-Flex is a blank, responsive wordpress theme foundation. 
+A safely tested Wordpress theme submission foundation.
+WP-Flex has been tested and debugged with the required
+'theme-unit-test.xml' file and 'wp-config.php' debugger.
 
 # debugging with wp-config.php line #81 
+#
 # default mode
-# define('WP_DEBUG', false);
+define('WP_DEBUG', false);
+#
 # debug mode
-# define('WP_DEBUG', true); 
+define('WP_DEBUG', true); 
+
 
 # A few suggestions before making your theme submission
-# 1. Remove the following hidden files from the WP-Flex directory
-# as per the Theme Check Plugin Review http://pross.org.uk/theme-check/
+# 1. Remove any hidden files except .htaccess from the WP-Flex directory
+#    per Theme Check Plugin Review => http://pross.org.uk/theme-check
 #
-# WARNING: remove hidden files .ds_store .git .htaccess 
+# WARNING: remove hidden files .ds_store .git
 # REQUIRED: Please remove any extraneous directories like .git or .svn from the ZIP file before uploading it.
+#
+# 2. Remove github's README file included 
+	2a. Rename 'themename-readme.txt' to readme.txt per theme submission requirements 
+
 
 # Includes:
-
 1. HTML5 Boilerplate 
    http://html5boilerplate.com
    https://github.com/h5bp/html5-boilerplate
@@ -34,18 +39,18 @@ file set to true as per Wordpress requirement.
 2. Super dooooper awesome PHP comments with web URI refs included for
    theme submission checks and customizing.
 
-3. Required WP CSS classes for theme submission
+3. Required Wordpress CSS classes for all theme submissions
 
-4. Those tricky comment thread styling classes are provided to you by default. No more scanning
+4. Those tricky comment thread styling classes provided to you by default. No more scanning
    the DOM or reading more tutorials. It's all there. 
 
-5. CSS flags used as reccommended by Wordpress theme submission dodex.
+5. CSS flags used for sectioning as reccommended by Wordpress theme submission codex.
 
 6. theme-unit-test.xml for theme testing with multiple users, comment threading 
-   style classes (5 deep), responsive embedded media styles for WP themes(img's can
-   include their own custom classes by default from WP)
+   style classes (5 deep), responsive embedded media styles for Wordpress themes (img's can
+   include their own custom classes by default from Wordpress)
 
-7. Blank boilerplate theme-options.php template
+7. theme-options.php boilerplate template
 
 8. Foundational functions.php scaffolding with all the required fucntionality 
    for theme submissions with Wordpress.org http://wordpress.org/extend/themes/upload  
