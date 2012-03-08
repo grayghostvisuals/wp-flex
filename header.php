@@ -87,7 +87,10 @@
 <?php else : ?>
 <body <?php body_class(); ?> id="themename-<?php the_title(); ?>">
 <?php endif; ?>
-    
+	<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+	<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  
     <header role="banner">
       
       <?php 
@@ -106,8 +109,6 @@
         
 	  <?php endif; ?>
       <!-- end header custom image -->
-
-      
       
       <!-- http://codex.wordpress.org/Function_Reference/wp_nav_menu -->
       <nav role="navigation">
