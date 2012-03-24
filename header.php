@@ -118,7 +118,7 @@
 				$nav_themename = array(
 									   'depth'        	=> 2,
 									   'show_date'    	=> '',
-									   'date_format'  	=> get_option('date_format'),
+									   'date_format'  	=> get_option( 'date_format' ),
 									   'child_of'     	=> 0,
 									   'exclude'      	=> '',
 									   'include'      	=> '',
@@ -146,7 +146,7 @@
     </header>
     
     <article>
-    	<div><a href="<?php bloginfo('rss2_url') ?>">RSS Feed</a></div>
+    	<a href="<?php bloginfo('rss2_url') ?>">RSS Feed</a>
     </article>
     
     <?php //required call for search-form ?>
