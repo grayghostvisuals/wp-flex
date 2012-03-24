@@ -1,51 +1,49 @@
 <?php get_header(); ?>
-<div id="container">
-
-  <div role="main">
 
     <section>
     
       <!-- begin post loop -->
       <?php if ( have_posts() ) : while( have_posts() ) : the_post(); ?>
+      
       <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-        <header>
         
+        <header>
           <?php if ( has_post_thumbnail() ) : ?>
           <figure>
             <?php the_post_thumbnail(); ?>
           </figure>
 		  <?php endif; //end if has_post_thumbnail ?>
           
-          <h1><span><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?> blog post entry"><?php the_title(); ?></a></span></h1>
-		  <?php get_template_part( 'inc/meta'); ?>
-           
-          </header>
+          <h1>
+          	<span><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?> blog post entry"><?php the_title(); ?></a></span>
+          </h1>
           
-        <div class="clearfix">
-          <?php the_content( '<span>read more &raquo;</span>' ); ?>
-        </div>
+          <!-- meta tags for posts -->
+		  <?php get_template_part( 'inc/meta'); ?>
+        </header>
+          
+          <!-- post content -->
+          <?php the_content( 'read more' ); ?>
         
         <!-- post footer -->
         <footer>
-          <div class="meta-tags">
           	<span><a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?> Comments</a></span>
-          </div>
-          
-          <div>
+  
           	<ul>
-          	<li class="tags"><?php _e( 'Tagged:', 'zenlite');?>
-            	<ul>
-                	<li><?php the_tags( ',</li> <li>'); ?></li>
-                </ul>
-    		</li>
-            <li class="cats"><?php _e('Filed under:', 'zenlite');?>
-            	<ul>
-                	<li><?php the_category(',</li> <li>') ?></li>
-            	</ul>
-            </li>
+              <li class="tags"><?php _e( 'Tagged:' );?>
+                  <ul>
+                      <li><?php the_tags( ',</li> <li>' ); ?></li>
+                  </ul>
+              </li>
+              
+              <li class="cats"><?php _e( 'Filed under:' );?>
+                  <ul>
+                      <li><?php the_category( ',</li> <li>' ) ?></li>
+                  </ul>
+              </li>
             </ul>
-          </div>
         </footer>
+        
       </article>
       <?php endwhile; //end while have_posts loop ?>
       <!-- end post loop -->
@@ -57,8 +55,6 @@
       
     </section>
     
-    <!-- post pagination -->
-    <div>
       <?php 
 		global $wp_query;
 		$big = 999999999;
@@ -71,19 +67,12 @@
 		'end_size'     => 1,
 		'mid_size'     => 2,
 		'prev_next'    => True,
-		'prev_text'    => '<!--[if lte IE 8]><span>&laquo; Previous</span><![endif]--><!--[if gt IE 8]><!--><button>&laquo; Previous</button><!--<![endif]-->',
-		'next_text'    => '<!--[if lte IE 8]><span id="iebtn-nxt">Next &raquo;</span><![endif]--><!--[if gt IE 8]><!--><button>Next &raquo;</button><!--<![endif]-->',
+		'prev_text'    => '&laquo; Previous',
+		'next_text'    => 'Next &raquo;',
 		'type'         => 'plain',
 		'add_args'     => False,
 		'add_fragment' => '' 
 		) );//end array
 		?>
-    </div>
-    <!-- end post pagination -->
-    
-  </div>
-
-</div>
-<!--! end /div#container -->
 
 <?php get_footer(); ?>
