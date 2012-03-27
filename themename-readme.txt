@@ -1,10 +1,9 @@
 SiteName ::
-<your themename here>
+<your url here>
 
-Documentation :: 
-<themename further docs>
+ThemeName Documentation ::
 
-WP Codex Theme Review ::
+Wordpress Codex Theme Review ::
 http://codex.wordpress.org/Theme_Review
 
 ! IMPORTANT !
@@ -21,7 +20,7 @@ FILE HIERARCHY
 	
 	2.  single.php 		=================================== strictly for displaying single posts ( w/sidebar )
 	
-	3.  page.php 		================ single site pages ( no sidebar )
+	3.  page.php 		================ theme site pages ( no sidebar )
 	
 	4.  sidebar.php 	=================================================== dynamic widget area w/defaults
 	
@@ -33,22 +32,17 @@ FILE HIERARCHY
 	    
 	8.  comments.php 	=============================== displays comments board and loads comment respond form
 	 
-    9.  404.php 		======================================== displays customized 404 error page ( no sidebar )
+        9.  404.php 		======================================== displays customized 404 error page ( no sidebar )
 
 	10. pageblank.php 	======================================== a secret page for those designers that wish to experiment with a custom blank page ( no sidebar )
     
     
 DEFICIENCIES
 
-	1. 
-
-	
 SPECIAL REQUIREMENTS
 
-
-
 SUPPORT & UPDATES
-Author Support
+Author Support:
 Author URI: 
 	
 	
