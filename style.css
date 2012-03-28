@@ -574,7 +574,6 @@ ol.commentlist li.thread-odd {}
 
 /* =Responsive Zoomable Typography
 ------------------------------------------------------------------------------- */
-
 /*
 *
 *	Zoomable baseline grid
@@ -642,6 +641,13 @@ h2 { font-weight: normal; }
 
 
 
+/* =Author @media queries
+   EXAMPLE Media Query for Responsive Design.
+   This example overrides the primary ('mobile first') styles
+   Modify as content requires.
+------------------------------------------------------------------------------- */
+@media only screen and (min-width: 35em) {/* Style adjustments for viewports that meet the condition */}
+
 
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.
@@ -666,20 +672,6 @@ h2 { font-weight: normal; }
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { *zoom: 1; }
-
-
-/* =Author @media queries
-   EXAMPLE Media Query for Responsive Design.
-   This example overrides the primary ('mobile first') styles
-   Modify as content requires.
-------------------------------------------------------------------------------- */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
-
-
-
 
 /* ==|== print styles =======================================================
    Print styles.
