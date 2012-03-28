@@ -12,38 +12,25 @@ CACHE MANIFEST
 # CACHE explicit entries
 # NETWORK URL online whitelist entries
 # FALLBACK ish entries (i.e. "In case shit happens")
-
-
+#
 CACHE:
-# Google Fonts or
 # Typekit
-# http://use.typekit.com/xxx#xxx.js
-
+http://use.typekit.com/xxxxxxx.js
+#
 # Styles
 http://[ your_url ]/wp-content/themes/themename/style.css
-
 # Images
-
+#
 # Modernizr
-
+js/libs/modernizr.js
 # jQuery Local
-js/libraries/jquery-1.7.1.min.js
-
+js/libs/jquery.min.js
+#
 # JS
 js/plugins.js
-js/scripts.js
-
-
+js/script.js
+#
 NETWORK:
-# jQuery CDN
-http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js
-
-# Google Analytics
-http://www.google-analytics.com/ga.js
-
-# Typekit
-# http://use.typekit.com/x/xxx#xxx-x.css?base64encryption_goes_here
-
 # Wordpress Template Files
 ./header.php
 ./archive.php
@@ -52,8 +39,18 @@ http://www.google-analytics.com/ga.js
 ./footer.php
 ./index.php
 ./page.php
+./pageblank.php
 ./sidebar.php
 ./single.php
-./themeoptions.php
-
+./404.php
+#
+# jQuery CDN
+http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js
+#
+# Google Analytics
+http://www.google-analytics.com/ga.js
+#
+# Typekit
+http://use.typekit.com/x/xxxxxxx-x.css?[base64encryption_goes_here]
+#
 FALLBACK:
