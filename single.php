@@ -41,10 +41,14 @@
     
   </article>
   
-  <div id="single-pagination"><?php previous_post_link( '%link', '&laquo;Previous Category Post', TRUE ); ?></span><span><?php next_post_link( '%link', 'Next Category Post&raquo;', TRUE ); ?></div>
+  <div id="single-pagination">
+    <span><?php previous_post_link( '%link', '&larr; Previous Category Post', TRUE ); ?></span>
+    <span><?php next_post_link( '%link', 'Next Category Post &rarr;', TRUE ); ?></span>
+  </div>
   
   <?php endwhile; ?>
   <!-- post loop error message -->
+
   <?php else : //if no posts were found do this ?>
   <p><?php echo ( 'Holy smokes! This is totally crazy. No posts match anything even remotely close to that in our database. Sorry Mon Frere, try again' ); ?></p>
   <?php endif; //end if have_posts condition ?>
