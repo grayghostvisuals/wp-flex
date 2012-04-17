@@ -1,10 +1,5 @@
 <!doctype html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]><html class="no-js ie6 oldie" <?php language_attributes(); ?>><![endif]-->
-<!--[if IE 7]><html class="no-js ie7 oldie" <?php language_attributes(); ?>><![endif]-->
-<!--[if IE 8]><html class="no-js ie8 oldie" <?php language_attributes(); ?>><![endif]-->
-<!-- consider adding a cache manifest simply add this attribute to the html tag manifest="cache.manifest" -->
-<!--[if gt IE 8]><!--><html class="no-js" <?php language_attributes(); ?>><!--<![endif]-->
+<html class="no-js" <?php language_attributes(); ?>>
 <head>
 <!-- Typekit Asynchronous Snippet -->
 <!--<script src="<?php /*uncomment for tk glory => */ /*echo get_template_directory_uri();*/ ?>/js/tk-async.js"></script>-->
@@ -16,36 +11,64 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 
 <!-- title -->
-<title><?php esc_attr( bloginfo( 'name' ) ); ?> : <?php esc_attr( bloginfo( 'description' ) ); ?>, <?php esc_attr( wp_title() ); ?></title>
+<title><?php 
+if( function_exists( 'is_tag' ) && is_tag() ) : single_tag_title( 'Tag Archive for &quot;' ); echo '&quot; - '; 
+elseif( is_archive() ) :
+esc_attr( wp_title( '' ) ); echo 'Archive -';
+elseif( is_search() ) :
+echo 'Search for &quot;' . wp_specialchars( $s ) . '&quot; -';
+elseif( !( is_404() ) && ( is_single() ) || ( is_page() ) ) :
+esc_attr( wp_title( '' ) ); echo '-';
+elseif( is_404() ) :
+echo 'Not Found -';
+endif;
+if( is_home() ):
+esc_attr( bloginfo( 'name' ) ); esc_attr( bloginfo( 'description' ) ); esc_attr( wp_title() );
+else :
+esc_attr( bloginfo( 'name' ) );
+endif;
+if( $paged > 1 ) :
+echo '-page' . $paged;
+endif;
+?></title>
 
 <!-- search engine robots meta instructions -->
 <?php if ( is_search() || is_404() ) : ?>
-<meta name="robots" content="noindex, nofollow" />
+<meta name="robots" content="noindex, nofollow">
 <?php else: ?>
-<meta name="robots" content="all" />
+<meta name="robots" content="all">
 <?php endif; ?>
-<!-- seo meta data -->
-<?php if ( is_home() || is_404() || is_search() ) : ?>
-<meta name="description" content="<?php esc_attr( bloginfo( 'description' ) ); ?>" />
-<!-- general useage meta tag description -->
+
+<!-- index search meta data -->
+<?php if ( is_home() ) : ?>
+<meta name="description" content="<?php esc_attr( bloginfo( 'name' ) ); esc_attr( bloginfo( 'description' ) ); ?>">
+
+<!-- single page meta tag description -->
 <?php elseif ( is_single() ) : ?>
-<meta name="description" content="" />
-<!-- should be unique for single page -->
+<meta name="description" content="<?php esc_attr( wp_title() ) ?>">
+
+<!-- archive pages meta tag description -->
 <?php elseif ( is_archive() ) : ?>
-<meta name="description" content="" />
-<!-- should be unique for archive pages -->
+<meta name="description" content="">
+
+<?php elseif ( is_search() ) : ?>
+<meta name="" content="<?php wp_specialchars( $s ) ?>">
+
+<!-- fallback meta tag description -->
 <?php else : ?>
-<meta name="description" content="" />
-<!-- the fallback meta description -->
+<meta name="description" content="<?php esc_attr( bloginfo( 'name' ) ); esc_attr( bloginfo( 'description' ) ) ?>">
 <?php endif; ?>
 
 <!-- Mobile viewport optimized: h5bp.com/viewport -->
 <meta name="viewport" content="width=device-width">
+
 <!-- http://t.co/dKP3o1e -->
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
+
 <!-- Sets whether a web application runs in full-screen mode -->
 <meta name="apple-mobile-web-app-capable" content="yes">
+
 <!-- open graph meta tags -->
 <meta property="og:title" content="">
 <meta property="og:type" content="">
@@ -55,10 +78,16 @@
 <meta property="fb:admins" content="">
 
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-<!-- css -->
+<!-- base css -->
 <link rel="stylesheet" media="screen" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<!-- IE7 css -->
+<!--[if IE7]><link rel="stylesheet" media="screen" href="<?php bloginfo( 'stylesheet_directory' ) ?>/css/ie7.css"><![endif]-->
+<!-- IE8 css -->
+<!--[if IE 8]><link rel="stylesheet" media="screen" href="<?php bloginfo( 'stylesheet_directory' ) ?>/css/ie8.css"><![endif]-->
+
 <!-- pingback url -->
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+
 <!-- RSS Feed -->
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo( 'rss2_url' ); ?>" />
 
@@ -130,5 +159,6 @@
   <?php //endif; ?>
 </header>
 <article><a href="<?php bloginfo('rss2_url') ?>">RSS Feed</a></article>
+
 <?php //required call for search-form ?>
 <?php get_search_form(); ?>
