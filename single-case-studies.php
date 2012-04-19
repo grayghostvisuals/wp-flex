@@ -18,19 +18,22 @@
       <h1><span><?php the_title(); ?></span></h1>
       <?php get_template_part( 'inc/meta' ); ?>
     </header>
-
-   <p><?php echo get_post_meta( $post->ID, "case_description", $single = true ); ?></p>
-
+   
+   <!-- the content -->
    <?php the_content(); ?>
     
 	<?php
           wp_link_pages( array( 
-          	'before' => '<div>' . 'Pages &raquo',
-          	'after'  => '</div>' 
-          )); //end wp_link_pages ?>
+          			'before' => '<div>' . 'Pages &raquo',
+          			'after'  => '</div>' 
+          			)
+			); //end wp_link_pages ?>
 
+    <!-- retrieve and display the custom taxonomies as a list -->
+    <?php get_case_type(); ?>
+    
+    <!-- footer -->
     <footer>
-
     <div id="comments-count"><a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?>Comments</a></div>
       <ul>
         <li class="tags">
@@ -41,6 +44,7 @@
             </li>
           </ul>
         </li>
+
         <li class="cats">
           <?php _e( 'Filed under:' );?>
           <ul>

@@ -136,45 +136,45 @@ add_action( 'widgets_init' , 'themename_widget' );
 function case_studies() {
 	// labels as an array for dashboard
 	$labels = array(
-		// general name for the post stype
-		"name"		 	=> "Cases",
-		// singular name for one object of this post type
-		"singular_name"  	=> "Case Study",
-		// the add new text for dashboard nav
-		"add_new" 	 	=> "Add Case",
-		// dashboard nav item txt
-		"all_items"		=> "Cases",
-		// edit menu header title txt
-		"edit_item" 	 	=> "Edit Case Study",
-		// add new header title txt
-		"add_new_item" 	 	=> "New Case Study",
-		// view button txt in visual editor window
-		"view_item" 	 	=> "Preview Case Study",
-		// case studies search menu button txt
-		"search_items" 	 	=> "Search Cases",
-		// case studies search error txt
-		"not_found" 	 	=> "No Case Studies Found",
-		"not_found_in_trash" 	=> "No Case Studies Found in Trash", 
-		// the parent text. This string isn't used on non-hierarchical types
-		// In hierarchical ones the default is Parent Page 
-		'parent_item_colon' 	=> ''
-	);// end $labels
+			// general name for the post stype
+			"name"		 	=> "Cases",
+			// singular name for one object of this post type
+			"singular_name"  	=> "Case Study",
+			// the add new text for dashboard nav
+			"add_new" 	 	=> "Add New Case",
+			// dashboard nav item txt
+			"all_items"		=> "Cases",
+			// edit menu header title txt
+			"edit_item" 	 	=> "Edit Case Study",
+			// add new header title txt
+			"add_new_item" 	 	=> "New Case Study",
+			// view button txt in visual editor window
+			"view_item" 	 	=> "Preview Case Study",
+			// case studies search menu button txt
+			"search_items" 	 	=> "Search Cases",
+			// case studies search error txt
+			"not_found" 	 	=> "No Case Studies Found",
+			"not_found_in_trash" 	=> "No Case Studies Found in Trash", 
+			// the parent text. This string isn't used on non-hierarchical types
+			// In hierarchical ones the default is Parent Page 
+			'parent_item_colon' 	=> ''
+		);// end $labels
 
 	// $args as an array  
 	$args = array(
-		"labels" 		=> $labels,
-		"public" 		=> true,
-		"exclude_from_search" 	=> false,
-		"publicly_queryable" 	=> true,
-		"show_ui" 		=> true, 
-		"query_var" 		=> true,
-		"capability_type" 	=> 'post',
-		"hierarchical"		=> false,
-		"menu_position" 	=> null,
-		"supports" 		=> array( 'title', 'editor', 'thumbnail', 'excerpt' )
-	);//end $args
+			"labels" 		=> $labels,
+			"public" 		=> true,
+			"exclude_from_search" 	=> true,
+			"publicly_queryable" 	=> true,
+			"show_ui" 		=> true, 
+			"query_var" 		=> true,
+			"capability_type" 	=> 'post',
+			"hierarchical"		=> false,
+			"menu_position" 	=> null,
+			"supports" 		=> array( 'title', 'editor', 'thumbnail', 'excerpt' )
+		);//end $args
 	
-	//register the post type  
+	//register the post type and give it a name and pass the $args variable
 	register_post_type( 'case-studies', $args );
 
 }//end case_studies
@@ -207,7 +207,7 @@ function casestudies_custom_taxonomies(){
 	
 	// this call registers our case-study-type in our admin panel from the dashboard
 	// http://codex.wordpress.org/Function_Reference/register_taxonomy
-	register_taxonomy( "case-study-type", array( "case-studies" ), $args ); 
+	register_taxonomy( "case-type", array( "case-studies" ), $args ); 
 
 }// end casestudies_build_taxonomies
 
@@ -215,16 +215,47 @@ function casestudies_custom_taxonomies(){
 add_action( "init", "casestudies_custom_taxonomies", 0 );
 
 
+/*------------------------------------------------------------------------------------------------[ case studies work type display function ] */
+
+// function for retrieving work types on single case studies
+function get_case_type() {
+
+	global $post; 
+	$postid = $post->ID;
+	$terms = wp_get_object_terms( $postid, "case-type" );
+	
+	if( !empty( $terms ) ) :
+	echo '<ul class="case-types">';
+     
+     	foreach ( $terms as $term ) {
+     
+     	$ct_name = $term->name;
+     	$ct_id = $term->slug;
+     
+       	echo '<li><a href="/case-type/' . $ct_id . '" class="case-type-item" id="cti-'.$ct_id.'">'.$ct_name.'</a></li>';
+        
+     	} //end foreach loop
+
+     	echo "</ul>";
+ 	else :
+ 	echo "No Case Type Filed";
+ 	endif;
+	
+}//end get_work_type	
+
+
 /*------------------------------------------------------------------------------------------------[ case studies custom meta data setup ] */
+
 //http://return-true.com/2011/07/adding-custom-post-type-and-custom-meta-box-in-wordpress/
 //http://codex.wordpress.org/Function_Reference/add_meta_box#Example
 
+// action to add meta box
 add_action( 'add_meta_boxes', 'casestudies_custom_url_meta' );
 
 /* adds a meta box to the main column on the case-studies edit screen */
 function casestudies_custom_url_meta() {
     add_meta_box(
-		'case-url-meta',  // $id
+		'case-url',  // $id
 		'Case Study URL', // $title
 		'case_study_URL', // $callback
 		'case-studies',   // $post_type	
