@@ -39,6 +39,9 @@ NETWORK:
 ./footer.php
 ./index.php
 ./page.php
+./case-studies.php
+./single-case-studies.php
+./taxonomy-case-type.php
 ./pageblank.php
 ./sidebar.php
 ./single.php
