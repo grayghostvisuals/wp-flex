@@ -1,7 +1,7 @@
 /*   
 Theme Name: WP-Flex
 Theme URI: http://wp-flex.grayghostvisuals.com
-Description: WP-Flex is a responsive blank wordpress framework incorporating HTML5-boilerplate
+Description: WP-Flex is a responsive, blank wordpress framework incorporating HTML5-boilerplate and some other tasty starting points
 
 Author: Gray Ghost Visuals
 Author URI: http://grayghostvisuals.com
@@ -432,10 +432,13 @@ img.attachment-full {}
 	display: block;
 }
 
+/* comments pagination */
+div.comment-pagination {}
+span.prev-comments-link {}
+span.nxt-comments-link {}
+
 /* avatars */
-.avatar {
-	display: block
-}
+.avatar { display: block }
 
 /* comments intro header */
 #comments-title {}
@@ -572,70 +575,13 @@ ol.commentlist li.thread-even {}
 ol.commentlist li.thread-odd {}
 
 
-/* =Responsive Zoomable Typography
-------------------------------------------------------------------------------- */
-/*
-*
-*	Zoomable baseline grid
-*	type size presets
-*
-*/
-
-body {
-  /* 16px / 24px */
-  font-size: 1em;
-  line-height: 1.5em;
-}
-
-small,
-.small {
-  /* 13px / 18px */
-  font-size: 0.8125em;
-  line-height: 1.3846153846153846em;
-}
-
-h3,
-.normal {
-  /* 16px / 24px */
-  font-size: 1em;
-  line-height: 1.5em;
-  /* 24 */
-
-}
- 
-h1, 
-h2,
-.large {
-  /* 26 / 36px */
-  font-size: 1.625em;
-  line-height: 1.3846153846153846em;
-}
-
-h2 { font-weight: normal; }
-
-.huge {
-  /* 42px / 48px */
-  font-size: 2.625em;
-  line-height: 1.1428571428571428em;
-}
-
-.massive {
-  /* 68px / 72px */
-  font-size: 4.25em;
-  line-height: 1.0588235294117647em;
-}
-
-.gigantic {
-  /* 110px / 120px */
-  font-size: 6.875em;
-  line-height: 1.0909090909090908em;
-}
-
-
 /* =Author Typography
 ------------------------------------------------------------------------------- */
 /* =Author Layout
 ------------------------------------------------------------------------------- */
+
+body { max-width: 45em; margin: 0 auto; }
+
 /* =Author Colors
 ------------------------------------------------------------------------------- */
 
