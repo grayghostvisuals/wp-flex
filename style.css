@@ -348,7 +348,7 @@ a img.aligncenter {
 
 /* stops too many categories from breaking layout */
 .tags ul li,
-.cats ul li{ display: inline; }
+.cats ul li { display: inline; }
 
 
 /* =WordPress - Additional Styling Classes 
@@ -359,7 +359,7 @@ a img.aligncenter {
 img[class*="align"], 
 img[class*="wp-image-"] {
 	/* Make sure images with WordPress-added height and width attributes are scaled correctly */
-    height: auto
+    	height: auto
 }
 
 .wp-caption, 
@@ -370,10 +370,9 @@ img[class*="wp-image-"] {
 img.size-full {
 	max-width: 100%;
 	/* Prevent stretching of full-size images with height and width attributes in IE8 */
-    width: auto
+	width: auto
 }
 /**** END Wordpress Fluid Images */
-
 .entry-content img.wp-smiley {
 	border: none;
 	margin-bottom: 0;
@@ -381,11 +380,11 @@ img.size-full {
 	padding: 0
 }
 
+/* widget styling */
 .widget {}
 
 
 /* WP POST THUMBNAILS */
-
 img.wp-post-image {}
 img.attachment-thumbnail {}
 img.attachment-medium {}
@@ -394,18 +393,15 @@ img.attachment-full {}
 
 
 /* WP 404 ERRORS */
-
 .error404 {}
 
 
 /* WP PAGE CONTENT */
-
 .more-link {}
 .posttitle {}
 
 
 /* WP COMMENTS */
-
 /* comments list reset */
 .commentlist,
 .commentlist ul,
@@ -574,18 +570,36 @@ ol.commentlist li.thread-alt {}
 ol.commentlist li.thread-even {}
 ol.commentlist li.thread-odd {}
 
+/*
+ *
+ * CASE STUDIES CUSTOM POSTS default styling
+ *
+ */
+
+/* excerpt more button styling for case studies custom posts */
+span.excerpt-more-btn {}
+span.excerpt-more-btn a {}
+
+/* case type listing styles */
+ul.case-types {}
+ul.case-types li {}
+ul.case-types li a.case-type-item {}
+
 
 /* =Author Typography
 ------------------------------------------------------------------------------- */
+
+
 /* =Author Layout
 ------------------------------------------------------------------------------- */
 
-body { max-width: 45em; margin: 0 auto; }
+body { 
+	max-width: 45em; 
+	margin: 0 auto; 
+}
 
 /* =Author Colors
 ------------------------------------------------------------------------------- */
-
-
 
 /* =Author @media queries
    EXAMPLE Media Query for Responsive Design.

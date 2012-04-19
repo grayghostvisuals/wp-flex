@@ -7,30 +7,40 @@
 
 <!-- character encoding utf-8 -->
 <meta charset="<?php bloginfo( 'charset' ); ?>">
+
 <!-- google chrome frame -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 
 <!-- title -->
-<title><?php 
+<title>
+<?php 
 if( function_exists( 'is_tag' ) && is_tag() ) : single_tag_title( 'Tag Archive for &quot;' ); echo '&quot; - '; 
+
 elseif( is_archive() ) :
 esc_attr( wp_title( '' ) ); echo 'Archive -';
+
 elseif( is_search() ) :
 echo 'Search for &quot;' . wp_specialchars( $s ) . '&quot; -';
+
 elseif( !( is_404() ) && ( is_single() ) || ( is_page() ) ) :
 esc_attr( wp_title( '' ) ); echo '-';
+
 elseif( is_404() ) :
 echo 'Not Found -';
 endif;
+
 if( is_home() ):
 esc_attr( bloginfo( 'name' ) ); esc_attr( bloginfo( 'description' ) ); esc_attr( wp_title() );
+
 else :
 esc_attr( bloginfo( 'name' ) );
 endif;
+
 if( $paged > 1 ) :
 echo '-page' . $paged;
 endif;
-?></title>
+?>
+</title>
 
 <!-- search engine robots meta instructions -->
 <?php if ( is_search() || is_404() ) : ?>
@@ -80,8 +90,10 @@ endif;
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 <!-- base css -->
 <link rel="stylesheet" media="screen" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+
 <!-- IE7 css -->
 <!--[if IE7]><link rel="stylesheet" media="screen" href="<?php bloginfo( 'stylesheet_directory' ) ?>/css/ie7.css"><![endif]-->
+
 <!-- IE8 css -->
 <!--[if IE 8]><link rel="stylesheet" media="screen" href="<?php bloginfo( 'stylesheet_directory' ) ?>/css/ie8.css"><![endif]-->
 
@@ -94,70 +106,78 @@ endif;
 <!-- All JavaScript at the bottom, except this Modernizr. Modernizr enables HTML5 elements & feature detects; 
          for optimal performance, create your own custom Modernizr build: www.modernizr.com/download/ -->
 <script src="<?php echo get_template_directory_uri(); ?>/js/libs/modernizr.js"></script>
+
 <?php //required comment functionality ?>
 <?php if ( is_singular() ) { wp_enqueue_script( 'comment-reply' ); } ?>
+
+<!-- coments popup script -->
 <?php comments_popup_script(); ?>
+
 <?php wp_head(); //required for all wordpress themes and placed at the end of the head tag element ?>
 </head>
 
 <!-- body element tag -->
 <?php if ( is_single() ) : ?>
-<body <?php body_class(); ?> id="themename-single">
+<body <?php body_class(); ?> id="wpflex-single">
 <?php elseif ( is_home() ) : ?>
-<body <?php body_class(); ?> id="themename-index">
+<body <?php body_class(); ?> id="wpflex-index">
 <?php else : ?>
-<body <?php body_class(); ?> id="themename-<?php the_title(); ?>">
+<body <?php body_class(); ?> id="wpflex-<?php the_title(); ?>">
 <?php endif; ?>
-<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
-       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6. chromium.org/developers/how-tos/chrome-frame-getting-started -->
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-<header role="banner">
+<header id="wpflex-header" role="banner">
   <?php 
-	  	//Custom header
-		// Check if this is a post or page, if it has a thumbnail, and if it's a big one
-		if ( is_singular() && has_post_thumbnail( $post->ID ) && ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' )) && $image[1] >= HEADER_IMAGE_WIDTH ) : ?>
+  //Custom header
+  // Check if this is a post or page, if it has a thumbnail, and if it's a big one
+  if ( is_singular() && has_post_thumbnail( $post->ID ) && ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' )) && $image[1] >= HEADER_IMAGE_WIDTH ) : ?>
+
   <?php echo get_the_post_thumbnail( $post->ID, 'post-thumbnail', array( 'usemap' => '#Map' ) ); // We have a new header image! ?>
+
   <h1><a href="<?php echo home_url();  ?>"><?php esc_attr( bloginfo( 'name' ) ); ?></a></h1>
   <h2><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
   <img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" usemap="#Map" />
+
   <?php else : ?>
   <h1><a href="<?php echo home_url();  ?>"><?php esc_attr( bloginfo( 'name' ) ); ?></a></h1>
   <h2><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
   <?php endif; ?>
   <!-- end header custom image -->
-  
+ 
   <!-- http://codex.wordpress.org/Function_Reference/wp_nav_menu -->
   <nav role="navigation">
     <ol>
       <?php 
-		//wp_list_pages arguments as an array
-		$nav_themename = array(
-							   'depth'        	=> 2,
-							   'show_date'    	=> '',
-							   'date_format'  	=> get_option( 'date_format' ),
-							   'child_of'     	=> 0,
-							   'exclude'      	=> '',
-							   'include'      	=> '',
-							   'title_li'     	=> '',
-							   'echo'         	=> 1,
-							   'authors'      	=> '',
-							   'sort_column'  	=> 'menu_order',
-							   'link_before'  	=> '',
-							   'link_after'   	=> '',
-							   'walker' 		=> '' 
-							); ?>
+	//wp_list_pages arguments as an array
+	$nav_wpflex = array(
+				'depth'        	=> 2,
+				'show_date'    	=> '',
+				'date_format'  	=> get_option( 'date_format' ),
+				'child_of'     	=> 0,
+				'exclude'      	=> '',
+				'include'      	=> '',
+				'title_li'     	=> '',
+				'echo'         	=> 1,
+				'authors'      	=> '',
+				'sort_column'  	=> 'menu_order',
+				'link_before'  	=> '',
+				'link_after'   	=> '',
+				'walker' 	=> '' 
+				); ?>
       <?php 
-		  //begin wp_list_pages loop
-		  if( wp_list_pages($nav_themename) ) : while ( wp_list_pages( $nav_themename ) ) : 
-	   ?>
-      <?php wp_list_pages( $nav_themename ); //list items from the array above ?>
+	//begin wp_list_pages loop
+	if( wp_list_pages( $nav_wpflex ) ) : while ( wp_list_pages( $nav_wpflex ) ) : 
+       ?>
+      <?php wp_list_pages( $nav_wpflex ); //list items from the array above ?>
       <?php endwhile; //end while wp_list_pages ?>
       <?php endif; //end if wp_list_pages ?>
     </ol>
   </nav>
   <?php //endif; ?>
+
 </header>
+
 <article><a href="<?php bloginfo('rss2_url') ?>">RSS Feed</a></article>
 
 <?php //required call for search-form ?>
