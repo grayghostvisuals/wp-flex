@@ -18,7 +18,7 @@ if( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop -> the_post();
 
 <article class="case-study-item">
 <header>
-	<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 </header>
 
 <div id="thumbnail">

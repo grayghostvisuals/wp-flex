@@ -18,7 +18,13 @@
       <h1><span><?php the_title(); ?></span></h1>
       <?php get_template_part( 'inc/meta' ); ?>
     </header>
-   
+
+   <div id="thumbnail">
+	<?php if ( has_post_thumbnail() ) : // check if the post has a Post Thumbnail assigned to it. ?>
+	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail( 'case-study-thumb' ); ?></a>
+	<?php endif; ?> 
+   </div>
+
    <!-- the content -->
    <?php the_content(); ?>
     
