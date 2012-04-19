@@ -164,7 +164,7 @@ function case_studies() {
 	$args = array(
 			"labels" 		=> $labels,
 			"public" 		=> true,
-			"exclude_from_search" 	=> true,
+			"exclude_from_search" 	=> false,
 			"publicly_queryable" 	=> true,
 			"show_ui" 		=> true, 
 			"query_var" 		=> true,
@@ -184,7 +184,6 @@ add_action( "init", "case_studies" );
 
 
 /*------------------------------------------------------------------------------------------------[ case studies taxonomy setup ] */
-
 
 // Begin tz_build_taxonomies
 function casestudies_custom_taxonomies(){
@@ -216,8 +215,9 @@ add_action( "init", "casestudies_custom_taxonomies", 0 );
 
 
 /*------------------------------------------------------------------------------------------------[ case studies work type display function ] */
-
 // function for retrieving work types on single case studies
+
+
 function get_case_type() {
 
 	global $post; 
@@ -245,7 +245,6 @@ function get_case_type() {
 
 
 /*------------------------------------------------------------------------------------------------[ case studies custom meta data setup ] */
-
 //http://return-true.com/2011/07/adding-custom-post-type-and-custom-meta-box-in-wordpress/
 //http://codex.wordpress.org/Function_Reference/add_meta_box#Example
 
@@ -270,6 +269,17 @@ function case_study_url( $post ) {
 	echo '<label for="url-address">enter URL</label>';
 	echo '<input type="url" id="url-address" name="url-address" placeholder="http://www.dominaname.com">';
 }
+
+
+/*------------------------------------------------------------------------------------------------[ case studies custom excerpts ] */
+// http://codex.wordpress.org/Excerpt
+
+function excerpt_read_more_link( $output ){
+	global $post;
+	return $output . '<span class="excerpt-more-btn"><a href="' . get_permalink( $post->ID ) . '">Continue Reading &rarr;</a></span>';
+}
+
+add_filter( 'the_excerpt', 'excerpt_read_more_link' );
 
 
 }//end themename_setup

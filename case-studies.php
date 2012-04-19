@@ -27,10 +27,11 @@ if( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop -> the_post();
 <?php endif; ?> 
 </div>
 
+<!-- the excerpt -->
 <div class="excerpt">
-	<?php the_excerpt(); ?>
+<?php the_excerpt(); ?>
 </div>
-<!-- end/ .excerpt -->
+<!-- end/ div.excerpt -->
 
 </article>
 <!-- end/ article -->
