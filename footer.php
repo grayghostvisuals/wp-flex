@@ -7,69 +7,104 @@
     </section>
   
     <!--xxxxxxxxxxxxxxxxxx custom footer Vcard xxxxxxxxxxxxxxxxxx-->
-    <?php $options = get_option( 'theme-name_theme_options' ); ?>
+    <?php $options = get_option( 'wpflex_theme_options' ); ?>
     <?php if( $options || empty($options) ): ?>
   
     <!-- vcard fn org -->
-    <section class="vcard">
-      <ul>
-        <?php if( !empty( $options['fnorg'] ) ): ?>
-        <li class="fn org"> <small><?php echo ( $options['fnorg'] ); ?>,</small> </li>
-        <?php else : ?>
-        <li><small>Company Organization</small></li>
+    <section>
+      <ul class="vcard">
+	<!-- fn org -->
+        <?php if( ! empty( $options['fnorg'] ) ): ?>
+        <li class="fn org">
+		<small><?php echo ( $options['fnorg'] ); ?>,</small>
+	</li>
+        <!-- fn org fallback -->
+	<?php else : ?>
+        <li>
+		<small>My Super Awesome Company</small>
+	</li>
         <?php endif; ?>
         
         <!-- vcard adr -->
         <?php if( $options['street'] && $options['locality'] && $options['region'] && $options['postal'] ): ?>
-        <li class="adr"><small><span class="street-address"><?php echo ( $options['street'] ); ?></span>, <span class="locality"><?php echo ( $options['locality'] ); ?></span>, <span class="region"><abbr title="<?php echo ( $options['region'] ); ?>"><?php echo ( $options['region'] ); ?></abbr></span> 	`		<span class="postal-code"><?php echo ( $options['postal'] ); ?></span></small></li>
-        <?php else : ?>
-        <li class="adr"><small>555 Fake Street, City Name, NY 55555</small></li>
+        <li class="adr">
+		<small>
+			<span class="street-address"><?php echo ( $options['street'] ); ?></span>, <span class="locality"><?php echo ( $options['locality'] ); ?></span>, 
+			<span class="region"><abbr title="<?php echo ( $options['region'] ); ?>"><?php echo ( $options['region'] ); ?></abbr></span>
+			<span class="postal-code"><?php echo ( $options['postal'] ); ?></span>
+		</small>
+	</li>
+        <!-- vcard adr fallback -->
+	<?php else : ?>
+        <li class="adr">
+		<small>555 Fake Street, My Awesome City Name, NY 55555</small>
+	</li>
         <?php endif; ?>
         
         <!-- vcard tel -->
         <?php if( $options['teltype'] && $options['telvalue'] ): ?>
-        <li class="tel"><small><span class="type"><?php echo ( $options['teltype'] ); ?></span>: <span class="value"><?php echo ( $options['telvalue'] ); ?></span></small></li>
+        <li class="tel">
+	<small>
+		<span class="type"><?php echo ( $options['teltype'] ); ?></span>: <span class="value"><?php echo ( $options['telvalue'] ); ?></span></small></li>
         <?php else : ?>
-        <li class="tel"><small>Office: 555&ndash;555-5555</small></li>
+        <li class="tel">
+		<small>Office: 555&ndash;555-5555</small>
+	</li>
         <?php endif; ?>
         
-        <!-- vcard url fn org -->
+        <!-- url fn org -->
         <?php if( $options['url'] ): ?>
-        <li class="url fn org"><small><a rel="bookmark" href="http://<?php echo ( $options['url'] ); ?>" title="visit us online"><?php echo ( $options['url'] ); ?></a> </small> </li>
-        <?php else : ?>
-        <li class="url fn org"><small><a rel="bookmark" href="http://www.grayghostvisuals.com" title="visit designer online">http://www.grayghostvisuals.com</a> </small> </li>
+        <li class="url fn org">
+		<small><a rel="bookmark" href="http://<?php echo ( $options['url'] ); ?>" title="visit us online"><?php echo ( $options['url'] ); ?></a></small>
+	</li>
+        <!-- url fn org fallback -->
+	<?php else : ?>
+        <li class="url fn org">
+		<small>
+			<a rel="bookmark" href="http://www.grayghostvisuals.com" title="visit the designer and coder online">http://www.grayghostvisuals.com</a>
+		</small> 
+	</li>
         <?php endif; ?>
         
         <!-- vcard add to address book -->
-        <li class="add-vcard"><small><a href="http://h2vx.com/vcf/<?php echo ( $options['addrbook'] ); ?>" rel="vcard">&bull; Add Us To Your Address Book</a></small></li>
+        <li class="add-vcard">
+		<small>
+			<a href="http://h2vx.com/vcf/<?php echo ( $options['addrbook'] ); ?>" rel="vcard">&bull; Add Us To Your Address Book</a>
+		</small>
+	</li>
       </ul>
+    
     </section>
     <?php endif; ?>
     
     <section id="footer-socials">
-      <?php $options = get_option( 'theme-name_theme_options' ); ?>
-      
-	  <?php if( $options[ 'facebookurl' ] ) : ?>
+      <!-- facebook -->
+      <?php $options = get_option( 'wpflex_theme_options' ); ?>
+      <?php if( $options[ 'facebookurl' ] ) : ?>
       <article id="footer-fb">
-        <div class="fb-like-button" data-href="<?php echo ( $options[ 'facebookurl' ] ); ?>" data-send="false" data-layout="button_count" data-show-faces="false"></div>
+        <div class="facebook">
+		<a href="<?php echo ( $options[ 'facebookurl' ] ); ?>" rel="external"><?php echo ( $options[ 'facebookurl' ] ); ?></a>
+	</div>
       </article>
-	  <?php endif; ?>
-      
-	  <?php $options = get_option( 'theme-name_theme_options' ); ?>
-      
-	  <?php if( $options[ 'twitterurl' ] ) : ?>
+      <?php endif; ?>
+
+      <!-- twitter -->
+      <?php $options = get_option( 'wpflex_theme_options' ); ?>
+      <?php if( $options[ 'twitterurl' ] ) : ?>
       <article id="footer-twitter">
-        <div class="twitter-button"><a href="https://twitter.com/<?php echo ( $options[ 'twitterurl' ] ); ?>" class="twitter-follow-button">follow @<?php echo( $options[ 'twitterurl' ] ); ?></a></div>
+        <div class="twitter">
+		<a href="https://twitter.com/<?php echo ( $options[ 'twitterurl' ] ); ?>" rel="external">follow<?php echo( $options[ 'twitterurl' ] ); ?></a>
+	</div>
       </article>
       <?php endif; ?>
       
       <!-- It is completely optional, but if you like WP-Flex I would appreciate it if you keep the credit link at the bottom -->
-      <section>
-      <small>Created with the WP-Flex boilerplate foundation by gray ghost visuals <a href="" rel="external">http://grayghostvisuals.com</a></small>
+      <section id="copyright">
+      	<small>Created with the WP&ndash;Flex boilerplate foundation by <a href="" rel="external">http://grayghostvisuals.com</a></small>
       </section>
-      <!-- It is completely optional, but if you like WP-Flex I would appreciate it if you keep the credit link at the bottom -->
-    
+     
     </section>
+ 
   </footer>
 
   <!-- JavaScript at the bottom for fast page loading -->
