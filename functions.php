@@ -246,7 +246,6 @@ function casestudies_custom_taxonomies(){
 add_action( 'init', 'casestudies_custom_taxonomies', 0 );
 
 
-
 /*------------------------------------------------------------------------------------------------[ case studies work type display function ] */
 // function for retrieving work types on single case studies
 
@@ -279,58 +278,88 @@ function get_case_type() {
 
 
 
-/*------------------------------------------------------------------------------------------------[ case studies custom meta data setup ] */
-//http://return-true.com/2011/07/adding-custom-post-type-and-custom-meta-box-in-wordpress/
+/*------------------------------------------------------------------------------------------------[ case studies url meta setup ] */
+//http://return-true.com/2011/07/adding-custom-post-type-and-custom-meta-box-in-wordpress
 //http://codex.wordpress.org/Function_Reference/add_meta_box#Example
+//http://wp.smashingmagazine.com/2011/10/04/create-custom-post-meta-boxes-wordpress
+//http://markjaquith.wordpress.com/2006/06/02/wordpress-203-nonces
 
 
-// action to add meta box
-add_action( 'add_meta_boxes', 'casestudies_custom_url_meta' );
+// Since you only want your post meta box to appear on the post editor screen in the admin, 
+// you’ll use the load-post.php and load-post-new.php hooks to initialize your meta box code
+add_action( 'load-post.php', 'casestudy_url_metabox_setup' );
+add_action( 'load-post-new.php', 'casestudy_url_metabox_setup' );
 
-/* adds a meta box to the main column on the case-studies edit screen */
-function casestudies_custom_url_meta() {
+// custom meta box setup
+function casestudy_url_metabox_setup(){
+	// action to add meta box
+	add_action( 'add_meta_boxes', 'casestudy_url_metabox' );
+	
+	// lets save that custom meta data shall we?
+	add_action( 'save_post', 'save_casestudy_url_meta', 10, 2 );
+}
+
+// adds a meta box to the the case-studies edit screen
+function casestudy_url_metabox() {
     add_meta_box(
-		'case-url',  	  // $id
-		'Case Study URL', // $title
-		'case_study_URL', // $callback
-		'case-studies',   // $post_type	
-		'side',		  // $context (normal,advanced,side)
+		'case-study-url', // $id = assigned to admin metabox
+		'Case Study URL', // $title = metabox title name
+		'case_study_url', // $callback = function
+		'case-studies',   // $post_type = admin page to display metabox	
+		'side',		  // $context = metabox admin position (normal,advanced,side)
 		'low'	          // $priority (high,core,default,low)	
 		);
 }
 
-// prints out the custom meta box
-function case_study_url( $post ) { 
-	wp_nonce_field( plugin_basename( __FILE__ ), 'myplugin_noncename' );
-	echo '<label for="url-address">enter URL</label><br />';
-	echo '<input type="url" id="url-address" name="url-address" placeholder="http://www.dominaname.com">';
+// prints out the custom meta box input fields
+function case_study_url( $object, $box ) { 
+	// Nonces are used as a security related protection to prevent attacks and mistakes
+	// The nonce field is used to validate that the contents of the form came from the 
+	// location on the current site and not somewhere else
+	if( function_exists( 'wp_nonce_field' ) ) :
+	wp_nonce_field( basename( __FILE__ ), 'casestudy_url_nonce' ); ?>
+
+	<!-- add the custom meta fields -->
+	<label for="casestudy-url">Case Study URL</label>
+	<p><input type="url" id="casestudy-url" name="casestudy-url" value="<?php echo esc_attr( get_post_meta( $object->ID, 'casestudy_url', true ) ); ?>" size="30" placeholder="http://www."></p>
+	<?php endif;
 }
 
+/* Save the meta box's post metadata. */
+function save_casestudy_url_meta( $post_id, $post ) {
 
-// action to add meta box
-add_action( 'add_meta_boxes', 'casestudies_custom_descr_meta' );
+	/* Verify the nonce before proceeding. */
+	if ( ! isset( $_POST['casestudy_url_nonce'] ) || ! wp_verify_nonce( $_POST['casestudy_url_nonce'], basename( __FILE__ ) ) )
+	return $post_id;
 
-/* adds a meta box to the main column on the case-studies edit screen */
-function casestudies_custom_descr_meta() {
-    add_meta_box(
-		'case-descr',  	  	  	 // $id
-		'Case Study Custom Description', // $title
-		'case_study_descr',       	 // $callback
-		'case-studies',   	  	 // $post_type	
-		'side',		  	  	 // $context (normal,advanced,side)
-		'low'	          	  	 // $priority (high,core,default,low)	
-		);
+	/* Get the post type object. */
+	$post_type = get_post_type_object( $post->post_type );
+
+	/* Check if the current user has permission to edit the post. */
+	if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) )
+	return $post_id;
+
+	/* Get the posted data and sanitize it for use as an HTML class. */
+	$new_meta_value = ( isset( $_POST['casestudy-url'] ) ? esc_attr( $_POST['casestudy-url'] ) : '' );
+
+	/* Get the meta key. */
+	$meta_key = 'casestudy_url';
+
+	/* Get the meta value of the custom field key. */
+	$meta_value = get_post_meta( $post_id, $meta_key, true );
+
+	/* If a new meta value was added and there was no previous value, add it. */
+	if ( $new_meta_value && '' == $meta_value )
+	add_post_meta( $post_id, $meta_key, $new_meta_value, true );
+
+	/* If the new meta value does not match the old value, update it. */
+	elseif ( $new_meta_value && $new_meta_value != $meta_value )
+	update_post_meta( $post_id, $meta_key, $new_meta_value );
+
+	/* If there is no new meta value but an old value exists, delete it. */
+	elseif ( '' == $new_meta_value && $meta_value )
+	delete_post_meta( $post_id, $meta_key, $meta_value );
 }
-
-// prints out the custom meta box
-function case_study_descr( $post ) { 
-	wp_nonce_field( plugin_basename( __FILE__ ), 'myplugin_noncename' );
-	echo '<label for="">Description</label><br />';
-	echo '<textarea name="" placeholder=""></textarea>';
-}
-
-
-
 
 /*------------------------------------------------------------------------------------------------[ case studies custom excerpts ] */
 // http://codex.wordpress.org/Excerpt

@@ -27,7 +27,7 @@
 
    <!-- the content -->
    <?php the_content(); ?>
-    
+
 	<?php
           wp_link_pages( array( 
           			'before' => '<div>' . 'Pages &raquo',
@@ -37,7 +37,12 @@
 
     <!-- retrieve and display the custom taxonomies as a list -->
     <?php get_case_type(); ?>
+    <h3>Custom Post Meta</h3>
     
+    <!-- grab the custom meta data to display -->
+    <?php $caseurl = get_post_meta( $post->ID, 'casestudy_url', true ); ?>
+    <p><a href="<?php echo "$caseurl" ?>"><?php echo "$caseurl" ?></a></p>
+
     <!-- footer -->
     <footer>
     <div id="comments-count"><a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?>Comments</a></div>
