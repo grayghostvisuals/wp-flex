@@ -47,19 +47,29 @@ define('WP_DEBUG', true);
    css comment flags used for sectioning as reccommended by Wordpress theme submission codex
 
 6. theme-unit/theme-unit-test.xml
-   A database for theme testing with multiple users, comment threading, posts and much more
+   a database for theme testing with multiple users, comment threading, posts and much more
 
-7. theme-options.php
+7. wpflex-options.php
    a custom boilerplate starting point to give your users awesome theme options
 
 8. functions.php 
    base scaffolding for required functionality of themes and submission via Wordpress.org Theme Repository. http://wordpress.org/extend/themes/upload  
+   also contains the ability to give your wordpress a boost with a dual feed. This means out of the box WP-Flex gives you custom posts, custom meta info and more
 
 9. cache.manifest 
    feel free to get started with your boilerplate cache manifest. Includes baked in references to Typekit, jQuery and Modernizr
 
 10. js/tk-async.js
-    Your personal Typekit ansynchronous call snippet for loading your web fonts dude
+    personal typekit ansynchronous call snippet for loading your web fonts dude
+
+11. case-studies.php
+    displays all your custom posts/case-studies
+
+12. single-case-studies.php
+    displays a single custom post/case-study
+
+13. taxonomy-case-type.php
+   displays all custom posts/case-studies for the correlating taxonomy filed within
 
 # Some more inspiring and wonderful blank Wordpress theme frameworks to get you going
 
