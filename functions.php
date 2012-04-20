@@ -19,7 +19,7 @@ add_action( 'after_setup_theme', 'wpflex_setup' );
 
 
 //wpflex options
-include_once( get_template_directory() . '/themeoptions.php' );
+include_once( get_template_directory() . '/wpflex-options.php' );
 
 
 /*------------------------------------------------------------------------------------------------[ theme setup function ] */
@@ -49,7 +49,7 @@ function wpflex_header_style() { ?>
 	background: url(<?php header_image(); ?>) 
 }
 </style>
-<?php }//end function themename_header_style
+<?php }//end function wpflex_header_style
 
 // gets included in the admin header
 function wpflex_admin_header_style() { ?>
@@ -60,10 +60,10 @@ function wpflex_admin_header_style() { ?>
 	height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;
 }
 </style>
-<?php } //end function themename_admin_header_style
+<?php } //end function wpflex_admin_header_style
 
-//custom theme image header
-add_custom_image_header( 'wpflex_header_style', 'wpflex_admin_header_style' );// arg1 $callback arg2
+//custom image header
+add_custom_image_header( 'wpflex_header_style', 'wpflex_admin_header_style' );
 
 
 /*------------------------------------------------------------------------------------------------[ rss feed ] */
@@ -278,10 +278,10 @@ function get_case_type() {
 }//end get_work_type	
 
 
+
 /*------------------------------------------------------------------------------------------------[ case studies custom meta data setup ] */
 //http://return-true.com/2011/07/adding-custom-post-type-and-custom-meta-box-in-wordpress/
 //http://codex.wordpress.org/Function_Reference/add_meta_box#Example
-
 
 
 // action to add meta box
@@ -302,9 +302,33 @@ function casestudies_custom_url_meta() {
 // prints out the custom meta box
 function case_study_url( $post ) { 
 	wp_nonce_field( plugin_basename( __FILE__ ), 'myplugin_noncename' );
-	echo '<label for="url-address">enter URL</label>';
+	echo '<label for="url-address">enter URL</label><br />';
 	echo '<input type="url" id="url-address" name="url-address" placeholder="http://www.dominaname.com">';
 }
+
+
+// action to add meta box
+add_action( 'add_meta_boxes', 'casestudies_custom_descr_meta' );
+
+/* adds a meta box to the main column on the case-studies edit screen */
+function casestudies_custom_descr_meta() {
+    add_meta_box(
+		'case-descr',  	  	  	 // $id
+		'Case Study Custom Description', // $title
+		'case_study_descr',       	 // $callback
+		'case-studies',   	  	 // $post_type	
+		'side',		  	  	 // $context (normal,advanced,side)
+		'low'	          	  	 // $priority (high,core,default,low)	
+		);
+}
+
+// prints out the custom meta box
+function case_study_descr( $post ) { 
+	wp_nonce_field( plugin_basename( __FILE__ ), 'myplugin_noncename' );
+	echo '<label for="">Description</label><br />';
+	echo '<textarea name="" placeholder=""></textarea>';
+}
+
 
 
 
