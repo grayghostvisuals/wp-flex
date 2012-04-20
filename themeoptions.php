@@ -1,12 +1,12 @@
 <?php 
 
-// themename Custom Options
+// wpflex Custom Options
 // triggered before any other hook when a user accesses the admin area
 // only can be used to callback a specified function which is dgs_options_init
 add_action( 'admin_init', 'wpflex_options_init' );
 add_action( 'admin_menu', 'wpflex_options_add_page' );
 
-// themename options initialization
+// wpflex options initialization
 function wpflex_options_init(){
 	// lets us generate wp-admin page by registering theme settings
 	// and providing a few callbacks to control the output
