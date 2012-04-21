@@ -251,29 +251,21 @@ add_action( 'init', 'casestudies_custom_taxonomies', 0 );
 
 
 function get_case_type() {
-
 	global $post; 
 	$postid = $post->ID;
 	$terms = wp_get_object_terms( $postid, 'case-type' );
-	
 	if( !empty( $terms ) ) :
+	echo '<h3>Case Type</h3>';
 	echo '<ul class="case-types">';
-     
      	foreach ( $terms as $term ) {
-     
      		$ct_name = $term->name;
      		$ct_id = $term->slug;
-     
        		echo '<li><a href="/case-type/' . $ct_id . '" class="case-type-item" id="cti-'.$ct_id.'">'.$ct_name.'</a></li>';
-        
      	} //end foreach loop
-
      	echo "</ul>";
  	else :
  	echo "No Case Type Filed";
- 	
 	endif;
-	
 }//end get_work_type	
 
 
