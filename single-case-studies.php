@@ -15,7 +15,7 @@
  
   <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
     <header>
-      <h1><span><?php the_title(); ?></span></h1>
+      <h1><?php the_title(); ?></h1>
       <?php get_template_part( 'inc/meta' ); ?>
     </header>
 
@@ -25,46 +25,28 @@
 	<?php endif; ?> 
    </div>
 
-   <!-- the content -->
-   <?php the_content(); ?>
-
-	<?php
-          wp_link_pages( array( 
-          			'before' => '<div>' . 'Pages &raquo',
-          			'after'  => '</div>' 
-          			)
-			); //end wp_link_pages ?>
-
-    <!-- retrieve and display the custom taxonomies as a list -->
-    <?php get_case_type(); ?>
-    <h3>Custom Post Meta</h3>
+    <!-- the content -->
+    <?php the_content(); ?>
     
-    <!-- grab the custom meta data to display -->
+    <!-- pagination  -->
+    <?php wp_link_pages( array( 'before' => '<div class="pagination">' . 'Pages &raquo', 'after'  => '</div>' ) ); //end wp_link_pages ?>
+       
+    <!-- retrieve and display the custom taxonomies as a list -->
     <?php $caseurl = get_post_meta( $post->ID, 'casestudy_url', true ); ?>
-    <p><a href="<?php echo "$caseurl" ?>"><?php echo "$caseurl" ?></a></p>
+    <?php if( function_exists( 'get_post_meta' ) && ! empty( $caseurl ) ) : ?>
+    
+    <!-- custom url meta -->
+    <div id="custom-post-meta">
+    	<h3>Case Study URL</h3>
+    	<!-- grab the custom meta data to display -->
+    	<p><a href="<?php echo "$caseurl" ?>"><?php echo "$caseurl" ?></a></p>
+    </div>
+    <?php endif; ?>
+    <!-- end/ custom url meta -->
 
     <!-- footer -->
     <footer>
-    <div id="comments-count"><a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?>Comments</a></div>
-      <ul>
-        <li class="tags">
-          <?php _e( 'Tagged:' );?>
-          <ul>
-            <li>
-              <?php the_tags( ',</li> <li>' ); ?>
-            </li>
-          </ul>
-        </li>
-
-        <li class="cats">
-          <?php _e( 'Filed under:' );?>
-          <ul>
-            <li>
-              <?php the_category( ',</li> <li>' ); ?>
-            </li>
-          </ul>
-        </li>
-      </ul>
+      <?php get_case_type(); ?>
     </footer>
     
   </article>
