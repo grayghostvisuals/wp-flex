@@ -611,12 +611,16 @@ body { max-width: 45em; margin: 0 auto; }
 /* =Author Colors
 ------------------------------------------------------------------------------- */
 
-/* =Author @media queries
+
+/* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
    This example overrides the primary ('mobile first') styles
    Modify as content requires.
-------------------------------------------------------------------------------- */
-@media only screen and (min-width: 35em) {/* Style adjustments for viewports that meet the condition */}
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
 
 
 /* ==|== non-semantic helper classes ========================================
@@ -624,7 +628,7 @@ body { max-width: 45em; margin: 0 auto; }
    ========================================================================== */
 
 /* For image replacement */
-.ir { border:0; font: 0/0 a; text-shadow: none; color: transparent; background-color: transparent; }
+.ir { border: 0; font: 0/0 a; text-shadow: none; color: transparent; background-color: transparent; }
 
 /* Hide from both screenreaders and browsers: h5bp.com/u */
 .hidden { display: none !important; visibility: hidden; }
@@ -643,17 +647,19 @@ body { max-width: 45em; margin: 0 auto; }
 .clearfix:after { clear: both; }
 .clearfix { *zoom: 1; }
 
+
+
 /* ==|== print styles =======================================================
    Print styles.
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
 
 @media print {
-  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; } /* Black prints faster: h5bp.com/s */
   a, a:visited { text-decoration: underline; }
   a[href]:after { content: " (" attr(href) ")"; }
   abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } /* Don't show links for images, or javascript/internal links */
   pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
   thead { display: table-header-group; } /* h5bp.com/t */
   tr, img { page-break-inside: avoid; }
