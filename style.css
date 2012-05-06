@@ -1,7 +1,7 @@
 /*   
 Theme Name: WP-Flex
 Theme URI: https://github.com/grayghostvisuals/WP-Flex
-Description: WP-Flex is a responsive, highly customized, blank wordpress framework incorporating HTML5-boilerplate, custom posts and correlating meta data plus some other tasty starting points
+Description: A responsive, foundational Wordpress theme boilerplate for developers submitting to the Wordpress.org theme repository. 
 
 Author: Gray Ghost Visuals
 Author URI: http://grayghostvisuals.com
@@ -338,17 +338,19 @@ a img.aligncenter {
 }
 
 .wp-caption p.wp-caption-text {
-    font-size:11px;
-    line-height:17px;
-    margin:0;
-    padding:0 4px 5px;
+  font-size:11px;
+  line-height:17px;
+  margin:0;
+  padding:0 4px 5px;
 }
 
 .gallery-caption {}
 
 /* stops too many categories from breaking layout */
 .tags ul li,
-.cats ul li { display: inline; }
+.cats ul li { 
+  display: inline; 
+}
 
 
 /* =WordPress - Additional Styling Classes 
@@ -570,21 +572,6 @@ ol.commentlist li.thread-alt {}
 ol.commentlist li.thread-even {}
 ol.commentlist li.thread-odd {}
 
-/*
- *
- * CASE STUDIES CUSTOM POSTS default styling
- *
- */
-
-/* excerpt more button styling for case studies custom posts */
-span.excerpt-more-btn {}
-span.excerpt-more-btn a {}
-
-/* case study custom meta styling */
-div#custom-post-meta {}
-div#custom-post-meta h3 {}
-div#custom-post-meta p {}
-div#custom-post-meta a {}
 
 /* single page pagination */
 div#single-pagination:first-child {/*http://caniuse.com/#search=:first-child*/}
@@ -592,11 +579,6 @@ div#single-pagination:last-child {/*http://caniuse.com/#search=:last-child*/}
 
 /* case studies pagination styles */
 .pagination {}
-
-/* case type listing styles */
-ul.case-types {}
-ul.case-types li {}
-ul.case-types li a.case-type-item {}
 
 
 /* =Author Typography
@@ -628,7 +610,8 @@ body { max-width: 45em; margin: 0 auto; }
    ========================================================================== */
 
 /* For image replacement */
-.ir { border: 0; font: 0/0 a; text-shadow: none; color: transparent; background-color: transparent; }
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+.ir br { display: none; }
 
 /* Hide from both screenreaders and browsers: h5bp.com/u */
 .hidden { display: none !important; visibility: hidden; }
@@ -647,19 +630,17 @@ body { max-width: 45em; margin: 0 auto; }
 .clearfix:after { clear: both; }
 .clearfix { *zoom: 1; }
 
-
-
 /* ==|== print styles =======================================================
    Print styles.
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
 
 @media print {
-  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; } /* Black prints faster: h5bp.com/s */
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
   a, a:visited { text-decoration: underline; }
   a[href]:after { content: " (" attr(href) ")"; }
   abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } /* Don't show links for images, or javascript/internal links */
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
   pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
   thead { display: table-header-group; } /* h5bp.com/t */
   tr, img { page-break-inside: avoid; }
