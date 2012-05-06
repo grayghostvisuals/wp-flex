@@ -1,13 +1,12 @@
-WP-Flex is a blank, responsive wordpress theme foundation. 
+# WHAT IS WP-FLEX?
+A responsive, foundational Wordpress theme boilerplate for developers submitting to the Wordpress.org theme repository. 
 
+# DEBUGGING:
 Tested and Debugged with the required 'theme-unit-test.xml' file and 'wp-config.php' debugger.
 
-# example of debugging with wp-config.php line #81 
-#
-# default mode by wordpress
+# DEFAULT wp-config
 define('WP_DEBUG', false);
-#
-# setting the debug mode
+# DEBUG MODE wp-config
 define('WP_DEBUG', true); 
 
 # A few suggestions before uploading your theme submission
@@ -19,8 +18,7 @@ define('WP_DEBUG', true);
   
 3. Rename 'themename-readme.txt' to 'readme.txt' as per theme submission requirements 
 
-
-#  Goodies WP-Flex Includes:
+# WATS IT GOT?:
 
 1. HTML5 Boilerplate 
    http://html5boilerplate.com
@@ -29,16 +27,16 @@ define('WP_DEBUG', true);
 3. Modernizr
    http://modernizr.com
 
-# Other Goodies Included.......
+# EVEN MORE!!!
 
 1. themename-readme.txt
    A must have for theme submission. Describes the ins and outs
    to users what is great and what still needs work with your theme.
-   (A reccomendation from Wordpress)
+   ( A reccomendation from the Wordpress Codex for theme authors )
 
-2. Super dooooper awesome PHP comments with web URI refs included for theme submission checks and further customization
+2. Detailed PHP comments with URL refs for theme submission checks and further customization
 
-3. Required Wordpress CSS classes for any theme submission
+3. Required Wordpress CSS classes
 
 4. Comment Thread Styling Classes
    Those tricky comment thread styling classes provided to you by default. No more scanning the DOM or reading more tutorials. It's all there bro! 
@@ -49,27 +47,11 @@ define('WP_DEBUG', true);
 6. theme-unit/theme-unit-test.xml
    a database for theme testing with multiple users, comment threading, posts and much more
 
-7. wpflex-options.php
-   a custom boilerplate starting point to give your users awesome theme options
+7. WP-Flex Theme Options Foundation
+   a custom boilerplate starting point to give your users awesome theme and authors theme options
 
-8. functions.php 
+8. Theme Functions Boilerplate
    base scaffolding for required functionality of themes and submission via Wordpress.org Theme Repository. http://wordpress.org/extend/themes/upload  
-   also contains the ability to give your wordpress a boost with a dual feed. This means out of the box WP-Flex gives you custom posts, custom meta info and more
-
-9. cache.manifest 
-   feel free to get started with your boilerplate cache manifest. Includes baked in references to Typekit, jQuery and Modernizr
-
-10. js/tk-async.js
-    personal typekit ansynchronous call snippet for loading your web fonts dude
-
-11. case-studies.php
-    displays all your custom posts/case-studies
-
-12. single-case-studies.php
-    displays a single custom post/case-study
-
-13. taxonomy-case-type.php
-   displays all custom posts/case-studies for the correlating taxonomy filed within
 
 # Some more inspiring and wonderful blank Wordpress theme frameworks to get you going
 

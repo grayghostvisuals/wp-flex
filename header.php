@@ -1,9 +1,10 @@
 <!doctype html>
-<html class="no-js" <?php language_attributes(); ?>>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" <?php language_attributes(); ?>> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
-<!-- Typekit Asynchronous Snippet -->
-<!--<script src="<?php /*uncomment for tk glory => */ /*echo get_template_directory_uri();*/ ?>/js/tk-async.js"></script>-->
-<!-- End Typekit Asynchronous Snippet -->
 
 <!-- character encoding utf-8 -->
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -79,23 +80,9 @@ endif;
 <!-- Sets whether a web application runs in full-screen mode -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-<!-- open graph meta tags -->
-<meta property="og:title" content="">
-<meta property="og:type" content="">
-<meta property="og:url" content="">
-<meta property="og:image" content="">
-<meta property="og:site_name" content="">
-<meta property="fb:admins" content="">
-
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 <!-- base css -->
 <link rel="stylesheet" media="screen" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-
-<!-- IE7 css -->
-<!--[if IE7]><link rel="stylesheet" media="screen" href="<?php bloginfo( 'stylesheet_directory' ) ?>/css/ie7.css"><![endif]-->
-
-<!-- IE8 css -->
-<!--[if IE 8]><link rel="stylesheet" media="screen" href="<?php bloginfo( 'stylesheet_directory' ) ?>/css/ie8.css"><![endif]-->
 
 <!-- pingback url -->
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -105,7 +92,7 @@ endif;
 
 <!-- All JavaScript at the bottom, except this Modernizr. Modernizr enables HTML5 elements & feature detects; 
          for optimal performance, create your own custom Modernizr build: www.modernizr.com/download/ -->
-<script src="<?php echo get_template_directory_uri(); ?>/js/libs/modernizr.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr.js"></script>
 
 <?php //required comment functionality ?>
 <?php if ( is_singular() ) { wp_enqueue_script( 'comment-reply' ); } ?>
