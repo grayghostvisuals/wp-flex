@@ -1,24 +1,30 @@
-# WHAT IS WP-FLEX?
+# WHAT IS IT?
 A responsive, foundational Wordpress theme boilerplate for developers submitting to the Wordpress.org theme repository. 
 
-# DEBUGGING:
-Tested and Debugged with the required 'theme-unit-test.xml' file and 'wp-config.php' debugger.
+# KID TESTED, DEVELOPER APPROVED:
+Tested and Debugged using Wordpress 3.3.2, 'theme-unit-test.xml' and 'wp-config.php'. 
 
-# DEFAULT wp-config
-define('WP_DEBUG', false);
-# DEBUG MODE wp-config
-define('WP_DEBUG', true); 
+Windows 7 Browser Tests
+IE      7-9
+Chrome  18
+Firefox 12
+Safari  5
+Opera   11
 
-# A few suggestions before uploading your theme submission
-1. Remove all hidden files from the WP-Flex directory
-   .ds_store, .git, .htaccess
-   per Theme Check Plugin Review => http://pross.org.uk/theme-check
+Mac Lion 10.7 Browser Tests
+Firefox 12
+Chrome  18
+Safari  5
+Opera   11
+
+# A few suggestions before uploading your theme submission for wordpress' theme repository review
+1. Remove all hidden files from the WP-Flex directory (.ds_store, .git, .htaccess) per Theme Check Plugin Review => http://pross.org.uk/theme-check
  
-2. Remove github's README file included for this repository 
+2. Remove github's 'README' file included for this repository 
   
-3. Rename 'themename-readme.txt' to 'readme.txt' as per theme submission requirements 
+3. Rename 'themename-readme.txt' to 'readme.txt' as per Wordpress Codex theme submission requirements 
 
-# WATS IT GOT?:
+# UNDER THE HOOD:
 
 1. HTML5 Boilerplate 
    http://html5boilerplate.com
@@ -32,9 +38,9 @@ define('WP_DEBUG', true);
 1. themename-readme.txt
    A must have for theme submission. Describes the ins and outs
    to users what is great and what still needs work with your theme.
-   ( A reccomendation from the Wordpress Codex for theme authors )
+   (A reccomendation from the Wordpress Codex for theme authors)
 
-2. Detailed PHP comments with URL refs for theme submission checks and further customization
+2. Detailed PHP comments with URL references for theme submission checks and further customization
 
 3. Required Wordpress CSS classes
 
@@ -47,11 +53,11 @@ define('WP_DEBUG', true);
 6. theme-unit/theme-unit-test.xml
    a database for theme testing with multiple users, comment threading, posts and much more
 
-7. WP-Flex Theme Options Foundation
+7. WP-Flex Theme Options Boilerplate
    a custom boilerplate starting point to give your users awesome theme and authors theme options
 
 8. Theme Functions Boilerplate
-   base scaffolding for required functionality of themes and submission via Wordpress.org Theme Repository. http://wordpress.org/extend/themes/upload  
+   a creamy base for required functionality of themes and submission via Wordpress.org Theme Repository. http://wordpress.org/extend/themes/upload  
 
 # Some more inspiring and wonderful blank Wordpress theme frameworks to get you going
 
