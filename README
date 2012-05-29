@@ -17,6 +17,22 @@ Chrome  18
 Safari  5
 Opera   11
 
+# IT STILL NEEDS YOUR HELP! SOS!
+1. In order to submit to the Wordpress theme repo, authors must rename all function calls, variables with the theme name reference to your own new theme-to-be name. Refer here http://codex.wordpress.org/Theme_Review#Theme_Name for rules regarding naming. WP-Flex needs a dynamic means to create a new theme name across our codebase without going through everything line by line. 
+
+For example (using functions.php to illustrate)...
+
+function wpflex_setup() {
+   do_something_great()
+}
+
+would be replaced dynamcially with our new name....
+
+function awesomesauce_setup() {
+   do_something_great()
+}
+
+
 # A few suggestions before uploading your theme submission for wordpress' theme repository review
 1. Remove all hidden files from the WP-Flex directory (.ds_store, .git, .htaccess) per Theme Check Plugin Review => http://pross.org.uk/theme-check
  
