@@ -20,9 +20,9 @@ Tested and Debugged using Wordpress 3.3.2, <code>theme-unit-test.xml</code> and 
 3. Safari  5
 4. Opera   11
 
-##IT STILL NEEDS YOUR HELP! SOS!
+##IT STILL NEEDS YOUR HELP!
 1. In order to submit to the Wordpress theme repo, authors must rename all function calls / variables with the theme name reference to your own new theme-to-be name. 
-Reference &rarr; (http://codex.wordpress.org/Theme_Review#Theme_Name)[http://codex.wordpress.org/Theme_Review#Theme_Name] for rules regarding naming. WP-Flex needs a dynamic means to create a new theme name across our codebase without going through everything line by line. 
+Reference &rarr; [http://codex.wordpress.org/Theme_Review#Theme_Name](http://codex.wordpress.org/Theme_Review#Theme_Name) for rules regarding naming. WP-Flex needs a dynamic means to create a new theme name across our codebase without going through everything line by line. 
 
 ###For example
 using <code>functions.php</code> to illustrate&hellip;
@@ -84,7 +84,7 @@ function awesomesauce_setup() {
    [http://digwp.com/2010/02/blank-wordpress-theme](http://digwp.com/2010/02/blank-wordpress-theme)
 
 
-Surely you can always visit the Wordpress Codex for more customization and give it a shot yourself 
+######Surely you can always visit the Wordpress Codex for more customization and give it a shot yourself 
 -thats what I did :)p
 
 ######Codex
