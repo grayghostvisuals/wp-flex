@@ -1,26 +1,32 @@
-#WHAT IS IT?
-A responsive, foundational Wordpress theme boilerplate for developers submitting to the Wordpress.org theme repository. 
+#WPFlex Wordpress Theme Repository Boilerplate
 
-#KID TESTED, DEVELOPER APPROVED:
-Tested and Debugged using Wordpress 3.3.2, 'theme-unit-test.xml' and 'wp-config.php'. 
+##WHAT IS IT?
+A responsive, foundational Wordpress theme boilerplate for developers submitting to the Wordpress.org theme repository. Includes bunches of best practices for theme building requirements and coding standards for authors as suggested by Wordpress' Codex.  
 
-Windows 7 Browser Tests
-1. IE      7-9
-2. Chrome  18
-3. Firefox 12
-4. Safari  5
-5. Opera   11
+##KID TESTED, DEVELOPER APPROVED:
+Tested and Debugged using Wordpress 3.3.2, <code>theme-unit-test.xml</code> and <code>wp-config.php</code>. 
 
-Mac Lion 10.7 Browser Tests
-1. Firefox 12
-2. Chrome  18
-3. Safari  5
-4. Opera   11
+###Windows 7 Browser Tests
+1.IE      7-9
+2.Chrome  18
+3.Firefox 12
+4.Safari  5
+5.Opera   11
 
-#IT STILL NEEDS YOUR HELP! SOS!
-1. In order to submit to the Wordpress theme repo, authors must rename all function calls, variables with the theme name reference to your own new theme-to-be name. Refer here http://codex.wordpress.org/Theme_Review#Theme_Name for rules regarding naming. WP-Flex needs a dynamic means to create a new theme name across our codebase without going through everything line by line. 
+###Mac Lion 10.7 Browser Tests
+1.Firefox 12
+2.Chrome  18
+3.Safari  5
+4.Opera   11
 
-For example (using functions.php to illustrate)...
+##IT STILL NEEDS YOUR HELP! SOS!
+In order to submit to the Wordpress theme repo, authors must rename all function calls / variables with the theme name reference to your own new theme-to-be name. 
+
+Reference &rarr; (http://codex.wordpress.org/Theme_Review#Theme_Name)[http://codex.wordpress.org/Theme_Review#Theme_Name] for rules regarding naming. WP-Flex needs a dynamic means to create a new theme name across our codebase without going through everything line by line. 
+
+###For example
+using <code>functions.php</code> to illustrate&hellip;
+<pre>
 <code>
 function wpflex_setup() {
    do_something_great()
@@ -32,22 +38,23 @@ function awesomesauce_setup() {
    do_something_great()
 }
 </code>
+</pre>
 
-#A few suggestions before uploading your theme submission for wordpress' theme repository review
-1. Remove all hidden files from the WP-Flex directory (.ds_store, .git, .htaccess) per Theme Check Plugin Review => http://pross.org.uk/theme-check
-2. Remove github's 'README' file included for this repository 
-3. Rename 'themename-readme.txt' to 'readme.txt' as per Wordpress Codex theme submission requirements 
+###Before uploading your theme submission to wordpress' theme repository for review
+1.Remove all hidden files from the WP-Flex directory (.ds_store, .git, .htaccess) per Theme Check Plugin Review &rarr; [http://pross.org.uk/theme-check](http://pross.org.uk/theme-check)
+2.Remove github's <code>README.md</code> file included with this repository 
+3.Rename <code>themename-readme.txt</code> to <code>readme.txt</code> as per Wordpress' Codex theme requirements 
 
-#UNDER THE HOOD:
+####UNDER THE HOOD:
 
-1. HTML5 Boilerplate 
-   [http://html5boilerplate.com](http://html5boilerplate.com)
-2. jQuery
-   [http://jquery.com](http://jquery.com)
-3. Modernizr
-   [http://modernizr.com](http://modernizr.com)
+1.HTML5 Boilerplate 
+  [http://html5boilerplate.com](http://html5boilerplate.com)
+2.jQuery
+  [http://jquery.com](http://jquery.com)
+3.Modernizr
+  [http://modernizr.com](http://modernizr.com)
 
-#EVEN MORE!!!
+#####EVEN MORE!!!
 
 1. themename-readme.txt
    A must have for theme submission. Describes the ins and outs
@@ -73,7 +80,7 @@ function awesomesauce_setup() {
 8. Theme Functions Boilerplate
    a creamy base for required functionality of themes and submission via Wordpress.org Theme Repository. http://wordpress.org/extend/themes/upload  
 
-# Some more inspiring and wonderful blank Wordpress theme frameworks to get you going
+######more inspiring and wonderful blank Wordpress themes
 
 1. Matt Murtaugh's HTML5 Reset Wordpress Theme
    [http://html5reset.org/#wordpress](http://html5reset.org/#wordpress)
@@ -85,5 +92,7 @@ function awesomesauce_setup() {
 Surely you can always visit the Wordpress Codex for more customization and give it a shot yourself 
 -thats what I did :)p
 
+######Codex
 [http://codex.wordpress.org](http://codex.wordpress.org)
+######Wordpress.org
 [http://wordpress.org](http://wordpress.org)
