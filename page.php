@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php if ( have_posts() ) : while( have_posts() ) : the_post(); ?>
-<section id="content" class="<?php the_title(); ?>" role="main">
+<section id="content" class="<?php the_title(); ?> clearfix" role="main">
   <header>
     <h1><?php the_title(); ?></h1>
   </header>
