@@ -5,6 +5,7 @@
   
   <?php if( have_posts() ) : while( have_posts() ) : the_post()?>
   <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+  
     <header>
       <h1><span><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?> blog post entry"><?php the_title(); ?></a></span></h1>
       <?php get_template_part( 'inc/meta' ); ?>
@@ -13,7 +14,10 @@
 	<?php the_content( 'read more' ); ?>
     
     <footer>
-      <div id="comments-count"><a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?>Comments</a>
+      <div id="comments-count">
+      	<a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?>Comments</a>
+      </div>
+      
       <ul>
         <li class="tags">
           <?php _e( 'Tagged:' );?>
@@ -23,6 +27,7 @@
             </li>
           </ul>
         </li>
+        
         <li class="cats">
           <?php _e( 'Filed under:' );?>
           <ul>
@@ -41,7 +46,9 @@
   <?php else : //if no posts were found do this ?>
   <p><?php echo ( 'Holy smokes! This is totally crazy. No posts match anything even remotely close to that in our database. Sorry Mon Frere, try again' ); ?></p>
   <?php endif; //end if have_posts condition ?>
-  <p><?php posts_nav_link( '&#8734;', '&laquo; Go Forward In Time', 'Go Back In Time &raquo;' ); ?></p>
+  
+  <p><?php posts_nav_link( '&#8734;', '&larr; Go Forward In Time', 'Go Back In Time &rarr;' ); ?></p>
+
 </section>
 
 <!-- sidebar -->
