@@ -5,7 +5,7 @@
   <?php if ( have_posts() ) : while( have_posts() ) : the_post(); ?>  
   <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
     <header>
-      <h1><span><?php the_title(); ?></span></h1>
+      <h1><?php the_title(); ?></h1>
       <?php get_template_part( 'inc/meta' ); ?>
     </header>
     
@@ -15,10 +15,13 @@
           wp_link_pages( array( 
           	'before' => '<div>' . 'Pages &raquo',
           	'after'  => '</div>' 
-          )); 
-     ?>
+          )); ?>
+     
     <footer>
-      <div id="comments-count"><a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?>Comments</a>
+      <div id="comments-count">
+      	<a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?>Comments</a>
+      </div>
+      
       <ul>
         <li class="tags">
           <?php _e( 'Tagged:' );?>
@@ -28,6 +31,7 @@
             </li>
           </ul>
         </li>
+        
         <li class="cats">
           <?php _e( 'Filed under:' );?>
           <ul>
@@ -42,8 +46,10 @@
   </article>
   
   <div id="single-pagination">
-    <span><?php previous_post_link( '%link', '&larr; Previous Category Post', TRUE ); ?></span>
-    <span><?php next_post_link( '%link', 'Next Category Post &rarr;', TRUE ); ?></span>
+  	<ul>
+	  	<li><span><?php previous_post_link( '%link', '&larr; Previous Category Post', TRUE ); ?></span></li>
+    	<li><span><?php next_post_link( '%link', 'Next Category Post &rarr;', TRUE ); ?></span></li>
+    </ul>
   </div>
   
   <?php endwhile; ?>
