@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <section id="content" role="main">
+
   <!-- begin post loop -->
   <?php if ( have_posts() ) : while( have_posts() ) : the_post(); ?>
   <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -10,15 +11,21 @@
       </figure>
       <?php endif; //end if has_post_thumbnail ?>
       
-      <h1><span><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?> blog post entry"><?php the_title(); ?></a></span></h1>
+      <h1><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
+      
       <!-- meta tags for posts -->
       <?php get_template_part( 'inc/meta' ); ?>
       </header>
+      
       <!-- post content -->
       <?php the_content( 'read more' ); ?>
+      
       <!-- post footer -->
       <footer>
-      <div id="comments-count"><a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?>Comments</a></div>
+      <div id="comments-count">
+      	<a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?>Comments</a>
+      </div>
+      
         <ul>
           <li class="tags">
             <?php _e( 'Tagged:' );?>
@@ -28,6 +35,7 @@
               </li>
             </ul>
           </li>
+          
           <li class="cats">
             <?php _e( 'Filed under:' );?>
             <ul>
@@ -38,14 +46,17 @@
           </li>
         </ul>
       </footer>
+      
       </article>
       <?php endwhile; //end while have_posts loop ?>
       <!-- end post loop -->
+      
       <!-- post loop error message -->
       <?php else : //if no posts were found do this ?>
       <p><?php echo ( 'Holy smokes! This is totally crazy. No posts match anything even remotely close to that in our database. Sorry Mon Frere, try again' ); ?></p>
       <?php endif; //end if have_posts condition ?>
-	  <?php 
+	  
+      <?php 
         global $wp_query;
         $big = 999999999;
         echo paginate_links( array(
@@ -57,8 +68,8 @@
           'end_size'     => 1,
           'mid_size'     => 2,
           'prev_next'    => True,
-          'prev_text'    => '&laquo; Previous',
-          'next_text'    => 'Next &raquo;',
+          'prev_text'    => '&larr; Previous',
+          'next_text'    => 'Next &rarr;',
           'type'         => 'plain',
           'add_args'     => False,
           'add_fragment' => '' 
