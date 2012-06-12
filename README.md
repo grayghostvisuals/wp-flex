@@ -41,9 +41,9 @@ function awesomesauce_setup() {
 </pre>
 
 ###!Before uploading your theme submission
-1. Remove all hidden files from the WP-Flex directory (<code>.ds_store, .git, .htaccess</code>) per Theme Check Plugin Review &rarr; [http://pross.org.uk/theme-check](http://pross.org.uk/theme-check)
+1. Remove any hidden files from your WP-Flex directory per Theme Check Plugin Review &rarr; [http://pross.org.uk/theme-check](http://pross.org.uk/theme-check)
 2. Remove github's <code>README.md</code> file included with this repository 
-3. Rename <code>themename-readme.txt</code> to <code>readme.txt</code> as per Wordpress' Codex theme requirements 
+3. Rename <code>wpflex-readme.txt</code> to <code>readme.txt</code> as per Wordpress' Codex theme requirements 
 
 ####UNDER THE HOOD:
 1. HTML5 Boilerplate &rarr; [http://html5boilerplate.com](http://html5boilerplate.com)
@@ -51,9 +51,9 @@ function awesomesauce_setup() {
 3. Modernizr &rarr; [http://modernizr.com](http://modernizr.com)
 
 #####EVEN MORE!!!
-1. <code>themename-readme.txt</code>
+1. <code>wpflex-readme.txt</code>
    A must have for theme submission. Describes the ins and outs
-   to users what is great and what still needs work with your theme.
+   to users what's great and what still needs work with your theme.
    (A reccomendation from the Wordpress Codex for theme authors)
 
 2. Detailed PHP comments with URL references for theme submission checks and further customization
@@ -64,27 +64,27 @@ function awesomesauce_setup() {
    Those tricky comment thread styling classes provided to you by default. No more scanning the DOM or reading more tutorials. It's all there bro! 
 
 5. Standardized CSS Comment Flags
-   css comment flags used for sectioning as reccommended by Wordpress theme submission codex
+   CSS comment flags used for sectioning as reccommended by Wordpress theme submission codex
 
 6. <code>theme-unit</code> &amp; <code>theme-unit-test.xml</code>
-   a database for theme testing with multiple users, comment threading, posts and much more
+   A database for theme testing with multiple users, comment threading, posts and much more
 
 7. WP-Flex Theme Options Boilerplate
-   a custom boilerplate starting point to give your users awesome theme and authors theme options
+   Custom boilerplate starting point to give your users and authors awesome theme options
 
 8. Theme Functions Boilerplate
-   a creamy base for required functionality of themes and submission via Wordpress.org Theme Repository. http://wordpress.org/extend/themes/upload  
+   A creamy base for required functionality of themes and submission via Wordpress.org Theme Repository. http://wordpress.org/extend/themes/upload  
 
-######more inspiring and wonderful blank Wordpress themes
+######More inspiring and wonderful blank Wordpress themes
 
 1. Matt Murtaugh's HTML5 Reset Wordpress Theme
    [http://html5reset.org/#wordpress](http://html5reset.org/#wordpress)
 
-2. Digging Into Wordpress' BLANK Wordpress Theme
+2. Digging Into Wordpress' Blank Wordpress Theme
    [http://digwp.com/2010/02/blank-wordpress-theme](http://digwp.com/2010/02/blank-wordpress-theme)
 
 
-######Surely you can always visit the Wordpress Codex for more customization and give it a shot yourself 
+Surely you can always visit the Wordpress Codex for more customization and give it a shot yourself 
 -thats what I did :)p
 
 ######Codex
