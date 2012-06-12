@@ -1,49 +1,57 @@
 SiteName ::
-<your url here>
+<your URL here>
 
 ThemeName Documentation ::
+<your URL here >
 
 Wordpress Codex Theme Review ::
 http://codex.wordpress.org/Theme_Review
 
 ! IMPORTANT !
-Before anything else is initiated in the setup of this theme, you must immediately do the following: FAILURE TO FOLLOW THESE DIRECTIONS WILL PRODUCE UNEXPECTED RESULTS
+Before anything else is initiated in the setup of this theme, you must immediately do the following
+FAILURE TO FOLLOW THESE DIRECTIONS WILL PRODUCE UNEXPECTED RESULTS
 	
 DEFAULT ABILITIES
 
-	1. 
+	1. Start your list here :) 
 
 
 FILE HIERARCHY
 
-	1.  index.php 		========================================== contains feed for recent posts ( no sidebar )
+	1.  index.php 		================================ contains feed for recent posts w/out sidebar
 	
-	2.  single.php 		=================================== strictly for displaying single posts ( w/sidebar )
+	2.  single.php 		================================ strictly for displaying single posts w/sidebar
 	
-	3.  page.php 		================ theme site pages ( no sidebar )
+	3.  page.php 		================================ individual page w/out a sidebar
 	
-	4.  sidebar.php 	=================================================== dynamic widget area w/defaults
+	4.  sidebar.php 	================================ dynamic widget area w/defaults
 	
-	5.  search.php 		================================================ displays search results ( w/sidebar )
+	5.  search.php 		================================ displays search results w/sidebar
 	
-	6.  archives.php 	===== displays post archive results for either month, year, day or tag ( w/sidebar )
+	6.  archives.php 	================================ displays post archive results for either month, year, day or tag w/sidebar
 	
-	7.  categories.php 	=================================== displays post categories archive ( w/sidebar )
+	7.  categories.php 	================================ displays post categories archive w/sidebar
 	    
-	8.  comments.php 	=============================== displays comments board and loads comment respond form
+	8.  comments.php 	=============================== displays user comments and loads theme's comment respond form
 	 
-        9.  404.php 		======================================== displays customized 404 error page ( no sidebar )
+    9.  404.php 		================================ displays customized 404 error page w/out sidebar
 
-	10. pageblank.php 	======================================== a secret page for those designers that wish to experiment with a custom blank page ( no sidebar )
+	10. pageblank.php 	================================ a custom blank page w/out sidebar
     
     
 DEFICIENCIES
 
+	1. Start your list here :) 
+
+
 SPECIAL REQUIREMENTS
 
+	1. Start your list here :) 
+
+
 SUPPORT & UPDATES
-Author Support:
-Author URI: 
+Author Support: <your contact info here>
+Author URI: <your URL here>
 	
 	
 	
