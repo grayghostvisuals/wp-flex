@@ -41,11 +41,10 @@ function awesomesauce_setup() {
 </pre>
 
 ###!Before uploading your theme submission
-[http://codex.wordpress.org/Theme_Review](http://codex.wordpress.org/Theme_Review)
 1. Remove any hidden files from your WP-Flex directory per Theme Check Plugin Review &rarr; [http://pross.org.uk/theme-check](http://pross.org.uk/theme-check)
 2. Remove github's <code>README.md</code> file included with this repository 
 3. Rename <code>wpflex-readme.txt</code> to <code>readme.txt</code> as per Wordpress' Codex theme requirements 
-4. License your theme with GNU http://www.gnu.org/licenses/gpl-3.0.html. Themes are required to be licensed fully under a GPL-compatible license.
+4. License your theme with GNU http://www.gnu.org/licenses/gpl-3.0.html. Themes are required to be licensed fully under a GPL-compatible license. 
 
 ####UNDER THE HOOD:
 1. HTML5 Boilerplate &rarr; [http://html5boilerplate.com](http://html5boilerplate.com)
