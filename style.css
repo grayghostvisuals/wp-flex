@@ -786,10 +786,10 @@ ol.commentlist li.thread-odd {}
 
 
 /* single page pagination */
-div#single-pagination:first-child {/*http://caniuse.com/#search=:first-child*/}
-div#single-pagination:last-child {/*http://caniuse.com/#search=:last-child*/}
+#single-pagination:first-child {/*http://caniuse.com/#search=:first-child*/}
+#single-pagination:last-child {/*http://caniuse.com/#search=:last-child*/}
 
-/* case studies pagination styles */
+/* pagination */
 .pagination {}
 
 
@@ -802,15 +802,6 @@ div#single-pagination:last-child {/*http://caniuse.com/#search=:last-child*/}
 /* =Author Colors
 ------------------------------------------------------------------------------- */
 
-   
-/* =Media Queries
-   EXAMPLE Media Query for Responsive Design.
-   This example overrides the primary ('mobile first') styles
-   Modify as content requires.
-------------------------------------------------------------------------------- */
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
 
 
 /* =non-semantic helper classes
