@@ -471,6 +471,8 @@ video {
 
 
 /* =WordPress Required - Generated Core Classes 
+	Each Theme should have these or similar styles in its style.css file 
+	in order to display images and captions properly. 
 	http://codex.wordpress.org/CSS#WordPress_Generated_Classes
 ------------------------------------------------------------------------------- */
 
@@ -558,7 +560,9 @@ a img.aligncenter {
 
 .gallery-caption {}
 
-/* stops too many categories from breaking layout */
+/* 
+ * stops too many categories from breaking the layout 
+ */
 .tags ul li,
 .cats ul li { 
   display: inline; 
@@ -566,7 +570,6 @@ a img.aligncenter {
 
 
 /* =WordPress - Additional Styling Classes 
-	http://codex.wordpress.org/CSS#WordPress_Generated_Classes
 ------------------------------------------------------------------------------- */
 
 /**** Wordpress Fluid Images */
