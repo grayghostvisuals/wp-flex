@@ -40,6 +40,12 @@ function awesomesauce_setup() {
 </code>
 </pre>
 
+###Wordpress Coding Standards
+####HTML/PHP/CSS 
+&rarr; [http://codex.wordpress.org/WordPress_Coding_Standards](http://codex.wordpress.org/WordPress_Coding_Standards)
+####CSS 
+&rarr; [http://codex.wordpress.org/CSS_Coding_Standards](http://codex.wordpress.org/CSS_Coding_Standards)
+
 ###!Before uploading your theme submission
 1. Remove any hidden files from your WP-Flex directory per Theme Check Plugin Review &rarr; [http://pross.org.uk/theme-check](http://pross.org.uk/theme-check)
 2. Remove github's <code>README.md</code> file included with this repository 
