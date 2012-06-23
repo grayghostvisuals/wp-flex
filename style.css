@@ -670,7 +670,7 @@ label[for="commment"] {}
 .comment-form-comment {}
 
 /* comment form inputs  */
-#commentform input
+#commentform input,
 #commentform textarea {
 	display: block;
 }
