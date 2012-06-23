@@ -1,23 +1,31 @@
 #WP-Flex
-###A Blank Wordpress Theme Repository Boilerplate
+###A responsive, foundational Wordpress theme boilerplate for developers submitting to the Wordpress.org theme repository
+[http://grayghostvisuals.com/wpflex](http://grayghostvisuals.com/wpflex)
+[![http://grayghostvisuals.com/wpflex](http://static.grayghostvisuals.com/portfolio/wpflex.png)](http://grayghostvisuals.com/wpflex)
+
+####Codex Theme Review Guidelines  
+[http://codex.wordpress.org/Theme_Review](http://codex.wordpress.org/Theme_Review)
+
+####Theme Unit Test Site
+[http://wpthemetestdata.files.wordpress.com](http://wpthemetestdata.files.wordpress.com)
 
 ##WHAT IS IT?
 A responsive, foundational Wordpress theme boilerplate for developers submitting to the Wordpress.org theme repository. Includes bunches of best practices for theme building requirements and coding standards for authors as suggested by Wordpress' Codex.  
 
 ##KID TESTED, DEVELOPER APPROVED:
-Tested and Debugged using Wordpress 3.3.2, <code>theme-unit-test.xml</code> and <code>wp-config.php</code>. 
+Tested and Debugged using Wordpress 3.4, <code>theme-unit-test.xml</code> and <code>wp-config.php</code>. 
 
 ###Windows 7 Browser Tests
-1. IE      7-9
+1. IE       7-9
 2. Chrome  18
 3. Firefox 12
-4. Safari  5
+4. Safari   5
 5. Opera   11
 
 ###Mac Lion 10.7 Browser Tests
 1. Firefox 12
 2. Chrome  18
-3. Safari  5
+3. Safari   5
 4. Opera   11
 
 ##IT STILL NEEDS YOUR HELP!
