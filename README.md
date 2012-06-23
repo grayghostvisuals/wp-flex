@@ -1,16 +1,14 @@
-#WP-Flex
+#WP-Flex &rarr; [http://grayghostvisuals.com/wpflex](http://grayghostvisuals.com/wpflex)
 ###A responsive, foundational Wordpress theme boilerplate for developers submitting to the Wordpress.org theme repository
-[http://grayghostvisuals.com/wpflex](http://grayghostvisuals.com/wpflex)
 [![http://grayghostvisuals.com/wpflex](http://static.grayghostvisuals.com/portfolio/wpflex.png)](http://grayghostvisuals.com/wpflex)
-
-####Codex Theme Review Guidelines  
-[http://codex.wordpress.org/Theme_Review](http://codex.wordpress.org/Theme_Review)
-
-####Theme Unit Test Site
-[http://wpthemetestdata.files.wordpress.com](http://wpthemetestdata.files.wordpress.com)
 
 ##WHAT IS IT?
 A responsive, foundational Wordpress theme boilerplate for developers submitting to the Wordpress.org theme repository. Includes bunches of best practices for theme building requirements and coding standards for authors as suggested by Wordpress' Codex.  
+
+####Codex Theme Review Guidelines  
+[http://codex.wordpress.org/Theme_Review](http://codex.wordpress.org/Theme_Review)
+####Theme Unit Test Site
+[http://wpthemetestdata.files.wordpress.com](http://wpthemetestdata.files.wordpress.com)
 
 ##KID TESTED, DEVELOPER APPROVED:
 Tested and Debugged using Wordpress 3.4, <code>theme-unit-test.xml</code> and <code>wp-config.php</code>. 
