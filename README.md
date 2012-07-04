@@ -50,8 +50,8 @@ function awesomesauce_setup() {
 Documentation &rarr; [http://codex.wordpress.org/WordPress_Coding_Standards](http://codex.wordpress.org/WordPress_Coding_Standards)
 
 ####CSS Coding Standards
-Current Specification &rarr; [http://codex.wordpress.org/CSS_Coding_Standards](http://codex.wordpress.org/CSS_Coding_Standards)
-7/04/2012 Specification Updates &rarr; [https://docs.google.com/a/twitter.com/document/d/1b-ouASTs6C6ZDKGsoCgUIF4FVBxN2v0dvaytDsuCzlM/edit?pli=1](https://docs.google.com/a/twitter.com/document/d/1b-ouASTs6C6ZDKGsoCgUIF4FVBxN2v0dvaytDsuCzlM/edit?pli=1)
+* Current Specification &rarr; [http://codex.wordpress.org/CSS_Coding_Standards](http://codex.wordpress.org/CSS_Coding_Standards)
+* 7/04/2012 Specification Updates &rarr; [https://docs.google.com/a/twitter.com/document/d/1b-ouASTs6C6ZDKGsoCgUIF4FVBxN2v0dvaytDsuCzlM/edit?pli=1](https://docs.google.com/a/twitter.com/document/d/1b-ouASTs6C6ZDKGsoCgUIF4FVBxN2v0dvaytDsuCzlM/edit?pli=1)
 
 ###!Before uploading your theme submission
 1. Remove any hidden files from your WP-Flex directory per Theme Check Plugin Review &rarr; [http://pross.org.uk/theme-check](http://pross.org.uk/theme-check)
@@ -91,10 +91,10 @@ Current Specification &rarr; [http://codex.wordpress.org/CSS_Coding_Standards](h
 
 ######More inspiring and wonderful blank Wordpress themes
 
-1. Matt Murtaugh's HTML5 Reset Wordpress Theme
+* Matt Murtaugh's HTML5 Reset Wordpress Theme
    [http://html5reset.org/#wordpress](http://html5reset.org/#wordpress)
 
-2. Digging Into Wordpress' Blank Wordpress Theme
+* Digging Into Wordpress' Blank Wordpress Theme
    [http://digwp.com/2010/02/blank-wordpress-theme](http://digwp.com/2010/02/blank-wordpress-theme)
 
 
