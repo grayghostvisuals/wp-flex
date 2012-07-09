@@ -595,6 +595,17 @@ img.size-full {
 /**** END Wordpress Fluid Images */
 
 
+/* WP Breadcrumb Styles */
+.cat-item {}
+.cat-item.current-cat {}
+
+.cat-item a:hover {}
+.cat-item.current-cat a:hover {}
+
+.cat-item a {}
+.cat-item.current-cat a {}
+
+/* WP Smiley */
 .entry-content img.wp-smiley {
 	border: none;
 	margin-bottom: 0;
@@ -602,7 +613,7 @@ img.size-full {
 	padding: 0
 }
 
-/* widget styling */
+/* WP widget styling */
 .widget {}
 
 
@@ -623,9 +634,8 @@ img.attachment-full {}
 .posttitle {}
 
 
-/* WP COMMENTS FORM */
-
 /* 
+ * WP COMMENTS FORM
  * comment form container
  * keep this consistent for comment form
  * everytime a user clicks reply to a thread
