@@ -74,22 +74,29 @@ Documentation &rarr; [http://codex.wordpress.org/WordPress_Coding_Standards](htt
 
 3. Required Wordpress CSS classes
 
-4. Comment Thread Styling Classes
+4. Responsive Images
+   You know the drill. Blah, blah, blah, something, something, max-width:100% sorta stuff for embedded media. Also implemented for WordPress post attachments by making sure images with WordPress–added height and width attributes are scaled correctly.
+
+5. Comment Thread Styling Classes
    Those tricky comment thread styling classes provided to you by default. No more scanning the DOM or reading more tutorials. It's all there bro!
 
-5. Standardized CSS Comment Flags
+6. Responsive Category and Tag listings
+   In order to flow the listing of tags and categories as the browser expands and contracts we must break up the lists and display them inline –in order to avoid a run on measure. We make absolutely sure we stop too many categories from breaking the layout.
+
+7. Standardized CSS Comment Flags
    CSS comment flags used for sectioning as reccommended by Wordpress theme submission codex
 
-6. <code>theme-unit</code> &amp; <code>theme-unit-test.xml</code>
+8. <code>theme-unit</code> &amp; <code>theme-unit-test.xml</code>
    A database for theme testing with multiple users, comment threading, posts and much more
 
-7. WP-Flex Theme Options Boilerplate
+9. WP-Flex theme-options.php Boilerplate
    Custom boilerplate starting point to give your users and authors awesome theme options
 
-8. Theme Functions Boilerplate
+10. Theme functions.php Boilerplate
    A creamy base for required functionality of themes and submission via Wordpress.org Theme Repository. http://wordpress.org/extend/themes/upload
 
-######More inspiring and wonderful blank Wordpress themes
+
+##More inspiring and wonderful blank Wordpress themes
 
 * Matt Murtaugh's HTML5 Reset Wordpress Theme
    [http://html5reset.org/#wordpress](http://html5reset.org/#wordpress)
