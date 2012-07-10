@@ -66,34 +66,36 @@ Documentation &rarr; [http://codex.wordpress.org/WordPress_Coding_Standards](htt
 
 #####EVEN MORE!!!
 1. <code>wpflex-readme.txt</code>
-   A must have for theme submission. Describes the ins and outs
+   * A must have for theme submission. Describes the ins and outs
    to users what's great and what still needs work with your theme.
    (A reccomendation from the Wordpress Codex for theme authors)
 
-2. Detailed PHP comments with URL references for theme submission checks and further customization
+2. Detailed PHP comments with 
+   * Includes URL references for theme submission checks and further customization
 
 3. Required Wordpress CSS classes
+   * Every theme submission is required to have specific CSS classes for your style sheets in order to be accepted into the WordPress.org theme repository
 
 4. Responsive Images
-   You know the drill. Blah, blah, blah, something, something, max-width:100% sorta stuff for embedded media. Also implemented for WordPress post attachments by making sure images with WordPress–added height and width attributes are scaled correctly.
+  * You know the drill. Blah, blah, blah, something, something, max-width:100% sorta stuff for embedded media.   Also implemented for WordPress post attachments by making sure images with WordPress–added height and width attributes are scaled correctly.
 
 5. Comment Thread Styling Classes
-   Those tricky comment thread styling classes provided to you by default. No more scanning the DOM or reading more tutorials. It's all there bro!
+   * Those tricky comment thread styling classes provided to you by default. No more scanning the DOM or reading more tutorials. It's all there bro!
 
 6. Responsive Category and Tag listings
-   In order to flow the listing of tags and categories as the browser expands and contracts we must break up the lists and display them inline –in order to avoid a run on measure. We make absolutely sure we stop too many categories from breaking the layout.
+   * In order to flow the listing of tags and categories as the browser expands and contracts we must break up the lists and display them inline –in order to avoid a run on measure. We make absolutely sure we stop too many categories from breaking the layout.
 
 7. Standardized CSS Comment Flags
-   CSS comment flags used for sectioning as reccommended by Wordpress theme submission codex
+   * CSS comment flags used for sectioning as reccommended by Wordpress theme submission codex
 
 8. <code>theme-unit</code> &amp; <code>theme-unit-test.xml</code>
-   A database for theme testing with multiple users, comment threading, posts and much more
+   * A database for theme testing with multiple users, comment threading, posts and much more
 
 9. WP-Flex theme-options.php Boilerplate
-   Custom boilerplate starting point to give your users and authors awesome theme options
+   * Custom boilerplate starting point to give your users and authors awesome theme options
 
 10. Theme functions.php Boilerplate
-   A creamy base for required functionality of themes and submission via Wordpress.org Theme Repository. http://wordpress.org/extend/themes/upload
+   * A creamy base for required functionality of themes and submission via Wordpress.org Theme Repository. http://wordpress.org/extend/themes/upload
 
 
 ##More inspiring and wonderful blank Wordpress themes
