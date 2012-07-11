@@ -70,10 +70,10 @@ Documentation &rarr; [http://codex.wordpress.org/WordPress_Coding_Standards](htt
    to users what's great and what still needs work with your theme.
    (A reccomendation from the Wordpress Codex for theme authors)
 
-2. Detailed PHP comments with 
+2. Detailed PHP Comments
    * Includes URL references for theme submission checks and further customization
 
-3. Required Wordpress CSS classes
+3. Required Wordpress CSS Classes
    * Every theme submission is required to have specific CSS classes for your style sheets in order to be accepted into the WordPress.org theme repository
 
 4. Responsive Images
@@ -82,7 +82,7 @@ Documentation &rarr; [http://codex.wordpress.org/WordPress_Coding_Standards](htt
 5. Comment Thread Styling Classes
    * Those tricky comment thread styling classes provided to you by default. No more scanning the DOM or reading more tutorials. It's all there bro!
 
-6. Responsive Category and Tag listings
+6. Responsive Category and Tag Listings
    * In order to flow the listing of tags and categories as the browser expands and contracts we must break up the lists and display them inline –in order to avoid a run on measure. We make absolutely sure we stop too many categories from breaking the layout.
 
 7. Standardized CSS Comment Flags
@@ -91,20 +91,18 @@ Documentation &rarr; [http://codex.wordpress.org/WordPress_Coding_Standards](htt
 8. <code>theme-unit</code> &amp; <code>theme-unit-test.xml</code>
    * A database for theme testing with multiple users, comment threading, posts and much more
 
-9. WP-Flex theme-options.php Boilerplate
+9. WP-Flex <code>theme-options.php</code> Boilerplate
    * Custom boilerplate starting point to give your users and authors awesome theme options
 
-10. Theme functions.php Boilerplate
+10. Theme <code>functions.php</code> Boilerplate
    * A creamy base for required functionality of themes and submission via Wordpress.org Theme Repository. http://wordpress.org/extend/themes/upload
 
 
 ##More inspiring and wonderful blank Wordpress themes
 
-* Matt Murtaugh's HTML5 Reset Wordpress Theme
-   [http://html5reset.org/#wordpress](http://html5reset.org/#wordpress)
+* Matt Murtaugh's HTML5 Reset Wordpress Theme &rarr; [http://html5reset.org/#wordpress](http://html5reset.org/#wordpress)
 
-* Digging Into Wordpress' Blank Wordpress Theme
-   [http://digwp.com/2010/02/blank-wordpress-theme](http://digwp.com/2010/02/blank-wordpress-theme)
+* Digging Into Wordpress' Blank Wordpress Theme &rarr; [http://digwp.com/2010/02/blank-wordpress-theme](http://digwp.com/2010/02/blank-wordpress-theme)
 
 
 Surely you can always visit the Wordpress Codex for more customization and give it a shot yourself
