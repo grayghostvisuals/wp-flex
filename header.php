@@ -37,7 +37,7 @@ endif;
 
 //if home
 if( is_home() ):
-  esc_attr( bloginfo( 'name' ) ); echo ' '; esc_attr( bloginfo( 'description' ) ); echo ' '; esc_attr( wp_title() );
+  esc_attr( bloginfo( 'name' ) ); echo '-'; esc_attr( bloginfo( 'description' ) ); echo '-'; esc_attr( wp_title() );
 else :
   esc_attr( bloginfo( 'name' ) );
 endif;
