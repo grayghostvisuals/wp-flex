@@ -1,5 +1,4 @@
 #WP-Flex &rarr; [http://grayghostvisuals.com/wpflex](http://grayghostvisuals.com/wpflex)
-###A responsive, foundational Wordpress theme boilerplate for developers submitting to the Wordpress.org theme repository
 [![http://grayghostvisuals.com/wpflex](http://static.grayghostvisuals.com/portfolio/wpflex.png)](http://grayghostvisuals.com/wpflex)
 
 ##WHAT IS IT?

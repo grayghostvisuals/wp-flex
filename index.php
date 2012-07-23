@@ -10,43 +10,45 @@
         <?php the_post_thumbnail(); ?>
       </figure>
       <?php endif; //end if has_post_thumbnail ?>
-      
+
       <h1><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
-      
+
       <!-- meta tags for posts -->
       <?php get_template_part( 'inc/meta' ); ?>
       </header>
-      
-      <!-- post content -->
+
+      <!-- *optional* remove read more link -->
+      <!-- http://codex.wordpress.org/Customizing_the_Read_More -->
+      <!-- post entry content -->
       <?php the_content( 'read more' ); ?>
-      
+
       <!-- post footer -->
       <footer>
-      <div id="comments-count">
-      	<a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?>Comments</a>
+      <div class="comments-count">
+        <a href="<?php comments_link(); ?>" class="comments-count-number"><?php comments_number( '0', '1', '%' ); ?>Comments</a>
       </div>
-      
-        <ul>
-          <li class="tags">
+
+        <ul class="entry-taxonomies">
+          <li>
             <?php _e( 'Tagged:' );?>
-            <ul>
-              <li>
+            <ul class="entry-tags-list">
+              <li class="entry-tags">
                 <?php the_tags( ',</li> <li>' ); ?>
               </li>
             </ul>
           </li>
-          
-          <li class="cats">
+
+          <li>
             <?php _e( 'Filed under:' );?>
-            <ul>
-              <li>
+            <ul class="entry-categories-list">
+              <li class="entry-categories">
                 <?php the_category( ',</li> <li>' ) ?>
               </li>
             </ul>
           </li>
         </ul>
       </footer>
-      
+
       </article>
       <?php endwhile; //end while have_posts loop ?>
       <!-- end post loop -->
@@ -55,8 +57,8 @@
       <?php else : //if no posts were found do this ?>
       <p><?php echo ( 'Holy smokes! This is totally crazy. No posts match anything even remotely close to that in our database. Sorry Mon Frere, try again' ); ?></p>
       <?php endif; //end if have_posts condition ?>
-	  
-      <?php 
+
+      <?php
         global $wp_query;
         $big = 999999999;
         echo paginate_links( array(

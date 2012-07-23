@@ -574,9 +574,9 @@ a img.aligncenter {
 /* 
  * stops too many categories from breaking the layout 
  */
-.tags ul li,
-.cats ul li { 
-  display: inline; 
+.entry-tags-list li,
+.entry-categories-list li { 
+  display: inline-block; 
 }
 
 
@@ -619,12 +619,11 @@ img.size-full {
     border: none;
     margin-bottom: 0;
     margin-top: 0;
-    padding: 0
+    padding: 0;
 }
 
 /* WP widget styling */
 .widget {}
-
 
 /* WP POST THUMBNAILS */
 img.wp-post-image {}
@@ -633,15 +632,22 @@ img.attachment-medium {}
 img.attachment-large {}
 img.attachment-full {}
 
-
 /* WP 404 ERRORS */
 .error404 {}
-
 
 /* WP PAGE CONTENT */
 .more-link {}
 .posttitle {}
 
+/* WP POST ENTRY FOOTER META */
+.comments-count {}
+.comments-count-number {}
+
+/* WP POST ENTRY PAGINATION */
+.pagination {}
+
+/* WP SINGLE POST ENTRY PAGINATION */
+.pagination.single {}
 
 /* 
  * WP COMMENTS FORM
@@ -660,7 +666,7 @@ img.attachment-full {}
 .commentlist .children {
     margin: 0;
     padding: 0;
-    list-style-type: none
+    list-style-type: none;
 }
 
 /* comment form title */
@@ -707,7 +713,9 @@ span.prev-comments-link {}
 span.nxt-comments-link {}
 
 /* avatars */
-.avatar { display: block }
+.avatar { 
+    display: block
+}
 
 /* comments intro header */
 #comments-title {}

@@ -7,9 +7,7 @@
 ?>
 
 <?php get_header(); ?>
-
-	<section id="content" role="main">
-    	<?php the_content(); ?>
+    <section id="content" role="main">
+        <?php the_content(); ?>
     </section>
-
 <?php get_footer(); ?>
