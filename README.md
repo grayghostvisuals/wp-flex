@@ -1,9 +1,11 @@
 #WP-Flex &rarr; [http://grayghostvisuals.com/wpflex](http://grayghostvisuals.com/wpflex)
-###A responsive, foundational Wordpress theme boilerplate for developers submitting to the Wordpress.org theme repository
 [![http://grayghostvisuals.com/wpflex](http://static.grayghostvisuals.com/portfolio/wpflex.png)](http://grayghostvisuals.com/wpflex)
 
 ##WHAT IS IT?
-A responsive, foundational Wordpress theme boilerplate for developers submitting to the Wordpress.org theme repository. Includes bunches of best practices for theme building requirements and coding standards for authors as suggested by Wordpress' Codex.
+A blank, responsive, Wordpress theme boilerplate for developers submitting to the Wordpress.org theme repository. Includes bunches of best practices for theme building requirements and coding standards for authors as suggested by Wordpress' Codex. 
+
+If you care to mention this theme helper in your project then please do so by adding the following to your site footer with an appropriate link to this repo:
+"Built with the almighty WP&ndash;Flex; A blank, responsive boilerplate for Wordpress theme makers."
 
 ####Codex Theme Review Guidelines
 [http://codex.wordpress.org/Theme_Review](http://codex.wordpress.org/Theme_Review)
@@ -46,7 +48,7 @@ function awesomesauce_setup() {
 </code>
 </pre>
 
-###Wordpress Coding Standards Guideline
+###Wordpress Coding Standards Guidelines
 Documentation &rarr; [http://codex.wordpress.org/WordPress_Coding_Standards](http://codex.wordpress.org/WordPress_Coding_Standards)
 
 ####CSS Coding Standards
