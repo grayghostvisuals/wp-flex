@@ -41,36 +41,33 @@ endif;
 
 /*------------------------------------------------------------------------------------------------[ custom theme header ] */
 
+// http://codex.wordpress.org/Custom_Headers
+// http://codex.wordpress.org/Appearance_Header_Screen
+$custom_header_defaults = array(
+    'default-image'          => '', //get_template_directory_uri() . 'screenshot.png',
+    'random-default'         => false,
+    'width'                  => '980',
+    'height'                 => '200',
+    'flex-height'            => true,
+    'flex-width'             => true,
+    'default-text-color'     => '',
+    'header-text'            => true,
+    'uploads'                => true,
+    'wp-head-callback'       => '',
+    'admin-head-callback'    => '',
+    'admin-preview-callback' => '',
+);
 
-// call to header style
-function wpflex_header_style() { ?>
-<style>
-#wpflex-header { 
-	background: url(<?php header_image(); ?>) 
-}
-</style>
-<?php }//end function wpflex_header_style
-
-// gets included in the admin header
-function wpflex_admin_header_style() { ?>
-<style>
-#wpflex-headimg { 
-	background: no-repeat;
-	width:<?php echo HEADER_IMAGE_WIDTH; ?>px; 
-	height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;
-}
-</style>
-<?php } //end function wpflex_admin_header_style
-
-//custom image header
-add_custom_image_header( 'wpflex_header_style', 'wpflex_admin_header_style' );
+// custom image header
+// add_theme_support( 'custom-header', $args ) as of WP 3.4
+add_theme_support( 'custom-header', $custom_header_defaults );
 
 
 /*------------------------------------------------------------------------------------------------[ rss feed ] */
 
 
-//enables post and comment RSS feed links to head
-//required for theme submission
+// enables post and comment RSS feed links to head
+// required for theme submission
 add_theme_support( 'automatic-feed-links' );
 
 
@@ -84,15 +81,16 @@ add_editor_style();
 /*------------------------------------------------------------------------------------------------[ custom background ] */
 
 
-//allows users to set a custom background
-add_custom_background();
+// allows users to set a custom background
+// add_theme_support( 'custom-background', $args )
+add_theme_support( 'custom-background' );
 
 
 /*------------------------------------------------------------------------------------------------[ post thumbnails ] */
 
 
-//enables post-thumbnail support
-//enables for Posts and "movie" post type but not for Pages
+// enables post-thumbnail support
+// enables for Posts and "movie" post type but not for Pages
 add_theme_support( 'post-thumbnails', array( 'post', 'movie' ) );
 
 // set post thumbnail size
@@ -102,7 +100,7 @@ set_post_thumbnail_size( 700, 450, true );
 /*------------------------------------------------------------------------------------------------[ content width ] */
 
 
-//if content_width not set
+// if content_width not set
 if ( ! isset( $content_width ) ) :
 $content_width = 960;
 endif;
@@ -111,36 +109,36 @@ endif;
 /*------------------------------------------------------------------------------------------------[ widgets ] */
 
 
-//wpflex widget setup
+// wpflex widget setup
 function wpflex_widget() {
 
-//call register_sidebar wp method as array
+// call register_sidebar wp method as array
 register_sidebar( array(
-	'ID'			=> 'wpflex_sidebar',
-	'name' 			=> 'WP-Flex Sidebar',
-	'before_widget' => '<article id="%1$s" class="widget %2$s">',
-	'after_widget' 	=> '</article>',
-	'before_title' 	=> '<h3 class="widget-title">',
-	'after_title' 	=> '</h3>',
-));//end primary sidebar
+    'ID'            => 'wpflex_sidebar',
+    'name'          => 'WP-Flex Sidebar',
+    'before_widget' => '<article id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</article>',
+    'before_title'  => '<h3 class="widget-title">',
+    'after_title'   => '</h3>',
+));// end primary sidebar
   
-//call to register footer sidebar widgets
+// call to register footer sidebar widgets
 register_sidebar( array(
-	'ID'			=> 'fw',
-	'name' 			=> 'WP-Flex Footer Widget',
-	'before_widget' => '<article id="%1$s" class="fwidget %2$s">',
-	'after_widget' 	=> '</article>',
-	'before_title' 	=> '<h3 class="widget-title">',
-	'after_title' 	=> '</h3>',
-)); //end footer widget
+    'ID'            => 'fw',
+    'name'          => 'WP-Flex Footer Widget',
+    'before_widget' => '<article id="%1$s" class="fwidget %2$s">',
+    'after_widget'  => '</article>',
+    'before_title'  => '<h3 class="widget-title">',
+    'after_title'   => '</h3>',
+)); // end footer widget
 
-}; //end wpflex_widget
+}; // end wpflex_widget
 
-//trigger the wpflex widget function
-//required for theme submission
-add_action( 'widgets_init' , 'wpflex_widget' );	
+// trigger the wpflex widget function
+// required for theme submission
+add_action( 'widgets_init' , 'wpflex_widget' ); 
 
 
-}//end themename_setup
+}// end wpflex_setup
 
-endif;//end ! function_exists( 'themename_setup' )
+endif;// end ! function_exists( 'wpflex_setup' )
