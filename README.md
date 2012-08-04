@@ -1,4 +1,4 @@
-#WP-Flex &rarr; [http://grayghostvisuals.com/wpflex](http://grayghostvisuals.com/wpflex)
+#WP-Flex v1.0.1 &rarr; [http://grayghostvisuals.com/wpflex](http://grayghostvisuals.com/wpflex)
 [![http://grayghostvisuals.com/wpflex](http://static.grayghostvisuals.com/portfolio/wpflex.png)](http://grayghostvisuals.com/wpflex)
 
 ##WHAT IS IT?
