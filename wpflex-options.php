@@ -167,14 +167,14 @@ function wpflex_theme_options_layout() {
                         <!-- URL -->
                         <strong>URL</strong><br />
                         <em>ex.) www.my_own_url.com</em>
-                        <input type="text" class="regular-text" name="wpflex_theme_options[url]" value="<?php esc_attr_e( $options[ 'url' ]); ?>" placeholder="www.my_own_url.com" />
+                        <input type="text" class="regular-text" name="wpflex_theme_options[url]" value="<?php esc_attr_e( $options[ 'url' ]); ?>" placeholder="http://my_own_url.com" />
                     </td>
                 </tr>
 
                 <tr valign="top">
                     <td valign="top" scope="row">
                         <strong>ADD TO ADDRESS BOOK LINK</strong>
-                        <input type="text" class="regular-text" name="wpflex_theme_options[addrbook]" value="<?php esc_attr_e( $options[ 'addrbook' ]); ?>" placeholder="www.my_own_url.com" />
+                        <input type="text" class="regular-text" name="wpflex_theme_options[addrbook]" value="<?php esc_attr_e( $options[ 'addrbook' ]); ?>" placeholder="http://my_own_url.com" />
                     </td>
                 </tr>
             </tbody>
