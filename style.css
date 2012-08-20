@@ -903,10 +903,19 @@ ol.commentlist li.thread-odd {}
 /* =WP-Flex Styling Modules
 ------------------------------------------------------------------------------- */
 
+/* WP-Flex BLOG HEADER Module */
+#wpflex-header {}
+
+/* WP-Flex BLOG NAME Module */
+.blogname {}
+
+/* WP-Flex TAGLINE Module */
+.tagline {}
+
 /* WP-Flex NAVIGATION Module */
 .menu {}
 
-/* WP-Flex PAGE TITLES Module */
+/* WP-Flex PAGE TITLE Module */
 .page-title{}
 
 /* WP-Flex ENTRY TITLE Module */
@@ -944,7 +953,6 @@ body {
     max-width: 65em;
 }
 
-/* links */
 a {
     color: #ffffff;
     text-decoration: none;
@@ -970,7 +978,6 @@ dl dd {
     padding: 0;
 }
 
-/* post module */
 .post {
     border-bottom: 2px solid rgba(0, 117, 160, 0.50);
     box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.35);
