@@ -36,7 +36,7 @@ elseif( is_404() ) :
 endif;
 
 //if home
-if( is_home() ):
+if( is_home() || is_front_page() ):
   esc_attr( bloginfo( 'name' ) ); echo '-'; esc_attr( bloginfo( 'description' ) ); echo '-'; esc_attr( wp_title() );
 else :
   esc_attr( bloginfo( 'name' ) );
@@ -85,7 +85,8 @@ endif; ?></title>
 <link rel="stylesheet" media="screen" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 
 <!-- pingback url -->
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <!-- RSS Feed -->
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo( 'rss2_url' ); ?>" />
@@ -111,46 +112,46 @@ endif; ?></title>
 <?php else : ?>
 <body <?php body_class(); ?> id="wpflex-<?php the_title(); ?>">
 <?php endif; ?>
-<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6. chromium.org/developers/how-tos/chrome-frame-getting-started -->
-<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+<!--[if lt IE 7]>
+    <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+<![endif]-->
 
 <header id="wpflex-header" role="banner">
-  <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" usemap="#Map">
-  <h1><a href="<?php echo home_url();  ?>"><?php esc_attr( bloginfo( 'name' ) ); ?></a></h1>
-  <h2><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
-  <!-- end header custom image -->
 
-  <!-- http://codex.wordpress.org/Function_Reference/wp_nav_menu -->
-  <nav role="navigation">
-    <ol>
+    <?php if ( function_exists('header_image') ) : ?>
+        <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" usemap="#Map">
+    <?php endif; ?>
+
+    <h1><a href="<?php echo home_url();  ?>"><?php esc_attr( bloginfo( 'name' ) ); ?></a></h1>
+    <h2><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
+
+    <!-- http://codex.wordpress.org/Function_Reference/wp_nav_menu -->
+    <nav role="navigation">
       <?php
-      //wp_list_pages arguments as an array
-      $nav_wpflex = array(
-        'depth'         => 2,
-        'show_date'     => '',
-        'date_format'   => get_option( 'date_format' ),
-        'child_of'      => 0,
-        'exclude'       => '',
-        'include'       => '',
-        'title_li'      => '',
-        'echo'          => 1,
-        'authors'       => '',
-        'sort_column'   => 'menu_order',
-        'link_before'   => '',
-        'link_after'    => '',
-        'walker'  => ''
-        );
+          //wp_list_pages arguments as an array
+          $nav_wpflex = array(
+                'menu'            => '',
+                'container'       => 'div',
+                'container_class' => 'menu-{menu slug}-container',
+                'container_id'    => '',
+                'menu_class'      => 'menu',
+                'menu_id'         => '',
+                'echo'            => true,
+                'fallback_cb'     => 'wp_page_menu',
+                'before'          => '',
+                'after'           => '',
+                'link_before'     => '',
+                'link_after'      => '',
+                'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                'depth'           => 0,
+                'walker'          => ''
+            );
 
-      //begin wp_list_pages loop
-      if( wp_list_pages( $nav_wpflex ) ) : while ( wp_list_pages( $nav_wpflex ) ) :
-        //list items from the array above
-        wp_list_pages( $nav_wpflex );
-      endwhile;
-      endif;
-      ?>
-    </ol>
-  </nav>
-  <?php //endif; ?>
+            // call to list the naviagtion
+            wp_nav_menu( $nav_wpflex );
+        ?>
+    </nav>
+    <?php //endif; ?>
 
 </header>
 
