@@ -13,7 +13,7 @@ If you care to mention this theme helper in your project then please do so by ad
 [http://wpthemetestdata.files.wordpress.com](http://wpthemetestdata.files.wordpress.com)
 
 ##KID TESTED, DEVELOPER APPROVED:
-Tested and Debugged using Wordpress 3.4, <code>theme-unit-test.xml</code> and <code>wp-config.php</code>.
+Tested and Debugged using Wordpress 3.4, <code>theme-unit-test.xml</code> and <code>wp-config.php.</code>
 
 ###Windows 7 Browser Tests
 1. IE       7-9
@@ -48,12 +48,26 @@ function awesomesauce_setup() {
 </code>
 </pre>
 
-###Wordpress Coding Standards Guidelines
+###Wordpress Coding Standards Documentation
 Documentation &rarr; [http://codex.wordpress.org/WordPress_Coding_Standards](http://codex.wordpress.org/WordPress_Coding_Standards)
 
 ####CSS Coding Standards
 * Current Specification &rarr; [http://codex.wordpress.org/CSS_Coding_Standards](http://codex.wordpress.org/CSS_Coding_Standards)
 * 7/04/2012 Specification Updates &rarr; [https://docs.google.com/a/twitter.com/document/d/1b-ouASTs6C6ZDKGsoCgUIF4FVBxN2v0dvaytDsuCzlM/edit?pli=1](https://docs.google.com/a/twitter.com/document/d/1b-ouASTs6C6ZDKGsoCgUIF4FVBxN2v0dvaytDsuCzlM/edit?pli=1)
+
+####Contributing and Coding Guidelines
+We strictly follow the Wordpress Coding Guidelines and so should you if you're going to contribute to this repo. Thanks for abiding by these guidelines. WP&ndash;Flex contributors and myself love you for this.
+* [http://codex.wordpress.org/WordPress_Coding_Standards](http://codex.wordpress.org/WordPress_Coding_Standards)
+
+* For WP&ndash;Flex we use a [Gitflow Branching Model](http://nvie.com/posts/a-successful-git-branching-model). This means our branching is kept nice and clean allowing everyone else to see commits, merges and releases in a logical fashion. Please take the time to review this model to ensure your Pull Request are accepted.
+* Master
+* Develop
+* Release
+* Hotfix
+* Feature
+
+####Case Studies Feature Branch
+If you haven't noticed already we have a feature brnch called 'Case Studies' for those wishing to display a secondary grouping of entries and correlating taxonomies.
 
 ###!Before uploading your theme submission
 1. Remove any hidden files from your WP-Flex directory per Theme Check Plugin Review &rarr; [http://pross.org.uk/theme-check](http://pross.org.uk/theme-check)
