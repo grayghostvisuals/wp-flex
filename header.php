@@ -122,13 +122,12 @@ endif; ?></title>
         <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" usemap="#Map">
     <?php endif; ?>
 
-    <h1><a href="<?php echo home_url();  ?>"><?php esc_attr( bloginfo( 'name' ) ); ?></a></h1>
-    <h2><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
+    <h1 class="blogname"><a href="<?php echo home_url();  ?>"><?php esc_attr( bloginfo( 'name' ) ); ?></a></h1>
+    <h2 class="tagline"><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
 
     <!-- http://codex.wordpress.org/Function_Reference/wp_nav_menu -->
     <nav role="navigation">
       <?php
-          //wp_list_pages arguments as an array
           $nav_wpflex = array(
                 'menu'            => '',
                 'container'       => 'div',
@@ -147,12 +146,10 @@ endif; ?></title>
                 'walker'          => ''
             );
 
-            // call to list the naviagtion
+            // call to naviagtion using our arguments
             wp_nav_menu( $nav_wpflex );
         ?>
     </nav>
-    <?php //endif; ?>
-
 </header>
 
 <article><a href="<?php bloginfo('rss2_url') ?>">RSS Feed</a></article>
