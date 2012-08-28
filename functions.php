@@ -1,5 +1,5 @@
-<?php 
-/*------------------------------------------------------------------------------------------------[ custom image header constraints ] */
+<?php
+/*-----------------------------------[ custom image header constraints ] */
 
 //Custom Image Header Constants
 define( 'HEADER_TEXTCOLOR', '' );
@@ -8,92 +8,85 @@ define( 'HEADER_IMAGE_WIDTH', 775 ); //use width and height appropriate for your
 define( 'HEADER_IMAGE_HEIGHT', 200 );
 
 
-/*------------------------------------------------------------------------------------------------[ after setup theme init ] */
+/*-----------------------------------[ theme options ] */
+
+//wpflex options
+include_once( get_template_directory() . '/wpflex-options.php' );
 
 
-//themename custom function setup
-add_action( 'after_setup_theme', 'wpflex_setup' );
-
-
-/*------------------------------------------------------------------------------------------------[ theme options ] */
+/*-----------------------------------[ theme options ] */
 
 
 //wpflex options
 include_once( get_template_directory() . '/wpflex-options.php' );
 
 
-/*------------------------------------------------------------------------------------------------[ theme setup function ] */
+/*-----------------------------------------------------------------------[ theme setup function ] */
 
 
 //if ! wpflex_setup
 if ( ! function_exists( 'wpflex_setup' ) ) :
+
 //wpflex_setup
 function wpflex_setup() {
 
 
-/*------------------------------------------------------------------------------------------------[ wp enque script ] */
+/*-----------------------------------[ wp enque script ] */
 
-
-if ( is_singular() ) : 
-wp_enqueue_script( 'comment-reply' );
+if ( is_singular() ) :
+    wp_enqueue_script( 'comment-reply' );
 endif;
 
 
-/*------------------------------------------------------------------------------------------------[ custom theme header ] */
+/*-----------------------------------[ custom theme header ] */
+
+// http://codex.wordpress.org/Custom_Headers
+// http://codex.wordpress.org/Appearance_Header_Screen
+$custom_header_defaults = array(
+    'default-image'          => '', //get_template_directory_uri() . 'screenshot.png',
+    'random-default'         => false,
+    'width'                  => '980',
+    'height'                 => '200',
+    'flex-height'            => true,
+    'flex-width'             => true,
+    'default-text-color'     => '',
+    'header-text'            => true,
+    'uploads'                => true,
+    'wp-head-callback'       => '',
+    'admin-head-callback'    => '',
+    'admin-preview-callback' => '',
+);
+
+// custom image header
+// add_theme_support( 'custom-header', $args ) as of WP 3.4
+add_theme_support( 'custom-header', $custom_header_defaults );
 
 
-// call to header style
-function wpflex_header_style() { ?>
-<style>
-#wpflex-header { 
-    background: url(<?php header_image(); ?>) 
-}
-</style>
-<?php }//end function wpflex_header_style
+/*-----------------------------------[ rss feed ] */
 
-// gets included in the admin header
-function wpflex_admin_header_style() { ?>
-<style>
-#wpflex-headimg { 
-    background: no-repeat;
-    width:<?php echo HEADER_IMAGE_WIDTH; ?>px; 
-    height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;
-}
-</style>
-<?php } //end function wpflex_admin_header_style
-
-//custom image header
-add_custom_image_header( 'wpflex_header_style', 'wpflex_admin_header_style' );
-
-
-/*------------------------------------------------------------------------------------------------[ rss feed ] */
-
-
-//enables post and comment RSS feed links to head
-//required for theme submission
+// enables post and comment RSS feed links to head
+// required for theme submission
 add_theme_support( 'automatic-feed-links' );
 
 
-/*------------------------------------------------------------------------------------------------[ editor style sheet ] */
-
+/*-----------------------------------[ editor style sheet ] */
 
 //add editor style sheet
 add_editor_style();
 
 
-/*------------------------------------------------------------------------------------------------[ custom background ] */
+/*-----------------------------------[ custom background ] */
+
+// allows users to set a custom background
+// add_theme_support( 'custom-background', $args )
+add_theme_support( 'custom-background' );
 
 
-//allows users to set a custom background
-add_custom_background();
+/*-----------------------------------[ post thumbnails ] */
 
-
-/*------------------------------------------------------------------------------------------------[ post thumbnails ] */
-
-
-//enables post-thumbnail support
-//enables for Posts and "movie" post type but not for Pages
-add_theme_support( 'post-thumbnails', array( 'post', 'case-studies', 'movie' ) );
+// enables post-thumbnail support
+// enables for Posts and "movie" post type but not for Pages
+add_theme_support( 'post-thumbnails', array( 'post', 'movie' ) );
 
 // set post thumbnail size
 set_post_thumbnail_size( 700, 450, true );
@@ -117,45 +110,43 @@ function remove_image_dim_attr( $html ) {
 add_filter( 'post_thumbnail_html','remove_image_dim_attr' );
 
 
-/*------------------------------------------------------------------------------------------------[ content width ] */
+/*-----------------------------------[ content width ] */
 
-
-//if content_width not set
+// if content_width not set
 if ( ! isset( $content_width ) ) :
 $content_width = 960;
 endif;
 
 
-/*------------------------------------------------------------------------------------------------[ widgets ] */
+/*-----------------------------------[ widgets ] */
 
-
-//wpflex widget setup
+// wpflex widget setup
 function wpflex_widget() {
 
-//call register_sidebar wp method as array
+// call register_sidebar wp method as array
 register_sidebar( array(
-    'ID'        => 'wpflex_sidebar',
-    'name'      => 'WP-Flex Sidebar',
+    'ID'            => 'wpflex_sidebar',
+    'name'          => 'WP-Flex Sidebar',
     'before_widget' => '<article id="%1$s" class="widget %2$s">',
     'after_widget'  => '</article>',
     'before_title'  => '<h3 class="widget-title">',
     'after_title'   => '</h3>',
-));//end primary sidebar
-  
-//call to register footer sidebar widgets
+));// end primary sidebar
+
+// call to register footer sidebar widgets
 register_sidebar( array(
-    'ID'        => 'fw',
-    'name'      => 'WP-Flex Footer Widget',
+    'ID'            => 'fw',
+    'name'          => 'WP-Flex Footer Widget',
     'before_widget' => '<article id="%1$s" class="fwidget %2$s">',
     'after_widget'  => '</article>',
     'before_title'  => '<h3 class="widget-title">',
     'after_title'   => '</h3>',
-)); //end footer widget
+)); // end footer widget
 
-}; //end wpflex_widget
+}; // end wpflex_widget
 
-//trigger the wpflex widget function
-//required for theme submission
+// trigger the wpflex widget function
+// required for theme submission
 add_action( 'widgets_init' , 'wpflex_widget' );
 
 
@@ -168,41 +159,41 @@ function case_studies() {
     // labels as an array for dashboard
     $labels = array(
             // general name for the post stype
-            'name'          => 'Cases',
+            'name'                  => 'Cases',
             // singular name for one object of this post type
-            'singular_name'     => 'Case Study',
+            'singular_name'         => 'Case Study',
             // the add new text for dashboard nav
-            'add_new'       => 'Add New Case',
+            'add_new'               => 'Add New Case',
             // dashboard nav item txt
-            'all_items'     => 'View Cases',
+            'all_items'             => 'View Cases',
             // edit menu header title txt
-            'edit_item'         => 'Edit Case Study',
+            'edit_item'             => 'Edit Case Study',
             // add new header title txt
-            'add_new_item'      => 'New Case Study',
+            'add_new_item'          => 'New Case Study',
             // view button txt in visual editor window
-            'view_item'         => 'Preview Case Study',
+            'view_item'             => 'Preview Case Study',
             // case studies search menu button txt
-            'search_items'      => 'Search Cases',
+            'search_items'          => 'Search Cases',
             // case studies search error txt
-            'not_found'         => 'No Case Studies Found',
-            'not_found_in_trash'    => 'No Case Studies Found in Trash', 
+            'not_found'             => 'No Case Studies Found',
+            'not_found_in_trash'    => 'No Case Studies Found in Trash',
             // the parent text. This string isn't used on non-hierarchical types
-            // In hierarchical ones the default is Parent Page 
+            // In hierarchical ones the default is Parent Page
             'parent_item_colon'     => ''
         );// end $labels
 
-    // $args as an array  
+    // $args as an array
     $args = array(
-            'labels'        => $labels,
-            'public'        => true,
+            'labels'                => $labels,
+            'public'                => true,
             'exclude_from_search'   => false,
             'publicly_queryable'    => true,
-            'show_ui'       => true, 
-            'query_var'         => true,
-            'capability_type'   => 'post',
-            'hierarchical'      => false,
-            'menu_position'     => null,
-            'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt' )
+            'show_ui'               => true,
+            'query_var'             => true,
+            'capability_type'       => 'post',
+            'hierarchical'          => false,
+            'menu_position'         => null,
+            'supports'              => array( 'title', 'editor', 'thumbnail', 'excerpt' )
         );//end $args
 
     //register the post type and give it a name and pass the $args variable
@@ -220,25 +211,25 @@ add_action( 'init', 'case_studies' );
 // Begin casestudies_custom_taxonomies
 function casestudies_custom_taxonomies(){
     $args = array(
-        'hierarchical'      => true, 
+        'hierarchical'  => true,
         'label'         => 'Add Case Type',
         'labels'        => array(
-                        'edit_item' => 'Edit Case Type',
+                        'edit_item'     => 'Edit Case Type',
                         'add_new_item'  => 'Add New Case Type',
                         'search_items'  => 'Search Case Types',
                         'update_item'   => 'Update Case Type'
                         ),
-        'rewrite'       => array( 
-                        'slug'      => 'case-type', 
-                        'hierarchical'  => true 
-                        ), 
+        'rewrite'       => array(
+                        'slug'          => 'case-type',
+                        'hierarchical'  => true
+                        ),
         'public'        => true,
         'show_tagcloud'     => true
     );
 
     // this call registers our case-study-type in our admin panel from the dashboard
     // http://codex.wordpress.org/Function_Reference/register_taxonomy
-    register_taxonomy( 'case-type', array( 'case-studies' ), $args ); 
+    register_taxonomy( 'case-type', array( 'case-studies' ), $args );
 
 }// end casestudies_build_taxonomies
 
@@ -251,7 +242,7 @@ add_action( 'init', 'casestudies_custom_taxonomies', 0 );
 
 
 function get_case_type() {
-    global $post; 
+    global $post;
     $postid = $post->ID;
     $terms = wp_get_object_terms( $postid, 'case-type' );
     if( !empty( $terms ) ) :
@@ -266,7 +257,7 @@ function get_case_type() {
     else :
     echo "No Case Type Filed";
     endif;
-}//end get_work_type    
+}//end get_work_type
 
 
 
@@ -277,7 +268,7 @@ function get_case_type() {
 //http://markjaquith.wordpress.com/2006/06/02/wordpress-203-nonces
 
 
-// Since you only want your post meta box to appear on the post editor screen in the admin, 
+// Since you only want your post meta box to appear on the post editor screen in the admin,
 // you’ll use the load-post.php and load-post-new.php hooks to initialize your meta box code
 add_action( 'load-post.php', 'casestudy_url_metabox_setup' );
 add_action( 'load-post-new.php', 'casestudy_url_metabox_setup' );
@@ -294,19 +285,19 @@ function casestudy_url_metabox_setup(){
 // adds a meta box to the the case-studies edit screen
 function casestudy_url_metabox() {
     add_meta_box(
-        'case-study-url', // $id = assigned to admin metabox
-        'Case Study URL', // $title = metabox title name
-        'case_study_url', // $callback = function
-        'case-studies',   // $post_type = admin page to display metabox 
-        'side',       // $context = metabox admin position (normal,advanced,side)
-        'low'             // $priority (high,core,default,low)  
+        'case-study-url',   // $id = assigned to admin metabox
+        'Case Study URL',   // $title = metabox title name
+        'case_study_url',   // $callback = function
+        'case-studies',     // $post_type = admin page to display metabox
+        'side',             // $context = metabox admin position (normal,advanced,side)
+        'low'               // $priority (high,core,default,low)
         );
 }
 
 // prints out the custom meta box input fields
-function case_study_url( $object, $box ) { 
+function case_study_url( $object, $box ) {
     // Nonces are used as a security related protection to prevent attacks and mistakes
-    // The nonce field is used to validate that the contents of the form came from the 
+    // The nonce field is used to validate that the contents of the form came from the
     // location on the current site and not somewhere else
     if( function_exists( 'wp_nonce_field' ) ) :
     wp_nonce_field( basename( __FILE__ ), 'casestudy_url_nonce' ); ?>
@@ -374,3 +365,9 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 }//end wpflex_setup
 
 endif;//end ! function_exists( 'wpflex_setup' )
+
+
+/*-----------------------------------------------------------------------[ after setup theme init ] */
+
+//themename custom function setup
+add_action( 'after_setup_theme', 'wpflex_setup' );

@@ -36,7 +36,7 @@ elseif( is_404() ) :
 endif;
 
 //if home
-if( is_home() ):
+if( is_home() || is_front_page() ):
   esc_attr( bloginfo( 'name' ) ); echo '-'; esc_attr( bloginfo( 'description' ) ); echo '-'; esc_attr( wp_title() );
 else :
   esc_attr( bloginfo( 'name' ) );
@@ -85,14 +85,15 @@ endif; ?></title>
 <link rel="stylesheet" media="screen" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 
 <!-- pingback url -->
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <!-- RSS Feed -->
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo( 'rss2_url' ); ?>" />
 
 <!-- All JavaScript at the bottom, except this Modernizr. Modernizr enables HTML5 elements & feature detects;
          for optimal performance, create your own custom Modernizr build: www.modernizr.com/download/ -->
-<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr-2.6.1.min.js"></script>
 
 <?php //required comment functionality ?>
 <?php if ( is_singular() ) { wp_enqueue_script( 'comment-reply' ); } ?>
@@ -111,59 +112,42 @@ endif; ?></title>
 <?php else : ?>
 <body <?php body_class(); ?> id="wpflex-<?php the_title(); ?>">
 <?php endif; ?>
-<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6. chromium.org/developers/how-tos/chrome-frame-getting-started -->
-<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+<!--[if lt IE 7]>
+    <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+<![endif]-->
 
 <header id="wpflex-header" role="banner">
-  <?php 
-  //Custom header
-  // Check if this is a post or page, if it has a thumbnail, and if it's a big one
-  if ( is_singular() && has_post_thumbnail( $post->ID ) && ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' )) && $image[1] >= HEADER_IMAGE_WIDTH ) : ?>
 
-  <?php echo get_the_post_thumbnail( $post->ID, 'post-thumbnail', array( 'usemap' => '#Map' ) ); // We have a new header image! ?>
+    <?php if ( function_exists('header_image') ) : ?>
+        <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" usemap="#Map">
+    <?php endif; ?>
 
-  <h1><a href="<?php echo home_url();  ?>"><?php esc_attr( bloginfo( 'name' ) ); ?></a></h1>
-  <h2><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
-  <img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" usemap="#Map" />
+    <h1 class="blogname"><a href="<?php echo home_url();  ?>"><?php esc_attr( bloginfo( 'name' ) ); ?></a></h1>
+    <h2 class="tagline"><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
 
-  <?php else : ?>
-  <h1><a href="<?php echo home_url();  ?>"><?php esc_attr( bloginfo( 'name' ) ); ?></a></h1>
-  <h2><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
-  <?php endif; ?>
-  <!-- end header custom image -->
-
-  <!-- http://codex.wordpress.org/Function_Reference/wp_nav_menu -->
-  <nav role="navigation">
-    <ol>
-      <?php
-      //wp_list_pages arguments as an array
-      $nav_wpflex = array(
-        'depth'         => 2,
-        'show_date'     => '',
-        'date_format'   => get_option( 'date_format' ),
-        'child_of'      => 0,
-        'exclude'       => '',
-        'include'       => '',
-        'title_li'      => '',
-        'echo'          => 1,
-        'authors'       => '',
-        'sort_column'   => 'menu_order',
-        'link_before'   => '',
-        'link_after'    => '',
-        'walker'  => '' 
-        );
-
-      //begin wp_list_pages loop
-      if( wp_list_pages( $nav_wpflex ) ) : while ( wp_list_pages( $nav_wpflex ) ) :
-        //list items from the array above
-        wp_list_pages( $nav_wpflex );
-      endwhile;
-      endif;
-      ?>
-    </ol>
-  </nav>
-  <?php //endif; ?>
-
+    <!-- http://codex.wordpress.org/Function_Reference/wp_nav_menu -->
+    <!-- http://codex.wordpress.org/Navigation_Menus -->
+    <nav role="navigation">
+        <?php wp_nav_menu( array(
+                'theme_location'  => 'primary',
+                'menu'            => '',
+                'container'       => 'menu-container',
+                'container_class' => 'menu-{menu slug}-container',
+                'container_id'    => '',
+                'menu_class'      => 'menu',
+                'menu_id'         => '',
+                'echo'            => true,
+                'fallback_cb'     => 'wp_page_menu',
+                'before'          => '',
+                'after'           => '',
+                'link_before'     => '',
+                'link_after'      => '',
+                'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                'depth'           => 0,
+                'walker'          => ''
+            ));
+        ?>
+    </nav>
 </header>
 
 <article><a href="<?php bloginfo('rss2_url') ?>">RSS Feed</a></article>
