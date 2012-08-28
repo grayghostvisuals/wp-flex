@@ -1,10 +1,10 @@
-/*   
+/*
 Theme Name: WP-Flex
 Theme URI: https://github.com/grayghostvisuals/WP-Flex
-Description: A responsive, foundational Wordpress theme boilerplate for developers submitting to the Wordpress.org theme repository. 
+Description: A responsive, foundational Wordpress theme boilerplate for developers submitting to the Wordpress.org theme repository.
 
-Author: Gray Ghost Visuals
-Author URI: http://grayghostvisuals.com
+Author: <your_name>
+Author URI: <author_uri>
 
 Version: 1.0.2
 Tags: full-width-template, flexible-width, custom-background, microformats, editor-style, custom-menu, sticky-post, theme-options, front-page-post-form, featured-images, sticky-post, rtl-language-support, threaded-comments, post-formats, white, light, custom-posts, custom-meta
@@ -12,7 +12,7 @@ Tags: full-width-template, flexible-width, custom-background, microformats, edit
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-WP-Flex Copyright ©2012 Gray Ghost Visuals
+WP-Flex Copyright ©2011 Gray Ghost Visuals
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -540,15 +540,15 @@ table {
 
 img,
 object,
-video { 
-    max-width: 100%; 
-    height: auto; 
+video {
+    max-width: 100%;
+    height: auto;
 }
 
 
-/* =WordPress Required - Generated Core Classes 
-    Each Theme should have these or similar styles in its style.css file 
-    in order to display images and captions properly. 
+/* =WordPress Required - Generated Core Classes
+    Each Theme should have these or similar styles in its style.css file
+    in order to display images and captions properly.
     http://codex.wordpress.org/CSS#WordPress_Generated_Classes
 ------------------------------------------------------------------------------- */
 
@@ -636,26 +636,26 @@ a img.aligncenter {
 
 .gallery-caption {}
 
-/* 
- * stops too many categories from breaking the layout 
+/*
+ * stops too many categories from breaking the layout
  */
 .entry-tags-list li,
-.entry-categories-list li { 
-  display: inline-block; 
+.entry-categories-list li {
+  display: inline-block;
 }
 
 
-/* =WordPress Generated - Extra Styling Classes for us Authors 
+/* =WordPress Generated - Extra Styling Classes for us Authors
 ------------------------------------------------------------------------------- */
 
 /* Fluid Images For Wordpress */
-img[class*="align"], 
+img[class*="align"],
 img[class*="wp-image-"] {
     /* Make sure images with WordPress-added height and width attributes are scaled correctly */
     height: auto;
 }
 
-.wp-caption, 
+.wp-caption,
 .wp-caption img {
     max-width: 100%;
 }
@@ -703,14 +703,14 @@ img.attachment-full {}
 .more-link {}
 .posttitle {}
 
-/* 
+/*
  * WP COMMENTS FORM
  * comment form container
  * keep this consistent for comment form
  * everytime a user clicks reply to a thread
  * the comment form that appears contains these very
  * styles defined below
- * 
+ *
  */
 #respond {}
 
@@ -768,7 +768,7 @@ span.prev-comments-link {}
 span.nxt-comments-link {}
 
 /* avatars */
-.avatar { 
+.avatar {
     display: block
 }
 
@@ -792,11 +792,11 @@ span.nxt-comments-link {}
  * http://css-tricks.com/snippets/wordpress/base-threaded-comments-styling
  *
  */
-ol.commentlist { 
-    list-style: none; 
-    margin: 0 0 1em; 
-    padding: 0; 
-    text-indent: 0; 
+ol.commentlist {
+    list-style: none;
+    margin: 0 0 1em;
+    padding: 0;
+    text-indent: 0;
 }
 
 ol.commentlist li {}
@@ -805,26 +805,26 @@ ol.commentlist li.bypostauthor {}
 ol.commentlist li.byuser {}
 ol.commentlist li.comment-author-admin {}
 
-ol.commentlist li.comment { 
-    border-bottom: 1px dotted #666; 
-    padding: 1em; 
+ol.commentlist li.comment {
+    border-bottom: 1px dotted #666;
+    padding: 1em;
 }
 
 ol.commentlist li.comment div.comment-author {}
 
-ol.commentlist li.comment div.vcard { 
-    font: normal 16px georgia,times,serif; 
+ol.commentlist li.comment div.vcard {
+    font: normal 16px georgia,times,serif;
 }
-ol.commentlist li.comment div.vcard cite.fn { 
-    font-style: normal; 
+ol.commentlist li.comment div.vcard cite.fn {
+    font-style: normal;
 }
 
 ol.commentlist li.comment div.vcard cite.fn a.url {}
 
-ol.commentlist li.comment div.vcard img.avatar { 
-    border: 5px solid #ccc; 
-    float: right; 
-    margin: 0 0 1em 1em; 
+ol.commentlist li.comment div.vcard img.avatar {
+    border: 5px solid #ccc;
+    float: right;
+    margin: 0 0 1em 1em;
 }
 
 ol.commentlist li.comment div.vcard img.avatar-32 {}
@@ -833,31 +833,31 @@ ol.commentlist li.comment div.vcard img.photo {}
 ol.commentlist li.comment div.vcard span.says {}
 ol.commentlist li.comment div.commentmetadata {}
 
-ol.commentlist li.comment div.comment-meta { 
-    font-size: 9px; 
+ol.commentlist li.comment div.comment-meta {
+    font-size: 9px;
 }
-ol.commentlist li.comment div.comment-meta a { 
-    color: #ccc; 
+ol.commentlist li.comment div.comment-meta a {
+    color: #ccc;
 }
-ol.commentlist li.comment p { 
-    font-size: 11px; 
-    margin: 0 0 1em; 
+ol.commentlist li.comment p {
+    font-size: 11px;
+    margin: 0 0 1em;
 }
-ol.commentlist li.comment ul { 
-    font-size: 11px; 
-    list-style: square; 
-    margin: 0 0 1em 2em; 
+ol.commentlist li.comment ul {
+    font-size: 11px;
+    list-style: square;
+    margin: 0 0 1em 2em;
 }
-ol.commentlist li.comment div.reply { 
-    font-size: 11px; 
+ol.commentlist li.comment div.reply {
+    font-size: 11px;
 }
-ol.commentlist li.comment div.reply a { 
-    font-weight: bold; 
+ol.commentlist li.comment div.reply a {
+    font-weight: bold;
 }
-ol.commentlist li.comment ul.children { 
-    list-style: none; 
-    margin: 1em 0 0; 
-    text-indent: 0; 
+ol.commentlist li.comment ul.children {
+    list-style: none;
+    margin: 1em 0 0;
+    text-indent: 0;
 }
 
 ol.commentlist li.comment ul.children li {}
@@ -867,17 +867,17 @@ ol.commentlist li.comment ul.children li.byuser {}
 ol.commentlist li.comment ul.children li.comment {}
 ol.commentlist li.comment ul.children li.comment-author-admin {}
 
-ol.commentlist li.comment ul.children li.depth-2 { 
-    border-left: 2px solid #0094cc; 
-    margin: 0 0 .25em .25em; 
+ol.commentlist li.comment ul.children li.depth-2 {
+    border-left: 2px solid #0094cc;
+    margin: 0 0 .25em .25em;
 }
-ol.commentlist li.comment ul.children li.depth-3 { 
-    border-left: 2px solid #0094cc; 
-    margin: 0 0 .25em .25em; 
+ol.commentlist li.comment ul.children li.depth-3 {
+    border-left: 2px solid #0094cc;
+    margin: 0 0 .25em .25em;
 }
-ol.commentlist li.comment ul.children li.depth-4 { 
-    border-left: 5px solid #0094cc; 
-    margin: 0 0 .25em .25em; 
+ol.commentlist li.comment ul.children li.depth-4 {
+    border-left: 5px solid #0094cc;
+    margin: 0 0 .25em .25em;
 }
 
 ol.commentlist li.comment ul.children li.depth-5 {}
@@ -902,9 +902,6 @@ ol.commentlist li.thread-odd {}
 
 /* =WP-Flex Styling Modules
 ------------------------------------------------------------------------------- */
-
-/* WP-Flex BLOG HEADER Module */
-#wpflex-header {}
 
 /* WP-Flex BLOG NAME Module */
 .blogname {}
