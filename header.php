@@ -126,11 +126,12 @@ endif; ?></title>
     <h2 class="tagline"><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
 
     <!-- http://codex.wordpress.org/Function_Reference/wp_nav_menu -->
+    <!-- http://codex.wordpress.org/Navigation_Menus -->
     <nav role="navigation">
-      <?php
-          $nav_wpflex = array(
+        <?php wp_nav_menu( array(
+                'theme_location'  => 'primary',
                 'menu'            => '',
-                'container'       => 'div',
+                'container'       => 'menu-container',
                 'container_class' => 'menu-{menu slug}-container',
                 'container_id'    => '',
                 'menu_class'      => 'menu',
@@ -144,10 +145,7 @@ endif; ?></title>
                 'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                 'depth'           => 0,
                 'walker'          => ''
-            );
-
-            // call to naviagtion using our arguments
-            wp_nav_menu( $nav_wpflex );
+            ));
         ?>
     </nav>
 </header>
