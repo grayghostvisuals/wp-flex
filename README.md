@@ -16,17 +16,16 @@ If you care to mention this theme helper in your project then please do so by ad
 Tested and Debugged using Wordpress 3.4, ``theme-unit-test.xml`` and ``wp-config.php.``
 
 ###Windows 7 Browser Tests
-1. IE       7-9
+1. IE      7-9
 2. Chrome  21.0.1180.82
 3. Firefox 15
-4. Safari   5.1
-5. Opera   11
-
-###Mac Lion 10.7 Browser Tests
-1. Firefox 12
-2. Chrome  18
-3. Safari   5
 4. Opera   11
+
+###Mac Lion 10.7.4 Browser Tests
+1. Firefox 15
+2. Chrome  21.0.1180.82
+3. Safari  6.0
+4. Opera   12.01
 
 ##IT STILL NEEDS YOUR HELP!
 1. In order to submit to the Wordpress theme repo, authors must rename all function calls / variables with the theme name reference to your own new theme-to-be name.
@@ -34,8 +33,8 @@ Reference &rarr; [http://codex.wordpress.org/Theme_Review#Theme_Name](http://cod
 
 ###For example
 using ``functions.php`` to illustrate&hellip;
-<pre>
-``
+
+``shell
 function wpflex_setup() {
    do_something_great()
 }
@@ -46,7 +45,6 @@ function awesomesauce_setup() {
    do_something_great()
 }
 ``
-</pre>
 
 ###Wordpress Coding Standards Documentation
 Documentation &rarr; [http://codex.wordpress.org/WordPress_Coding_Standards](http://codex.wordpress.org/WordPress_Coding_Standards)
@@ -57,9 +55,11 @@ Documentation &rarr; [http://codex.wordpress.org/WordPress_Coding_Standards](htt
 
 ####WP&ndash;Flex Contribution Guidelines
 We strictly follow the Wordpress Coding Guidelines and so should you if you're going to contribute to this repo. Thanks for abiding by these guidelines. WP&ndash;Flex contributors and myself love you for this.
+
 * [http://codex.wordpress.org/WordPress_Coding_Standards](http://codex.wordpress.org/WordPress_Coding_Standards)
 
 * For WP&ndash;Flex we use a [Gitflow Branching Model](http://nvie.com/posts/a-successful-git-branching-model). This means our branching is kept nice and clean allowing everyone else to see commits, merges and releases in a logical fashion. Please take the time to review this model to ensure your Pull Requests are accepted. The following items listed are the branches and naming conventions we adhere to.
+
     * Master
     * Develop
     * Release
@@ -68,7 +68,7 @@ We strictly follow the Wordpress Coding Guidelines and so should you if you're g
 
 * Keep it simple and as blank as possible &ndash;with the exception of the demo styles. Feel free to give back to the demo styles if you feel inclined :)
 
-####Case Studies Feature Branch
+#### [Case Studies Feature Branch](//github.com/grayghostvisuals/WP-Flex/tree/feature/Case-Studies)
 If you haven't noticed already we have a feature branch called 'Case Studies' for those wishing to display a secondary grouping of entries with correlating custom taxonomies. Feel free to make it better :)
 
 ###!Before uploading your theme submission
@@ -84,43 +84,42 @@ If you haven't noticed already we have a feature branch called 'Case Studies' fo
 
 #####EVEN MORE!!!
 1. ``wpflex-readme.txt``
-   * A must have for theme submission. Describes the ins and outs
-   to users what's great and what still needs work with your theme.
-   (A reccomendation from the Wordpress Codex for theme authors)
+* A must have for theme submission. Describes the ins and outs
+to users what's great and what still needs work with your theme.
+(A reccomendation from the Wordpress Codex for theme authors)
 
 2. Detailed PHP Comments
-   * Includes URL references for theme submission checks and further customization correlating with the Wordpress Codex
+* Includes URL references for theme submission checks and further customization correlating with the Wordpress Codex
 
 3. Required Wordpress CSS Classes
-   * Every theme submission is required to have specific CSS classes for your style sheets in order to be accepted into the WordPress.org theme repository
+* Every theme submission is required to have specific CSS classes for your style sheets in order to be accepted into the WordPress.org theme repository
 
 4. Responsive Images
-  * You know the drill. Blah, blah, blah, something, something, max-width:100% sorta stuff for embedded media.   Also implemented for WordPress post attachments by making sure images with WordPress–added height and width attributes are scaled correctly.
+* You know the drill. Blah, blah, blah, something, something, max-width:100% sorta stuff for embedded media.   Also implemented for WordPress post attachments by making sure images with WordPress–added height and width attributes are scaled correctly.
 
 5. Comment Thread Styling Classes
-   * Those tricky comment thread styling classes provided to you by default. No more scanning the DOM or reading more tutorials. It's all there bro!
+* Those tricky comment thread styling classes provided to you by default. No more scanning the DOM or reading more tutorials. It's all there bro!
 
 6. Responsive Category and Tag Listings
-   * In order to flow the listing of tags and categories as the browser expands and contracts we must break up the lists and display them inline –in order to avoid a run on measure. We make absolutely sure we stop too many categories from breaking the layout.
+* In order to flow the listing of tags and categories as the browser expands and contracts we must break up the lists and display them inline –in order to avoid a run on measure. We make absolutely sure we stop too many categories from breaking the layout.
 
 7. Standardized CSS Comment Flags
-   * CSS comment flags used for sectioning as reccommended by Wordpress theme review guidelines.
+* CSS comment flags used for sectioning as reccommended by Wordpress theme review guidelines.
 
 8. ``theme-unit-test.xml``
-   * A database for theme testing with multiple users, comment threading, posts and more.
+* A database for theme testing with multiple users, comment threading, posts and more.
 
 9. Theme Check
-   * The theme check plugin is an easy way to test your theme and make sure it's up to spec with the latest theme review standards.
+* The theme check plugin is an easy way to test your theme and make sure it's up to spec with the latest theme review standards.
 
 10. ``theme-options.php`` Boilerplate
-   * Custom boilerplate starting point to give your users and authors awesome theme options out of the box for vCard and social integrations with Facebook and Twitter.
+* Custom boilerplate starting point to give your users and authors awesome theme options out of the box for vCard and social integrations with Facebook and Twitter.
 
 11. ``functions.php`` Boilerplate
-   * A creamy base for required functionality of themes and submission via Wordpress.org Theme Repository. http://wordpress.org/extend/themes/upload
+* A creamy base for required functionality of themes and submission via Wordpress.org Theme Repository. http://wordpress.org/extend/themes/upload
 
-12. Custom Navigation Funcitonality
-   * We use ``wp_nav_menu`` while providing a fallback if a custom navigation menu is not in place.
-
+12. Custom Navigation Functionality
+* We use ``wp_nav_menu`` while providing a fallback if a custom navigation menu is not in place.
 
 ##More inspiring and wonderful blank Wordpress themes
 * Matt Murtaugh's HTML5 Reset Wordpress Theme &rarr; [http://html5reset.org/#wordpress](http://html5reset.org/#wordpress)
