@@ -1,5 +1,5 @@
-<?php 
-/*------------------------------------------------------------------------------------------------[ custom image header constraints ] */
+<?php
+/*-----------------------------------[ custom image header constraints ] */
 
 //Custom Image Header Constants
 define( 'HEADER_TEXTCOLOR', '' );
@@ -8,38 +8,36 @@ define( 'HEADER_IMAGE_WIDTH', 775 ); //use width and height appropriate for your
 define( 'HEADER_IMAGE_HEIGHT', 200 );
 
 
-/*------------------------------------------------------------------------------------------------[ after setup theme init ] */
-
-
-//themename custom function setup
-add_action( 'after_setup_theme', 'wpflex_setup' );
-
-
-/*------------------------------------------------------------------------------------------------[ theme options ] */
-
+/*-----------------------------------[ theme options ] */
 
 //wpflex options
 include_once( get_template_directory() . '/wpflex-options.php' );
 
 
-/*------------------------------------------------------------------------------------------------[ theme setup function ] */
-
+/*-----------------------------------------------------------------------[ theme setup function ] */
 
 //if ! wpflex_setup
 if ( ! function_exists( 'wpflex_setup' ) ) :
+
 //wpflex_setup
 function wpflex_setup() {
 
 
-/*------------------------------------------------------------------------------------------------[ wp enque script ] */
+/*-----------------------------------[ register the custom nav menus ] */
+
+register_nav_menus( array(
+    'primary' => 'Primary Menu'
+));
 
 
-if ( is_singular() ) : 
-wp_enqueue_script( 'comment-reply' );
+/*-----------------------------------[ wp enque script ] */
+
+if ( is_singular() ) :
+    wp_enqueue_script( 'comment-reply' );
 endif;
 
 
-/*------------------------------------------------------------------------------------------------[ custom theme header ] */
+/*-----------------------------------[ custom theme header ] */
 
 // http://codex.wordpress.org/Custom_Headers
 // http://codex.wordpress.org/Appearance_Header_Screen
@@ -63,31 +61,27 @@ $custom_header_defaults = array(
 add_theme_support( 'custom-header', $custom_header_defaults );
 
 
-/*------------------------------------------------------------------------------------------------[ rss feed ] */
-
+/*-----------------------------------[ rss feed ] */
 
 // enables post and comment RSS feed links to head
 // required for theme submission
 add_theme_support( 'automatic-feed-links' );
 
 
-/*------------------------------------------------------------------------------------------------[ editor style sheet ] */
-
+/*-----------------------------------[ editor style sheet ] */
 
 //add editor style sheet
 add_editor_style();
 
 
-/*------------------------------------------------------------------------------------------------[ custom background ] */
-
+/*-----------------------------------[ custom background ] */
 
 // allows users to set a custom background
 // add_theme_support( 'custom-background', $args )
 add_theme_support( 'custom-background' );
 
 
-/*------------------------------------------------------------------------------------------------[ post thumbnails ] */
-
+/*-----------------------------------[ post thumbnails ] */
 
 // enables post-thumbnail support
 // enables for Posts and "movie" post type but not for Pages
@@ -97,8 +91,7 @@ add_theme_support( 'post-thumbnails', array( 'post', 'movie' ) );
 set_post_thumbnail_size( 700, 450, true );
 
 
-/*------------------------------------------------------------------------------------------------[ content width ] */
-
+/*-----------------------------------[ content width ] */
 
 // if content_width not set
 if ( ! isset( $content_width ) ) :
@@ -106,8 +99,7 @@ $content_width = 960;
 endif;
 
 
-/*------------------------------------------------------------------------------------------------[ widgets ] */
-
+/*-----------------------------------[ widgets ] */
 
 // wpflex widget setup
 function wpflex_widget() {
@@ -121,7 +113,7 @@ register_sidebar( array(
     'before_title'  => '<h3 class="widget-title">',
     'after_title'   => '</h3>',
 ));// end primary sidebar
-  
+
 // call to register footer sidebar widgets
 register_sidebar( array(
     'ID'            => 'fw',
@@ -136,9 +128,15 @@ register_sidebar( array(
 
 // trigger the wpflex widget function
 // required for theme submission
-add_action( 'widgets_init' , 'wpflex_widget' ); 
+add_action( 'widgets_init' , 'wpflex_widget' );
 
 
 }// end wpflex_setup
 
 endif;// end ! function_exists( 'wpflex_setup' )
+
+
+/*-----------------------------------------------------------------------[ after setup theme init ] */
+
+//themename custom function setup
+add_action( 'after_setup_theme', 'wpflex_setup' );
