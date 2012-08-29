@@ -1,7 +1,5 @@
 #WP-Flex v1.0.3 : Case Studies Feature Branch
 [![http://grayghostvisuals.com/wpflex](http://static.grayghostvisuals.com/portfolio/wpflex.png)](http://grayghostvisuals.com/wpflex)
-###DEMO
-[http://grayghostvisuals.com/wpflex](http://grayghostvisuals.com/wpflex)
 
 ##What does this branch do?
 Good question gumshoe. The really simple answer is you can create not only a native Wordpress post feed for your blog, but also create another completely customized post feed and taxonomies (i.e. the meta data about the posts). Simply open up your Wordpress admin dashboard and you'll find the option titled "Cases."
