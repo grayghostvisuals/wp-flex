@@ -38,7 +38,6 @@ using ``functions.php`` to illustrate&hellip;
 function wpflex_setup() {
    do_something_great()
 }
-
 ```
 
 would be replaced dynamcially with our new name....
@@ -47,7 +46,6 @@ would be replaced dynamcially with our new name....
 function awesomesauce_setup() {
    do_something_great()
 }
-
 ```
 
 ###Wordpress Coding Standards Documentation
@@ -63,11 +61,11 @@ We strictly follow the Wordpress Coding Guidelines and so should you if you're g
 * [http://codex.wordpress.org/WordPress_Coding_Standards](http://codex.wordpress.org/WordPress_Coding_Standards)
 
 * For WP&ndash;Flex we use a [Gitflow Branching Model](http://nvie.com/posts/a-successful-git-branching-model). This means our branching is kept nice and clean allowing everyone else to see commits, merges and releases in a logical fashion. Please take the time to review this model to ensure your Pull Requests are accepted. The following items listed are the branches and naming conventions we adhere to.
-  * Master
-  * Develop
-  * Release
-  * Hotfix
-  * Feature
+    * Master
+    * Develop
+    * Release
+    * Hotfix
+    * Feature
 
 
 * Keep it simple and as blank as possible &ndash;with the exception of the demo styles. Feel free to give back to the demo styles if you feel inclined :)
@@ -99,13 +97,13 @@ to users what's great and what still needs work with your theme.
   * Every theme submission is required to have specific CSS classes for your style sheets in order to be accepted into the WordPress.org theme repository
 
 4. Responsive Images
-  * You know the drill. Blah, blah, blah, something, something, max-width:100% sorta stuff for embedded media.   Also implemented for WordPress post attachments by making sure images with WordPress–added height and width attributes are scaled correctly.
+  * You know the drill. Blah, blah, blah, something, something, max-width:100% sorta stuff for embedded media. Also implemented for WordPress post attachments by making sure images with WordPress–added height and width attributes are scaled correctly.
 
 5. Comment Thread Styling Classes
   * Those tricky comment thread styling classes provided to you by default. No more scanning the DOM or reading more tutorials. It's all there bro!
 
 6. Responsive Category and Tag Listings
-  * In order to flow the listing of tags and categories as the browser expands and contracts we must break up the lists and display them inline –in order to avoid a run on measure. We make absolutely sure we stop too many categories from breaking the layout.
+  * In order to flow the listing of tags and categories as the browser expands and contracts we must break up the lists and display them inline in order to avoid a run on measure. We make absolutely sure we stop too many categories from breaking the layout.
 
 7. Standardized CSS Comment Flags
   * CSS comment flags used for sectioning as reccommended by Wordpress theme review guidelines.
