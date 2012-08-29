@@ -159,41 +159,41 @@ function case_studies() {
     // labels as an array for dashboard
     $labels = array(
             // general name for the post stype
-            'name'                  => 'Cases',
+            'name'               => 'Cases',
             // singular name for one object of this post type
-            'singular_name'         => 'Case Study',
+            'singular_name'      => 'Case Study',
             // the add new text for dashboard nav
-            'add_new'               => 'Add New Case',
+            'add_new'            => 'Add New Case',
             // dashboard nav item txt
-            'all_items'             => 'View Cases',
+            'all_items'          => 'View Cases',
             // edit menu header title txt
-            'edit_item'             => 'Edit Case Study',
+            'edit_item'          => 'Edit Case Study',
             // add new header title txt
-            'add_new_item'          => 'New Case Study',
+            'add_new_item'       => 'New Case Study',
             // view button txt in visual editor window
-            'view_item'             => 'Preview Case Study',
+            'view_item'          => 'Preview Case Study',
             // case studies search menu button txt
-            'search_items'          => 'Search Cases',
+            'search_items'       => 'Search Cases',
             // case studies search error txt
-            'not_found'             => 'No Case Studies Found',
-            'not_found_in_trash'    => 'No Case Studies Found in Trash',
+            'not_found'          => 'No Case Studies Found',
+            'not_found_in_trash' => 'No Case Studies Found in Trash',
             // the parent text. This string isn't used on non-hierarchical types
             // In hierarchical ones the default is Parent Page
-            'parent_item_colon'     => ''
+            'parent_item_colon'  => ''
         );// end $labels
 
     // $args as an array
     $args = array(
-            'labels'                => $labels,
-            'public'                => true,
-            'exclude_from_search'   => false,
-            'publicly_queryable'    => true,
-            'show_ui'               => true,
-            'query_var'             => true,
-            'capability_type'       => 'post',
-            'hierarchical'          => false,
-            'menu_position'         => null,
-            'supports'              => array( 'title', 'editor', 'thumbnail', 'excerpt' )
+            'labels'              => $labels,
+            'public'              => true,
+            'exclude_from_search' => false,
+            'publicly_queryable'  => true,
+            'show_ui'             => true,
+            'query_var'           => true,
+            'capability_type'     => 'post',
+            'hierarchical'        => false,
+            'menu_position'       => null,
+            'supports'            => array( 'title', 'editor', 'thumbnail', 'excerpt' )
         );//end $args
 
     //register the post type and give it a name and pass the $args variable
@@ -214,16 +214,16 @@ function casestudies_custom_taxonomies(){
         'hierarchical'  => true,
         'label'         => 'Add Case Type',
         'labels'        => array(
-                        'edit_item'     => 'Edit Case Type',
-                        'add_new_item'  => 'Add New Case Type',
-                        'search_items'  => 'Search Case Types',
-                        'update_item'   => 'Update Case Type'
+                            'edit_item'     => 'Edit Case Type',
+                            'add_new_item'  => 'Add New Case Type',
+                            'search_items'  => 'Search Case Types',
+                            'update_item'   => 'Update Case Type'
                         ),
         'rewrite'       => array(
-                        'slug'          => 'case-type',
-                        'hierarchical'  => true
+                            'slug'          => 'case-type',
+                            'hierarchical'  => true
                         ),
-        'public'        => true,
+        'public'            => true,
         'show_tagcloud'     => true
     );
 
