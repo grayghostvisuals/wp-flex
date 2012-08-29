@@ -26,7 +26,7 @@
             <?php if( $options['street'] && $options['locality'] && $options['region'] && $options['postal'] ): ?>
             <li class="adr">
                 <small>
-                    <span class="street-address"><?php echo ( $options['street'] ); ?></span>, <span class="locality"><?php echo ( $options['locality'] ); ?></span>, 
+                    <span class="street-address"><?php echo ( $options['street'] ); ?></span>, <span class="locality"><?php echo ( $options['locality'] ); ?></span>,
                     <span class="region"><abbr title="<?php echo ( $options['region'] ); ?>"><?php echo ( $options['region'] ); ?></abbr></span>
                     <span class="postal-code"><?php echo ( $options['postal'] ); ?></span>
                 </small>
@@ -57,7 +57,7 @@
 
             <!-- add to address book -->
             <li class="add-vcard"><small><a href="http://h2vx.com/vcf/<?php echo ( $options['addrbook'] ); ?>" rel="vcard">Add Us To Your Address Book</a></small></li>
-          </ul>
+        </ul>
     </section>
     <?php endif; ?>
 
@@ -101,10 +101,10 @@
 <!-- end scripts -->
 
 <!-- Asynchronous Google Analytics snippet. mathiasbynens.be/notes/async-analytics-snippet -->
-<!-- 
-Why not add this to your Analytics Snippet? 
+<!--
+Why not add this to your Analytics Snippet?
 ['_setDomainName', 'www.your-site-uri.com']
-This allows us to create a cookieless sub-domain 
+This allows us to create a cookieless sub-domain
 http://www.ravelrumba.com/blog/static-cookieless-domain
 -->
 <script>
@@ -114,14 +114,14 @@ g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js
 s.parentNode.insertBefore(g,s)}(document,'script'));
 </script>
 
-<?php 
-/* 
+<?php
+/*
  * Always have wp_footer() just before the closing </body>
  * tag of your WP theme, or you will break many plugins, which
  * generally use this hook to reference JavaScript files.
  *
  */
-wp_footer(); 
+wp_footer();
 ?>
 </body>
 </html>
