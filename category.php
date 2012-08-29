@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-
 <section id="content" role="main">
     <h1 class="page-title"><?php printf( 'Category Archives: %s', '<span>' . single_cat_title( '', false ) . '</span>' );?></h1>
 
@@ -43,7 +42,7 @@
 
     <!-- post loop error message -->
     <?php else : //if no posts were found do this ?>
-    <p><?php echo ( 'Holy smokes! This is totally crazy. No posts match anything even remotely close to that in our database. Sorry Mon Frere, try again' ); ?></p>
+        <p><?php echo ( 'Holy smokes! This is totally crazy. No posts match anything even remotely close to that in our database. Sorry Mon Frere, try again' ); ?></p>
     <?php endif; //end if have_posts condition ?>
 
     <p><?php posts_nav_link( '&#8734;', '&larr; Go Forward In Time', 'Go Back In Time &rarr;' ); ?></p>

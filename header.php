@@ -57,14 +57,17 @@ endif; ?></title>
 <!-- index search meta data -->
 <?php if ( is_home() ) : ?>
 <meta name="description" content="<?php esc_attr( bloginfo( 'name' ) ); esc_attr( bloginfo( 'description' ) ); ?>">
+
 <!-- single page meta tag description -->
 <?php elseif ( is_single() ) : ?>
 <meta name="description" content="<?php esc_attr( wp_title() ) ?>">
+
 <!-- archive pages meta tag description -->
 <?php elseif ( is_archive() ) : ?>
 <meta name="description" content="">
 <?php elseif ( is_search() ) : ?>
 <meta name="" content="<?php wp_specialchars( $s ) ?>">
+
 <!-- fallback meta tag description -->
 <?php else : ?>
 <meta name="description" content="<?php esc_attr( bloginfo( 'name' ) ); esc_attr( bloginfo( 'description' ) ) ?>">
@@ -98,25 +101,26 @@ endif; ?></title>
 <?php //required comment functionality ?>
 <?php if ( is_singular() ) { wp_enqueue_script( 'comment-reply' ); } ?>
 
-<!-- coments popup script -->
-<?php comments_popup_script(); ?>
-
-<?php wp_head(); //required for all wordpress themes and placed at the end of the head tag element ?>
+<!-- required for all wordpress themes and placed at the end of the head tag element -->
+<?php wp_head(); ?>
 </head>
 
 <!-- body element tag -->
 <?php if ( is_single() ) : ?>
 <body <?php body_class(); ?> id="wpflex-single">
+
 <?php elseif ( is_home() ) : ?>
 <body <?php body_class(); ?> id="wpflex-index">
+
 <?php else : ?>
 <body <?php body_class(); ?> id="wpflex-<?php the_title(); ?>">
 <?php endif; ?>
+
 <!--[if lt IE 7]>
     <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
 <![endif]-->
 
-<header id="wpflex-header" role="banner">
+<header role="banner">
 
     <?php if ( function_exists('header_image') ) : ?>
         <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" usemap="#Map">
@@ -128,24 +132,66 @@ endif; ?></title>
     <!-- http://codex.wordpress.org/Function_Reference/wp_nav_menu -->
     <!-- http://codex.wordpress.org/Navigation_Menus -->
     <nav role="navigation">
-        <?php wp_nav_menu( array(
-                'theme_location'  => 'primary',
-                'menu'            => '',
-                'container'       => 'menu-container',
-                'container_class' => 'menu-{menu slug}-container',
-                'container_id'    => '',
-                'menu_class'      => 'menu',
-                'menu_id'         => '',
-                'echo'            => true,
-                'fallback_cb'     => 'wp_page_menu',
-                'before'          => '',
-                'after'           => '',
-                'link_before'     => '',
-                'link_after'      => '',
-                'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                'depth'           => 0,
-                'walker'          => ''
-            ));
+        <?php
+            // Custom Nav Call
+            function custom_nav() {
+                if ( function_exists( 'wp_nav_menu' ) ) :
+                    wp_nav_menu( array(
+                        'theme_location'  => 'primary',
+                        'menu'            => '',
+                        'container'       => 'menu-container',
+                        'container_class' => 'menu-{menu slug}-container',
+                        'container_id'    => '',
+                        'menu_class'      => 'menu',
+                        'menu_id'         => '',
+                        'echo'            => true,
+                        'fallback_cb'     => 'wp_nav_fallback',
+                        'before'          => '',
+                        'after'           => '',
+                        'link_before'     => '',
+                        'link_after'      => '',
+                        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                        'depth'           => 0,
+                        'walker'          => ''
+                    ));
+                else :
+                    nav_fallback();
+                endif;
+            }
+
+            // Navigation Fallback Call
+            function wp_nav_fallback() {
+                //wp_list_pages arguments as an array
+                $nav_wpflex = array(
+                    'depth'         => 2,
+                    'show_date'     => '',
+                    'date_format'   => get_option( 'date_format' ),
+                    'child_of'      => 0,
+                    'exclude'       => '',
+                    'include'       => '',
+                    'title_li'      => '',
+                    'echo'          => 1,
+                    'authors'       => '',
+                    'sort_column'   => 'menu_order',
+                    'link_before'   => '',
+                    'link_after'    => '',
+                    'walker'        => ''
+                );?>
+
+                <ol>
+                    <?php
+                        //begin wp_list_pages loop
+                        if( wp_list_pages( $nav_wpflex ) ) : while ( wp_list_pages( $nav_wpflex ) ) :
+                            //list items from the array above
+                            wp_list_pages( $nav_wpflex );
+                        endwhile;
+                        endif;
+                    ?>
+                </ol>
+        <?php } // end wp_nav_fallback
+
+            // custom_nav call
+            custom_nav();
         ?>
     </nav>
 </header>
