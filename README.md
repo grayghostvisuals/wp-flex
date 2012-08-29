@@ -1,7 +1,7 @@
-#WP-Flex v1.0.3 &rarr;
+#WP-Flex v1.0.3
 [![http://grayghostvisuals.com/wpflex](http://static.grayghostvisuals.com/portfolio/wpflex.png)](http://grayghostvisuals.com/wpflex)
 
-##DEMO
+###DEMO
 [http://grayghostvisuals.com/wpflex](http://grayghostvisuals.com/wpflex)
 
 ##WHAT IS IT?
@@ -73,12 +73,7 @@ We strictly follow the Wordpress Coding Guidelines and so should you if you're g
 * For WP&ndash;Flex we use a [Gitflow Branching Model](http://nvie.com/posts/a-successful-git-branching-model).
 
     This means our branching is kept nice and clean allowing everyone else to see commits, merges and releases in a logical fashion. Please take the time to review this model to ensure your Pull Requests are accepted. The following items listed are the branches and naming conventions we adhere to.
-
-    * Master
-    * Develop
-    * Release
-    * Hotfix
-    * Feature
+    *Master*, *Develop*, *Release*, *Hotfix*, *Feature*
 
 * Keep it simple and as blank as possible &ndash;with the exception of the demo styles.
     Feel free to give back to the demo styles if you feel inclined :)
