@@ -5,10 +5,10 @@
 [http://grayghostvisuals.com/wpflex](http://grayghostvisuals.com/wpflex)
 
 ##WHAT IS IT?
-A blank, responsive, Wordpress theme boilerplate for developers submitting to the Wordpress.org theme repository. Includes bunches of best practices for theme building requirements and coding standards for authors as suggested by Wordpress' Codex.
+A blank, responsive, WordPress theme boilerplate for developers submitting to the WordPress.org theme repository. Includes bunches of best practices for theme building requirements and coding standards for authors as suggested by WordPress' Codex. Also makes a great starter theme to get you going from scratch.
 
 If you care to mention this theme helper in your project then please do so by adding the following to your site footer with an appropriate link to this repo:
-"Built with the almighty WP&ndash;Flex; A blank, responsive boilerplate for Wordpress theme makers."
+"Built with the almighty WP&ndash;Flex; A blank, responsive boilerplate for WordPress theme makers."
 
 
 ####Codex Theme Review Guidelines
@@ -35,7 +35,7 @@ Tested and Debugged using Wordpress 3.4, ``theme-unit-test.xml`` and ``wp-config
 
 
 ##IT STILL NEEDS YOUR HELP!
-1. In order to submit to the Wordpress theme repo, authors must rename all function calls / variables with the theme name reference to your own new theme-to-be name.
+1. In order to submit to the WordPress theme repo, authors must rename all function calls / variables with the theme name reference to your own new theme-to-be name.
 Reference &rarr; [http://codex.wordpress.org/Theme_Review#Theme_Name](http://codex.wordpress.org/Theme_Review#Theme_Name) for rules regarding naming. WP-Flex needs a dynamic means to create a new theme name across our codebase without going through everything line by line.
 
 
@@ -56,7 +56,7 @@ function awesomesauce_setup() {
 }
 ```
 
-###Wordpress Coding Standards Documentation
+###WordPress Coding Standards Documentation
 Documentation &rarr; [http://codex.wordpress.org/WordPress_Coding_Standards](http://codex.wordpress.org/WordPress_Coding_Standards)
 
 
@@ -86,7 +86,7 @@ If you haven't noticed already we have a feature branch called 'Case Studies' fo
 ###!Before uploading your theme submission
 1. Remove any hidden files from your WP-Flex directory per Theme Check Plugin Review &rarr; [http://pross.org.uk/theme-check](http://pross.org.uk/theme-check)
 2. Remove github's ``README.md`` file included with this repository
-3. Rename ``wpflex-readme.txt`` to ``readme.txt`` as per Wordpress' Codex theme requirements
+3. Rename ``wpflex-readme.txt`` to ``readme.txt`` as per WordPress' Codex theme requirements
 4. License your theme with GNU http://www.gnu.org/licenses/gpl-3.0.html. Themes are required to be licensed fully under a GPL-compatible license.
 
 
@@ -105,13 +105,13 @@ If you haven't noticed already we have a feature branch called 'Case Studies' fo
 
     Includes URL references for theme submission checks and further customization correlating with the Wordpress Codex
 
-3. Required Wordpress CSS Classes
+3. Required WordPress CSS Classes
 
     Every theme submission is required to have specific CSS classes for your style sheets in order to be accepted into the WordPress.org theme repository
 
 4. Responsive Images
 
-    You know the drill. Blah, blah, blah, something, something, max-width:100% sorta stuff for embedded media. Also implemented for WordPress post attachments by making sure images with WordPress–added height and width attributes are scaled correctly.
+    You know the drill. Blah, blah, blah, something, something, max-width:100% sorta stuff for embedded media. Also implemented for WordPress post attachments by making sure images with WordPress added height and width attributes are scaled correctly.
 
 5. Comment Thread Styling Classes
 
@@ -123,7 +123,7 @@ If you haven't noticed already we have a feature branch called 'Case Studies' fo
 
 7. Standardized CSS Comment Flags
 
-    CSS comment flags used for sectioning as reccommended by Wordpress theme review guidelines.
+    CSS comment flags used for sectioning as reccommended by WordPress theme review guidelines.
 
 8. ``theme-unit-test.xml``
 
@@ -139,14 +139,15 @@ If you haven't noticed already we have a feature branch called 'Case Studies' fo
 
 11. ``functions.php`` Boilerplate
 
-    A creamy base for required functionality of themes and submission via Wordpress.org Theme Repository. http://wordpress.org/extend/themes/upload
+    A creamy base for required functionality of themes and submission via WordPress.org Theme Repository. http://wordpress.org/extend/themes/upload
 
 12. Custom Navigation Functionality
 
-    We use ``wp_nav_menu`` while providing a fallback if a custom navigation menu is not in place. This option can be found from within your Wordpress Admin Dashboard under "Appearance" &gt; "Menus"
+    We use ``wp_nav_menu`` while providing a fallback if a custom navigation menu is not in place. This option can be found from within your WordPress Admin Dashboard under "Appearance" &gt; "Menus"
 
 
-##More inspiring and wonderful blank Wordpress themes
+##More inspiring and wonderful blank WordPress themes
+* _S Theme &rarr; [http://underscores.me](http://underscores.me)
 * Matt Murtaugh's HTML5 Reset Wordpress Theme &rarr; [http://html5reset.org/#wordpress](http://html5reset.org/#wordpress)
 * Digging Into Wordpress' Blank Wordpress Theme &rarr; [http://digwp.com/2010/02/blank-wordpress-theme](http://digwp.com/2010/02/blank-wordpress-theme)
 
