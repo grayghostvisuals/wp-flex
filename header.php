@@ -27,7 +27,7 @@ elseif( is_search() ) :
   echo 'Search for &quot;' . wp_specialchars( $s ) . '&quot; -';
 
 // if !404 and single or page
-elseif( !( is_404() ) && ( is_single() ) || ( is_page() ) ) :
+elseif( !( is_404() ) && ( is_single() ) || ( is_page() ) && !(is_front_page() ) ) :
   esc_attr( wp_title( '' ) ); echo '-';
 
 // if 404
