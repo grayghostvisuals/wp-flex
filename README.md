@@ -18,7 +18,7 @@ If you care to mention this theme helper in your project then please do so by ad
 
 
 ##KID TESTED, DEVELOPER APPROVED:
-Tested and Debugged using Wordpress 3.4, ``theme-unit-test.xml`` and ``wp-config.php.``
+Tested and Debugged using WordPress 3.4.2, ``theme-unit-test.xml`` and ``wp-config.php.``
 
 ###Windows 7 Browser Tests
 1. IE      7-9
@@ -66,14 +66,15 @@ Documentation &rarr; [http://codex.wordpress.org/WordPress_Coding_Standards](htt
 
 
 ####WP&ndash;Flex Contribution Guidelines
-We strictly follow the Wordpress Coding Guidelines and so should you if you're going to contribute to this repo. Thanks for abiding by these guidelines. WP&ndash;Flex contributors and myself love you for this.
+We strictly follow the WordPress coding guidelines and so should you if you're going to contribute to this repo. Thanks for abiding by these guidelines. WP&ndash;Flex contributors and myself love you for this.
 
 * [http://codex.wordpress.org/WordPress_Coding_Standards](http://codex.wordpress.org/WordPress_Coding_Standards)
 
 * For WP&ndash;Flex we use a [Gitflow Branching Model](http://nvie.com/posts/a-successful-git-branching-model).
 
     This means our branching is kept nice and clean allowing everyone else to see commits, merges and releases in a logical fashion. Please take the time to review this model to ensure your Pull Requests are accepted. The following items listed are the branches and naming conventions we adhere to.
-    *Master*, *Develop*, *Release*, *Hotfix*, *Feature*
+
+    ``Master, Develop, Release, Hotfix, Feature``
 
 * Keep it simple and as blank as possible &ndash;with the exception of the demo styles.
     Feel free to give back to the demo styles if you feel inclined :)
@@ -149,7 +150,7 @@ If you haven't noticed already we have a feature branch called 'Case Studies' fo
 ##More inspiring and wonderful blank WordPress themes
 * _S Theme &rarr; [http://underscores.me](http://underscores.me)
 * Matt Murtaugh's HTML5 Reset Wordpress Theme &rarr; [http://html5reset.org/#wordpress](http://html5reset.org/#wordpress)
-* Digging Into Wordpress' Blank Wordpress Theme &rarr; [http://digwp.com/2010/02/blank-wordpress-theme](http://digwp.com/2010/02/blank-wordpress-theme)
+* Digging Into Wordpress' Blank WordPress Theme &rarr; [http://digwp.com/2010/02/blank-wordpress-theme](http://digwp.com/2010/02/blank-wordpress-theme)
 
 Surely you can always visit the Wordpress Codex for more customization and give it a shot yourself
 -thats what I did :)p

@@ -24,7 +24,7 @@ elseif( is_archive() ) :
 
 // if search
 elseif( is_search() ) :
-  echo 'Search for &quot;' . wp_specialchars( $s ) . '&quot; -';
+  echo 'Search for &quot;' . esc_html( $s ) . '&quot; -';
 
 // if !404 and single or page
 elseif( !( is_404() ) && ( is_single() ) || ( is_page() ) && !(is_front_page() ) ) :
@@ -66,7 +66,7 @@ endif; ?></title>
 <?php elseif ( is_archive() ) : ?>
 <meta name="description" content="">
 <?php elseif ( is_search() ) : ?>
-<meta name="" content="<?php wp_specialchars( $s ) ?>">
+<meta name="" content="<?php esc_html( $s ) ?>">
 
 <!-- fallback meta tag description -->
 <?php else : ?>
@@ -96,7 +96,7 @@ endif; ?></title>
 
 <!-- All JavaScript at the bottom, except this Modernizr. Modernizr enables HTML5 elements & feature detects;
          for optimal performance, create your own custom Modernizr build: www.modernizr.com/download/ -->
-<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr-2.6.1.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
 
 <?php //required comment functionality ?>
 <?php if ( is_singular() ) { wp_enqueue_script( 'comment-reply' ); } ?>
@@ -107,13 +107,13 @@ endif; ?></title>
 
 <!-- body element tag -->
 <?php if ( is_single() ) : ?>
-<body <?php body_class(); ?> id="wpflex-single">
+<body <?php body_class(); ?> id="single">
 
 <?php elseif ( is_home() ) : ?>
-<body <?php body_class(); ?> id="wpflex-index">
+<body <?php body_class(); ?> id="index">
 
 <?php else : ?>
-<body <?php body_class(); ?> id="wpflex-<?php the_title(); ?>">
+<body <?php body_class(); ?> id="<?php the_title(); ?>">
 <?php endif; ?>
 
 <!--[if lt IE 7]>
