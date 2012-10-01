@@ -3,11 +3,11 @@ Theme Name: WP-Flex
 Theme URI: https://github.com/grayghostvisuals/WP-Flex
 Description: A responsive, foundational Wordpress theme boilerplate for developers submitting to the Wordpress.org theme repository.
 
-Author: <your_name>
-Author URI: <author_uri>
+Author: Gray Ghost Visuals
+Author URI: http://grayghostvisuals.com
 
 Version: 1.0.3
-Tags: full-width-template, flexible-width, custom-background, microformats, editor-style, custom-menu, sticky-post, theme-options, front-page-post-form, featured-images, sticky-post, rtl-language-support, threaded-comments, post-formats, white, light, custom-posts, custom-meta
+Tags: full-width-template, flexible-width, custom-background, microformats, editor-style, custom-menu, sticky-post, theme-options, front-page-post-form, featured-images, sticky-post, rtl-language-support, threaded-comments, post-formats, white, light
 
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -21,6 +21,7 @@ A copy of the license entitled "GNU Free Documentation License" can be
 found at http://www.gnu.org/licenses/fdl-1.3-standalone.html
 */
 
+
 /*
  * The Wordpress CSS Codex
  * http://codex.wordpress.org/CSS_Coding_Standards
@@ -32,11 +33,32 @@ found at http://www.gnu.org/licenses/fdl-1.3-standalone.html
  */
 
 
-/*! normalize.css v1.0.0 | MIT License | git.io/normalize */
-
+/* normalize styles H5BP */
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
+
+/*
+ * Corrects `block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/*
+ * Corrects `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
 
 /*
  * Corrects `block` display not defined in IE 6/7/8/9 and Firefox 3.
@@ -87,6 +109,7 @@ audio:not([controls]) {
 [hidden] {
     display: none;
 }
+
 
 /* ==========================================================================
    Base
@@ -146,6 +169,7 @@ a:active,
 a:hover {
     outline: 0;
 }
+
 
 /* ==========================================================================
    Typography
@@ -275,8 +299,12 @@ q:after {
     content: none;
 }
 
+/*
+ * Addresses inconsistent and variable font size in all browsers.
+ */
+
 small {
-    font-size: 75%;
+    font-size: 80%;
 }
 
 /*
@@ -298,6 +326,7 @@ sup {
 sub {
     bottom: -0.25em;
 }
+
 
 /* ==========================================================================
    Lists
@@ -337,6 +366,7 @@ nav ol {
     list-style: none;
     list-style-image: none;
 }
+
 
 /* ==========================================================================
    Embedded content
@@ -520,6 +550,7 @@ textarea {
     vertical-align: top; /* 2 */
 }
 
+
 /* ==========================================================================
    Tables
    ========================================================================== */
@@ -543,6 +574,92 @@ object,
 video {
     max-width: 100%;
     height: auto;
+}
+
+
+/* main H5BP base styles */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
 }
 
 

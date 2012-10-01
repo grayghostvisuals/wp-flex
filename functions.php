@@ -30,6 +30,16 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
 //wpflex_setup
 function wpflex_setup() {
 
+/*-----------------------------------[ register the custom nav menu(s) ] */
+
+// this will take another array for another nav menu
+// i.e.
+// 'primary'      => 'Primary Menu',
+// 'another menu' => 'Footer Menu'
+register_nav_menus( array(
+    'primary'   => 'Primary Menu'
+));
+
 
 /*-----------------------------------[ wp enque script ] */
 
@@ -43,7 +53,7 @@ endif;
 // http://codex.wordpress.org/Custom_Headers
 // http://codex.wordpress.org/Appearance_Header_Screen
 $custom_header_defaults = array(
-    'default-image'          => '', //get_template_directory_uri() . 'screenshot.png',
+    'default-image'          => '',
     'random-default'         => false,
     'width'                  => '980',
     'height'                 => '200',
