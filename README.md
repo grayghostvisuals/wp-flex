@@ -1,8 +1,8 @@
 #WP-Flex v1.0.3
-[![http://grayghostvisuals.com/wpflex](http://static.grayghostvisuals.com/portfolio/wpflex.png)](http://grayghostvisuals.com/wpflex)
+[![http://wpflex.grayghostvisuals.com](http://static.grayghostvisuals.com/portfolio/wpflex.png)](http://wpflex.grayghostvisuals.com)
 
 ###DEMO
-[http://grayghostvisuals.com/wpflex](http://grayghostvisuals.com/wpflex)
+[http://wpflex.grayghostvisuals.com](http://wpflex.grayghostvisuals.com)
 
 ##WHAT IS IT?
 A blank, responsive, WordPress theme boilerplate for developers submitting to the WordPress.org theme repository. Includes bunches of best practices for theme building requirements and coding standards for authors as suggested by WordPress' Codex. Also makes a great starter theme to get you going from scratch.
