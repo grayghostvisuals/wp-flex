@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
  * Required to display in select menu list
  * on posts pages from dashboard

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 // wpflex Custom Options
 // triggered before any other hook when a user accesses the admin area
@@ -27,7 +27,7 @@ function wpflex_options_add_page() {
     add_theme_page( 'WP-Flex Options', 'WP-Flex Options', 'edit_theme_options', 'wpflex-options', 'wpflex_theme_options_layout' );
 };
 
-// creates the option page. 
+// creates the option page.
 // this is the function called through add_theme _page
 function wpflex_theme_options_layout() {
 
@@ -35,26 +35,26 @@ function wpflex_theme_options_layout() {
     if ( ! isset( $_REQUEST['settings-updated'] ) ) :
         $_REQUEST['settings-updated'] = false;
     endif; //endif ! isset() ?>
-        
+
     <!-- styles -->
     <style>
-        input { 
-            display: block; 
-            box-shadow: inset 0px 1px 1px rgba(0,0,0,.6), 
-                              0 1px 0px #FFF; 
+        input {
+            display: block;
+            box-shadow: inset 0px 1px 1px rgba(0,0,0,.6),
+                              0 1px 0px #FFF;
         }
 
-        #submit-btn { 
-            display: block; 
-            margin: .5em 0; 
-            padding: 1em 0; 
+        #submit-btn {
+            display: block;
+            margin: .5em 0;
+            padding: 1em 0;
         }
     </style>
-        
+
     <!-- begin WP-Flex options layout -->
     <div class="wrap">
-        
-        <?php 
+
+        <?php
         //displays the screen icon next to the title on the theme options page
         //retrieve current theme name wp_get_theme()
         screen_icon(); ?>
@@ -73,9 +73,9 @@ function wpflex_theme_options_layout() {
         <!-- begin form for theme options page -->
         <form method="post" action="options.php">
         <?php /////////////////// wpflex options fetch /////////////////////////// ?>
-        
+
         <?php settings_fields( 'wpflex_options' ); //must match register_settings field ?>
-        
+
         <?php $options = get_option( 'wpflex_theme_options' ); ?>
 
         <table class="form-table">
@@ -101,7 +101,7 @@ function wpflex_theme_options_layout() {
                 <tr valign="top">
                     <td valign="top" scope="row">
                         <strong>Facebook URL</strong> <em>http://www.facebook.com/fb_slug</em>
-                        <input type="text" class="regular-text" placeholder="http://www.facebook.com/fb_slug" name="wpflex_theme_options[facebookurl]" value="<?php esc_attr_e( $options['facebookurl'] ); ?>" />
+                        <input type="text" class="regular-text" placeholder="http://www.facebook.com/fb_slug" name="wpflex_theme_options[facebookurl]" value="<?php esc_attr( $options['facebookurl'] ); ?>" />
                     </td>
                 </tr>
 
@@ -109,7 +109,7 @@ function wpflex_theme_options_layout() {
                 <tr valign="top">
                     <td valign="top" scope="row">
                         <strong>Twitter Name</strong><em>make sure to include the @ symbol</em>
-                        <input type="text" class="regular-text" placeholder="@twittername" name="wpflex_theme_options[twitterurl]" value="<?php esc_attr_e( $options['twitterurl'] ); ?>" />
+                        <input type="text" class="regular-text" placeholder="@twittername" name="wpflex_theme_options[twitterurl]" value="<?php esc_attr( $options['twitterurl'] ); ?>" />
                     </td>
                 </tr>
 
@@ -126,7 +126,7 @@ function wpflex_theme_options_layout() {
                     <td valign="top" scope="row">
                         <!-- organization -->
                         <strong>Organization</strong>
-                        <input type="text" class="regular-text" name="wpflex_theme_options[fnorg]" value="<?php esc_attr_e( $options[ 'fnorg' ] ); ?>" placeholder="John J. Doe or Pete's Pancake House" />
+                        <input type="text" class="regular-text" name="wpflex_theme_options[fnorg]" value="<?php esc_attr( $options[ 'fnorg' ] ); ?>" placeholder="John J. Doe or Pete's Pancake House" />
                     </td>
                 </tr>
 
@@ -134,19 +134,19 @@ function wpflex_theme_options_layout() {
                     <td valign="top" scope="row">
                         <!-- address -->
                         <strong>Street Address</strong>
-                        <input type="text" class="regular-text" name="wpflex_theme_options[street]" value="<?php esc_attr_e( $options[ 'street' ]); ?>"placeholder="555 Fake Street" />
-                        
+                        <input type="text" class="regular-text" name="wpflex_theme_options[street]" value="<?php esc_attr( $options[ 'street' ]); ?>"placeholder="555 Fake Street" />
+
                         <!-- city -->
                         <em>City Name</em>
-                        <input type="text" class="regular-text" name="wpflex_theme_options[locality]" value="<?php esc_attr_e( $options[ 'locality' ]); ?>"placeholder="City Name" />
-                        
+                        <input type="text" class="regular-text" name="wpflex_theme_options[locality]" value="<?php esc_attr( $options[ 'locality' ]); ?>"placeholder="City Name" />
+
                         <!-- state -->
                         <em>State</em> <strong>Abbreviated Please!</strong>
-                        <input type="text" class="regular-text" name="wpflex_theme_options[region]" value="<?php esc_attr_e( $options[ 'region' ]); ?>"placeholder="State" />
-                        
+                        <input type="text" class="regular-text" name="wpflex_theme_options[region]" value="<?php esc_attr( $options[ 'region' ]); ?>"placeholder="State" />
+
                         <!-- postal code -->
                         <em>Postal Code</em>
-                        <input type="text" class="regular-text" name="wpflex_theme_options[postal]" value="<?php esc_attr_e( $options[ 'postal' ]); ?>"placeholder="Postal Code" />
+                        <input type="text" class="regular-text" name="wpflex_theme_options[postal]" value="<?php esc_attr( $options[ 'postal' ]); ?>"placeholder="Postal Code" />
                     </td>
                 </tr>
 
@@ -156,9 +156,9 @@ function wpflex_theme_options_layout() {
                         <!-- phone -->
                         <strong>Phone</strong><br />
                         <em>headquarters type: ex.) Office, Home, Work</em><br />
-                        <input type="text" class="regular-text" name="wpflex_theme_options[teltype]" value="<?php esc_attr_e( $options[ 'teltype' ]); ?>" placeholder="Office" />   
+                        <input type="text" class="regular-text" name="wpflex_theme_options[teltype]" value="<?php esc_attr( $options[ 'teltype' ]); ?>" placeholder="Office" />
                         <em>Telephone Number</em>
-                        <input type="text" class="regular-text" name="wpflex_theme_options[telvalue]" value="<?php esc_attr_e( $options[ 'telvalue' ]); ?>" placeholder="555-555-5555" />
+                        <input type="text" class="regular-text" name="wpflex_theme_options[telvalue]" value="<?php esc_attr( $options[ 'telvalue' ]); ?>" placeholder="555-555-5555" />
                     </td>
                 </tr>
 
@@ -167,14 +167,14 @@ function wpflex_theme_options_layout() {
                         <!-- URL -->
                         <strong>URL</strong><br />
                         <em>ex.) www.my_own_url.com</em>
-                        <input type="text" class="regular-text" name="wpflex_theme_options[url]" value="<?php esc_attr_e( $options[ 'url' ]); ?>" placeholder="http://my_own_url.com" />
+                        <input type="text" class="regular-text" name="wpflex_theme_options[url]" value="<?php esc_attr( $options[ 'url' ]); ?>" placeholder="http://my_own_url.com" />
                     </td>
                 </tr>
 
                 <tr valign="top">
                     <td valign="top" scope="row">
                         <strong>ADD TO ADDRESS BOOK LINK</strong>
-                        <input type="text" class="regular-text" name="wpflex_theme_options[addrbook]" value="<?php esc_attr_e( $options[ 'addrbook' ]); ?>" placeholder="http://my_own_url.com" />
+                        <input type="text" class="regular-text" name="wpflex_theme_options[addrbook]" value="<?php esc_attr( $options[ 'addrbook' ]); ?>" placeholder="http://my_own_url.com" />
                     </td>
                 </tr>
             </tbody>
@@ -188,40 +188,40 @@ function wpflex_theme_options_layout() {
 
 <?php } //end wpflex_theme_options_layout
 
-//Sanitize and validate input. Accepts an array, return a sanitized array. 
+//Sanitize and validate input. Accepts an array, return a sanitized array.
 function wpflex_options_validate( $input ) {
     // Organization Option Cleanse
     $input['fnorg'] = wp_filter_nohtml_kses( $input['fnorg'] );
 
     // Street Address Option Cleanse
     $input['street'] = wp_filter_nohtml_kses( $input['street'] );
-            
+
     // Locality Option Cleanse
     $input['locality'] = wp_filter_nohtml_kses( $input['locality'] );
-            
+
     // Region Option Cleanse
     $input['region'] = wp_filter_nohtml_kses( $input['region'] );
-            
+
     // Postal Option Cleanse
     $input['postal'] = wp_filter_nohtml_kses( $input['postal'] );
-            
+
     // Telephone Type Option Cleanse
     $input['teltype'] = wp_filter_nohtml_kses( $input['teltype'] );
-            
+
     // Telephone Value Option Cleanse
     $input['telvalue'] = wp_filter_nohtml_kses( $input['telvalue'] );
-            
+
     // User URL Option Cleanse
     $input['url'] = wp_filter_nohtml_kses( $input['url'] );
-            
+
     // Add To Address Book Link Option Cleanse
     $input['addrbook'] = wp_filter_nohtml_kses( $input['addrbook'] );
-            
+
     // Facebook Option Cleanse
     $input['facebookurl'] = wp_filter_nohtml_kses( $input['facebookurl'] );
-            
+
     // Twitter Option Cleanse
     $input['twitterurl'] = wp_filter_nohtml_kses( $input['twitterurl'] );
-            
+
     return $input;
 };//end wpflex_options_validate ?>
