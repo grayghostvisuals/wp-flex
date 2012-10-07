@@ -96,7 +96,7 @@ for optimal performance, create your own custom Modernizr build: www.modernizr.c
     <?php $header = get_header_image() ?>
     <?php if ( isset( $header ) || $header ) : ?>
         <div id="header-image">
-            <a href="<?php bloginfo( 'url' ) ?>"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" usemap="#Map"></a>
+            <a href="<?php echo home_url() ?>"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" usemap="#Map"></a>
         </div>
     <?php endif; ?>
 
