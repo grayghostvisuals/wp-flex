@@ -1,4 +1,4 @@
-#WP-Flex v1.0.3
+#WP-Flex v1.0.4
 [![http://wpflex.grayghostvisuals.com](http://static.grayghostvisuals.com/portfolio/wpflex.png)](http://wpflex.grayghostvisuals.com)
 
 ###DEMO
@@ -130,19 +130,15 @@ If you haven't noticed already we have a feature branch called 'Case Studies' fo
 
     A database for theme testing with multiple users, comment threading, posts and more.
 
-9. Theme Check
-
-    The theme check plugin is an easy way to test your theme and make sure it's up to spec with the latest theme review standards.
-
-10. ``theme-options.php`` Boilerplate
+9. ``theme-options.php`` Boilerplate
 
     Custom boilerplate starting point to give your users and authors awesome theme options out of the box for vCard and social integrations with Facebook and Twitter.
 
-11. ``functions.php`` Boilerplate
+10. ``functions.php`` Boilerplate
 
     A creamy base for required functionality of themes and submission via WordPress.org Theme Repository. http://wordpress.org/extend/themes/upload
 
-12. Custom Navigation Functionality
+11. Custom Navigation Functionality
 
     We use ``wp_nav_menu`` while providing a fallback if a custom navigation menu is not in place. This option can be found from within your WordPress Admin Dashboard under "Appearance" &gt; "Menus"
 
