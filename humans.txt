@@ -1,0 +1,29 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+  <your title><your name>
+  
+  Site: 
+  
+  Twitter:
+  
+  Location: 
+
+
+/* THANKS */
+  Names (& URL):
+
+  Paul Irish, Jefferey Zeldman, Ethan Marcotte, Eric Meyer, Larry Ullman, Matt Mullenweg & The Wordpress Community,
+  Andy Clarke, Dan Cederholm, Jeremy Keith, Richard Rutter, Ian Hicks, Simon Collison and finally Web Standards. 
+
+  
+
+/* SITE */
+
+  Standards: 
+  Backend:
+  Components: 
+  Framework: 
+

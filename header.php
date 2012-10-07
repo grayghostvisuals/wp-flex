@@ -13,39 +13,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 
 <!-- title -->
-<title><?php
-// if tag
-if( function_exists( 'is_tag' ) && is_tag() ) :
-  single_tag_title( 'Tag Archive for &quot;' ); echo '&quot; - ';
+<!-- http://codex.wordpress.org/Function_Reference/wp_title -->
+<title>
+<?php wp_title(); ?>
+<?php
+    // Add the blog description for the home/front page.
+    $site_description = get_bloginfo( 'description', 'display' );
 
-// if archives
-elseif( is_archive() ) :
-  esc_attr( wp_title( '' ) ); echo ' '; echo 'Archive -';
-
-// if search
-elseif( is_search() ) :
-  echo 'Search for &quot;' . esc_html( $s ) . '&quot; -';
-
-// if !404 and single or page
-elseif( !( is_404() ) && ( is_single() ) || ( is_page() ) && !(is_front_page() ) ) :
-  esc_attr( wp_title( '' ) ); echo '-';
-
-// if 404
-elseif( is_404() ) :
-  echo 'Not Found -';
-endif;
-
-//if home
-if( is_home() || is_front_page() ):
-  esc_attr( bloginfo( 'name' ) ); echo '-'; esc_attr( bloginfo( 'description' ) ); echo '-'; esc_attr( wp_title() );
-else :
-  esc_attr( bloginfo( 'name' ) );
-endif;
-
-// if pages is greater than 1
-if( $paged > 1 ) :
-  echo '-page' . $paged;
-endif; ?></title>
+    if ( $site_description && ( is_home() || is_front_page() ) ) :
+        echo " &raquo; $site_description";
+    endif;
+?>
+</title>
 
 <!-- search engine robots meta instructions -->
 <?php if ( is_search() || is_404() ) : ?>
@@ -66,7 +45,7 @@ endif; ?></title>
 <?php elseif ( is_archive() ) : ?>
 <meta name="description" content="">
 <?php elseif ( is_search() ) : ?>
-<meta name="" content="<?php esc_html( $s ) ?>">
+<meta name="description" content="<?php esc_html( $s ) ?>">
 
 <!-- fallback meta tag description -->
 <?php else : ?>
@@ -84,18 +63,19 @@ endif; ?></title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-<!-- base css -->
-<link rel="stylesheet" media="screen" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<link rel="stylesheet" media="all" href="<?php echo get_stylesheet_uri(); ?>">
 
 <!-- pingback url -->
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <!-- RSS Feed -->
-<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo( 'rss2_url' ); ?>" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo( 'rss2_url' ); ?>">
 
-<!-- All JavaScript at the bottom, except this Modernizr. Modernizr enables HTML5 elements & feature detects;
-         for optimal performance, create your own custom Modernizr build: www.modernizr.com/download/ -->
+<!--
+All JavaScript at the bottom, except this Modernizr. Modernizr enables HTML5 elements & feature detects;
+for optimal performance, create your own custom Modernizr build: www.modernizr.com/download
+-->
 <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
 
 <?php //required comment functionality ?>
@@ -106,24 +86,18 @@ endif; ?></title>
 </head>
 
 <!-- body element tag -->
-<?php if ( is_single() ) : ?>
-<body <?php body_class(); ?> id="single">
-
-<?php elseif ( is_home() ) : ?>
-<body <?php body_class(); ?> id="index">
-
-<?php else : ?>
-<body <?php body_class(); ?> id="<?php the_title(); ?>">
-<?php endif; ?>
+<body <?php body_class(); ?>>
 
 <!--[if lt IE 7]>
     <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
 <![endif]-->
 
 <header role="banner">
-
-    <?php if ( function_exists( 'header_image' ) ) : ?>
-        <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" usemap="#Map">
+    <?php $header = get_header_image() ?>
+    <?php if ( isset( $header ) || $header ) : ?>
+        <div id="header-image">
+            <a href="<?php echo home_url() ?>"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" usemap="#Map"></a>
+        </div>
     <?php endif; ?>
 
     <h1 class="blogname"><a href="<?php echo home_url();  ?>"><?php esc_attr( bloginfo( 'name' ) ); ?></a></h1>
@@ -135,8 +109,8 @@ endif; ?></title>
     <nav role="navigation">
         <?php
             // Custom Nav Call
-            function custom_nav() {
-                if ( function_exists( 'wp_nav_menu' ) ) :
+            function wpflex_custom_nav() {
+                if ( 'wp_nav_menu' ) :
                     wp_nav_menu( array(
                         'theme_location'  => '', // Location in the theme to be used--must be registered with register_nav_menu() in order to be selectable by the user
                         'menu'            => '', //  The menu that is desired; accepts (matching in order) id, slug, name
@@ -146,7 +120,7 @@ endif; ?></title>
                         'menu_class'      => '', // The navigations containg element surrounding li elements will have this class (i.e. <ul class="menu_class"><li></li></ul>)
                         'menu_id'         => '', // The ID that is applied to the ul element which forms the menu
                         'echo'            => true, // Removes the custom nav menu entirely from view and the HTML markup
-                        'fallback_cb'     => 'wp_nav_fallback', // wp_nav_menu falback call function. If wp_nav_menu is not used by the author then do the following within the callback
+                        'fallback_cb'     => 'wpflex_nav_fallback', // wp_nav_menu falback call function. If wp_nav_menu is not used by the author then do the following within the callback
                         'before'          => '', // Output text before the anchor tag of the link. This value can be a string or HTML
                         'after'           => '', // Output text before the anchor tag of the link. This value can be a string or HTML
                         'link_before'     => '', // If HTML is injected in this value then the anchor is strippped away entirely. Only use strings of content ( NO HTML)
@@ -156,14 +130,14 @@ endif; ?></title>
                         'walker'          => '' // Custom walker object to use (Note: You must pass an actual object to use, not a string)- Feel free to make this clearer
                     ));
                 else :
-                    nav_fallback();
+                    wpflex_nav_fallback();
                 endif;
             }
 
             // Navigation Fallback Call using wp_list_pages
-            function wp_nav_fallback() {
+            function wpflex_nav_fallback() {
                 //wp_list_pages arguments as an array
-                $nav_wpflex = array(
+                $wpflex_nav = array(
                     'depth'       => 0, // All Pages and sub-pages are displayed (no depth restriction)
                     'show_date'   => '', // Display creation or last modified date next to each Page. The default value is the null value (do not display dates).
                     'date_format' => get_option( 'date_format' ), // Controls the format of the Page date set by the show_date parameter (example: "l, F j, Y"). This parameter defaults to the date format configured in your WordPress options
@@ -185,9 +159,9 @@ endif; ?></title>
                 <ol>
                     <?php
                         //begin wp_list_pages loop
-                        if( wp_list_pages( $nav_wpflex ) ) : while ( wp_list_pages( $nav_wpflex ) ) :
+                        if ( wp_list_pages( $wpflex_nav ) ) : while ( wp_list_pages( $wpflex_nav ) ) :
                             //list items from the array above
-                            wp_list_pages( $nav_wpflex );
+                            wp_list_pages( $wpflex_nav );
                         endwhile;
                         endif;
                     ?>
@@ -195,7 +169,7 @@ endif; ?></title>
         <?php } // end wp_nav_fallback
 
             // custom_nav call
-            custom_nav();
+            wpflex_custom_nav();
         ?>
     </nav>
 </header>

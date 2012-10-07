@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <section id="content" role="main">
 
-    <?php if ( have_posts() ) : while( have_posts() ) : the_post(); ?>
+    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
         <header>
             <h1><?php the_title(); ?></h1>
@@ -12,11 +12,13 @@
         <!-- http://codex.wordpress.org/Customizing_the_Read_More -->
         <?php the_content(); ?>
 
+        <!-- Required Theme Functionality -->
         <?php
-          wp_link_pages( array(
-            'before' => '<div>' . 'Pages &raquo',
-            'after'  => '</div>'
-        )); ?>
+            wp_link_pages( array(
+                'before' => '<div>' . 'Pages &raquo',
+                'after'  => '</div>'
+            ));
+        ?>
 
         <!-- post footer -->
         <footer>
@@ -25,23 +27,23 @@
             </div>
 
             <ul class="entry-taxonomies">
-              <li>
-                <?php echo ( 'Tagged:' ); ?>
-                <ul class="entry-tags-list">
-                  <li class="entry-tags">
-                    <?php the_tags( ',</li> <li>' ); ?>
-                  </li>
-                </ul>
-              </li>
+                <li>
+                    <?php echo ( 'Tagged:' ); ?>
+                    <ul class="entry-tags-list">
+                        <li class="entry-tags">
+                            <?php the_tags( ',</li> <li>' ); ?>
+                        </li>
+                    </ul>
+                </li>
 
-              <li>
-                <?php echo ( 'Filed under:' ); ?>
-                <ul class="entry-categories-list">
-                  <li class="entry-categories">
-                    <?php the_category( ',</li> <li>' ) ?>
-                  </li>
-                </ul>
-              </li>
+                <li>
+                    <?php echo ( 'Filed under:' ); ?>
+                    <ul class="entry-categories-list">
+                        <li class="entry-categories">
+                            <?php the_category( ',</li> <li>' ) ?>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </footer>
 
@@ -49,8 +51,8 @@
 
     <div class="pagination single">
         <ul>
-          <li><?php previous_post_link( '%link', '&larr; Previous Category Post', TRUE ); ?></li>
-          <li><?php next_post_link( '%link', 'Next Category Post &rarr;', TRUE ); ?></li>
+            <li><?php previous_post_link( '%link', '&larr; Previous Category Post', TRUE ); ?></li>
+            <li><?php next_post_link( '%link', 'Next Category Post &rarr;', TRUE ); ?></li>
         </ul>
     </div>
 

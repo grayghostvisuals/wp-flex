@@ -33,7 +33,7 @@ rewind_posts();
     <?php if( have_posts() ) : while( have_posts() ) : the_post()?>
     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
         <header>
-            <h1 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?> blog post entry"><?php the_title(); ?></a></h1>
+            <h1 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark tag" title="<?php the_title(); ?> blog post entry"><?php the_title(); ?></a></h1>
             <?php get_template_part( 'inc/meta' ); ?>
         </header>
 
