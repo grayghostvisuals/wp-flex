@@ -5,7 +5,7 @@
 [http://wpflex.grayghostvisuals.com](http://wpflex.grayghostvisuals.com)
 
 ##WHAT IS IT?
-A blank, responsive, WordPress theme boilerplate for developers submitting to the WordPress.org theme repository. Includes bunches of best practices for theme building requirements and coding standards for authors as suggested by WordPress' Codex. Also makes a great starter theme to get you going from scratch.
+A blank, responsive, WordPress theme boilerplate adhering to best practices and requirements set forth by the official WordPress Codex and theme review guidelines. Also makes a great starter theme for any of your WordPress theming needs.
 
 If you care to mention this theme helper in your project then please do so by adding the following to your site footer with an appropriate link to this repo:
 "Built with the almighty WP&ndash;Flex; A blank, responsive boilerplate for WordPress theme makers."
