@@ -1,4 +1,4 @@
-#WP-Flex v1.0.4
+#WP-Flex v1.0.5
 [![http://wpflex.grayghostvisuals.com](http://static.grayghostvisuals.com/portfolio/wpflex.png)](http://wpflex.grayghostvisuals.com)
 
 ###DEMO
@@ -27,7 +27,7 @@ Tested and Debugged using WordPress 3.4.2, ``theme-unit-test.xml`` and ``wp-conf
 4. Opera   12.01
 
 
-###Mac Lion 10.7.4 Browser Tests
+###Mac Mountain Lion 10.8.2 Browser Tests
 1. Firefox 16.0.1
 2. Chrome  22.0.1229.94
 3. Safari  6.0

@@ -24,46 +24,44 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
 
         /*-----------------------------------[ HTML title tag filter ] */
 
-        // http://ziadrahhal.com/2012/05/recommended-wp_title-filter-in-wordpress
         // http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
         // http://codex.wordpress.org/Function_Reference/wp_title
-
-        // Title tag filter
-        // required for themes
+        //
+        // Feel free to pick your poison
+        // https://gist.github.com/3907296
+        // https://gist.github.com/3907306
+        //
+        // Title tag filter required for themes
         // a custom callback function that displays a meaningful title
         // depending on the page being rendered
-
-        function wpflex_filter_wp_title( $title ) {
+        function wpflex_title_filter( $title ) {
             global $wp_query, $s, $paged, $page;
-            if ( !is_feed() ) {
-                $sep = __('&raquo;');
-                $new_title = get_bloginfo('name').' ';
-                $bloginfo_description = get_bloginfo('description');
 
-                if ((is_home () || is_front_page()) && !empty($bloginfo_description) && !$paged && !$page) {
-                    $new_title .= $sep.' '.$bloginfo_description;
-                }
-                elseif (is_single() || is_page()) {
-                    $new_title .= $sep.' '.single_post_title('', false);
-                }
-                elseif (is_search() ) {
-                    $new_title .= $sep.' '.sprintf(__('Search Results: %s'),
-                    esc_html($s));
-                }
-                else
+            if ( ! is_feed() ) :
+                $sep = __( '&raquo;' );
+                $new_title = get_bloginfo( 'name' ) . ' ';
+                $bloginfo_description = get_bloginfo( 'description' );
+
+                if ( ( is_home () || is_front_page() ) && !empty( $bloginfo_description ) && !$paged && !$page ) :
+                    $new_title .= $sep . ' ' . $bloginfo_description;
+                elseif ( is_single() || is_page() ) :
+                    $new_title .= $sep . ' ' . single_post_title( '', false );
+                elseif ( is_search() ) :
+                    $new_title .= $sep . ' ' . sprintf( __( 'Search Results: %s' ), esc_html( $s ) );
+                else :
                     $new_title .= $title;
+                endif;
 
-                if ( $paged || $page ) {
-                    $new_title .= ' '.$sep.' '.sprintf(__('Page: %s'),max( $paged,
-                    $page ));
-                }
+                if ( $paged || $page ) :
+                    $new_title .= ' ' . $sep . ' ' . sprintf( __( 'Page: %s' ), max( $paged, $page ) );
+                endif;
 
                 $title = $new_title;
-            }
+            endif;
             return $title;
         }
 
-        add_filter( 'wp_title', 'wpflex_filter_wp_title' );
+        add_filter( 'wp_title', 'wpflex_title_filter' );
 
 
         /*-----------------------------------[ register the custom nav menu(s) ] */
@@ -94,7 +92,7 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
         // included scripts willl load relative to the URL of your theme directory
         function wpflex_assets_loader() {
             // load main stylesheet
-            wp_register_style( 'style', get_stylesheet_uri(), array(), '1.0.4', 'all' );
+            wp_register_style( 'style', get_stylesheet_uri(), array(), '1.0.5', 'all' );
             wp_enqueue_style( 'style' );
 
             // Load WordPress' jQuery. Must be registered first before wp_enqueue_script()
@@ -102,13 +100,16 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
             wp_enqueue_script( 'jquery' );
 
             // Load Modernizr
-            wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/vendor/modernizr-2.6.2.min.js', array(), '', false );
+            wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/vendor/modernizr-2.6.2.min.js', array(), '2.6.2', false );
 
             // load plugins.js
-            wp_enqueue_script( 'plugins', get_template_directory_uri() . '/js/plugins.js', array( 'jquery'), '1.0.4', true );
+            wp_enqueue_script( 'plugins', get_template_directory_uri() . '/js/plugins.js', array( 'jquery'), '1.0.5', true );
 
             // load main.js
-            wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array( 'jquery'), '1.0.4', true );
+            wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array( 'jquery'), '1.0.5', true );
+
+            // load google analytics
+            wp_enqueue_script( 'google-analytics', get_template_directory_uri() . '/js/google-analytics.js', array(), '', true );
         }
 
         add_action( 'wp_enqueue_scripts', 'wpflex_assets_loader' );
