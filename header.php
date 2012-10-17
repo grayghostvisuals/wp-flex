@@ -14,7 +14,7 @@
 
 <!-- title -->
 <!-- http://codex.wordpress.org/Function_Reference/wp_title -->
-<title><?php wp_title( '&raquo;', true, 'right' ); ?></title>
+<title><?php wp_title( '&raquo;', true, 'left' ); ?></title>
 
 <!-- search engine robots meta instructions -->
 <?php if ( is_search() || is_404() ) : ?>
