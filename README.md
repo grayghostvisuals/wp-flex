@@ -21,23 +21,23 @@ If you care to mention this theme helper in your project then please do so by ad
 Tested and Debugged using WordPress 3.4.2, ``theme-unit-test.xml`` and ``wp-config.php.``
 
 ###Windows 7 Browser Tests
-1. IE      7-9
-2. Chrome  21.0.1180.82
-3. Firefox 15.0
+1. IE      7-10
+2. Chrome  22.0.1229.94
+3. Firefox 16.0.1
 4. Opera   12.01
 
 
 ###Mac Lion 10.7.4 Browser Tests
-1. Firefox 15.0
-2. Chrome  21.0.1180.82
+1. Firefox 16.0.1
+2. Chrome  22.0.1229.94
 3. Safari  6.0
 4. Opera   12.01
 
 
 ##IT STILL NEEDS YOUR HELP!
-1. In order to submit to the WordPress theme repo, authors must rename all function calls / variables with the theme name reference to your own new theme-to-be name.
-Reference &rarr; [http://codex.wordpress.org/Theme_Review#Theme_Name](http://codex.wordpress.org/Theme_Review#Theme_Name) for rules regarding naming. WP-Flex needs a dynamic means to create a new theme name across our codebase without going through everything line by line.
-
+<blockquote>Themes are required to prefix all options, custom functions, custom variables, and custom constants with theme-slug (or appropriate variant</blockquote>
+Reference &rarr; [http://codex.wordpress.org/Theme_Review#Security_and_Privacy](http://codex.wordpress.org/Theme_Review#Security_and_Privacy).
+WP-Flex needs a dynamic means to create a new prefix across our codebase without going through everything line by line.
 
 ###For example
 using ``functions.php`` to illustrate&hellip;

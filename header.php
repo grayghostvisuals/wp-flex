@@ -14,42 +14,29 @@
 
 <!-- title -->
 <!-- http://codex.wordpress.org/Function_Reference/wp_title -->
-<title>
-<?php wp_title(); ?>
-<?php
-    // Add the blog description for the home/front page.
-    $site_description = get_bloginfo( 'description', 'display' );
-
-    if ( $site_description && ( is_home() || is_front_page() ) ) :
-        echo " &raquo; $site_description";
-    endif;
-?>
-</title>
+<title><?php wp_title( '&raquo;', true, 'left' ); ?></title>
 
 <!-- search engine robots meta instructions -->
 <?php if ( is_search() || is_404() ) : ?>
-<meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="noindex, nofollow">
 <?php else: ?>
-<meta name="robots" content="all">
+    <meta name="robots" content="all">
 <?php endif; ?>
 
 <!-- index search meta data -->
 <?php if ( is_home() ) : ?>
-<meta name="description" content="<?php esc_attr( bloginfo( 'name' ) ); esc_attr( bloginfo( 'description' ) ); ?>">
-
+    <meta name="description" content="<?php esc_attr( bloginfo( 'name' ) ); esc_attr( bloginfo( 'description' ) ); ?>">
 <!-- single page meta tag description -->
 <?php elseif ( is_single() ) : ?>
-<meta name="description" content="<?php esc_attr( wp_title() ) ?>">
-
+    <meta name="description" content="<?php esc_attr( wp_title() ) ?>">
 <!-- archive pages meta tag description -->
 <?php elseif ( is_archive() ) : ?>
-<meta name="description" content="">
+    <meta name="description" content="">
 <?php elseif ( is_search() ) : ?>
-<meta name="description" content="<?php esc_html( $s ) ?>">
-
+    <meta name="description" content="<?php esc_html( $s ) ?>">
 <!-- fallback meta tag description -->
 <?php else : ?>
-<meta name="description" content="<?php esc_attr( bloginfo( 'name' ) ); esc_attr( bloginfo( 'description' ) ) ?>">
+    <meta name="description" content="<?php esc_attr( bloginfo( 'name' ) ); esc_attr( bloginfo( 'description' ) ) ?>">
 <?php endif; ?>
 
 <!-- Mobile viewport optimized: h5bp.com/viewport -->
@@ -62,21 +49,12 @@
 <!-- Sets whether a web application runs in full-screen mode -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-<link rel="stylesheet" media="all" href="<?php echo get_stylesheet_uri(); ?>">
-
 <!-- pingback url -->
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <!-- RSS Feed -->
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo( 'rss2_url' ); ?>">
-
-<!--
-All JavaScript at the bottom, except this Modernizr. Modernizr enables HTML5 elements & feature detects;
-for optimal performance, create your own custom Modernizr build: www.modernizr.com/download
--->
-<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
 
 <?php //required comment functionality ?>
 <?php if ( is_singular() ) { wp_enqueue_script( 'comment-reply' ); } ?>
