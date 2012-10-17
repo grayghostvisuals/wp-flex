@@ -24,48 +24,44 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
 
         /*-----------------------------------[ HTML title tag filter ] */
 
-        // http://shinraholdings.com/59/using-the-wp_title-filter
         // http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
         // http://codex.wordpress.org/Function_Reference/wp_title
+        //
+        // Feel free to pick your poison
+        // https://gist.github.com/3907296
+        // https://gist.github.com/3907306
+        //
+        // Title tag filter required for themes
+        // a custom callback function that displays a meaningful title
+        // depending on the page being rendered
+        function wpflex_title_filter( $title ) {
+            global $wp_query, $s, $paged, $page;
 
-        // Title tag filter
-        // required for themes
-        function wpflex_title_filter( $title, $sep, $seplocation ) {
-            // get special index page type (if any)
-            if ( is_category() )
-                $type = 'Category';
-            elseif ( is_tag() )
-                $type = 'Tag';
-            elseif ( is_author() )
-                $type . 'Author';
-            elseif ( is_date() || is_archive() )
-                $type = 'Archives';
-            else
-                $type = false;
+            if ( ! is_feed() ) :
+                $sep = __( '&raquo;' );
+                $new_title = get_bloginfo( 'name' ) . ' ';
+                $bloginfo_description = get_bloginfo( 'description' );
 
-            // get the page number
-            if ( get_query_var( 'paged' ) )
-                $page_num = 'Page ' . get_query_var( 'paged' ); // on index
-            elseif ( get_query_var( 'page' ) )
-                $page_num = 'Page ' . get_query_var( 'page' ); // on single
-            else $page_num = false;
+                if ( ( is_home () || is_front_page() ) && !empty( $bloginfo_description ) && !$paged && !$page ) :
+                    $new_title .= $sep . ' ' . $bloginfo_description;
+                elseif ( is_single() || is_page() ) :
+                    $new_title .= $sep . ' ' . single_post_title( '', false );
+                elseif ( is_search() ) :
+                    $new_title .= $sep . ' ' . sprintf( __( 'Search Results: %s' ), esc_html( $s ) );
+                else :
+                    $new_title .= $title;
+                endif;
 
-            // strip title separator
-            $title = trim( str_replace( $sep, '', $title ) );
+                if ( $paged || $page ) :
+                    $new_title .= ' ' . $sep . ' ' . sprintf( __( 'Page: %s' ), max( $paged, $page ) );
+                endif;
 
-            // determine seplocation order
-            if ( $seplocation == 'right' )
-                $parts = array( $page_num, $title, $type, get_bloginfo( 'name' ) );
-            else
-                $parts = array( get_bloginfo( 'name' ), $type, $title, $page_num );
-
-            // strip blanks, implode, and return title tag
-            $parts = array_filter( $parts );
-            return implode( ' ' . $sep . ' ', $parts );
+                $title = $new_title;
+            endif;
+            return $title;
         }
 
-        // call our custom wp_title filter, with normal (10) priority, and 3 args
-        add_filter( 'wp_title', 'wpflex_title_filter', 10, 3 );
+        add_filter( 'wp_title', 'wpflex_title_filter' );
 
 
         /*-----------------------------------[ register the custom nav menu(s) ] */
@@ -79,30 +75,44 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
         ));
 
 
-        /*-----------------------------------[ wp_enqueue styles ] */
-
-        //Themes are recommended to hook stylesheet and script enqueue callbacks into `wp_enqueue_scripts`
-        //uncomment and implement before submission for theme review
-        //
-        //function wpflex_style() {
-        //    // Register the style like this for a theme:
-        //    // (First the unique name for the style (custom-style) then the src,
-        //    // then dependencies and ver no. and media type)
-        //    wp_register_style();
-
-        //    // enqueing:
-        //    wp_enqueue_style();
-        //}
-
-        //add_action('wp_enqueue_scripts', 'wpflex_style');
-
-
-        /*-----------------------------------[ wp enque script ] */
+        /*-----------------------------------[ comment reply wp enque script ] */
 
         // Required WordPress Core Feature for Theme Review
         if ( is_singular() ) :
             wp_enqueue_script( 'comment-reply' );
         endif;
+
+
+        /*-----------------------------------[ external javascript and stylesheet assets ] */
+
+        // http://codex.wordpress.org/Function_Reference/wp_enqueue_script
+        // http://wpcandy.com/teaches/how-to-load-scripts-in-wordpress-themes
+        // Themes are recommended to hook stylesheet and script enqueue callbacks into `wp_enqueue_scripts`
+        // Loads in your document <head> along with a WordPress version flag ?ver=X.X.X
+        // included scripts willl load relative to the URL of your theme directory
+        function wpflex_assets_loader() {
+            // load main stylesheet
+            wp_register_style( 'style', get_stylesheet_uri(), array(), '1.0.5', 'all' );
+            wp_enqueue_style( 'style' );
+
+            // Load WordPress' jQuery. Must be registered first before wp_enqueue_script()
+            wp_register_script( 'jquery', false, array(), '', true);
+            wp_enqueue_script( 'jquery' );
+
+            // Load Modernizr
+            wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/vendor/modernizr-2.6.2.min.js', array(), '2.6.2', false );
+
+            // load plugins.js
+            wp_enqueue_script( 'plugins', get_template_directory_uri() . '/js/plugins.js', array( 'jquery'), '1.0.5', true );
+
+            // load main.js
+            wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array( 'jquery'), '1.0.5', true );
+
+            // load google analytics
+            wp_enqueue_script( 'google-analytics', get_template_directory_uri() . '/js/google-analytics.js', array(), '', true );
+        }
+
+        add_action( 'wp_enqueue_scripts', 'wpflex_assets_loader' );
 
 
         /*-----------------------------------[ custom theme header ] */
@@ -171,27 +181,27 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
         // wpflex widget setup
         function wpflex_widget() {
 
-        // call register_sidebar wp method as array
-        register_sidebar( array(
-            'ID'            => 'wpflex-sidebar',
-            'name'          => 'wpflex sidebar',
-            'before_widget' => '<article id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</article>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>',
-        ));// end primary sidebar
+            // call register_sidebar wp method as array
+            register_sidebar( array(
+                'ID'            => 'wpflex-sidebar',
+                'name'          => 'wpflex sidebar',
+                'before_widget' => '<article id="%1$s" class="widget %2$s">',
+                'after_widget'  => '</article>',
+                'before_title'  => '<h3 class="widget-title">',
+                'after_title'   => '</h3>',
+            )); // end primary sidebar
 
-        // call to register footer sidebar widgets
-        register_sidebar( array(
-            'ID'            => 'wpflex-footer-sidebar',
-            'name'          => 'wpflex footer sidebar',
-            'before_widget' => '<article id="%1$s" class="fwidget %2$s">',
-            'after_widget'  => '</article>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>',
-        )); // end footer widget
+            // call to register footer sidebar widgets
+            register_sidebar( array(
+                'ID'            => 'wpflex-footer-sidebar',
+                'name'          => 'wpflex footer sidebar',
+                'before_widget' => '<article id="%1$s" class="fwidget %2$s">',
+                'after_widget'  => '</article>',
+                'before_title'  => '<h3 class="widget-title">',
+                'after_title'   => '</h3>',
+            )); // end footer widget
 
-        }; // end wpflex_widget
+        };
 
         // trigger the wpflex widget function
         // required for theme submission
