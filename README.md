@@ -20,18 +20,9 @@ If you care to mention this theme helper in your project then please do so by ad
 ##:trophy: KID TESTED, DEVELOPER APPROVED:
 Tested and Debugged using WordPress 3.4.2, ``theme-unit-test.xml`` and ``wp-config.php.``
 
-###Windows 7 Browser Tests
-1. IE      7-10
-2. Chrome  22.0.1229.94
-3. Firefox 16.0.1
-4. Opera   12.01
 
-
-###Mac Mountain Lion 10.8.2 Browser Tests
-1. Firefox 16.0.1
-2. Chrome  22.0.1229.94
-3. Safari  6.0
-4. Opera   12.01
+###:shipit: Browser Tested &amp; Approved. Yup! even IE7
+<img src="https://raw.github.com/paulirish/browser-logos/master/all-desktop.png" width="400">
 
 
 ##:mega: IT STILL NEEDS YOUR HELP!
@@ -145,12 +136,12 @@ We strictly follow the WordPress coding guidelines and so should you if you're g
     We use ``wp_nav_menu`` while providing a fallback if a custom navigation menu is not in place. This option can be found from within your WordPress Admin Dashboard under "Appearance" &gt; "Menus"
 
 
-##:tophat: SPECIAL BONUS
+###:tophat: SPECIAL BONUS
 ---------
 Custom Post Types for your blog along with custom taxonomy fields for each of your custom posts (i.e. the meta data about the posts). All this added functionality can be customized using the case-studies folder and following the intructions from the readme provided.
 
 
-##:metal:More inspiring and wonderful blank WordPress themes
+###:metal:More inspiring and wonderful blank WordPress themes
 ---------
 * _S Theme &rarr; [http://underscores.me](http://underscores.me)
 * Matt Murtaugh's HTML5 Reset Wordpress Theme &rarr; [http://html5reset.org/#wordpress](http://html5reset.org/#wordpress)
