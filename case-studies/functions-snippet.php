@@ -12,38 +12,38 @@
 
 /*------------------------------------------------------------------------------------------------[ case studies setup ] */
 // http://codex.wordpress.org/Function_Reference/register_post_type
-// Add Case Studies Custom Post Type
+// Add Custom Post Type
 
-function case_studies() {
+function wpflex_custom_post() {
     // labels as an array for dashboard
-    $labels = array(
+    $wpflex_custom_post_labels = array(
             // general name for the post stype
-            'name'               => 'Cases',
+            'name'               => 'Custom Posts',
             // singular name for one object of this post type
-            'singular_name'      => 'Case Study',
+            'singular_name'      => 'Custom Post',
             // the add new text for dashboard nav
-            'add_new'            => 'Add New Case',
+            'add_new'            => 'Add New Custom Post',
             // dashboard nav item txt
-            'all_items'          => 'View Cases',
+            'all_items'          => 'View Custom Posts',
             // edit menu header title txt
-            'edit_item'          => 'Edit Case Study',
+            'edit_item'          => 'Edit Custom Post',
             // add new header title txt
-            'add_new_item'       => 'New Case Study',
+            'add_new_item'       => 'New Custom Post',
             // view button txt in visual editor window
-            'view_item'          => 'Preview Case Study',
+            'view_item'          => 'Preview Custom Post',
             // case studies search menu button txt
-            'search_items'       => 'Search Cases',
+            'search_items'       => 'Search Custom Posts',
             // case studies search error txt
-            'not_found'          => 'No Case Studies Found',
-            'not_found_in_trash' => 'No Case Studies Found in Trash',
+            'not_found'          => 'No Custom Post(s) Found',
+            'not_found_in_trash' => 'No Custom Post(s) Found in Trash',
             // the parent text. This string isn't used on non-hierarchical types
             // In hierarchical ones the default is Parent Page
             'parent_item_colon'  => ''
         );// end $labels
 
     // $args as an array
-    $args = array(
-            'labels'              => $labels,
+    $wpflex_custom_post_args = array(
+            'labels'              => $wpflex_custom_post_labels,
             'public'              => true,
             'exclude_from_search' => false,
             'publicly_queryable'  => true,
@@ -52,34 +52,36 @@ function case_studies() {
             'capability_type'     => 'post',
             'hierarchical'        => false,
             'menu_position'       => null,
+            'show_ui'             => true,
+            'show_in_nav_menus'   => true,
+            'show_in_menu'        => true,
             'supports'            => array( 'title', 'editor', 'thumbnail', 'excerpt' )
         );//end $args
 
     //register the post type and give it a name and pass the $args variable
-    register_post_type( 'case-studies', $args );
+    register_post_type( 'custom-post', $wpflex_custom_post_args );
 
-}//end case_studies
+}//end wpflex_custom_post
 
 // initialization call
-add_action( 'init', 'case_studies' );
+add_action( 'init', 'wpflex_custom_post' );
 
 
 /*------------------------------------------------------------------------------------------------[ case studies taxonomy setup ] */
 
-
-// Begin casestudies_custom_taxonomies
-function casestudies_custom_taxonomies(){
+// Begin wpflex_custom_taxonomies
+function wpflex_custom_taxonomies(){
     $args = array(
         'hierarchical'  => true,
-        'label'         => 'Add Case Type',
+        'label'         => 'Add Taxonomy Type',
         'labels'        => array(
-                            'edit_item'     => 'Edit Case Type',
-                            'add_new_item'  => 'Add New Case Type',
-                            'search_items'  => 'Search Case Types',
-                            'update_item'   => 'Update Case Type'
+                            'edit_item'     => 'Edit Taxonomy Type',
+                            'add_new_item'  => 'Add New Taxonomy Type',
+                            'search_items'  => 'Search Taxonomy Types',
+                            'update_item'   => 'Update Taxonomy Type'
                         ),
         'rewrite'       => array(
-                            'slug'          => 'case-type',
+                            'slug'          => 'taxonomy-type',
                             'hierarchical'  => true
                         ),
         'public'            => true,
@@ -88,36 +90,34 @@ function casestudies_custom_taxonomies(){
 
     // this call registers our case-study-type in our admin panel from the dashboard
     // http://codex.wordpress.org/Function_Reference/register_taxonomy
-    register_taxonomy( 'case-type', array( 'case-studies' ), $args );
+    register_taxonomy( 'taxonomy-type', array( 'custom-post' ), $args );
 
 }// end casestudies_build_taxonomies
 
 // initialization call
-add_action( 'init', 'casestudies_custom_taxonomies', 0 );
+add_action( 'init', 'wpflex_custom_taxonomies', 0 );
 
 
 /*------------------------------------------------------------------------------------------------[ case studies work type display function ] */
-// function for retrieving work types on single case studies
+// function for retrieving work types on single custom posts
 
-
-function get_case_type() {
+function get_taxonomy_type() {
     global $post;
     $postid = $post->ID;
-    $terms = wp_get_object_terms( $postid, 'case-type' );
+    $terms = wp_get_object_terms( $postid, 'taxonomy-type' );
     if( !empty( $terms ) ) :
     echo '<h3>Case Type</h3>';
-    echo '<ul class="case-types">';
+    echo '<ul class="taxonomy-types">';
         foreach ( $terms as $term ) {
             $ct_name = $term->name;
-            $ct_id = $term->slug;
-            echo '<li><a href="/case-type/' . $ct_id . '" class="case-type-item" id="cti-'.$ct_id.'">'.$ct_name.'</a></li>';
-        } //end foreach loop
+            $ct_id   = $term->slug;
+            echo '<li><a href="/taxonomy-type/' . $ct_id . '" class="taxonomy-type-item" id="cti-'.$ct_id.'">'.$ct_name.'</a></li>';
+        }
         echo "</ul>";
     else :
     echo "No Case Type Filed";
     endif;
-}//end get_work_type
-
+}
 
 
 /*------------------------------------------------------------------------------------------------[ case studies url meta setup ] */
@@ -136,20 +136,19 @@ add_action( 'load-post-new.php', 'casestudy_url_metabox_setup' );
 function casestudy_url_metabox_setup(){
     // action to add meta box
     add_action( 'add_meta_boxes', 'casestudy_url_metabox' );
-
     // lets save that custom meta data shall we?
     add_action( 'save_post', 'save_casestudy_url_meta', 10, 2 );
 }
 
-// adds a meta box to the the case-studies edit screen
+// adds a meta box to the the custom-post edit screen
 function casestudy_url_metabox() {
     add_meta_box(
-        'case-study-url',   // $id = assigned to admin metabox
-        'Case Study URL',   // $title = metabox title name
-        'case_study_url',   // $callback = function
-        'case-studies',     // $post_type = admin page to display metabox
-        'side',             // $context = metabox admin position (normal,advanced,side)
-        'low'               // $priority (high,core,default,low)
+            'case-study-url',   // $id = assigned to admin metabox
+            'Case Study URL',   // $title = metabox title name
+            'case_study_url',   // $callback = function
+            'custom-post',      // $post_type = admin page to display metabox
+            'side',             // $context = metabox admin position (normal,advanced,side)
+            'low'               // $priority (high,core,default,low)
         );
 }
 
@@ -202,6 +201,7 @@ function save_casestudy_url_meta( $post_id, $post ) {
     elseif ( '' == $new_meta_value && $meta_value )
     delete_post_meta( $post_id, $meta_key, $meta_value );
 }
+
 
 /*------------------------------------------------------------------------------------------------[ case studies custom excerpts ] */
 // http://codex.wordpress.org/Excerpt
