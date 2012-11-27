@@ -1,5 +1,5 @@
 #WP-Flex v1.0.5
-:link: [![http://wpflex.grayghostvisuals.com](http://static.grayghostvisuals.com/portfolio/wpflex.png)](http://wpflex.grayghostvisuals.com)
+[![http://wpflex.grayghostvisuals.com](http://static.grayghostvisuals.com/portfolio/wpflex.png)](http://wpflex.grayghostvisuals.com)
 
 ###DEMO
 :link: [http://wpflex.grayghostvisuals.com](http://wpflex.grayghostvisuals.com)
@@ -34,12 +34,12 @@ Tested and Debugged using WordPress 3.4.2, ``theme-unit-test.xml`` and ``wp-conf
 4. Opera   12.01
 
 
-##:construction: IT STILL NEEDS YOUR HELP!
+##:mega: IT STILL NEEDS YOUR HELP!
 <blockquote>Themes are required to prefix all options, custom functions, custom variables, and custom constants with theme-slug (or appropriate variant</blockquote>
 Reference &rarr; [http://codex.wordpress.org/Theme_Review#Security_and_Privacy](http://codex.wordpress.org/Theme_Review#Security_and_Privacy).
 WP-Flex needs a dynamic means to create a new prefix across our codebase without going through everything line by line.
 
-###For example
+###:triangular_ruler: For example
 using ``functions.php`` to illustrate&hellip;
 
 ```shell
@@ -56,7 +56,7 @@ function awesomesauce_setup() {
 }
 ```
 
-###WordPress Coding Standards Documentation
+###:notebook_with_decorative_cover: WordPress Coding Standards Documentation
 Documentation &rarr; [http://codex.wordpress.org/WordPress_Coding_Standards](http://codex.wordpress.org/WordPress_Coding_Standards)
 
 
