@@ -94,7 +94,7 @@ We strictly follow the WordPress coding guidelines and so should you if you're g
 4. Custom Post Types  &rarr; create a custom Wordpress feed for your blog along with custom taxonomy fields for each of your custom posts (i.e. the meta data about the posts). Simply open up your Wordpress admin dashboard. Viola!
 
 
-#####EVEN MORE!!!
+#####:nut_and_bolt:EVEN MORE!!!
 1. ``wpflex-readme.txt``
 
     A must have for theme submission. Describes the ins and outs to users what's great and what still needs work with your theme.A reccomendation from the Wordpress Codex for theme authors
