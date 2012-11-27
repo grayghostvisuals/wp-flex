@@ -1,7 +1,7 @@
 #WP-Flex v1.0.5
 [![http://wpflex.grayghostvisuals.com](http://static.grayghostvisuals.com/portfolio/wpflex.png)](http://wpflex.grayghostvisuals.com)
 
-###DEMO
+###:computer:DEMO
 [http://wpflex.grayghostvisuals.com](http://wpflex.grayghostvisuals.com)
 
 ##WHAT IS IT?
