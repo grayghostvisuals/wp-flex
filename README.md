@@ -1,7 +1,6 @@
-#WP-Flex v1.0.5
 [![http://wpflex.grayghostvisuals.com](http://static.grayghostvisuals.com/portfolio/wpflex.png)](http://wpflex.grayghostvisuals.com)
 
-###DEMO
+###DEMO v1.0.5
 :link: [http://wpflex.grayghostvisuals.com](http://wpflex.grayghostvisuals.com)
 
 ##:page_with_curl: WHAT IS IT?
@@ -21,7 +20,7 @@ If you care to mention this theme helper in your project then please do so by ad
 Tested and Debugged using WordPress 3.4.2, ``theme-unit-test.xml`` and ``wp-config.php.``
 
 
-###:shipit: Browser Tested &amp; Approved. Yup! even IE7
+##:shipit: Browser Tested &amp; Approved. Yup! even IE7
 <img src="https://raw.github.com/paulirish/browser-logos/master/all-desktop.png" width="400">
 
 
@@ -30,7 +29,7 @@ Tested and Debugged using WordPress 3.4.2, ``theme-unit-test.xml`` and ``wp-conf
 Reference &rarr; [http://codex.wordpress.org/Theme_Review#Security_and_Privacy](http://codex.wordpress.org/Theme_Review#Security_and_Privacy).
 WP-Flex needs a dynamic means to create a new prefix across our codebase without going through everything line by line.
 
-###:triangular_ruler: For example
+###For example
 using ``functions.php`` to illustrate&hellip;
 
 ```shell
@@ -74,7 +73,7 @@ We strictly follow the WordPress coding guidelines and so should you if you're g
     Feel free to give back to the demo styles if you feel inclined :)
 
 
-###!Before uploading your theme submission
+###:warning: Before uploading your theme submission
 ---------
 1. Remove any hidden files from your WP-Flex directory per Theme Check Plugin Review &rarr; [http://pross.org.uk/theme-check](http://pross.org.uk/theme-check)
 2. Remove github's ``README.md`` file included with this repository
