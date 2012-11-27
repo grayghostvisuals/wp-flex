@@ -1,8 +1,8 @@
 #WP-Flex v1.0.5
-[![http://wpflex.grayghostvisuals.com](http://static.grayghostvisuals.com/portfolio/wpflex.png)](http://wpflex.grayghostvisuals.com)
+:link: [![http://wpflex.grayghostvisuals.com](http://static.grayghostvisuals.com/portfolio/wpflex.png)](http://wpflex.grayghostvisuals.com)
 
 ###DEMO
-:computer: [http://wpflex.grayghostvisuals.com](http://wpflex.grayghostvisuals.com)
+:link: [http://wpflex.grayghostvisuals.com](http://wpflex.grayghostvisuals.com)
 
 ##:page_with_curl: WHAT IS IT?
 A blank, responsive, WordPress theme boilerplate adhering to best practices and requirements set forth by the official WordPress Codex and theme review guidelines. Also makes a great starter theme for any of your WordPress theming needs.
@@ -12,12 +12,12 @@ If you care to mention this theme helper in your project then please do so by ad
 
 
 ####Codex Theme Review Guidelines
-[http://codex.wordpress.org/Theme_Review](http://codex.wordpress.org/Theme_Review)
+:link: [http://codex.wordpress.org/Theme_Review](http://codex.wordpress.org/Theme_Review)
 ####Theme Unit Test Site
-[http://wpthemetestdata.files.wordpress.com](http://wpthemetestdata.files.wordpress.com)
+:link: [http://wpthemetestdata.files.wordpress.com](http://wpthemetestdata.files.wordpress.com)
 
 
-##KID TESTED, DEVELOPER APPROVED:
+##:trophy: KID TESTED, DEVELOPER APPROVED:
 Tested and Debugged using WordPress 3.4.2, ``theme-unit-test.xml`` and ``wp-config.php.``
 
 ###Windows 7 Browser Tests
@@ -91,7 +91,6 @@ We strictly follow the WordPress coding guidelines and so should you if you're g
 1. HTML5 Boilerplate  &rarr; [http://html5boilerplate.com](http://html5boilerplate.com)
 2. jQuery             &rarr; [http://jquery.com](http://jquery.com)
 3. Modernizr          &rarr; [http://modernizr.com](http://modernizr.com)
-4. Custom Post Types  &rarr; create a custom Wordpress feed for your blog along with custom taxonomy fields for each of your custom posts (i.e. the meta data about the posts). Simply open up your Wordpress admin dashboard. Viola!
 
 
 #####:nut_and_bolt:EVEN MORE!!!
@@ -140,6 +139,10 @@ We strictly follow the WordPress coding guidelines and so should you if you're g
     We use ``wp_nav_menu`` while providing a fallback if a custom navigation menu is not in place. This option can be found from within your WordPress Admin Dashboard under "Appearance" &gt; "Menus"
 
 
+##:tophat: SPECIAL BONUS
+Custom Post Types for your blog along with custom taxonomy fields for each of your custom posts (i.e. the meta data about the posts). All this added functionality can be customized using the case-studies folder and following the intructions from the readme provided.
+
+
 ##More inspiring and wonderful blank WordPress themes
 * _S Theme &rarr; [http://underscores.me](http://underscores.me)
 * Matt Murtaugh's HTML5 Reset Wordpress Theme &rarr; [http://html5reset.org/#wordpress](http://html5reset.org/#wordpress)
@@ -149,6 +152,6 @@ Surely you can always visit the Wordpress Codex for more customization and give 
 -thats what I did :)p
 
 ######Codex
-[http://codex.wordpress.org](http://codex.wordpress.org)
+:link: [http://codex.wordpress.org](http://codex.wordpress.org)
 ######Wordpress.org
-[http://wordpress.org](http://wordpress.org)
+:link: [http://wordpress.org](http://wordpress.org)
