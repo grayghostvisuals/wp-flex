@@ -2,9 +2,9 @@
 [![http://wpflex.grayghostvisuals.com](http://static.grayghostvisuals.com/portfolio/wpflex.png)](http://wpflex.grayghostvisuals.com)
 
 ###DEMO
-:computer:[http://wpflex.grayghostvisuals.com](http://wpflex.grayghostvisuals.com)
+:computer: [http://wpflex.grayghostvisuals.com](http://wpflex.grayghostvisuals.com)
 
-##WHAT IS IT?
+##:page_with_curl: WHAT IS IT?
 A blank, responsive, WordPress theme boilerplate adhering to best practices and requirements set forth by the official WordPress Codex and theme review guidelines. Also makes a great starter theme for any of your WordPress theming needs.
 
 If you care to mention this theme helper in your project then please do so by adding the following to your site footer with an appropriate link to this repo:
@@ -34,7 +34,7 @@ Tested and Debugged using WordPress 3.4.2, ``theme-unit-test.xml`` and ``wp-conf
 4. Opera   12.01
 
 
-##IT STILL NEEDS YOUR HELP!
+##:construction: IT STILL NEEDS YOUR HELP!
 <blockquote>Themes are required to prefix all options, custom functions, custom variables, and custom constants with theme-slug (or appropriate variant</blockquote>
 Reference &rarr; [http://codex.wordpress.org/Theme_Review#Security_and_Privacy](http://codex.wordpress.org/Theme_Review#Security_and_Privacy).
 WP-Flex needs a dynamic means to create a new prefix across our codebase without going through everything line by line.
