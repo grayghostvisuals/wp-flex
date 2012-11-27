@@ -57,15 +57,18 @@ function awesomesauce_setup() {
 ```
 
 ###:notebook_with_decorative_cover: WordPress Coding Standards Documentation
+---------
 Documentation &rarr; [http://codex.wordpress.org/WordPress_Coding_Standards](http://codex.wordpress.org/WordPress_Coding_Standards)
 
 
-####CSS Coding Standards
+####{ } CSS Coding Standards
+---------
 * Current Specification &rarr; [http://codex.wordpress.org/CSS_Coding_Standards](http://codex.wordpress.org/CSS_Coding_Standards)
 * 7/04/2012 Specification Updates &rarr; [https://docs.google.com/a/twitter.com/document/d/1b-ouASTs6C6ZDKGsoCgUIF4FVBxN2v0dvaytDsuCzlM/edit?pli=1](https://docs.google.com/a/twitter.com/document/d/1b-ouASTs6C6ZDKGsoCgUIF4FVBxN2v0dvaytDsuCzlM/edit?pli=1)
 
 
-####WP&ndash;Flex Contribution Guidelines
+####:guardsman: WP&ndash;Flex Contribution Guidelines
+---------
 We strictly follow the WordPress coding guidelines and so should you if you're going to contribute to this repo. Thanks for abiding by these guidelines. WP&ndash;Flex contributors and myself love you for this.
 
 * [http://codex.wordpress.org/WordPress_Coding_Standards](http://codex.wordpress.org/WordPress_Coding_Standards)
@@ -81,6 +84,7 @@ We strictly follow the WordPress coding guidelines and so should you if you're g
 
 
 ###!Before uploading your theme submission
+---------
 1. Remove any hidden files from your WP-Flex directory per Theme Check Plugin Review &rarr; [http://pross.org.uk/theme-check](http://pross.org.uk/theme-check)
 2. Remove github's ``README.md`` file included with this repository
 3. Rename ``wpflex-readme.txt`` to ``readme.txt`` as per WordPress' Codex theme requirements
@@ -88,12 +92,14 @@ We strictly follow the WordPress coding guidelines and so should you if you're g
 
 
 ####UNDER THE HOOD:
+---------
 1. HTML5 Boilerplate  &rarr; [http://html5boilerplate.com](http://html5boilerplate.com)
 2. jQuery             &rarr; [http://jquery.com](http://jquery.com)
 3. Modernizr          &rarr; [http://modernizr.com](http://modernizr.com)
 
 
-#####:nut_and_bolt:EVEN MORE!!!
+#####:nut_and_bolt: The Package
+---------
 1. ``wpflex-readme.txt``
 
     A must have for theme submission. Describes the ins and outs to users what's great and what still needs work with your theme.A reccomendation from the Wordpress Codex for theme authors
@@ -140,10 +146,12 @@ We strictly follow the WordPress coding guidelines and so should you if you're g
 
 
 ##:tophat: SPECIAL BONUS
+---------
 Custom Post Types for your blog along with custom taxonomy fields for each of your custom posts (i.e. the meta data about the posts). All this added functionality can be customized using the case-studies folder and following the intructions from the readme provided.
 
 
-##More inspiring and wonderful blank WordPress themes
+##:metal:More inspiring and wonderful blank WordPress themes
+---------
 * _S Theme &rarr; [http://underscores.me](http://underscores.me)
 * Matt Murtaugh's HTML5 Reset Wordpress Theme &rarr; [http://html5reset.org/#wordpress](http://html5reset.org/#wordpress)
 * Digging Into Wordpress' Blank WordPress Theme &rarr; [http://digwp.com/2010/02/blank-wordpress-theme](http://digwp.com/2010/02/blank-wordpress-theme)
