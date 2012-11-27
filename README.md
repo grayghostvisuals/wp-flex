@@ -80,10 +80,6 @@ We strictly follow the WordPress coding guidelines and so should you if you're g
     Feel free to give back to the demo styles if you feel inclined :)
 
 
-#### [Case Studies Feature Branch](//github.com/grayghostvisuals/WP-Flex/tree/feature/Case-Studies)
-If you haven't noticed already we have a feature branch called 'Case Studies' for those wishing to display a secondary grouping of entries with correlating custom taxonomies. Feel free to make it better :)
-
-
 ###!Before uploading your theme submission
 1. Remove any hidden files from your WP-Flex directory per Theme Check Plugin Review &rarr; [http://pross.org.uk/theme-check](http://pross.org.uk/theme-check)
 2. Remove github's ``README.md`` file included with this repository
@@ -95,6 +91,7 @@ If you haven't noticed already we have a feature branch called 'Case Studies' fo
 1. HTML5 Boilerplate  &rarr; [http://html5boilerplate.com](http://html5boilerplate.com)
 2. jQuery             &rarr; [http://jquery.com](http://jquery.com)
 3. Modernizr          &rarr; [http://modernizr.com](http://modernizr.com)
+4. Custom Post Types  &rarr; create a custom Wordpress feed for your blog along with custom taxonomy fields for each of your custom posts (i.e. the meta data about the posts). Simply open up your Wordpress admin dashboard. Viola!
 
 
 #####EVEN MORE!!!
