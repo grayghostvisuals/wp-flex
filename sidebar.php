@@ -7,8 +7,8 @@
         <h3>Meta</h3>
         <ul>
             <?php wp_register(); ?>
-            <li><?php wp_login_form(); ?></li>
-            <li><a href="http://wordpress.org" title="Powered by WordPress, state-of-the-art semantic personal publishing platform." rel="external">WordPress.org</a></li>
+                <li><?php wp_login_form(); ?></li>
+                <li><a href="http://wordpress.org" title="Powered by WordPress, state-of-the-art semantic personal publishing platform." rel="external">WordPress.org</a></li>
             <?php wp_meta(); ?>
         </ul>
     </article>

@@ -6,7 +6,7 @@ Description: A responsive, foundational Wordpress theme boilerplate for develope
 Author: Gray Ghost Visuals
 Author URI: http://grayghostvisuals.com
 
-Version: 1.0.4
+Version: 1.0.5
 Tags: full-width-template, flexible-width, custom-background, microformats, editor-style, custom-menu, sticky-post, theme-options, front-page-post-form, featured-images, sticky-post, rtl-language-support, threaded-comments, post-formats, white, light
 
 License: GNU General Public License v3.0
@@ -695,21 +695,21 @@ textarea {
     margin: 5px auto 5px auto;
 }
 
-a img.alignright {
+.alignright {
     float:right;
     margin: 5px 0 20px 20px;
 }
 
-a img.alignnone {
+.alignnone {
     margin: 5px 20px 20px 0;
 }
 
-a img.alignleft {
+.alignleft {
     float:left;
     margin: 5px 20px 20px 0;
 }
 
-a img.aligncenter {
+.aligncenter {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -807,11 +807,11 @@ img.size-full {
 .widget {}
 
 /* WP POST THUMBNAILS */
-img.wp-post-image {}
-img.attachment-thumbnail {}
-img.attachment-medium {}
-img.attachment-large {}
-img.attachment-full {}
+.wp-post-image {}
+.attachment-thumbnail {}
+.attachment-medium {}
+.attachment-large {}
+.attachment-full {}
 
 /* WP 404 ERRORS */
 .error404 {}
