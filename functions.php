@@ -38,7 +38,7 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
             global $wp_query, $s, $paged, $page;
 
             if ( ! is_feed() ) :
-                $sep = __( '&raquo;' );
+                $sep = '&raquo;';
                 $new_title = get_bloginfo( 'name' ) . ' ';
                 $bloginfo_description = get_bloginfo( 'description' );
 
@@ -47,13 +47,13 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
                 elseif ( is_single() || is_page() ) :
                     $new_title .= $sep . ' ' . single_post_title( '', false );
                 elseif ( is_search() ) :
-                    $new_title .= $sep . ' ' . sprintf( __( 'Search Results: %s' ), esc_html( $s ) );
+                    $new_title .= $sep . ' ' . sprintf( 'Search Results: %s', esc_html( $s ) );
                 else :
                     $new_title .= $title;
                 endif;
 
                 if ( $paged || $page ) :
-                    $new_title .= ' ' . $sep . ' ' . sprintf( __( 'Page: %s' ), max( $paged, $page ) );
+                    $new_title .= ' ' . $sep . ' ' . sprintf( 'Page: %s', max( $paged, $page ) );
                 endif;
 
                 $title = $new_title;
@@ -96,20 +96,20 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
             wp_enqueue_style( 'style' );
 
             // Load WordPress' jQuery. Must be registered first before wp_enqueue_script()
-            wp_register_script( 'jquery', false, array(), '', true);
-            wp_enqueue_script( 'jquery' );
+            // http://css-tricks.com/snippets/wordpress/include-jquery-in-wordpress-theme
+            // http://digwp.com/2009/06/use-google-hosted-javascript-libraries-still-the-right-way
+            if ( ! is_admin() ) {
+                wp_deregister_script( 'jquery' );
+                wp_register_script( 'jquery', "http" . ( $_SERVER['SERVER_PORT'] == 443 ? "s" : "" ) . "://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js", false, null );
+                wp_enqueue_script( 'jquery' );
+            }
 
             // Load Modernizr
             wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/vendor/modernizr-2.6.2.min.js', array(), '2.6.2', false );
-
             // load plugins.js
             wp_enqueue_script( 'plugins', get_template_directory_uri() . '/js/plugins.js', array( 'jquery'), '1.0.5', true );
-
             // load main.js
             wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array( 'jquery'), '1.0.5', true );
-
-            // load google analytics
-            wp_enqueue_script( 'google-analytics', get_template_directory_uri() . '/js/google-analytics.js', array(), '', true );
         }
 
         add_action( 'wp_enqueue_scripts', 'wpflex_assets_loader' );

@@ -5,94 +5,89 @@
 <!--[if IE 8]><html class="no-js lt-ie9" <?php language_attributes(); ?>><![endif]-->
 <!--[if gt IE 8]><!--><html class="no-js" <?php language_attributes(); ?>><!--<![endif]-->
 <head>
+    <!-- character encoding utf-8 -->
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
 
-<!-- character encoding utf-8 -->
-<meta charset="<?php bloginfo( 'charset' ); ?>">
+    <!-- google chrome frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 
-<!-- google chrome frame -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <!-- title -->
+    <!-- http://codex.wordpress.org/Function_Reference/wp_title -->
+    <title><?php wp_title( '&raquo;', true, 'left' ); ?></title>
 
-<!-- title -->
-<!-- http://codex.wordpress.org/Function_Reference/wp_title -->
-<title><?php wp_title( '&raquo;', true, 'left' ); ?></title>
-
-<!-- search engine robots meta instructions -->
-<?php if ( is_search() || is_404() ) : ?>
-    <meta name="robots" content="noindex, nofollow">
-<?php else: ?>
-    <meta name="robots" content="all">
-<?php endif; ?>
-
-<!-- index search meta data -->
-<?php if ( is_home() ) : ?>
-    <meta name="description" content="<?php esc_attr( bloginfo( 'name' ) ); esc_attr( bloginfo( 'description' ) ); ?>">
-<!-- single page meta tag description -->
-<?php elseif ( is_single() ) : ?>
-    <meta name="description" content="<?php esc_attr( wp_title() ) ?>">
-<!-- archive pages meta tag description -->
-<?php elseif ( is_archive() ) : ?>
-    <meta name="description" content="">
-<?php elseif ( is_search() ) : ?>
-    <meta name="description" content="<?php esc_html( $s ) ?>">
-<!-- fallback meta tag description -->
-<?php else : ?>
-    <meta name="description" content="<?php esc_attr( bloginfo( 'name' ) ); esc_attr( bloginfo( 'description' ) ) ?>">
-<?php endif; ?>
-
-<!-- Mobile viewport optimized: h5bp.com/viewport -->
-<meta name="viewport" content="width=device-width">
-
-<!-- http://t.co/dKP3o1e -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-
-<!-- Sets whether a web application runs in full-screen mode -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-
-<!-- pingback url -->
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
-<!-- RSS Feed -->
-<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo( 'rss2_url' ); ?>">
-
-<?php //required comment functionality ?>
-<?php if ( is_singular() ) { wp_enqueue_script( 'comment-reply' ); } ?>
-
-<!-- required for all wordpress themes and placed at the end of the head tag element -->
-<?php wp_head(); ?>
-</head>
-
-<!-- body element tag -->
-<body <?php body_class(); ?>>
-
-<!--[if lt IE 7]>
-    <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-<![endif]-->
-
-<header role="banner">
-    <?php $header = get_header_image() ?>
-    <?php if ( isset( $header ) || $header ) : ?>
-        <div id="header-image">
-            <a href="<?php echo home_url() ?>"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" usemap="#Map"></a>
-        </div>
+    <!-- search engine robots meta instructions -->
+    <?php if ( is_search() || is_404() ) : ?>
+        <meta name="robots" content="noindex, nofollow">
+    <?php else: ?>
+        <meta name="robots" content="all">
     <?php endif; ?>
 
-    <h1 class="blogname"><a href="<?php echo home_url();  ?>"><?php esc_attr( bloginfo( 'name' ) ); ?></a></h1>
-    <h2 class="tagline"><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
+    <!-- index search meta data -->
+    <?php if ( is_home() ) : ?>
+        <meta name="description" content="<?php esc_attr( bloginfo( 'name' ) ); esc_attr( bloginfo( 'description' ) ); ?>">
+    <!-- single page meta tag description -->
+    <?php elseif ( is_single() ) : ?>
+        <meta name="description" content="<?php esc_attr( wp_title() ) ?>">
+    <!-- archive pages meta tag description -->
+    <?php elseif ( is_archive() ) : ?>
+        <meta name="description" content="">
+    <?php elseif ( is_search() ) : ?>
+        <meta name="description" content="<?php esc_html( $s ) ?>">
+    <!-- fallback meta tag description -->
+    <?php else : ?>
+        <meta name="description" content="<?php esc_attr( bloginfo( 'name' ) ); esc_attr( bloginfo( 'description' ) ) ?>">
+    <?php endif; ?>
 
-    <!-- http://codex.wordpress.org/Function_Reference/wp_nav_menu -->
-    <!-- http://codex.wordpress.org/Navigation_Menus -->
-    <!-- http://codex.wordpress.org/Function_Reference/wp_list_pages -->
-    <nav role="navigation">
+    <!-- Mobile viewport optimized: h5bp.com/viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+
+    <!-- http://t.co/dKP3o1e -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <!-- Sets whether a web application runs in full-screen mode -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- pingback url -->
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo( 'rss2_url' ); ?>">
+
+    <!-- required for comment functionality -->
+    <?php if ( is_singular() ) { wp_enqueue_script( 'comment-reply' ); } ?>
+
+    <!-- required for all wordpress themes and placed at the end of the head tag element -->
+    <?php wp_head(); ?>
+</head>
+
+<body <?php body_class(); ?>>
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
+    <header role="banner">
+        <?php $header = get_header_image() ?>
+        <?php if ( isset( $header ) || $header ) : ?>
+            <div id="header-image">
+                <a href="<?php echo home_url() ?>"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" usemap="#Map"></a>
+            </div>
+        <?php endif; ?>
+
+        <h1 class="blogname"><a href="<?php echo home_url();  ?>"><?php esc_attr( bloginfo( 'name' ) ); ?></a></h1>
+        <h2 class="tagline"><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
+
+        <!-- http://codex.wordpress.org/Function_Reference/wp_nav_menu -->
+        <!-- http://codex.wordpress.org/Navigation_Menus -->
+        <!-- http://codex.wordpress.org/Function_Reference/wp_list_pages -->
         <?php
             // Custom Nav Call
             function wpflex_custom_nav() {
                 if ( 'wp_nav_menu' ) :
                     wp_nav_menu( array(
-                        'theme_location'  => '', // Location in the theme to be used--must be registered with register_nav_menu() in order to be selectable by the user
-                        'menu'            => '', //  The menu that is desired; accepts (matching in order) id, slug, name
-                        'container'       => 'false', // Whether or not to wrap the ul, and what to wrap it with. Allowed tags are 'div' and 'nav.' Use false for no container
+                        'theme_location'  => 'primary', // Location in the theme to be used--must be registered with register_nav_menu() in order to be selectable by the user
+                        'menu'            => 'primary', //  The menu that is desired; accepts (matching in order) id, slug, name
+                        'container'       => 'nav', // Whether or not to wrap the ul, and what to wrap it with. Allowed tags are 'div' and 'nav.' Use false for no container
                         'container_class' => '', // What will the container from the previous option have as its 'class' name. (if you used a div as the 'container')
                         'container_id'    => '', // What will the container from the previous option have as its 'id' name. (if you used a div as the 'container')
                         'menu_class'      => '', // The navigations containg element surrounding li elements will have this class (i.e. <ul class="menu_class"><li></li></ul>)
@@ -149,10 +144,9 @@
             // custom_nav call
             wpflex_custom_nav();
         ?>
-    </nav>
-</header>
+    </header>
 
-<article><a href="<?php bloginfo( 'rss2_url' ) ?>">RSS Feed</a></article>
+    <article><a href="<?php bloginfo( 'rss2_url' ) ?>">RSS Feed</a></article>
 
-<?php //required call for search-form ?>
-<?php get_search_form(); ?>
+    <?php //required call for search-form ?>
+    <?php get_search_form(); ?>
