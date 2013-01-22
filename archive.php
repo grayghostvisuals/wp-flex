@@ -15,7 +15,7 @@
         rewind_posts();
     ?>
 
-        <section id="content" role="main">
+        <section class="clearfix" id="content" role="main">
             <h1 class="page-title">
                 <?php if ( is_day() ) : ?>
                     <?php printf( 'Daily Archives: <span>%s</span>', get_the_date() ); ?>
