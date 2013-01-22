@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-    <section id="content" role="main">
+    <section class="clearfix" id="content" role="main">
 
         <!-- begin post loop -->
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -41,7 +41,7 @@
                         <li>
                             <?php echo ( 'Filed under:' ); ?>
                             <ul class="entry-categories-list">
-                                <li class="entry-categories"><?php the_category( '</li><li>' ) ?></li>
+                                <li class="entry-categories"><?php the_category( '</li><li>,' ) ?></li>
                             </ul>
                         </li>
                     </ul>

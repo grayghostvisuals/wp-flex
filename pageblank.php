@@ -7,7 +7,7 @@
 
 <?php get_header(); ?>
 
-    <section id="content" role="main">
+    <section class="clearfix" id="content" role="main">
         <?php the_content(); ?>
     </section>
 
