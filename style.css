@@ -3,10 +3,10 @@ Theme Name: WP-Flex
 Theme URI: https://github.com/grayghostvisuals/WP-Flex
 Description: A responsive, foundational Wordpress theme boilerplate for developers submitting to the Wordpress.org theme repository.
 
-Author: Gray Ghost Visuals
-Author URI: http://grayghostvisuals.com
+Author: Dennis Gaebel : Gray Ghost Visuals
+Author URI: http://wpflex.grayghostvisuals.com
 
-Version: 1.0.5
+Version: 1.0.6
 Tags: full-width-template, flexible-width, custom-background, microformats, editor-style, custom-menu, sticky-post, theme-options, front-page-post-form, featured-images, sticky-post, rtl-language-support, threaded-comments, post-formats, white, light
 
 License: GNU General Public License v3.0
@@ -23,23 +23,24 @@ found at http://www.gnu.org/licenses/fdl-1.3-standalone.html
 
 
 /*
- * The Wordpress CSS Codex
- * http://codex.wordpress.org/CSS_Coding_Standards
- *
- * REMINDERS
- * -Use lowercase and separate words with hyphens when naming selectors. Avoid camelcase and underscores
- * -Prefixed vendor-specific properties pairs should appear directly before the generic property they refer to
- *
- */
+* The Wordpress CSS Codex
+* http://codex.wordpress.org/CSS_Coding_Standards
+* http://make.wordpress.org/core/handbook/coding-standards/css/
+*
+* REMINDERS
+* -Use lowercase and separate words with hyphens when naming selectors. Avoid camelcase and underscores
+* -Prefixed vendor-specific properties pairs should appear directly before the generic property they refer to
+*
+*/
 
 
-/* normalize styles H5BP */
+/*! normalize.css v2.1.0 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
 
-/*
- * Corrects `block` display not defined in IE 6/7/8/9 and Firefox 3.
+/**
+ * Correct `block` display not defined in IE 8/9.
  */
 
 article,
@@ -50,518 +51,475 @@ figure,
 footer,
 header,
 hgroup,
+main,
 nav,
 section,
 summary {
-    display: block;
+	display: block;
 }
 
-/*
- * Corrects `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
- */
-
-/*
- * Corrects `block` display not defined in IE 6/7/8/9 and Firefox 3.
- */
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-nav,
-section,
-summary {
-    display: block;
-}
-
-/*
- * Corrects `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
- */
+/**
+* Correct `inline-block` display not defined in IE 8/9.
+*/
 
 audio,
 canvas,
 video {
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
+	display: inline-block;
 }
 
-/*
- * Prevents modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
+/**
+* Prevent modern browsers from displaying `audio` without controls.
+* Remove excess height in iOS 5 devices.
+*/
 
 audio:not([controls]) {
-    display: none;
-    height: 0;
+	display: none;
+	height: 0;
 }
 
-/*
- * Addresses styling for `hidden` attribute not present in IE 7/8/9, Firefox 3,
- * and Safari 4.
- * Known issue: no IE 6 support.
- */
+/**
+* Address styling not present in IE 8/9.
+*/
 
 [hidden] {
-    display: none;
+	display: none;
 }
-
 
 /* ==========================================================================
    Base
    ========================================================================== */
 
-/*
- * 1. Corrects text resizing oddly in IE 6/7 when body `font-size` is set using
- *    `em` units.
- * 2. Prevents iOS text size adjust after orientation change, without disabling
- *    user zoom.
- */
+/**
+* 1. Set default font family to sans-serif.
+* 2. Prevent iOS text size adjust after orientation change, without disabling
+*    user zoom.
+*/
 
 html {
-    font-size: 100%; /* 1 */
-    -webkit-text-size-adjust: 100%; /* 2 */
-    -ms-text-size-adjust: 100%; /* 2 */
+	font-family: sans-serif; /* 1 */
+	-webkit-text-size-adjust: 100%; /* 2 */
+	-ms-text-size-adjust: 100%; /* 2 */
 }
 
-/*
- * Addresses `font-family` inconsistency between `textarea` and other form
- * elements.
- */
-
-html,
-button,
-input,
-select,
-textarea {
-    font-family: sans-serif;
-}
-
-/*
- * Addresses margins handled incorrectly in IE 6/7.
- */
+/**
+* Remove default margin.
+*/
 
 body {
-    margin: 0;
+	margin: 0;
 }
 
 /* ==========================================================================
    Links
    ========================================================================== */
 
-/*
- * Addresses `outline` inconsistency between Chrome and other browsers.
- */
+/**
+* Address `outline` inconsistency between Chrome and other browsers.
+*/
 
 a:focus {
-    outline: thin dotted;
+	outline: thin dotted;
 }
 
-/*
- * Improves readability when focused and also mouse hovered in all browsers.
- */
+/**
+* Improve readability when focused and also mouse hovered in all browsers.
+*/
 
 a:active,
 a:hover {
-    outline: 0;
+	outline: 0;
 }
-
 
 /* ==========================================================================
    Typography
    ========================================================================== */
 
-/*
- * Addresses font sizes and margins set differently in IE 6/7.
- * Addresses font sizes within `section` and `article` in Firefox 4+, Safari 5,
- * and Chrome.
- */
+/**
+* Address variable `h1` font-size and margin within `section` and `article`
+* contexts in Firefox 4+, Safari 5, and Chrome.
+*/
 
 h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
+	font-size: 2em;
+	margin: 0.67em 0;
 }
 
-h2 {
-    font-size: 1.5em;
-    margin: 0.83em 0;
-}
-
-h3 {
-    font-size: 1.17em;
-    margin: 1em 0;
-}
-
-h4 {
-    font-size: 1em;
-    margin: 1.33em 0;
-}
-
-h5 {
-    font-size: 0.83em;
-    margin: 1.67em 0;
-}
-
-h6 {
-    font-size: 0.75em;
-    margin: 2.33em 0;
-}
-
-/*
- * Addresses styling not present in IE 7/8/9, Safari 5, and Chrome.
- */
+/**
+* Address styling not present in IE 8/9, Safari 5, and Chrome.
+*/
 
 abbr[title] {
-    border-bottom: 1px dotted;
+	border-bottom: 1px dotted;
 }
 
-/*
- * Addresses style set to `bolder` in Firefox 3+, Safari 4/5, and Chrome.
- */
+/**
+* Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+*/
 
 b,
 strong {
-    font-weight: bold;
+	font-weight: bold;
 }
 
-blockquote {
-    margin: 1em 40px;
-}
-
-/*
- * Addresses styling not present in Safari 5 and Chrome.
- */
+/**
+* Address styling not present in Safari 5 and Chrome.
+*/
 
 dfn {
-    font-style: italic;
+	font-style: italic;
 }
 
-/*
- * Addresses styling not present in IE 6/7/8/9.
- */
+/**
+* Address differences between Firefox and other browsers.
+*/
+
+hr {
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	height: 0;
+}
+
+/**
+* Address styling not present in IE 8/9.
+*/
 
 mark {
-    background: #ff0;
-    color: #000;
+	background: #ff0;
+	color: #000;
 }
 
-/*
- * Addresses margins set differently in IE 6/7.
- */
-
-p,
-pre {
-    margin: 1em 0;
-}
-
-/*
- * Corrects font family set oddly in IE 6, Safari 4/5, and Chrome.
- */
+/**
+* Correct font family set oddly in Safari 5 and Chrome.
+*/
 
 code,
 kbd,
 pre,
 samp {
-    font-family: monospace, serif;
-    _font-family: 'courier new', monospace;
-    font-size: 1em;
+	font-family: monospace, serif;
+	font-size: 1em;
 }
 
-/*
- * Improves readability of pre-formatted text in all browsers.
- */
+/**
+* Improve readability of pre-formatted text in all browsers.
+*/
 
 pre {
-    white-space: pre;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+	white-space: pre-wrap;
 }
 
-/*
- * Addresses CSS quotes not supported in IE 6/7.
- */
+/**
+* Set consistent quote types.
+*/
 
 q {
-    quotes: none;
+	quotes: "\201C" "\201D" "\2018" "\2019";
 }
 
-/*
- * Addresses `quotes` property not supported in Safari 4.
- */
-
-q:before,
-q:after {
-    content: '';
-    content: none;
-}
-
-/*
- * Addresses inconsistent and variable font size in all browsers.
- */
+/**
+* Address inconsistent and variable font size in all browsers.
+*/
 
 small {
-    font-size: 80%;
+	font-size: 80%;
 }
 
-/*
- * Prevents `sub` and `sup` affecting `line-height` in all browsers.
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
 
 sub,
 sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
 }
 
 sup {
-    top: -0.5em;
+	top: -0.5em;
 }
 
 sub {
-    bottom: -0.25em;
+	bottom: -0.25em;
 }
-
-
-/* ==========================================================================
-   Lists
-   ========================================================================== */
-
-/*
- * Addresses margins set differently in IE 6/7.
- */
-
-dl,
-menu,
-ol,
-ul {
-    margin: 1em 0;
-}
-
-dd {
-    margin: 0 0 0 40px;
-}
-
-/*
- * Addresses paddings set differently in IE 6/7.
- */
-
-menu,
-ol,
-ul {
-    padding: 0 0 0 40px;
-}
-
-/*
- * Corrects list images handled incorrectly in IE 7.
- */
-
-nav ul,
-nav ol {
-    list-style: none;
-    list-style-image: none;
-}
-
 
 /* ==========================================================================
    Embedded content
    ========================================================================== */
 
-/*
- * 1. Removes border when inside `a` element in IE 6/7/8/9 and Firefox 3.
- * 2. Improves image quality when scaled in IE 7.
- */
+/**
+* Remove border when inside `a` element in IE 8/9.
+*/
 
 img {
-    border: 0; /* 1 */
-    -ms-interpolation-mode: bicubic; /* 2 */
+	border: 0;
 }
 
-/*
- * Corrects overflow displayed oddly in IE 9.
- */
+/**
+* Correct overflow displayed oddly in IE 9.
+*/
 
 svg:not(:root) {
-    overflow: hidden;
+	overflow: hidden;
 }
 
 /* ==========================================================================
    Figures
    ========================================================================== */
 
-/*
- * Addresses margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
- */
+/**
+* Address margin not present in IE 8/9 and Safari 5.
+*/
 
 figure {
-    margin: 0;
+	margin: 0;
 }
 
 /* ==========================================================================
    Forms
    ========================================================================== */
 
-/*
- * Corrects margin displayed oddly in IE 6/7.
- */
-
-form {
-    margin: 0;
-}
-
-/*
- * Define consistent border, margin, and padding.
- */
+/**
+* Define consistent border, margin, and padding.
+*/
 
 fieldset {
-    border: 1px solid #c0c0c0;
-    margin: 0 2px;
-    padding: 0.35em 0.625em 0.75em;
+	border: 1px solid #c0c0c0;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
 }
 
-/*
- * 1. Corrects color not being inherited in IE 6/7/8/9.
- * 2. Corrects text not wrapping in Firefox 3.
- * 3. Corrects alignment displayed oddly in IE 6/7.
- */
+/**
+* 1. Correct `color` not being inherited in IE 8/9.
+* 2. Remove padding so people aren't caught out if they zero out fieldsets.
+*/
 
 legend {
-    border: 0; /* 1 */
-    padding: 0;
-    white-space: normal; /* 2 */
-    *margin-left: -7px; /* 3 */
+	border: 0; /* 1 */
+	padding: 0; /* 2 */
 }
 
-/*
- * 1. Corrects font size not being inherited in all browsers.
- * 2. Addresses margins set differently in IE 6/7, Firefox 3+, Safari 5,
- *    and Chrome.
- * 3. Improves appearance and consistency in all browsers.
- */
+/**
+* 1. Correct font family not being inherited in all browsers.
+* 2. Correct font size not being inherited in all browsers.
+* 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+*/
 
 button,
 input,
 select,
 textarea {
-    font-size: 100%; /* 1 */
-    margin: 0; /* 2 */
-    vertical-align: baseline; /* 3 */
-    *vertical-align: middle; /* 3 */
+	font-family: inherit; /* 1 */
+	font-size: 100%; /* 2 */
+	margin: 0; /* 3 */
 }
 
-/*
- * Addresses Firefox 3+ setting `line-height` on `input` using `!important` in
- * the UA stylesheet.
- */
+/**
+* Address Firefox 4+ setting `line-height` on `input` using `!important` in
+* the UA stylesheet.
+*/
 
 button,
 input {
-    line-height: normal;
+	line-height: normal;
 }
 
-/*
- * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
- *    and `video` controls.
- * 2. Corrects inability to style clickable `input` types in iOS.
- * 3. Improves usability and consistency of cursor style between image-type
- *    `input` and others.
- * 4. Removes inner spacing in IE 7 without affecting normal text inputs.
- *    Known issue: inner spacing remains in IE 6.
- */
+/**
+* Address inconsistent `text-transform` inheritance for `button` and `select`.
+* All other form control elements do not inherit `text-transform` values.
+* Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+* Correct `select` style inheritance in Firefox 4+ and Opera.
+*/
+
+button,
+select {
+	text-transform: none;
+}
+
+/**
+* 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+*    and `video` controls.
+* 2. Correct inability to style clickable `input` types in iOS.
+* 3. Improve usability and consistency of cursor style between image-type
+*    `input` and others.
+*/
 
 button,
 html input[type="button"], /* 1 */
 input[type="reset"],
 input[type="submit"] {
-    -webkit-appearance: button; /* 2 */
-    cursor: pointer; /* 3 */
-    *overflow: visible;  /* 4 */
+	-webkit-appearance: button; /* 2 */
+	cursor: pointer; /* 3 */
 }
 
-/*
- * Re-set default cursor for disabled elements.
- */
+/**
+* Re-set default cursor for disabled elements.
+*/
 
 button[disabled],
-input[disabled] {
-    cursor: default;
+html input[disabled] {
+	cursor: default;
 }
 
-/*
- * 1. Addresses box sizing set to content-box in IE 8/9.
- * 2. Removes excess padding in IE 8/9.
- * 3. Removes excess padding in IE 7.
- *    Known issue: excess padding remains in IE 6.
- */
+/**
+* 1. Address box sizing set to `content-box` in IE 8/9.
+* 2. Remove excess padding in IE 8/9.
+*/
 
 input[type="checkbox"],
 input[type="radio"] {
-    box-sizing: border-box; /* 1 */
-    padding: 0; /* 2 */
-    *height: 13px; /* 3 */
-    *width: 13px; /* 3 */
+	box-sizing: border-box; /* 1 */
+	padding: 0; /* 2 */
 }
 
-/*
- * 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
- * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
- *    (include `-moz` to future-proof).
- */
+/**
+* 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+* 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+*    (include `-moz` to future-proof).
+*/
 
 input[type="search"] {
-    -webkit-appearance: textfield; /* 1 */
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box; /* 2 */
-    box-sizing: content-box;
+	-webkit-appearance: textfield; /* 1 */
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box; /* 2 */
+	box-sizing: content-box;
 }
 
-/*
- * Removes inner padding and search cancel button in Safari 5 and Chrome
- * on OS X.
- */
+/**
+* Remove inner padding and search cancel button in Safari 5 and Chrome
+* on OS X.
+*/
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
+	-webkit-appearance: none;
 }
 
-/*
- * Removes inner padding and border in Firefox 3+.
- */
+/**
+* Remove inner padding and border in Firefox 4+.
+*/
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-    border: 0;
-    padding: 0;
+	border: 0;
+	padding: 0;
 }
 
-/*
- * 1. Removes default vertical scrollbar in IE 6/7/8/9.
- * 2. Improves readability and alignment in all browsers.
- */
+/**
+* 1. Remove default vertical scrollbar in IE 8/9.
+* 2. Improve readability and alignment in all browsers.
+*/
 
 textarea {
-    overflow: auto; /* 1 */
-    vertical-align: top; /* 2 */
+	overflow: auto; /* 1 */
+	vertical-align: top; /* 2 */
 }
-
 
 /* ==========================================================================
    Tables
    ========================================================================== */
 
-/*
- * Remove most spacing between table cells.
- */
+/**
+* Remove most spacing between table cells.
+*/
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*
+* HTML5 Boilerplate
+*
+* What follows is the result of much research on cross-browser styling.
+* Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+* Kroc Camen, and the H5BP dev community and team.
+*/
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+	color: #222;
+}
+
+body {
+	font-size: 1em;
+	line-height: 1.4;
+}
+
+/*
+* Remove text-shadow in selection highlight: h5bp.com/i
+* These selection rule sets have to be separate.
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+
+::selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+
+/*
+* A better looking default horizontal rule
+*/
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+/*
+* Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+*/
+
+img {
+	vertical-align: middle;
+}
+
+/*
+* Remove default fieldset styles.
+*/
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+/*
+* Allow only vertical resizing of textareas.
+*/
+
+textarea {
+	resize: vertical;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+
+.chromeframe {
+	margin: 0.2em 0;
+	background: #ccc;
+	color: #000;
+	padding: 0.2em 0;
 }
 
 
@@ -572,193 +530,110 @@ table {
 img,
 object,
 video {
-    max-width: 100%;
-    height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
-
-/* main H5BP base styles */
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
-html,
-button,
-input,
-select,
-textarea {
-    color: #222;
-}
-
-body {
-    font-size: 1em;
-    line-height: 1.4;
-}
 
 /*
- * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection declarations have to be separate.
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
-/*
- * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
- */
-
-img {
-    vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-    resize: vertical;
-}
-
-
-/* ==========================================================================
-   Chrome Frame prompt
-   ========================================================================== */
-
-.chromeframe {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
-
-/* =WordPress Required - Generated Core Classes
-    Each Theme should have these or similar styles in its style.css file
-    in order to display images and captions properly.
-    http://codex.wordpress.org/CSS#WordPress_Generated_Classes
-------------------------------------------------------------------------------- */
+* 1.0 WordPress Required
+*
+* Generated Core Classes
+* Each Theme should have these or similar styles in its style.css file
+* in order to display images and captions properly.
+* http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+*/
 
 .sticky {}
 
 .alignnone {
-    margin: 5px 20px 20px 0;
+	margin: 5px 20px 20px 0;
 }
 
 .aligncenter, div.aligncenter {
-    display:block;
-    margin: 5px auto 5px auto;
+	display:block;
+	margin: 5px auto 5px auto;
 }
 
 .alignright {
-    float:right;
-    margin: 5px 0 20px 20px;
+	float:right;
+	margin: 5px 0 20px 20px;
 }
 
 .alignleft {
-    float:left;
-    margin: 5px 20px 20px 0;
+	float:left;
+	margin: 5px 20px 20px 0;
 }
 
 .aligncenter {
-    display: block;
-    margin: 5px auto 5px auto;
+	display: block;
+	margin: 5px auto 5px auto;
 }
 
 .alignright {
-    float:right;
-    margin: 5px 0 20px 20px;
+	float:right;
+	margin: 5px 0 20px 20px;
 }
 
 .alignnone {
-    margin: 5px 20px 20px 0;
+	margin: 5px 20px 20px 0;
 }
 
 .alignleft {
-    float:left;
-    margin: 5px 20px 20px 0;
+	float:left;
+	margin: 5px 20px 20px 0;
 }
 
 .aligncenter {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .wp-caption {
-    background: #fff;
-    border: 1px solid #f0f0f0;
-    max-width: 96%; /* Image does not overflow the content area */
-    padding: 5px 3px 10px;
-    text-align: center;
+	background: #fff;
+	border: 1px solid #f0f0f0;
+	max-width: 96%; /* Image does not overflow the content area */
+	padding: 5px 3px 10px;
+	text-align: center;
 }
 
 .wp-caption.alignnone {
-    margin: 5px 20px 20px 0;
+	margin: 5px 20px 20px 0;
 }
 
 .wp-caption.alignleft {
-    margin: 5px 20px 20px 0;
+	margin: 5px 20px 20px 0;
 }
 
 .wp-caption.alignright {
-    margin: 5px 0 20px 20px;
+	margin: 5px 0 20px 20px;
 }
 
 .wp-caption img {
-    border: 0 none;
-    height: auto;
-    margin:0;
-    max-width: 98.5%;
-    padding:0;
-    width: auto;
+	border: 0 none;
+	height: auto;
+	margin:0;
+	max-width: 98.5%;
+	padding:0;
+	width: auto;
 }
 
 .wp-caption p.wp-caption-text {
-  font-size:11px;
-  line-height:17px;
-  margin:0;
-  padding:0 4px 5px;
+	font-size:11px;
+	line-height:17px;
+	margin:0;
+	padding:0 4px 5px;
 }
 
 .gallery-caption {}
 
 /*
- * stops too many categories from breaking the layout
- */
+* stops too many categories from breaking the layout
+*/
 .entry-tags-list li,
 .entry-categories-list li {
-  display: inline-block;
+	display: inline-block;
 }
 
 
@@ -768,22 +643,18 @@ textarea {
 /* Fluid Images For Wordpress */
 img[class*="align"],
 img[class*="wp-image-"] {
-    /* Make sure images with WordPress-added height and width attributes are scaled correctly */
-    height: auto;
+	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
 }
 
 .wp-caption,
 .wp-caption img {
-    max-width: 100%;
+	max-width: 100%;
 }
 
 img.size-full {
-    max-width: 100%;
-    /* Prevent stretching of full-size images with height and width attributes in IE8 */
-    width: auto;
+	max-width: 100%;
+	width: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */
 }
-/**** END Wordpress Fluid Images */
-
 
 /* WP Breadcrumb Styles */
 .cat-item {}
@@ -797,10 +668,10 @@ img.size-full {
 
 /* WP Smiley */
 .entry-content img.wp-smiley {
-    border: none;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding: 0;
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
 }
 
 /* WP widget styling */
@@ -821,23 +692,22 @@ img.size-full {
 .posttitle {}
 
 /*
- * WP COMMENTS FORM
- * comment form container
- * keep this consistent for comment form
- * everytime a user clicks reply to a thread
- * the comment form that appears contains these very
- * styles defined below
- *
- */
+* WP COMMENTS FORM
+* comment form container
+* keep this consistent for comment form
+* everytime a user clicks reply to a thread
+* the comment form that appears contains these very
+* styles defined below
+*/
 #respond {}
 
 /* comments list reset */
 .commentlist,
 .commentlist ul,
 .commentlist .children {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
 
 /* comment form title */
@@ -850,8 +720,8 @@ img.size-full {
 /* no user comments styling class provided via comments.php line#69 */
 .moderating,
 .nocomments {
-    background: red;
-    color: #fff;
+	background: red;
+	color: #fff;
 }
 
 /* comment form labels */
@@ -869,7 +739,7 @@ label[for="commment"] {}
 /* comment form inputs  */
 #commentform input,
 #commentform textarea {
-    display: block;
+	display: block;
 }
 
 /* comment form allow tags */
@@ -886,7 +756,7 @@ span.nxt-comments-link {}
 
 /* avatars */
 .avatar {
-    display: block
+	display: block
 }
 
 /* comments intro header */
@@ -897,23 +767,22 @@ span.nxt-comments-link {}
 
 /* comment meta */
 .comment-meta {
-    font-size: small;
+	font-size: small;
 }
 
 
 /*
- * Custom Comment Styling Classes
- *
- * Built on the shoulders of Chris Coyier and Chris Harrison's awesome work
- * http://cdharrison.com/2008/12/03/threaded-comments
- * http://css-tricks.com/snippets/wordpress/base-threaded-comments-styling
- *
- */
+* 2.0 Comment Styling Classes
+*
+* Built on the shoulders of Chris Coyier and Chris Harrison's awesome work
+* http://cdharrison.com/2008/12/03/threaded-comments
+* http://css-tricks.com/snippets/wordpress/base-threaded-comments-styling
+*/
 ol.commentlist {
-    list-style: none;
-    margin: 0 0 1em;
-    padding: 0;
-    text-indent: 0;
+	list-style: none;
+	margin: 0 0 1em;
+	padding: 0;
+	text-indent: 0;
 }
 
 ol.commentlist li {}
@@ -923,25 +792,25 @@ ol.commentlist li.byuser {}
 ol.commentlist li.comment-author-admin {}
 
 ol.commentlist li.comment {
-    border-bottom: 1px dotted #666;
-    padding: 1em;
+	border-bottom: 1px dotted #666;
+	padding: 1em;
 }
 
 ol.commentlist li.comment div.comment-author {}
 
 ol.commentlist li.comment div.vcard {
-    font: normal 16px georgia,times,serif;
+	font: normal 16px georgia,times,serif;
 }
 ol.commentlist li.comment div.vcard cite.fn {
-    font-style: normal;
+	font-style: normal;
 }
 
 ol.commentlist li.comment div.vcard cite.fn a.url {}
 
 ol.commentlist li.comment div.vcard img.avatar {
-    border: 5px solid #ccc;
-    float: right;
-    margin: 0 0 1em 1em;
+	border: 5px solid #ccc;
+	float: right;
+	margin: 0 0 1em 1em;
 }
 
 ol.commentlist li.comment div.vcard img.avatar-32 {}
@@ -951,30 +820,30 @@ ol.commentlist li.comment div.vcard span.says {}
 ol.commentlist li.comment div.commentmetadata {}
 
 ol.commentlist li.comment div.comment-meta {
-    font-size: 9px;
+	font-size: 9px;
 }
 ol.commentlist li.comment div.comment-meta a {
-    color: #ccc;
+	color: #ccc;
 }
 ol.commentlist li.comment p {
-    font-size: 11px;
-    margin: 0 0 1em;
+	font-size: 11px;
+	margin: 0 0 1em;
 }
 ol.commentlist li.comment ul {
-    font-size: 11px;
-    list-style: square;
-    margin: 0 0 1em 2em;
+	font-size: 11px;
+	list-style: square;
+	margin: 0 0 1em 2em;
 }
 ol.commentlist li.comment div.reply {
-    font-size: 11px;
+	font-size: 11px;
 }
 ol.commentlist li.comment div.reply a {
-    font-weight: bold;
+	font-weight: bold;
 }
 ol.commentlist li.comment ul.children {
-    list-style: none;
-    margin: 1em 0 0;
-    text-indent: 0;
+	list-style: none;
+	margin: 1em 0 0;
+	text-indent: 0;
 }
 
 ol.commentlist li.comment ul.children li {}
@@ -985,31 +854,31 @@ ol.commentlist li.comment ul.children li.comment {}
 ol.commentlist li.comment ul.children li.comment-author-admin {}
 
 ol.commentlist li.comment ul.children li.depth-2 {
-    border-left: 2px solid #0094cc;
-    margin: 0 0 .25em .25em;
+	border-left: 2px solid #0094cc;
+	margin: 0 0 .25em .25em;
 }
 ol.commentlist li.comment ul.children li.depth-3 {
-    border-left: 2px solid #0094cc;
-    margin: 0 0 .25em .25em;
+	border-left: 2px solid #0094cc;
+	margin: 0 0 .25em .25em;
 }
 ol.commentlist li.comment ul.children li.depth-4 {
-    border-left: 5px solid #0094cc;
-    margin: 0 0 .25em .25em;
+	border-left: 5px solid #0094cc;
+	margin: 0 0 .25em .25em;
 }
 
 ol.commentlist li.comment ul.children li.depth-5 {}
 ol.commentlist li.comment ul.children li.odd {}
 
 ol.commentlist li.even {
-    background: #fff;
-    background: rgba(255,255,255,0.20);
+	background: #fff;
+	background: rgba(255,255,255,0.20);
 }
 ol.commentlist li.odd {
-    background: #f6f6f6;
-    background: rgba(255,255,255,0.20);
+	background: #f6f6f6;
+	background: rgba(255,255,255,0.20);
 }
 ol.commentlist li.parent {
-    border-left: 2px solid #0094cc;
+	border-left: 2px solid #0094cc;
 }
 
 ol.commentlist li.thread-alt {}
@@ -1017,8 +886,12 @@ ol.commentlist li.thread-even {}
 ol.commentlist li.thread-odd {}
 
 
-/* =WP-Flex Styling Modules
-------------------------------------------------------------------------------- */
+/**
+* 3.0 WP-Flex Styling Modules
+*
+* Use these custom Classes as helpers for your styling needs and based on
+* the classes written by this theme. These are not provided by WordPress
+*/
 
 /* WP-Flex BLOG NAME Module */
 .blogname {}
@@ -1062,41 +935,41 @@ ol.commentlist li.thread-odd {}
 ------------------------------------------------------------------------------- */
 
 body {
-    background: #00b5f8;
-    margin: 0 auto;
-    max-width: 65em;
+	background: #00b5f8;
+	margin: 0 auto;
+	max-width: 65em;
 }
 
 a {
-    color: #ffffff;
-    text-decoration: none;
+	color: #ffffff;
+	text-decoration: none;
 }
 a:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 dl dt {
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 1.2;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 1.2;
 }
 dl dd {
-    margin: 0 0 10px 0;
-    font-size: 14px;
-    line-height: 1.4;
-    color: #666;
+	margin: 0 0 10px 0;
+	font-size: 14px;
+	line-height: 1.4;
+	color: #666;
 }
 
 .nav-list {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 .post {
-    border-bottom: 2px solid rgba(0, 117, 160, 0.50);
-    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.35);
-    margin: 1.5em 0;
-    padding: 5%;
+	border-bottom: 2px solid rgba(0, 117, 160, 0.50);
+	box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.35);
+	margin: 1.5em 0;
+	padding: 5%;
 }
 
 
@@ -1108,155 +981,176 @@ dl dd {
 ------------------------------------------------------------------------------- */
 
 
-/* =non-semantic helper classes
-   Please define your styles before this section.
-------------------------------------------------------------------------------- */
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
 
 /*
- * Image replacement
- */
+* Image replacement
+*/
 
 .ir {
-    border: 0;
-    font: 0/0 a;
-    text-shadow: none;
-    color: transparent;
-    background-color: transparent;
+	background-color: transparent;
+	border: 0;
+	overflow: hidden;
+	/* IE 6/7 fallback */
+	*text-indent: -9999px;
+}
+
+.ir:before {
+	content: "";
+	display: block;
+	width: 0;
+	height: 150%;
 }
 
 /*
- * Hide from both screenreaders and browsers: h5bp.com/u
- */
+* Hide from both screenreaders and browsers: h5bp.com/u
+*/
 
 .hidden {
-    display: none !important;
-    visibility: hidden;
+	display: none !important;
+	visibility: hidden;
 }
 
 /*
- * Hide only visually, but have it available for screenreaders: h5bp.com/v
- */
+* Hide only visually, but have it available for screenreaders: h5bp.com/v
+*/
 
 .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
 }
 
 /*
- * Extends the .visuallyhidden class to allow the element to be focusable
- * when navigated to via the keyboard: h5bp.com/p
- */
+* Extends the .visuallyhidden class to allow the element to be focusable
+* when navigated to via the keyboard: h5bp.com/p
+*/
 
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	width: auto;
 }
 
 /*
- * Hide visually and from screenreaders, but maintain layout
- */
+* Hide visually and from screenreaders, but maintain layout
+*/
 
 .invisible {
-    visibility: hidden;
+	visibility: hidden;
 }
 
 /*
- * Contain floats: h5bp.com/q
- */
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
 
 .clearfix:before,
 .clearfix:after {
-    content: "";
-    display: table;
+	content: " "; /* 1 */
+	display: table; /* 2 */
 }
 
 .clearfix:after {
-    clear: both;
+	clear: both;
 }
+
+/*
+* For IE 6/7 only
+* Include this rule to trigger hasLayout and contain floats.
+*/
 
 .clearfix {
-    *zoom: 1;
+	*zoom: 1;
 }
 
 
-/* =Print styles.
-    Inlined to avoid required HTTP connection: h5bp.com/r
-------------------------------------------------------------------------------- */
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
 
 @media print {
-    * {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow:none !important;
-        text-shadow: none !important;
-    }
+	* {
+		background: transparent !important;
+		color: #000 !important; /* Black prints faster: h5bp.com/s */
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
 
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
+	a[href]:after {
+		content: " (" attr(href) ")";
+	}
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
 
-    /*
-     * Don't show links for images, or javascript/internal links
-     */
+	/*
+	 * Don't show links for images, or javascript/internal links
+	 */
 
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
+	.ir a:after,
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after {
+		content: "";
+	}
 
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
 
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
+	thead {
+		display: table-header-group; /* h5bp.com/t */
+	}
 
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
 
-    img {
-        max-width: 100% !important;
-    }
+	img {
+		max-width: 100% !important;
+	}
 
-    @page {
-        margin: 0.5cm;
-    }
+	@page {
+		margin: 0.5cm;
+	}
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
 }
