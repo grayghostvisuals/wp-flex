@@ -16,7 +16,7 @@ If you care to mention this theme helper in your project then please do so by ad
 
 
 ## Browser Tested &amp;, Developer Approved: Yup! even IE7
-1. Tested and Debugged using WordPress 3.4.2
+1. Tested and Debugged using WordPress 3.5.1
     1. ``theme-unit-test.xml``
     2. ``wp-config.php.``
 
