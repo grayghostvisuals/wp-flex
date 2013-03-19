@@ -14,6 +14,11 @@ If you care to mention this theme helper in your project then please do so by ad
 ###Theme Unit Test Site
 [http://wpthemetestdata.files.wordpress.com](http://wpthemetestdata.files.wordpress.com)
 
+## Non-Theme Directory Useage
+If you're not using the theme for submission to the theme directory then make sure to do the following.
+
+1. [Adjust the loader assets to fit your needs](https://github.com/grayghostvisuals/WP-Flex/blob/master/functions.php#L86-L115). You can remove the assets reference(s) and place the assets anywhere of your choosing.
+
 
 ## Browser Tested &amp;, Developer Approved: Yup! even IE7
 1. Tested and Debugged using WordPress 3.5.1
@@ -119,6 +124,9 @@ We strictly follow the WordPress coding guidelines and so should you if you're g
 
 12. "Snippets" folder containing clever bits for those that wish to customize their themes further.
 
+##Make your theme stronger with these…
+
+1. [wp-custom-admin](https://github.com/vanpattenmedia/wp-custom-admin)
 
 ## More inspiring and wonderful blank WordPress themes
 * _S Theme &rarr; [http://underscores.me](http://underscores.me)
