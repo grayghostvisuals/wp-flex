@@ -17,7 +17,7 @@ If you care to mention this theme helper in your project then please do so by ad
 ## Non-Theme Directory Useage
 If you're not using the theme for submission to the theme directory then make sure to do the following.
 
-1. [Adjust the loader assets to fit your needs](https://github.com/grayghostvisuals/WP-Flex/blob/master/functions.php#L86-L115). You can remove the assets reference(s) and place the assets anywhere of your choosing.
+1. [Adjust the loader assets to fit your needs](https://github.com/grayghostvisuals/WP-Flex/blob/master/functions.php#L127-L156). You can remove the assets reference(s) and place the assets anywhere of your choosing.
 
 
 ## Browser Tested &amp;, Developer Approved: Yup! even IE7
