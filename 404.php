@@ -4,6 +4,8 @@
 			<h2>Error 404 - Page Not Found</h2>
 	</section>
 
-	<?php get_sidebar(); ?>
+	<aside id="sidebar" role="complementary">
+		<?php get_sidebar(); ?>
+	</aside>
 
 <?php get_footer(); ?>

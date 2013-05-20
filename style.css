@@ -6,13 +6,13 @@ Description: A responsive, foundational Wordpress theme boilerplate for develope
 Author: Dennis Gaebel : Gray Ghost Visuals
 Author URI: http://wpflex.grayghostvisuals.com
 
-Version: 1.0.6
+Version: 1.0.7
 Tags: full-width-template, flexible-width, custom-background, microformats, editor-style, custom-menu, sticky-post, theme-options, front-page-post-form, featured-images, sticky-post, rtl-language-support, threaded-comments, post-formats, white, light
 
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-WP-Flex Copyright ©2011 Gray Ghost Visuals
+WP-Flex Copyright ©2013 Gray Ghost Visuals
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -34,7 +34,8 @@ found at http://www.gnu.org/licenses/fdl-1.3-standalone.html
 */
 
 
-/*! normalize.css v2.1.0 | MIT License | git.io/normalize */
+/*! normalize.css v2.1.2 | MIT License | git.io/normalize */
+
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -59,8 +60,8 @@ summary {
 }
 
 /**
-* Correct `inline-block` display not defined in IE 8/9.
-*/
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
 
 audio,
 canvas,
@@ -69,9 +70,9 @@ video {
 }
 
 /**
-* Prevent modern browsers from displaying `audio` without controls.
-* Remove excess height in iOS 5 devices.
-*/
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
 
 audio:not([controls]) {
 	display: none;
@@ -79,8 +80,8 @@ audio:not([controls]) {
 }
 
 /**
-* Address styling not present in IE 8/9.
-*/
+ * Address styling not present in IE 8/9.
+ */
 
 [hidden] {
 	display: none;
@@ -91,20 +92,20 @@ audio:not([controls]) {
    ========================================================================== */
 
 /**
-* 1. Set default font family to sans-serif.
-* 2. Prevent iOS text size adjust after orientation change, without disabling
-*    user zoom.
-*/
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
 
 html {
 	font-family: sans-serif; /* 1 */
-	-webkit-text-size-adjust: 100%; /* 2 */
 	-ms-text-size-adjust: 100%; /* 2 */
+	-webkit-text-size-adjust: 100%; /* 2 */
 }
 
 /**
-* Remove default margin.
-*/
+ * Remove default margin.
+ */
 
 body {
 	margin: 0;
@@ -115,16 +116,16 @@ body {
    ========================================================================== */
 
 /**
-* Address `outline` inconsistency between Chrome and other browsers.
-*/
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
 
 a:focus {
 	outline: thin dotted;
 }
 
 /**
-* Improve readability when focused and also mouse hovered in all browsers.
-*/
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
 
 a:active,
 a:hover {
@@ -136,9 +137,9 @@ a:hover {
    ========================================================================== */
 
 /**
-* Address variable `h1` font-size and margin within `section` and `article`
-* contexts in Firefox 4+, Safari 5, and Chrome.
-*/
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
 
 h1 {
 	font-size: 2em;
@@ -146,16 +147,16 @@ h1 {
 }
 
 /**
-* Address styling not present in IE 8/9, Safari 5, and Chrome.
-*/
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
 
 abbr[title] {
 	border-bottom: 1px dotted;
 }
 
 /**
-* Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
-*/
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
 
 b,
 strong {
@@ -163,16 +164,16 @@ strong {
 }
 
 /**
-* Address styling not present in Safari 5 and Chrome.
-*/
+ * Address styling not present in Safari 5 and Chrome.
+ */
 
 dfn {
 	font-style: italic;
 }
 
 /**
-* Address differences between Firefox and other browsers.
-*/
+ * Address differences between Firefox and other browsers.
+ */
 
 hr {
 	-moz-box-sizing: content-box;
@@ -181,8 +182,8 @@ hr {
 }
 
 /**
-* Address styling not present in IE 8/9.
-*/
+ * Address styling not present in IE 8/9.
+ */
 
 mark {
 	background: #ff0;
@@ -190,8 +191,8 @@ mark {
 }
 
 /**
-* Correct font family set oddly in Safari 5 and Chrome.
-*/
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
 
 code,
 kbd,
@@ -202,24 +203,24 @@ samp {
 }
 
 /**
-* Improve readability of pre-formatted text in all browsers.
-*/
+ * Improve readability of pre-formatted text in all browsers.
+ */
 
 pre {
 	white-space: pre-wrap;
 }
 
 /**
-* Set consistent quote types.
-*/
+ * Set consistent quote types.
+ */
 
 q {
 	quotes: "\201C" "\201D" "\2018" "\2019";
 }
 
 /**
-* Address inconsistent and variable font size in all browsers.
-*/
+ * Address inconsistent and variable font size in all browsers.
+ */
 
 small {
 	font-size: 80%;
@@ -250,16 +251,16 @@ sub {
    ========================================================================== */
 
 /**
-* Remove border when inside `a` element in IE 8/9.
-*/
+ * Remove border when inside `a` element in IE 8/9.
+ */
 
 img {
 	border: 0;
 }
 
 /**
-* Correct overflow displayed oddly in IE 9.
-*/
+ * Correct overflow displayed oddly in IE 9.
+ */
 
 svg:not(:root) {
 	overflow: hidden;
@@ -270,8 +271,8 @@ svg:not(:root) {
    ========================================================================== */
 
 /**
-* Address margin not present in IE 8/9 and Safari 5.
-*/
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
 
 figure {
 	margin: 0;
@@ -282,8 +283,8 @@ figure {
    ========================================================================== */
 
 /**
-* Define consistent border, margin, and padding.
-*/
+ * Define consistent border, margin, and padding.
+ */
 
 fieldset {
 	border: 1px solid #c0c0c0;
@@ -292,9 +293,9 @@ fieldset {
 }
 
 /**
-* 1. Correct `color` not being inherited in IE 8/9.
-* 2. Remove padding so people aren't caught out if they zero out fieldsets.
-*/
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
 
 legend {
 	border: 0; /* 1 */
@@ -302,10 +303,10 @@ legend {
 }
 
 /**
-* 1. Correct font family not being inherited in all browsers.
-* 2. Correct font size not being inherited in all browsers.
-* 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
-*/
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
 
 button,
 input,
@@ -317,9 +318,9 @@ textarea {
 }
 
 /**
-* Address Firefox 4+ setting `line-height` on `input` using `!important` in
-* the UA stylesheet.
-*/
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
 
 button,
 input {
@@ -327,11 +328,11 @@ input {
 }
 
 /**
-* Address inconsistent `text-transform` inheritance for `button` and `select`.
-* All other form control elements do not inherit `text-transform` values.
-* Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
-* Correct `select` style inheritance in Firefox 4+ and Opera.
-*/
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
 
 button,
 select {
@@ -339,12 +340,12 @@ select {
 }
 
 /**
-* 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
-*    and `video` controls.
-* 2. Correct inability to style clickable `input` types in iOS.
-* 3. Improve usability and consistency of cursor style between image-type
-*    `input` and others.
-*/
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
 
 button,
 html input[type="button"], /* 1 */
@@ -355,8 +356,8 @@ input[type="submit"] {
 }
 
 /**
-* Re-set default cursor for disabled elements.
-*/
+ * Re-set default cursor for disabled elements.
+ */
 
 button[disabled],
 html input[disabled] {
@@ -364,9 +365,9 @@ html input[disabled] {
 }
 
 /**
-* 1. Address box sizing set to `content-box` in IE 8/9.
-* 2. Remove excess padding in IE 8/9.
-*/
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
 
 input[type="checkbox"],
 input[type="radio"] {
@@ -375,10 +376,10 @@ input[type="radio"] {
 }
 
 /**
-* 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
-* 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
-*    (include `-moz` to future-proof).
-*/
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
 
 input[type="search"] {
 	-webkit-appearance: textfield; /* 1 */
@@ -388,9 +389,9 @@ input[type="search"] {
 }
 
 /**
-* Remove inner padding and search cancel button in Safari 5 and Chrome
-* on OS X.
-*/
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
@@ -398,8 +399,8 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 /**
-* Remove inner padding and border in Firefox 4+.
-*/
+ * Remove inner padding and border in Firefox 4+.
+ */
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
@@ -408,9 +409,9 @@ input::-moz-focus-inner {
 }
 
 /**
-* 1. Remove default vertical scrollbar in IE 8/9.
-* 2. Improve readability and alignment in all browsers.
-*/
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
 
 textarea {
 	overflow: auto; /* 1 */
@@ -422,8 +423,8 @@ textarea {
    ========================================================================== */
 
 /**
-* Remove most spacing between table cells.
-*/
+ * Remove most spacing between table cells.
+ */
 
 table {
 	border-collapse: collapse;
@@ -432,12 +433,12 @@ table {
 
 
 /*
-* HTML5 Boilerplate
-*
-* What follows is the result of much research on cross-browser styling.
-* Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
-* Kroc Camen, and the H5BP dev community and team.
-*/
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
 
 /* ==========================================================================
    Base styles: opinionated defaults
@@ -457,10 +458,10 @@ body {
 }
 
 /*
-* Remove text-shadow in selection highlight: h5bp.com/i
-* These selection rule sets have to be separate.
-* Customize the background color to match your design.
-*/
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
 
 ::-moz-selection {
 	background: #b3d4fc;
@@ -473,8 +474,8 @@ body {
 }
 
 /*
-* A better looking default horizontal rule
-*/
+ * A better looking default horizontal rule
+ */
 
 hr {
 	display: block;
@@ -486,16 +487,16 @@ hr {
 }
 
 /*
-* Remove the gap between images and the bottom of their containers: h5bp.com/i/440
-*/
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
 
 img {
 	vertical-align: middle;
 }
 
 /*
-* Remove default fieldset styles.
-*/
+ * Remove default fieldset styles.
+ */
 
 fieldset {
 	border: 0;
@@ -504,8 +505,8 @@ fieldset {
 }
 
 /*
-* Allow only vertical resizing of textareas.
-*/
+ * Allow only vertical resizing of textareas.
+ */
 
 textarea {
 	resize: vertical;
@@ -523,6 +524,7 @@ textarea {
 }
 
 
+
 /* =============================================================================
    Responsive Embedded Media
    ========================================================================== */
@@ -536,8 +538,9 @@ video {
 
 
 /*
-* 1.0 WordPress Required
+* WordPress Required
 *
+* @since 1.0.6
 * Generated Core Classes
 * Each Theme should have these or similar styles in its style.css file
 * in order to display images and captions properly.
@@ -636,6 +639,9 @@ video {
 	display: inline-block;
 }
 
+/* by post author styling */
+.bypostauthor {}
+
 
 /* =WordPress Generated - Extra Styling Classes for us Authors
 ------------------------------------------------------------------------------- */
@@ -729,12 +735,6 @@ label[for="author"] {}
 label[for="email"] {}
 label[for="commment"] {}
 
-/* comment form paragraph containers */
-.comment-notes {}
-.comment-form-author {}
-.comment-form-email {}
-.comment-form-url {}
-.comment-form-comment {}
 
 /* comment form inputs  */
 #commentform input,
@@ -743,151 +743,21 @@ label[for="commment"] {}
 }
 
 /* comment form allow tags */
-.form-allowed-tags
-
-/* comment form submit paragraph container and button */
-.form-submit {}
-#submit {}
+.form-allowed-tags {}
 
 /* comments pagination */
-div.comment-pagination {}
-span.prev-comments-link {}
-span.nxt-comments-link {}
+.comment-pagination {}
+.prev-comments-link {}
+.nxt-comments-link {}
 
 /* avatars */
 .avatar {
 	display: block
 }
 
-/* comments intro header */
-#comments-title {}
-
-/* comment form user comment text */
-.comment-body {}
-
-/* comment meta */
-.comment-meta {
-	font-size: small;
-}
-
-
-/*
-* 2.0 Comment Styling Classes
-*
-* Built on the shoulders of Chris Coyier and Chris Harrison's awesome work
-* http://cdharrison.com/2008/12/03/threaded-comments
-* http://css-tricks.com/snippets/wordpress/base-threaded-comments-styling
-*/
-ol.commentlist {
-	list-style: none;
-	margin: 0 0 1em;
-	padding: 0;
-	text-indent: 0;
-}
-
-ol.commentlist li {}
-ol.commentlist li.alt {}
-ol.commentlist li.bypostauthor {}
-ol.commentlist li.byuser {}
-ol.commentlist li.comment-author-admin {}
-
-ol.commentlist li.comment {
-	border-bottom: 1px dotted #666;
-	padding: 1em;
-}
-
-ol.commentlist li.comment div.comment-author {}
-
-ol.commentlist li.comment div.vcard {
-	font: normal 16px georgia,times,serif;
-}
-ol.commentlist li.comment div.vcard cite.fn {
-	font-style: normal;
-}
-
-ol.commentlist li.comment div.vcard cite.fn a.url {}
-
-ol.commentlist li.comment div.vcard img.avatar {
-	border: 5px solid #ccc;
-	float: right;
-	margin: 0 0 1em 1em;
-}
-
-ol.commentlist li.comment div.vcard img.avatar-32 {}
-ol.commentlist li.comment div.vcard img.avatar-64 {}
-ol.commentlist li.comment div.vcard img.photo {}
-ol.commentlist li.comment div.vcard span.says {}
-ol.commentlist li.comment div.commentmetadata {}
-
-ol.commentlist li.comment div.comment-meta {
-	font-size: 9px;
-}
-ol.commentlist li.comment div.comment-meta a {
-	color: #ccc;
-}
-ol.commentlist li.comment p {
-	font-size: 11px;
-	margin: 0 0 1em;
-}
-ol.commentlist li.comment ul {
-	font-size: 11px;
-	list-style: square;
-	margin: 0 0 1em 2em;
-}
-ol.commentlist li.comment div.reply {
-	font-size: 11px;
-}
-ol.commentlist li.comment div.reply a {
-	font-weight: bold;
-}
-ol.commentlist li.comment ul.children {
-	list-style: none;
-	margin: 1em 0 0;
-	text-indent: 0;
-}
-
-ol.commentlist li.comment ul.children li {}
-ol.commentlist li.comment ul.children li.alt {}
-ol.commentlist li.comment ul.children li.bypostauthor {}
-ol.commentlist li.comment ul.children li.byuser {}
-ol.commentlist li.comment ul.children li.comment {}
-ol.commentlist li.comment ul.children li.comment-author-admin {}
-
-ol.commentlist li.comment ul.children li.depth-2 {
-	border-left: 2px solid #0094cc;
-	margin: 0 0 .25em .25em;
-}
-ol.commentlist li.comment ul.children li.depth-3 {
-	border-left: 2px solid #0094cc;
-	margin: 0 0 .25em .25em;
-}
-ol.commentlist li.comment ul.children li.depth-4 {
-	border-left: 5px solid #0094cc;
-	margin: 0 0 .25em .25em;
-}
-
-ol.commentlist li.comment ul.children li.depth-5 {}
-ol.commentlist li.comment ul.children li.odd {}
-
-ol.commentlist li.even {
-	background: #fff;
-	background: rgba(255,255,255,0.20);
-}
-ol.commentlist li.odd {
-	background: #f6f6f6;
-	background: rgba(255,255,255,0.20);
-}
-ol.commentlist li.parent {
-	border-left: 2px solid #0094cc;
-}
-
-ol.commentlist li.thread-alt {}
-ol.commentlist li.thread-even {}
-ol.commentlist li.thread-odd {}
-
 
 /**
-* 3.0 WP-Flex Styling Modules
+* WP-Flex Styling Modules
 *
 * Use these custom Classes as helpers for your styling needs and based on
 * the classes written by this theme. These are not provided by WordPress
@@ -928,7 +798,7 @@ ol.commentlist li.thread-odd {}
 .pagination.single {}
 
 /* WP-Flex SIDEBAR Module */
-.sidebar {}
+#sidebar {}
 
 
 /* =Demo Layout Styles * DO NOT USE *
@@ -986,8 +856,8 @@ dl dd {
    ========================================================================== */
 
 /*
-* Image replacement
-*/
+ * Image replacement
+ */
 
 .ir {
 	background-color: transparent;
@@ -1005,8 +875,8 @@ dl dd {
 }
 
 /*
-* Hide from both screenreaders and browsers: h5bp.com/u
-*/
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
 
 .hidden {
 	display: none !important;
@@ -1014,8 +884,8 @@ dl dd {
 }
 
 /*
-* Hide only visually, but have it available for screenreaders: h5bp.com/v
-*/
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
 
 .visuallyhidden {
 	border: 0;
@@ -1029,9 +899,9 @@ dl dd {
 }
 
 /*
-* Extends the .visuallyhidden class to allow the element to be focusable
-* when navigated to via the keyboard: h5bp.com/p
-*/
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
 
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
@@ -1044,24 +914,24 @@ dl dd {
 }
 
 /*
-* Hide visually and from screenreaders, but maintain layout
-*/
+ * Hide visually and from screenreaders, but maintain layout
+ */
 
 .invisible {
 	visibility: hidden;
 }
 
 /*
-* Clearfix: contain floats
-*
-* For modern browsers
-* 1. The space content is one way to avoid an Opera bug when the
-*    `contenteditable` attribute is included anywhere else in the document.
-*    Otherwise it causes space to appear at the top and bottom of elements
-*    that receive the `clearfix` class.
-* 2. The use of `table` rather than `block` is only necessary if using
-*    `:before` to contain the top-margins of child elements.
-*/
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
 
 .clearfix:before,
 .clearfix:after {
@@ -1074,9 +944,9 @@ dl dd {
 }
 
 /*
-* For IE 6/7 only
-* Include this rule to trigger hasLayout and contain floats.
-*/
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
 
 .clearfix {
 	*zoom: 1;

@@ -1,10 +1,5 @@
 <footer role="contentinfo">
 
-	<section id="wpflex-footer-sidebar">
-		<?php if ( ! function_exists( 'dynamic_sidebar' ) || ! dynamic_sidebar( 'wpflex footer sidebar' ) ) : ?>
-		<?php endif; ?>
-	</section>
-
 	<!-- WPFlex vCard -->
 	<?php $options = get_option( 'wpflex_theme_options' ); ?>
 	<?php if ( $options || empty($options) ): ?>

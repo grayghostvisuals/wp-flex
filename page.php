@@ -24,8 +24,8 @@
 	<?php endif; //end if have_posts ?>
 
 	<!-- sidebar -->
-	<section id="sidebar" role="complementary">
+	<aside id="sidebar" role="complementary">
 		<?php get_sidebar(); ?>
-	</section>
+	</aside>
 
 <?php get_footer(); ?>

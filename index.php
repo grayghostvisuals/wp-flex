@@ -79,8 +79,8 @@
 		?>
 	</section>
 
-	<section id="sidebar" role="complementary">
+	<aside id="sidebar" role="complementary">
 		<?php get_sidebar(); ?>
-	</section>
+	</aside>
 
 <?php get_footer(); ?>
