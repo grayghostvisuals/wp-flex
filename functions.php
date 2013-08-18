@@ -84,6 +84,7 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
 
 
 		/*------------------------------------------------------------------------------------------------[ Comments ] */
+		// WordPress Comments
 		// Code Reference
 		// Digging into WordPress
 
@@ -133,7 +134,7 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
 		// included scripts willl load relative to the URL of your theme directory
 		function wpflex_assets_loader() {
 			// load main stylesheet
-			wp_register_style( 'style', get_stylesheet_uri(), array(), '1.0.6', 'all' );
+			wp_register_style( 'style', get_stylesheet_uri(), array(), '1.0.7', 'all' );
 			wp_enqueue_style( 'style' );
 
 			// Load WordPress' jQuery. Must be registered first before wp_enqueue_script()
@@ -141,16 +142,16 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
 			// http://digwp.com/2009/06/use-google-hosted-javascript-libraries-still-the-right-way
 			if ( ! is_admin() ) {
 				wp_deregister_script( 'jquery' );
-				wp_register_script( 'jquery', "http" . ( $_SERVER['SERVER_PORT'] == 443 ? "s" : "" ) . "://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js", false, null );
+				wp_register_script( 'jquery', "http" . ( $_SERVER['SERVER_PORT'] == 443 ? "s" : "" ) . "://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", false, null );
 				wp_enqueue_script( 'jquery' );
 			}
 
 			// Load Modernizr
 			wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/vendor/modernizr-2.6.2.min.js', array(), '2.6.2', false );
 			// load plugins.js
-			wp_enqueue_script( 'plugins', get_template_directory_uri() . '/js/plugins.js', array( 'jquery'), '1.0.5', true );
+			wp_enqueue_script( 'plugins', get_template_directory_uri() . '/js/plugins.js', array( 'jquery'), '1.0.7', true );
 			// load main.js
-			wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array( 'jquery'), '1.0.5', true );
+			wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array( 'jquery'), '1.0.7', true );
 		}
 
 		add_action( 'wp_enqueue_scripts', 'wpflex_assets_loader' );
