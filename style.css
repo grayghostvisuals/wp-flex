@@ -537,6 +537,10 @@ video {
 }
 
 
+/* =============================================================================
+   Required WordPress Styles
+   ========================================================================== */
+
 /*
 * WordPress Required
 *
@@ -643,8 +647,9 @@ video {
 .bypostauthor {}
 
 
-/* =WordPress Generated - Extra Styling Classes for us Authors
-------------------------------------------------------------------------------- */
+/* =============================================================================
+   WordPress Generated - Extra Styling Classes for us Authors
+   ========================================================================== */
 
 /* Fluid Images For Wordpress */
 img[class*="align"],
@@ -697,6 +702,10 @@ img.size-full {
 .more-link {}
 .posttitle {}
 
+
+/* =============================================================================
+   WordPress Comments
+   ========================================================================== */
 /*
 * WP COMMENTS FORM
 * comment form container
@@ -705,6 +714,7 @@ img.size-full {
 * the comment form that appears contains these very
 * styles defined below
 */
+
 #respond {}
 
 /* comments list reset */
@@ -735,7 +745,6 @@ label[for="author"] {}
 label[for="email"] {}
 label[for="commment"] {}
 
-
 /* comment form inputs  */
 #commentform input,
 #commentform textarea {
@@ -755,7 +764,26 @@ label[for="commment"] {}
 	display: block
 }
 
+/* User Comments */
+.comment-list {}
+.comment-meta {}
+.comment-meta.says {}
+.comment-vcard {}
+.comment-edit-link {}
+.comment-body {}
+.comment-text {}
+.reply {}
+.comment-reply-link {}
 
+/* Comment Respond Form */
+.comment-respond {}
+
+
+
+
+/* =============================================================================
+   WP-Flex Custom Styles
+   ========================================================================== */
 /**
 * WP-Flex Styling Modules
 *
@@ -801,8 +829,9 @@ label[for="commment"] {}
 #sidebar {}
 
 
-/* =Demo Layout Styles * DO NOT USE *
-------------------------------------------------------------------------------- */
+/* =============================================================================
+   Demo Layout Styles * DO NOT USE *
+   ========================================================================== */
 
 body {
 	background: #00b5f8;
@@ -843,14 +872,6 @@ dl dd {
 }
 
 
-/* =Author Typography
-------------------------------------------------------------------------------- */
-/* =Author Layout
-------------------------------------------------------------------------------- */
-/* =Author Colors
-------------------------------------------------------------------------------- */
-
-
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -858,7 +879,6 @@ dl dd {
 /*
  * Image replacement
  */
-
 .ir {
 	background-color: transparent;
 	border: 0;
@@ -877,7 +897,6 @@ dl dd {
 /*
  * Hide from both screenreaders and browsers: h5bp.com/u
  */
-
 .hidden {
 	display: none !important;
 	visibility: hidden;
@@ -886,7 +905,6 @@ dl dd {
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
-
 .visuallyhidden {
 	border: 0;
 	clip: rect(0 0 0 0);
@@ -902,7 +920,6 @@ dl dd {
  * Extends the .visuallyhidden class to allow the element to be focusable
  * when navigated to via the keyboard: h5bp.com/p
  */
-
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
 	clip: auto;
