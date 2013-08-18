@@ -122,7 +122,9 @@ We strictly follow the WordPress coding guidelines and so should you if you're g
 11. Custom Navigation Functionality
     We use ``wp_nav_menu`` while providing a fallback if a custom navigation menu is not in place. This option can be found from within your WordPress Admin Dashboard under "Appearance" &gt; "Menus"
 
-12. "Snippets" folder containing clever bits for those that wish to customize their themes further.
+12. "Snippets" folder containing clever bits for those that wish to customize their themes further like removing the “read more” behavior that jumps readers to the top, Custom Nav Placement to display a custom navigation menu of your choosing anywhere you would like.
+
+13. An “inc” folder containing snippets to display meta info about posts or if you'd like, an author bio with an avatar!
 
 ##Make your theme stronger with these…
 
