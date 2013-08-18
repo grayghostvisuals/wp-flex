@@ -20,12 +20,15 @@
 ?>
 
 <div class="profile">
+	<!-- Avatar -->
 	<div class="profile-avatar">
-		<?php echo get_avatar( get_the_author_meta('ID'), 128 ); ?>
+		<?php echo get_avatar( get_the_author_meta('ID'), 128 ); // 128 is your avatar size. Change as you see fit. I like 180 ?>
 	</div>
 
+	<!-- Author Meta -->
 	<div class="profile-meta">
 		<h3 class="profile-name"><?php the_author(); ?></h3>
+
 		<div class="profile-descr">
 			<?php the_author_meta('description'); ?>
 		</div>
