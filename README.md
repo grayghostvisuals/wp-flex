@@ -26,7 +26,7 @@ If you're not using the theme for submission to the theme directory then make su
     2. ``wp-config.php.``
 
 2. Complies with ALL Major Browser Vendors and Web Standards Practices
-<img src="https://raw.github.com/paulirish/browser-logos/master/all-desktop.png" width="400">
+<img src="https://raw.github.com/paulirish/browser-logos/master/main-desktop.png" alt="" width="400">
 
 
 ## IT STILL NEEDS YOUR HELP!
