@@ -1,25 +1,19 @@
-<?php
-/*
-*
-* template for displaying all single case studies.
-* Template Name: Single Case Studies
-*
-*/
-?>
-
+<?php // @since v1.0 ?>
 <?php get_header(); ?>
 
 <section id="content" role="main">
 	<?php if ( have_posts() ) : while( have_posts() ) : the_post(); ?>
-		<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+		<article <?php post_class('wpfcp-entry'); ?> id="post-<?php the_ID(); ?>" role="article">
 			<header>
 				<h1><?php the_title(); ?></h1>
 				<?php get_template_part( 'inc/meta' ); ?>
 			</header>
 
-			<div id="thumbnail">
-				<?php if ( has_post_thumbnail() ) : // check if the post has a Post Thumbnail assigned to it. ?>
-					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail( 'case-study-thumb' ); ?></a>
+			<div class="wpfcp-thumbnail">
+				<?php if ( has_post_thumbnail() ) : // Check if the post has a 'Post Thumbnail' assigned to it. ?>
+					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+						<?php the_post_thumbnail( 'case-study-thumb' ); ?>
+					</a>
 				<?php endif; ?>
 			</div>
 
@@ -31,10 +25,16 @@
 			</div>
 
 			<!-- pagination  -->
-			<?php wp_link_pages( array( 'before' => '<div class="pagination">' . 'Pages &raquo', 'after'  => '</div>' ) ); //end wp_link_pages ?>
+			<?php 
+				wp_link_pages( array(
+					'before' => '<div class="wpfcp-pagination pagination">' . 'Pages &raquo',
+					'after'  => '</div>'
+				)); //end wp_link_pages
+			?>
 
 			<!-- retrieve and display the custom taxonomies as a list -->
 			<?php $caseurl = get_post_meta( $post->ID, 'casestudy_url', true ); ?>
+
 			<?php if( function_exists( 'get_post_meta' ) && ! empty( $caseurl ) ) : ?>
 
 				<!-- custom url meta -->
@@ -54,7 +54,7 @@
 
 		</article>
 
-		<div id="single-pagination">
+		<div class="pagination--single pagination">
 			<span><?php previous_post_link( '%link', '&larr; Previous Category Post'); ?></span>
 			<span><?php next_post_link( '%link', 'Next Category Post &rarr;'); ?></span>
 		</div>
@@ -71,8 +71,8 @@
 <?php comments_template(); ?>
 <!-- end comments template !IMPORTANT FOR THEME SUBMISSION -->
 
-<section id="sidebar" role="complementary">
+<aside id="sidebar" role="complementary">
 	<?php get_sidebar(); ?>
-</section>
+</aside>
 
 <?php get_footer(); ?>

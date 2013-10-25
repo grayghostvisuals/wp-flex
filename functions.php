@@ -22,6 +22,13 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
 	//wpflex_setup
 	function wpflex_setup() {
 
+		/*-----------------------------------[ Automatic Updates ] */
+
+		// enables automatic updates for themes
+		// http://codex.wordpress.org/Configuring_Automatic_Background_Updates
+		add_filter( 'auto_update_theme', '__return_true' );
+
+
 		/*-----------------------------------[ HTML title tag filter ] */
 
 		// http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
