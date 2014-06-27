@@ -1,7 +1,9 @@
 <?php if ( ! function_exists( 'dynamic_sidebar' ) || ! dynamic_sidebar( 'wpflex sidebar' ) ) : ?>
 	<h3>Default Widgets</h3>
 
-	<article><?php get_search_form(); ?></article>
+	<article>
+		<?php get_search_form(); ?>
+	</article>
 
 	<article>
 		<h3>Meta</h3>
