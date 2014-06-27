@@ -1,6 +1,6 @@
 [![http://wpflex.grayghostvisuals.com](http://static.grayghostvisuals.com/portfolio/wpflex.png)](http://wpflex.grayghostvisuals.com)
 
-###:link: DEMO v1.0.7 [http://wpflex.grayghostvisuals.com](http://wpflex.grayghostvisuals.com)
+###:link: Demo : [http://wpflex.grayghostvisuals.com](http://wpflex.grayghostvisuals.com)
 
 ## WHAT IS IT
 A blank, responsive, WordPress theme boilerplate adhering to best practices and requirements set forth by the official WordPress Codex and theme review guidelines. Also makes a great starter theme for any of your WordPress theming needs.
@@ -21,7 +21,7 @@ If you're not using the theme for submission to the theme directory then make su
 
 
 ## Browser Tested &amp;, Developer Approved: Yup! even IE7
-1. Tested and Debugged using WordPress 3.5.1
+1. Tested and Debugged using WordPress 3.9.1
     1. ``theme-unit-test.xml``
     2. ``wp-config.php.``
 
