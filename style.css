@@ -834,8 +834,7 @@ label[for="commment"] {}
    ========================================================================== */
 
 body {
-	/*background: #00b5f8;*/
-	background: white;
+	background: #00b5f8;
 	margin: 0 auto;
 	max-width: 65em;
 }
