@@ -134,8 +134,9 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
 		// included scripts willl load relative to the URL of your theme directory
 		function wpflex_assets_loader() {
 			// load main stylesheet
-			wp_register_style( 'style', get_stylesheet_uri(), array(), '1.0.7', 'all' );
-			wp_enqueue_style( 'style' );
+			wp_register_style( 'normalize', "http" . ( $_SERVER['SERVER_PORT'] == 443 ? "s" : "" ) . '://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css');
+			wp_register_style( 'style', get_stylesheet_uri(), array('normalize'), '1.0.7', 'all' );
+			wp_enqueue_style( 'style');
 
 			// Load WordPress' jQuery. Must be registered first before wp_enqueue_script()
 			// http://css-tricks.com/snippets/wordpress/include-jquery-in-wordpress-theme
