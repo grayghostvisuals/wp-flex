@@ -175,6 +175,7 @@ video {
 }
 
 .aligncenter {
+	clear: both;
 	display: block;
 	margin: 5px auto 5px auto;
 }
@@ -185,6 +186,7 @@ video {
 }
 
 .alignnone {
+	clear: both;
 	margin: 5px 20px 20px 0;
 }
 
@@ -438,7 +440,8 @@ label[for="commment"] {}
 body {
 	background: #00b5f8;
 	margin: 0 auto;
-	max-width: 65em;
+	padding: 1em;
+	max-width: 50em;
 }
 
 a {
