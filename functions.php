@@ -83,6 +83,19 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
 		endif;
 
 
+		/*-----------------------------------[ Switch default core markup ] */
+		
+		// http://codex.wordpress.org/Function_Reference/add_theme_support#HTML5
+		// Output valid HTML5 for search form, comment form, and comments/
+		add_theme_support( 'html5', array( 
+			'comment-list',
+			'comment-form',
+			'search-form',
+			'gallery',
+			'caption'
+		));
+
+
 		/*------------------------------------------------------------------------------------------------[ Comments ] */
 		// WordPress Comments
 		// Code Reference
