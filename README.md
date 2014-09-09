@@ -1,4 +1,4 @@
-[![http://wpflex.grayghostvisuals.com](http://static.grayghostvisuals.com/portfolio/wpflex.png)](http://wpflex.grayghostvisuals.com)
+[![http://wpflex.grayghostvisuals.com](http://static.grayghostvisuals.com/img/wpflex.png)](http://wpflex.grayghostvisuals.com)
 
 ###:link: Demo : [http://wpflex.grayghostvisuals.com](http://wpflex.grayghostvisuals.com)
 
