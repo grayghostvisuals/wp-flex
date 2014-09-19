@@ -28,7 +28,7 @@
 			<?php printf( single_tag_title( 'Tag Archives : ' ) . ' ' . '<span>%s</span>', get_the_date( 'F Y' ) ); ?>
 		<?php else : ?>
 			<?php echo ( 'The Archives' ); ?>
-		<?php endif; //end initial if ?>
+		<?php endif; ?>
 	</h1>
 
 	<?php if( have_posts() ) : while( have_posts() ) : the_post()?>

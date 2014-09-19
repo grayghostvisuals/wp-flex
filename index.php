@@ -15,7 +15,6 @@
 					<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 				</h1>
 
-				<!-- meta tags for posts -->
 				<?php get_template_part( 'inc/meta' ); ?>
 			</header>
 
