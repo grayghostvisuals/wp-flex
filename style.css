@@ -6,7 +6,7 @@ Description: A blank, responsive, WordPress theme boilerplate adhering to best p
 Author: Dennis Gaebel : Gray Ghost Visuals
 Author URI: http://wpflex.grayghostvisuals.com
 
-Version: 1.0.7
+Version: 1.0.8
 Tags: full-width-template, fluid-layout, responsive-layout, custom-background, microformats, editor-style, custom-menu, sticky-post, theme-options, front-page-post-form, featured-images, sticky-post, rtl-language-support, threaded-comments, post-formats, white, light
 
 License: GNU General Public License v3.0
@@ -34,99 +34,6 @@ found at http://www.gnu.org/licenses/fdl-1.3-standalone.html
 */
 
 
-/*
- * HTML5 Boilerplate
- *
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
-html,
-button,
-input,
-select,
-textarea {
-	color: #222;
-}
-
-body {
-	font-size: 1em;
-	line-height: 1.4;
-}
-
-/*
- * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-	background: #b3d4fc;
-	text-shadow: none;
-}
-
-::selection {
-	background: #b3d4fc;
-	text-shadow: none;
-}
-
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-	display: block;
-	height: 1px;
-	border: 0;
-	border-top: 1px solid #ccc;
-	margin: 1em 0;
-	padding: 0;
-}
-
-/*
- * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
- */
-
-img {
-	vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-	border: 0;
-	margin: 0;
-	padding: 0;
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-	resize: vertical;
-}
-
-
-/* ==========================================================================
-   Browse Happy prompt
-   ========================================================================== */
-
-.browsehappy {
-	margin: 0.2em 0;
-	background: #ccc;
-	color: #000;
-	padding: 0.2em 0;
-}
-
-
 /* =============================================================================
    Responsive Embedded Media
    ========================================================================== */
@@ -140,18 +47,13 @@ video {
 
 
 /* =============================================================================
-   Required WordPress Styles
-   ========================================================================== */
-
-/*
-* WordPress Required
-*
-* @since 1.0.6
-* Generated Core Classes
-* Each Theme should have these or similar styles in its style.css file
-* in order to display images and captions properly.
-* http://codex.wordpress.org/CSS#WordPress_Generated_Classes
-*/
+  Required WordPress Styles
+  * @since 1.0.6
+  * Generated Core Classes
+  * Each Theme should have these or similar styles in its style.css file
+  * in order to display images and captions properly.
+  * http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+  ========================================================================== */
 
 .sticky {}
 
@@ -240,7 +142,7 @@ video {
 .gallery-caption {}
 
 /*
-* stops too many categories from breaking the layout
+* stops multiple categories from breaking the layout
 */
 .entry-tags-list li,
 .entry-categories-list li {

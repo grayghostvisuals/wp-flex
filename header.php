@@ -2,54 +2,35 @@
 <!--[if IE 8]><html class="no-js lt-ie9" <?php language_attributes(); ?>><![endif]-->
 <!--[if gt IE 8]><!--><html class="no-js" <?php language_attributes(); ?>><!--<![endif]-->
 <head>
-	<!-- character encoding utf-8 -->
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-
-	<!-- google chrome frame -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 
-	<!-- title -->
-	<!-- http://codex.wordpress.org/Function_Reference/wp_title -->
 	<title><?php wp_title( '&raquo;', true, 'left' ); ?></title>
 
-	<!-- search engine robots meta instructions -->
 	<?php if ( is_search() || is_404() ) : ?>
 		<meta name="robots" content="noindex, nofollow">
 	<?php else: ?>
 		<meta name="robots" content="all">
 	<?php endif; ?>
-
-	<!-- index search meta data -->
 	<?php if ( is_home() ) : ?>
 		<meta name="description" content="<?php esc_attr( bloginfo( 'name' ) ); esc_attr( bloginfo( 'description' ) ); ?>">
-	<!-- single page meta tag description -->
 	<?php elseif ( is_single() ) : ?>
 		<meta name="description" content="<?php esc_attr( wp_title() ) ?>">
-	<!-- archive pages meta tag description -->
 	<?php elseif ( is_archive() ) : ?>
 		<meta name="description" content="">
 	<?php elseif ( is_search() ) : ?>
 		<meta name="description" content="<?php esc_html( $s ) ?>">
-	<!-- fallback meta tag description -->
 	<?php else : ?>
 		<meta name="description" content="<?php esc_attr( bloginfo( 'name' ) ); esc_attr( bloginfo( 'description' ) ) ?>">
 	<?php endif; ?>
 
-	<!-- Mobile viewport optimized: h5bp.com/viewport -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
-
-	<!-- http://t.co/dKP3o1e -->
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
-
-	<!-- Sets whether a web application runs in full-screen mode -->
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
-	<!-- pingback url -->
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
-	<!-- RSS Feed -->
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo( 'rss2_url' ); ?>">
 
 	<!-- required for comment functionality -->
@@ -60,26 +41,18 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<!--[if lt IE 7]>
-		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-	<![endif]-->
-
 	<header role="banner">
 		<?php $header = get_header_image() ?>
 		<?php if ( isset( $header ) || $header ) : ?>
 			<div id="header-image">
-				<a href="<?php echo home_url() ?>"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" usemap="#Map"></a>
+				<a href="<?php echo home_url() ?>"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt=""></a>
 			</div>
 		<?php endif; ?>
 
 		<h1 class="blogname"><a href="<?php echo home_url();  ?>"><?php esc_attr( bloginfo( 'name' ) ); ?></a></h1>
 		<h2 class="tagline"><?php echo esc_attr( bloginfo( 'description' ) ); ?></h2>
 
-		<!-- http://codex.wordpress.org/Function_Reference/wp_nav_menu -->
-		<!-- http://codex.wordpress.org/Navigation_Menus -->
-		<!-- http://codex.wordpress.org/Function_Reference/wp_list_pages -->
 		<?php
-			// Custom Nav Call
 			function wpflex_custom_nav() {
 				if ( 'wp_nav_menu' ) :
 					wp_nav_menu( array(
@@ -105,9 +78,7 @@
 				endif;
 			}
 
-			// Navigation Fallback Call using wp_list_pages
 			function wpflex_nav_fallback() {
-				//wp_list_pages arguments as an array
 				$wpflex_nav = array(
 					'depth'       => 0, // All Pages and sub-pages are displayed (no depth restriction)
 					'show_date'   => '', // Display creation or last modified date next to each Page. The default value is the null value (do not display dates).
@@ -129,9 +100,7 @@
 
 				<ol>
 					<?php
-						//begin wp_list_pages loop
 						if ( wp_list_pages( $wpflex_nav ) ) : while ( wp_list_pages( $wpflex_nav ) ) :
-							//list items from the array above
 							wp_list_pages( $wpflex_nav );
 						endwhile;
 						endif;
@@ -139,12 +108,10 @@
 				</ol>
 		<?php } // end wp_nav_fallback
 
-			// custom_nav call
 			wpflex_custom_nav();
 		?>
 	</header>
 
 	<article><a href="<?php bloginfo( 'rss2_url' ) ?>">RSS Feed</a></article>
 
-	<?php //required call for search-form ?>
 	<?php get_search_form(); ?>
