@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-	<section class="clearfix" id="content" role="main">
+	<main class="clearfix" id="content" role="main">
 			<h2>Error 404 - Page Not Found</h2>
-	</section>
+	</main>
 
 	<aside id="sidebar" role="complementary">
 		<?php get_sidebar(); ?>

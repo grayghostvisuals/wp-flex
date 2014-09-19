@@ -11,14 +11,10 @@
 				<?php get_template_part( 'inc/meta' ); ?>
 			</header>
 
-			<!-- *optional* remove read more link -->
-			<!-- http://codex.wordpress.org/Customizing_the_Read_More -->
-			<!-- Resolves Issue #4: https://github.com/grayghostvisuals/WP-Flex/issues/4 -->
 			<div class="entry-content">
 				<?php the_content(); ?>
 			</div>
 
-			<!-- post footer -->
 			<footer class="entry-footer">
 				<div class="comments-count">
 					<a href="<?php comments_link(); ?>" class="comments-count-number"><?php comments_number( '0', '1', '%' ); ?>Comments</a>
@@ -42,17 +38,16 @@
 			</footer>
 
 		</article>
-	<?php endwhile; //end while have_posts ?>
+	<?php endwhile; ?>
 
 	<!-- post loop error message -->
-	<?php else : //if no posts were found do this ?>
+	<?php else : ?>
 		<p><?php echo ( 'Holy smokes! This is totally crazy. No posts match anything even remotely close to that in our database. Sorry Mon Frere, try again' ); ?></p>
-	<?php endif; //end if have_posts condition ?>
+	<?php endif; ?>
 
 	<p><?php posts_nav_link( '&#8734;', '&larr; Go Forward In Time', 'Go Back In Time &rarr;' ); ?></p>
 </main>
 
-<!-- sidebar -->
 <aside id="sidebar" role="complementary">
 	<?php get_sidebar(); ?>
 </aside>

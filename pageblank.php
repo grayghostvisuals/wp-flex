@@ -1,7 +1,7 @@
 <?php
 /*
- * Just A Blank Template to do what you wish with :) Cheers!
- * Template Name: PageBlank
+ * Blank Page Template
+ * Template Name: blank
  */
 ?>
 
@@ -13,19 +13,16 @@
 			<h1><?php the_title(); ?></h1>
 		</header>
 
-		<!-- *optional* remove read more link -->
-		<!-- http://codex.wordpress.org/Customizing_the_Read_More -->
-		<!-- Resolves Issue #4: https://github.com/grayghostvisuals/WP-Flex/issues/4 -->
 		<div class="entry-content">
 			<?php the_content(); ?>
 		</div>
 
 		<?php wp_link_pages( array( 'before' => '<div>' . 'Pages &rarr;', 'after' => '</div>' ) ); ?>
 	</main>
-<?php endwhile; //end while have_posts ?>
+<?php endwhile; ?>
 
 <?php else : ?>
 	<p><?php echo ( 'sorry, this page does not exist' ); ?></p>
-<?php endif; //end if have_posts ?>
+<?php endif; ?>
 
 <?php get_footer(); ?>

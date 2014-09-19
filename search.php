@@ -7,13 +7,13 @@
 		</header>
 
 		<ul>
-			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); //start search page DB query loop ?>
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-			<?php endwhile; //end while have_posts ?>
+			<?php endwhile; ?>
 
 			<?php else : ?>
 				<li><p><?php echo ( 'Sorry, your search term(s) did not find any matches within our database. Please do try again won\'t you pretty please ?' ); ?></p></li>
-			<?php endif; //end if have_posts condition ?>
+			<?php endif; ?>
 		</ul>
 
 		<div>
