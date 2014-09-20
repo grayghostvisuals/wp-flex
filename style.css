@@ -194,17 +194,22 @@ img.size-full {
 /* WP widget styling */
 .widget {}
 
-/* WP POST THUMBNAILS */
+/* WP Footer Search Widget Input */
+#s {
+	width: 100%;
+}
+
+/* WP Post Thumbnails */
 .wp-post-image {}
 .attachment-thumbnail {}
 .attachment-medium {}
 .attachment-large {}
 .attachment-full {}
 
-/* WP 404 ERRORS */
+/* WP 404 Errors */
 .error404 {}
 
-/* WP PAGE CONTENT */
+/* WP Page Content */
 .more-link {}
 .posttitle {}
 
@@ -243,7 +248,6 @@ img.size-full {
 .moderating,
 .nocomments {
 	font-weight: lighter;
-	color: #fff;
 }
 
 /* comment form labels */
@@ -255,6 +259,9 @@ label[for="commment"] {}
 #commentform input,
 #commentform textarea {
 	display: block;
+}
+#commentform textarea {
+	width: 100%;
 }
 
 /* comment form allow tags */
@@ -343,7 +350,7 @@ body {
 	background: #00b5f8;
 	margin: 0 auto;
 	padding: 1em;
-	max-width: 50em;
+	max-width: 36em;
 }
 
 a {

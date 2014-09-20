@@ -34,7 +34,7 @@
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo( 'rss2_url' ); ?>">
 
 	<!-- required for comment functionality -->
-	<?php if ( is_singular() ) { wp_enqueue_script( 'comment-reply' ); } ?>
+	<?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 
 	<!-- required for all wordpress themes and placed at the end of the head tag element -->
 	<?php wp_head(); ?>
