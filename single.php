@@ -21,17 +21,42 @@
 			?>
 
 			<footer class="entry-footer">
+				<?php edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' ); ?>
 				<?php get_template_part( 'inc/comment-count' ); ?>
 				<?php get_template_part( 'inc/taxonomy' ); ?>
 			</footer>
 		</article>
 
-		<div class="pagination single">
-			<ul>
-				<li><?php previous_post_link( '%link', '&larr; Previous Category Post', TRUE ); ?></li>
-				<li><?php next_post_link( '%link', 'Next Category Post &rarr;', TRUE ); ?></li>
-			</ul>
-		</div>
+		<?php
+			// Don't print empty markup if there's nowhere to navigate.
+			$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+			$next     = get_adjacent_post( false, '', false );
+
+			if ( ! $next && ! $previous ) : return;
+		?>
+		<?php else : ?>
+		<ul class="pagination-posts">
+			<?php previous_post_link( '<li>%link</li>', '&larr; Previous Category Post', TRUE ); ?></li>
+			<?php next_post_link( '<li>%link</li>', 'Next Category Post &rarr;', TRUE ); ?></li>
+		</ul>
+		<?php endif; ?>
+
+		<?php
+			$pagination_defaults = array(
+				'before'           => '<p>' . __( 'Pages:' ),
+				'after'            => '</p>',
+				'link_before'      => '',
+				'link_after'       => '',
+				'next_or_number'   => 'number',
+				'separator'        => ' ',
+				'nextpagelink'     => __( 'Next page' ),
+				'previouspagelink' => __( 'Previous page' ),
+				'pagelink'         => '%',
+				'echo'             => 1
+			);
+		?>
+		<?php wp_link_pages( $pagination_defaults ); ?>
+
 	<?php endwhile; ?>
 
 	<?php else : ?>
@@ -39,7 +64,12 @@
 	<?php endif; ?>
 </main>
 
-<?php comments_template(); ?>
+<?php
+	// If comments are open or has at least one comment.
+	if ( comments_open() || '0' != get_comments_number() ) :
+		comments_template();
+	endif;
+?>
 
 <section id="sidebar" role="complementary">
 	<?php get_sidebar(); ?>
