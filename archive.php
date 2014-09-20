@@ -51,8 +51,11 @@
 	<?php else : ?>
 		<p><?php echo ( 'Holy smokes! This is totally crazy. No posts match anything even remotely close to that in our database. Sorry Mon Frere, try again' ); ?></p>
 	<?php endif; ?>
-
-	<p><?php posts_nav_link( '&#8734;', '&larr; Go Forward In Time', 'Go Back In Time &rarr;' ); ?></p>
+	
+	<?php if ( $GLOBALS['wp_query']->max_num_pages < 2 ) : return ?>
+	<?php else : ?>
+	<p><?php posts_nav_link( '&#8734;', 'Go Forward In Time &rarr;', '&larr; Go Back In Time' ); ?></p>
+	<?php endif; ?>
 </main>
 
 <aside id="sidebar" role="complementary">
