@@ -21,7 +21,7 @@
 	<?php elseif ( is_search() ) : ?>
 		<meta name="description" content="<?php esc_html( $s ) ?>">
 	<?php else : ?>
-		<meta name="description" content="<?php esc_attr( bloginfo( 'name' ) ); . ':' . esc_attr( bloginfo( 'description' ) ) ?>">
+		<meta name="description" content="<?php esc_attr( bloginfo( 'name' ) ); ?> : <?php esc_attr( bloginfo( 'description' ) ); ?>">
 	<?php endif; ?>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
