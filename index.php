@@ -34,25 +34,16 @@
 		<p><?php echo ( 'Holy smokes! This is totally crazy. No posts match anything even remotely close to that in our database. Sorry Mon Frere, try again' ); ?></p>
 	<?php endif; ?>
 
-	<?php
-		global $wp_query;
-		$big = 999999999;
-		echo paginate_links( array(
-			'base'         => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
-			'format'       => '?paged=%#%',
-			'total'        => $wp_query -> max_num_pages,
-			'current'      => max( 1, get_query_var( 'paged' ) ),
-			'show_all'     => False,
-			'end_size'     => 1,
-			'mid_size'     => 2,
-			'prev_next'    => True,
-			'prev_text'    => '&larr; Previous',
-			'next_text'    => 'Next &rarr;',
-			'type'         => 'plain',
-			'add_args'     => False,
-			'add_fragment' => ''
-		));
-	?>
+	<?php if ( $GLOBALS['wp_query']->max_num_pages < 2 ) : return ?>
+		<?php else : ?>
+			<?php if ( get_next_posts_link() ) : ?>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', '_s' ) ); ?></div>
+			<?php endif; ?>
+
+			<?php if ( get_previous_posts_link() ) : ?>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', '_s' ) ); ?></div>
+			<?php endif; ?>
+	<?php endif; ?>
 </main>
 
 <aside id="sidebar" role="complementary">
