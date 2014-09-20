@@ -17,7 +17,12 @@
 			<?php the_content(); ?>
 		</div>
 
-		<?php wp_link_pages( array( 'before' => '<div>' . 'Pages &rarr;', 'after' => '</div>' ) ); ?>
+		<?php
+			wp_link_pages( array(
+				'before' => '<div>' . 'Pages &rarr;',
+				'after'  => '</div>'
+			));
+		?>
 	</main>
 <?php endwhile; ?>
 

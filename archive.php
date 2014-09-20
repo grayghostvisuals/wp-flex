@@ -42,10 +42,7 @@
 				<?php the_content(); ?>
 			</div>
 
-			<footer class="entry-footer">
-				<?php get_template_part( 'inc/comment-count' ); ?>
-				<?php get_template_part( 'inc/taxonomy' ); ?>
-			</footer>
+			<?php get_template_part( 'entry-footer' ); ?>
 		</article>
 	<?php endwhile; ?>
 	<?php else : ?>
