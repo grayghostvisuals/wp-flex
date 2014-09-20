@@ -242,7 +242,7 @@ img.size-full {
 /* no user comments styling class provided via comments.php line#69 */
 .moderating,
 .nocomments {
-	background: red;
+	font-weight: lighter;
 	color: #fff;
 }
 
