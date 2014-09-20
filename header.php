@@ -17,11 +17,11 @@
 	<?php elseif ( is_single() ) : ?>
 		<meta name="description" content="<?php esc_attr( wp_title() ) ?>">
 	<?php elseif ( is_archive() ) : ?>
-		<meta name="description" content="">
+		<meta name="description" content="<?php esc_attr( bloginfo( 'name' ) ); ?> » Archives">
 	<?php elseif ( is_search() ) : ?>
 		<meta name="description" content="<?php esc_html( $s ) ?>">
 	<?php else : ?>
-		<meta name="description" content="<?php esc_attr( bloginfo( 'name' ) ); esc_attr( bloginfo( 'description' ) ) ?>">
+		<meta name="description" content="<?php esc_attr( bloginfo( 'name' ) ); . ':' . esc_attr( bloginfo( 'description' ) ) ?>">
 	<?php endif; ?>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
