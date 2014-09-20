@@ -10,11 +10,23 @@
 			<?php the_content(); ?>
 		</div>
 
-		<?php wp_link_pages( array( 'before' => '<div>' . 'Pages &rarr;', 'after' => '</div>' ) ); ?>
+		<?php
+			wp_link_pages( array( 
+				'before' => '<div>' . 'Pages &rarr;',
+				'after'  => '</div>'
+			));
+		?>
+
+		<?php edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' ); ?>
 	</main>
 <?php endwhile; ?>
 
-<?php comments_template(); ?>
+<?php
+	// If comments are open or has at least one comment.
+	if ( comments_open() || '0' != get_comments_number() ) :
+		comments_template();
+	endif;
+?>
 
 <?php else : ?>
 	<p><?php echo ( 'sorry, this page does not exist' ); ?></p>
