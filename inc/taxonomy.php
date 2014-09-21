@@ -1,4 +1,8 @@
 <ul class="entry-taxonomies">
+	<?php
+	$posttags = get_the_tags();
+	if ($posttags) :
+	?>
 	<li>
 		<?php echo ( 'Tagged:' ); ?>
 		<ul class="entry-tags-list">
@@ -7,7 +11,12 @@
 			</li>
 		</ul>
 	</li>
+	<?php endif ?>
 
+	<?php
+	$postcats = get_the_category();
+	if ($postcats) :
+	?>
 	<li>
 		<?php echo ( 'Filed under:' ); ?>
 		<ul class="entry-categories-list">
@@ -16,4 +25,5 @@
 			</li>
 		</ul>
 	</li>
+	<?php endif ?>
 </ul>
