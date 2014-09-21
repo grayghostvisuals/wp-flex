@@ -1,7 +1,7 @@
 <?php
 /*
- * Blank Page Template
- * Template Name: blank
+ * Page Template Blank
+ * Template Name: blank-page
  */
 ?>
 
@@ -27,7 +27,7 @@
 <?php endwhile; ?>
 
 <?php else : ?>
-	<p><?php echo ( 'sorry, this page does not exist' ); ?></p>
+<p><?php echo ( 'sorry, this page does not exist' ); ?></p>
 <?php endif; ?>
 
 <?php get_footer(); ?>

@@ -49,7 +49,7 @@
 	<?php endif; ?>
 	<?php else :
 		if ( ! comments_open() ) : ?>
-			<p class="nocomments"><?php echo( 'Comments are closed' ); ?></p>
+		<p class="nocomments"><?php echo( 'Comments are closed' ); ?></p>
 		<?php endif; ?>
 	<?php endif; ?>
 

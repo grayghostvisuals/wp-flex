@@ -42,21 +42,15 @@
 				<?php the_content(); ?>
 			</div>
 
-			<?php get_template_part( 'entry-footer' ); ?>
+			<?php get_template_part( 'inc/entry-footer' ); ?>
 		</article>
 	<?php endwhile; ?>
 	<?php else : ?>
-		<p><?php echo ( 'Holy smokes! This is totally crazy. No posts match anything even remotely close to that in our database. Sorry Mon Frere, try again' ); ?></p>
+	<?php get_template_part( 'inc/error-msg' ); ?>
 	<?php endif; ?>
-	
-	<?php if ( $GLOBALS['wp_query']->max_num_pages < 1 ) : return ?>
-	<?php else : ?>
-	<p><?php posts_nav_link( '&#8734;', 'Go Forward In Time &rarr;', '&larr; Go Back In Time' ); ?></p>
-	<?php endif; ?>
+
+	<?php get_template_part( 'inc/pagination-posts' ); ?>
 </main>
 
-<aside id="sidebar" role="complementary">
-	<?php get_sidebar(); ?>
-</aside>
-
+<?php get_template_part( 'inc/widget-sidebar' ); ?>
 <?php get_footer(); ?>

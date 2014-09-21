@@ -17,7 +17,7 @@
 			));
 		?>
 
-		<?php edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php get_template_part( 'inc/edit-post-link' ); ?>
 	</main>
 <?php endwhile; ?>
 
@@ -29,11 +29,8 @@
 ?>
 
 <?php else : ?>
-	<p><?php echo ( 'sorry, this page does not exist' ); ?></p>
+<p><?php echo ( 'sorry, this page does not exist' ); ?></p>
 <?php endif; ?>
 
-<aside id="sidebar" role="complementary">
-	<?php get_sidebar(); ?>
-</aside>
-
+<?php get_template_part( 'inc/widget-sidebar' ); ?>
 <?php get_footer(); ?>

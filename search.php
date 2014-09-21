@@ -47,8 +47,5 @@
 	</section>
 </main>
 
-<aside role="complementary">
-	<?php get_sidebar(); ?>
-</aside>
-
+<?php get_template_part( 'inc/widget-sidebar' ); ?>
 <?php get_footer(); ?>

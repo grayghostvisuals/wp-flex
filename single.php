@@ -19,8 +19,9 @@
 					'after'  => '</div>'
 				));
 			?>
-			<?php edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' ); ?>
-			<?php get_template_part( 'entry-footer' ); ?>
+
+			<?php get_template_part( 'inc/edit-post-link' ); ?>
+			<?php get_template_part( 'inc/entry-footer' ); ?>
 		</article>
 
 		<?php
@@ -52,11 +53,9 @@
 			);
 		?>
 		<?php wp_link_pages( $pagination_defaults ); ?>
-
 	<?php endwhile; ?>
-
 	<?php else : ?>
-		<p><?php echo ( 'Holy smokes! This is totally crazy. No posts match anything even remotely close to that in our database. Sorry Mon Frere, try again' ); ?></p>
+	<?php get_template_part( 'inc/error-msg' ); ?>
 	<?php endif; ?>
 </main>
 
@@ -67,8 +66,5 @@
 	endif;
 ?>
 
-<section id="sidebar" role="complementary">
-	<?php get_sidebar(); ?>
-</section>
-
+<?php get_template_part( 'inc/widget-sidebar' ); ?>
 <?php get_footer(); ?>

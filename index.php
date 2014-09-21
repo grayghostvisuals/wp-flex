@@ -22,28 +22,16 @@
 				<?php the_content(); ?>
 			</div>
 
-			<?php get_template_part( 'entry-footer' ); ?>
+			<?php get_template_part( 'inc/entry-footer' ); ?>
 		</article>
 	<?php endwhile; ?>
 
 	<?php else : ?>
-		<p><?php echo ( 'Holy smokes! This is totally crazy. No posts match anything even remotely close to that in our database. Sorry Mon Frere, try again' ); ?></p>
+	<?php get_template_part( 'inc/error-msg' ); ?>
 	<?php endif; ?>
 
-	<?php if ( $GLOBALS['wp_query']->max_num_pages < 2 ) : return ?>
-		<?php else : ?>
-			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', '_s' ) ); ?></div>
-			<?php endif; ?>
-
-			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', '_s' ) ); ?></div>
-			<?php endif; ?>
-	<?php endif; ?>
+	<?php get_template_part( 'inc/pagination-posts' ); ?>
 </main>
 
-<aside id="sidebar" role="complementary">
-	<?php get_sidebar(); ?>
-</aside>
-
+<?php get_template_part( 'inc/widget-sidebar' ); ?>
 <?php get_footer(); ?>
