@@ -15,9 +15,7 @@
 	<?php if ($postcats) : ?>
 	<li><?php echo ( 'Filed under:' ); ?>
 		<ul class="taxonomy__catls taxonomy__ls">
-			<li class="taxonomy__cats">
-				<?php the_category( '</li><li>,' ) ?>
-			</li>
+			<li class="taxonomy__cats"><?php the_category( ', ' ) ?></li>
 		</ul>
 	</li>
 	<?php endif ?>
