@@ -1,6 +1,3 @@
 <?php
-    /*-----------------------------------[ editor style sheet ] */
-
-    //add editor style sheet
-    add_editor_style();
+  add_editor_style();
 ?>

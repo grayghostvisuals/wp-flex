@@ -41,8 +41,8 @@ found at http://www.gnu.org/licenses/fdl-1.3-standalone.html
 img,
 object,
 video {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 
@@ -58,85 +58,85 @@ video {
 .sticky {}
 
 .alignnone {
-	margin: 5px 20px 20px 0;
+  margin: 5px 20px 20px 0;
 }
 
 .aligncenter, div.aligncenter {
-	display:block;
-	margin: 5px auto 5px auto;
+  display:block;
+  margin: 5px auto 5px auto;
 }
 
 .alignright {
-	float:right;
-	margin: 5px 0 20px 20px;
+  float:right;
+  margin: 5px 0 20px 20px;
 }
 
 .alignleft {
-	float:left;
-	margin: 5px 20px 20px 0;
+  float:left;
+  margin: 5px 20px 20px 0;
 }
 
 .aligncenter {
-	clear: both;
-	display: block;
-	margin: 5px auto 5px auto;
+  clear: both;
+  display: block;
+  margin: 5px auto 5px auto;
 }
 
 .alignright {
-	float:right;
-	margin: 5px 0 20px 20px;
+  float:right;
+  margin: 5px 0 20px 20px;
 }
 
 .alignnone {
-	clear: both;
-	margin: 5px 20px 20px 0;
+  clear: both;
+  margin: 5px 20px 20px 0;
 }
 
 .alignleft {
-	float:left;
-	margin: 5px 20px 20px 0;
+  float:left;
+  margin: 5px 20px 20px 0;
 }
 
 .aligncenter {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .wp-caption {
-	background: #fff;
-	border: 1px solid #f0f0f0;
-	max-width: 96%; /* Image does not overflow the content area */
-	padding: 5px 3px 10px;
-	text-align: center;
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 96%; /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
+  text-align: center;
 }
 
 .wp-caption.alignnone {
-	margin: 5px 20px 20px 0;
+  margin: 5px 20px 20px 0;
 }
 
 .wp-caption.alignleft {
-	margin: 5px 20px 20px 0;
+  margin: 5px 20px 20px 0;
 }
 
 .wp-caption.alignright {
-	margin: 5px 0 20px 20px;
+  margin: 5px 0 20px 20px;
 }
 
 .wp-caption img {
-	border: 0 none;
-	height: auto;
-	margin:0;
-	max-width: 98.5%;
-	padding:0;
-	width: auto;
+  border: 0 none;
+  height: auto;
+  margin:0;
+  max-width: 98.5%;
+  padding:0;
+  width: auto;
 }
 
 .wp-caption p.wp-caption-text {
-	font-size:11px;
-	line-height:17px;
-	margin:0;
-	padding:0 4px 5px;
+  font-size:11px;
+  line-height:17px;
+  margin:0;
+  padding:0 4px 5px;
 }
 
 .gallery-caption {}
@@ -146,7 +146,7 @@ video {
 */
 .entry-tags-list li,
 .entry-categories-list li {
-	display: inline-block;
+  display: inline-block;
 }
 
 /* by post author styling */
@@ -160,17 +160,17 @@ video {
 /* Fluid Images For Wordpress */
 img[class*="align"],
 img[class*="wp-image-"] {
-	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+  height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
 }
 
 .wp-caption,
 .wp-caption img {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 img.size-full {
-	max-width: 100%;
-	width: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */
+  max-width: 100%;
+  width: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */
 }
 
 /* WP Breadcrumb Styles */
@@ -185,10 +185,10 @@ img.size-full {
 
 /* WP Smiley */
 .entry-content img.wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
 }
 
 /* WP widget styling */
@@ -196,7 +196,7 @@ img.size-full {
 
 /* WP Footer Search Widget Input */
 #s {
-	width: 100%;
+  width: 100%;
 }
 
 /* WP Post Thumbnails */
@@ -232,9 +232,9 @@ img.size-full {
 .commentlist,
 .commentlist ul,
 .commentlist .children {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* comment form title */
@@ -247,7 +247,7 @@ img.size-full {
 /* no user comments styling class provided via comments.php line#69 */
 .moderating,
 .nocomments {
-	font-weight: lighter;
+  font-weight: lighter;
 }
 
 /* comment form labels */
@@ -258,10 +258,10 @@ label[for="commment"] {}
 /* comment form inputs  */
 #commentform input,
 #commentform textarea {
-	display: block;
+  display: block;
 }
 #commentform textarea {
-	width: 100%;
+  width: 100%;
 }
 
 /* comment form allow tags */
@@ -274,7 +274,7 @@ label[for="commment"] {}
 
 /* avatars */
 .avatar {
-	display: block
+  display: block
 }
 
 /* User Comments */
@@ -347,42 +347,42 @@ label[for="commment"] {}
    ========================================================================== */
 
 body {
-	background: #00b5f8;
-	margin: 0 auto;
-	padding: 1em;
-	max-width: 36em;
+  background: #00b5f8;
+  margin: 0 auto;
+  padding: 1em;
+  max-width: 36em;
 }
 
 a {
-	color: #ffffff;
-	text-decoration: none;
+  color: #ffffff;
+  text-decoration: none;
 }
 a:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 dl dt {
-	font-size: 16px;
-	font-weight: bold;
-	line-height: 1.2;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.2;
 }
 dl dd {
-	margin: 0 0 10px 0;
-	font-size: 14px;
-	line-height: 1.4;
-	color: #666;
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #666;
 }
 
 .nav-list {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .post {
-	border-bottom: 2px solid rgba(0, 117, 160, 0.50);
-	box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.35);
-	margin: 1.5em 0;
-	padding: 5%;
+  border-bottom: 2px solid rgba(0, 117, 160, 0.50);
+  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.35);
+  margin: 1.5em 0;
+  padding: 5%;
 }
 
 
@@ -394,40 +394,40 @@ dl dd {
  * Image replacement
  */
 .ir {
-	background-color: transparent;
-	border: 0;
-	overflow: hidden;
-	/* IE 6/7 fallback */
-	*text-indent: -9999px;
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
 }
 
 .ir:before {
-	content: "";
-	display: block;
-	width: 0;
-	height: 150%;
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
 }
 
 /*
  * Hide from both screenreaders and browsers: h5bp.com/u
  */
 .hidden {
-	display: none !important;
-	visibility: hidden;
+  display: none !important;
+  visibility: hidden;
 }
 
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
 .visuallyhidden {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 /*
@@ -436,12 +436,12 @@ dl dd {
  */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-	clip: auto;
-	height: auto;
-	margin: 0;
-	overflow: visible;
-	position: static;
-	width: auto;
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
 }
 
 /*
@@ -449,7 +449,7 @@ dl dd {
  */
 
 .invisible {
-	visibility: hidden;
+  visibility: hidden;
 }
 
 /*
@@ -466,12 +466,12 @@ dl dd {
 
 .clearfix:before,
 .clearfix:after {
-	content: " "; /* 1 */
-	display: table; /* 2 */
+  content: " "; /* 1 */
+  display: table; /* 2 */
 }
 
 .clearfix:after {
-	clear: both;
+  clear: both;
 }
 
 /*
@@ -480,7 +480,7 @@ dl dd {
  */
 
 .clearfix {
-	*zoom: 1;
+  *zoom: 1;
 }
 
 
@@ -490,68 +490,68 @@ dl dd {
    ========================================================================== */
 
 @media print {
-	* {
-		background: transparent !important;
-		color: #000 !important; /* Black prints faster: h5bp.com/s */
-		box-shadow: none !important;
-		text-shadow: none !important;
-	}
+  * {
+    background: transparent !important;
+    color: #000 !important; /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
 
-	a,
-	a:visited {
-		text-decoration: underline;
-	}
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
 
-	a[href]:after {
-		content: " (" attr(href) ")";
-	}
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
 
-	abbr[title]:after {
-		content: " (" attr(title) ")";
-	}
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
 
-	/*
-	 * Don't show links for images, or javascript/internal links
-	 */
+  /*
+   * Don't show links for images, or javascript/internal links
+   */
 
-	.ir a:after,
-	a[href^="javascript:"]:after,
-	a[href^="#"]:after {
-		content: "";
-	}
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
 
-	pre,
-	blockquote {
-		border: 1px solid #999;
-		page-break-inside: avoid;
-	}
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
 
-	thead {
-		display: table-header-group; /* h5bp.com/t */
-	}
+  thead {
+    display: table-header-group; /* h5bp.com/t */
+  }
 
-	tr,
-	img {
-		page-break-inside: avoid;
-	}
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
 
-	img {
-		max-width: 100% !important;
-	}
+  img {
+    max-width: 100% !important;
+  }
 
-	@page {
-		margin: 0.5cm;
-	}
+  @page {
+    margin: 0.5cm;
+  }
 
-	p,
-	h2,
-	h3 {
-		orphans: 3;
-		widows: 3;
-	}
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
 
-	h2,
-	h3 {
-		page-break-after: avoid;
-	}
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }
