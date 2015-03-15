@@ -17,4 +17,7 @@
   endif;
 
   add_action( 'after_setup_theme', 'wpflex_setup' );
+function my_theme_setup(){
+    load_theme_textdomain('wpflex', get_template_directory() . '/languages');
+}
 ?>
