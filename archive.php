@@ -19,15 +19,15 @@
 <main id="content" class="clearfix" role="main">
   <h1 class="page-title">
     <?php if ( is_day() ) : ?>
-      <?php printf( 'Daily Archives: <span>%s</span>', get_the_date() ); ?>
+      <?php sprintf( __( 'Daily Archives: <span>%s</span>','wpflex' ),get_the_date() ); ?>
     <?php elseif ( is_month() ) : ?>
-      <?php printf( 'Monthly Archives: <span>%s</span>', get_the_date( 'F Y' ) ); ?>
+      <?php sprintf( __( 'Monthly Archives: <span>%s</span>','wpflex' ),get_the_date( 'F Y' ) ); ?>
     <?php elseif ( is_year() ) : ?>
-      <?php printf( 'Yearly Archives: <span>%s</span>', get_the_date( 'Y' ) ); ?>
+      <?php sprintf( __( 'Yearly Archives: <span>%s</span>','wpflex' ), get_the_date( 'Y' ) ); ?>
     <?php elseif ( is_tag() ) : ?>
-      <?php printf( single_tag_title( 'Tag Archives : ' ) . ' ' . '<span>%s</span>', get_the_date( 'F Y' ) ); ?>
+      <?php sprintf( __(single_tag_title( 'Tag Archives : ' ) . ' ' . '<span>%s</span>','wpflex' ),get_the_date( 'F Y' ) ); ?>
     <?php else : ?>
-      <?php echo ( 'The Archives' ); ?>
+      <?php _e( 'The Archives' , 'wpflex' ); ?>
     <?php endif; ?>
   </h1>
 
