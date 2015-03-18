@@ -1,4 +1,4 @@
-<?php
+
   if( ! empty( $_SERVER[ 'SCRIPT_FILENAME' ] ) && 'comments.php' == basename( $_SERVER[ 'SCRIPT_FILENAME' ] ) )
   die('please do not load this page directly kind sir');
 ?>
