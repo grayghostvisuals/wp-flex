@@ -33,7 +33,7 @@
     ?>
     <?php else : ?>
     <ul class="pagination-posts">
-      <?php previous_post_link( '<li>%link</li>', '&larr; Previous Category Post', TRUE ); ?></li>
+      <?php previous_post_link( '<li>%link</li>',  __( '&larr; Previous Category Post', 'wpflex' ) ); ?></li> 
       <?php next_post_link( '<li>%link</li>', 'Next Category Post &rarr;', TRUE ); ?></li>
     </ul>
     <?php endif; ?>
