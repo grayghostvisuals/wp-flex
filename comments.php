@@ -5,18 +5,18 @@
 
 <div class="comments">
   <?php if ( post_password_required() ) : ?>
-    <p class="nopassword"><?php echo( 'This post is password protected. Enter the password to view any comments.' ); ?></p>
+    <p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.' , 'wpflex'); ?></p>
     <?php return; ?>
   <?php endif; ?>
 
   <div id="comment-count">
     <?php if ( have_comments() ) : ?>
-      <h3><a href="<?php the_permalink(); ?>#respond">Leave a Comment</a></h3>
+      <h3><a href="<?php the_permalink(); ?>#respond"><?php _e( 'Leave a Comment','wpflex');?></a></h3>
 
     <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // check if there comments to navigate through ?>
       <div class="pagination comment-pagination">
-        <span class="prev-comments-link"><?php previous_comments_link( '<span>&larr; older comments</span>' ); ?></span>
-        <span class="nxt-comments-link"><?php next_comments_link( '<span>newer comments &rarr;</span>' ); ?></span>
+        <span class="prev-comments-link"><?php previous_comments_link( __( '<span>&larr; older comments</span>','wpflex')); ?></span>
+        <span class="nxt-comments-link"><?php next_comments_link( __('<span>newer comments &rarr;</span>','wpflex')); ?></span>
       </div>
     <?php endif; ?>
   </div>
@@ -29,8 +29,8 @@
                                 'style'             => 'ol',
                                 'callback'          => 'wpflex_comments',
                                 'end-callback'      => null,
-                                'type'              => 'comment',
-                                'reply_text'        => 'reply',
+                                'type'              => __( 'comment', 'wpflex' ), 
+                                'reply_text'        => __( 'reply', 'wpflex' ),
                                 'page'              => '',
                                 'per_page'          => '',
                                 'reverse_top_level' => false,
@@ -43,13 +43,13 @@
 
   <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
     <div class="pagination comment-pagination">
-      <span class="prev-comments-link"><?php previous_comments_link( '<span>&larr; older comments</span>' ); ?></span>
-      <span class="nxt-comments-link"><?php next_comments_link( '<span>newer comments &rarr;</span>' ); ?></span>
+      <span class="prev-comments-link"><?php previous_comments_link( __( '<span>&larr; older comments</span>','wpflex')); ?></span>
+      <span class="nxt-comments-link"><?php next_comments_link( __('<span>newer comments &rarr;</span>','wpflex')); ?></span>
     </div>
   <?php endif; ?>
   <?php else :
     if ( ! comments_open() ) : ?>
-    <p class="nocomments"><?php echo( 'Comments are closed' ); ?></p>
+    <p class="nocomments"><?php _e( 'Comments are closed' , 'wpflex' ); ?></p>
     <?php endif; ?>
   <?php endif; ?>
 
