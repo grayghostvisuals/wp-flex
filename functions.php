@@ -1,4 +1,4 @@
-
+<?php
   include_once( get_template_directory() . '/wpflex-options.php' );
 
   if ( ! function_exists( 'wpflex_setup' ) ) :
