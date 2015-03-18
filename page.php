@@ -29,7 +29,7 @@
 ?>
 
 <?php else : ?>
-<p><?php echo ( 'sorry, this page does not exist' ); ?></p>
+<p><?php  _e( 'sorry, this page does not exist' ); ?></p>
 <?php endif; ?>
 
 <?php get_template_part( 'inc/widget-sidebar' ); ?>
