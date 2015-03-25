@@ -15,7 +15,7 @@
 
       <?php
         wp_link_pages( array(
-          'before' => '<div>' . __('Pages &raquo', 'wpflex')
+          'before' => '<div>' . __('Pages &raquo', 'wpflex'),
           'after'  => '</div>'
         ));
       ?>
