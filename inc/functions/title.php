@@ -1,7 +1,7 @@
 <?php
   // http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
   // http://codex.wordpress.org/Function_Reference/wp_title
-  !//
+  //
   // Feel free to pick your poison
   // https://gist.github.com/3907296
   // https://gist.github.com/3907306
