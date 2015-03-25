@@ -217,7 +217,7 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
   // read more link for custom cases excerpts
   function excerpt_read_more_link( $output ){
     global $post;
-    return $output . '<span class="excerpt-more-btn"><a href="' . get_permalink( $post->ID ) . '">Continue Reading &rarr;></a></span>';
+    return $output . '<span class="excerpt-more-btn"><a href="' . get_permalink( $post->ID ) . '">'.__('Continue Reading &rarr;', 'wpflex').'</a></span>';
   }
   add_filter( 'the_excerpt', 'excerpt_read_more_link' );
 
