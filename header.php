@@ -112,6 +112,6 @@
     ?>
   </header>
 
-  <article><a href="<?php bloginfo( 'rss2_url' ) ?>">RSS Feed</a></article>
+  <article><a href="<?php bloginfo( 'rss2_url' ) ?>"><?php _e('RSS Feed', 'wpflex'); ?></a></article>
 
   <?php get_search_form(); ?>
