@@ -15,7 +15,7 @@
 
       <?php
         wp_link_pages( array(
-          'before' => '<div>' . 'Pages &raquo',
+          'before' => '<div>' . __('Pages &raquo', 'wpflex')
           'after'  => '</div>'
         ));
       ?>
@@ -34,20 +34,20 @@
     <?php else : ?>
     <ul class="pagination-posts">
       <?php previous_post_link( '<li>%link</li>',  __( '&larr; Previous Category Post', 'wpflex' ) ); ?></li> 
-      <?php next_post_link( '<li>%link</li>', 'Next Category Post &rarr;', TRUE ); ?></li>
+      <?php next_post_link( '<li>%link</li>',  __( 'Next Category Post &rarr;', 'wpflex' ) ); ?></li> 
     </ul>
     <?php endif; ?>
 
     <?php
       $pagination_defaults = array(
-        'before'           => '<p>' . __( 'Pages:' ),
+        'before'           => '<p>' . __( 'Pages:', 'wpflex' ),
         'after'            => '</p>',
         'link_before'      => '',
         'link_after'       => '',
         'next_or_number'   => 'number',
         'separator'        => ' ',
-        'nextpagelink'     => __( 'Next page' ),
-        'previouspagelink' => __( 'Previous page' ),
+        'nextpagelink'     => __( 'Next page', 'wpflex' ),
+        'previouspagelink' => __( 'Previous page', 'wpflex' ),
         'pagelink'         => '%',
         'echo'             => 1
       );
