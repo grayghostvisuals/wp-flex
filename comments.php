@@ -1,6 +1,6 @@
 <?php
   if( ! empty( $_SERVER[ 'SCRIPT_FILENAME' ] ) && 'comments.php' == basename( $_SERVER[ 'SCRIPT_FILENAME' ] ) )
-  die('please do not load this page directly kind sir');
+  die(__('please do not load this page directly kind sir', 'wpflex'));
 ?>
 
 <div class="comments">
@@ -55,7 +55,7 @@
 
   <?php if ( comments_open() ) : ?>
     <?php
-      $commentform_args = array( 'comment_notes_after' => '<p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:<pre><code class="language-markup">&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt;</code></pre></p>' );
+      $commentform_args = array( 'comment_notes_after' => '<p class="form-allowed-tags">'. __('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:','wpflex') . '<pre><code class="language-markup">&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt;</code></pre></p>' );
     ?>
     <?php comment_form($commentform_args); ?>
   <?php endif; ?>
