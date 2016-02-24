@@ -25,24 +25,24 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
     // labels as an array for dashboard
     $wpflex_custom_post_labels = array(
         // general name for the post stype
-        'name'               => 'Custom Posts',
+        'name'               => __('Custom Posts', 'wpflex');
         // singular name for one object of this post type
-        'singular_name'      => 'Custom Post',
+        'singular_name'      => __('Custom Post', 'wpflex');
         // the add new text for dashboard nav
-        'add_new'            => 'Add New Custom Post',
+        'add_new'            => __('Add New Custom Post', 'wpflex');
         // dashboard nav item txt
-        'all_items'          => 'View Custom Posts',
+        'all_items'          => __('View Custom Posts', 'wpflex');
         // edit menu header title txt
-        'edit_item'          => 'Edit Custom Post',
+        'edit_item'          => __('Edit Custom Post', 'wpflex');
         // add new header title txt
-        'add_new_item'       => 'New Custom Post',
+        'add_new_item'       => __('New Custom Post', 'wpflex');
         // view button txt in visual editor window
-        'view_item'          => 'Preview Custom Post',
+        'view_item'          => __('Preview Custom Post', 'wpflex');
         // case studies search menu button txt
-        'search_items'       => 'Search Custom Posts',
+        'search_items'       => __('Search Custom Posts', 'wpflex');
         // case studies search error txt
-        'not_found'          => 'No Custom Post(s) Found',
-        'not_found_in_trash' => 'No Custom Post(s) Found in Trash',
+        'not_found'          => __('No Custom Post(s) Found', 'wpflex');
+        'not_found_in_trash' => __('No Custom Post(s) Found in Trash', 'wpflex');
         // the parent text. This string isn't used on non-hierarchical types
         // In hierarchical ones the default is Parent Page
         'parent_item_colon'  => ''
@@ -80,12 +80,12 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
   function wpflex_custom_taxonomies(){
     $args = array(
       'hierarchical'  => true,
-      'label'         => 'Add New Taxonomy',
+      'label'         => __('Add New Taxonomy', 'wpflex');
       'labels'        => array(
-                      'edit_item'     => 'Edit Taxonomy Type',
-                      'add_new_item'  => 'Add New Taxonomy Type',
-                      'search_items'  => 'Search Taxonomies',
-                      'update_item'   => 'Update Taxonomy Type'
+                      'edit_item'     => __('Edit Taxonomy Type', 'wpflex');
+                      'add_new_item'  => __('Add New Taxonomy Type', 'wpflex');
+                      'search_items'  => __('Search Taxonomies', 'wpflex');
+                      'update_item'   => __('Update Taxonomy Type', 'wpflex');
                     ),
       'rewrite'       => array(
                       'slug'          => 'taxonomy-type',
@@ -123,7 +123,7 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
         }
       echo "</ul>";
     else :
-      echo "No Taxonomy Type Filed";
+      _e("No Taxonomy Type Filed", 'wpflex');
     endif;
   }
 
@@ -169,7 +169,7 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
     wp_nonce_field( basename( __FILE__ ), 'casestudy_url_nonce' ); ?>
 
     <!-- add the custom meta fields -->
-    <label for="casestudy-url">Case Study URL</label>
+    <label for="casestudy-url"><?php _e('Case Study URL', 'wpflex'); ?></label>
     <p><input type="url" id="casestudy-url" name="casestudy-url" value="<?php echo esc_attr( get_post_meta( $object->ID, 'casestudy_url', true ) ); ?>" size="30" placeholder="http://www."></p>
     <?php endif;
   }
@@ -217,7 +217,7 @@ if ( ! function_exists( 'wpflex_setup' ) ) :
   // read more link for custom cases excerpts
   function excerpt_read_more_link( $output ){
     global $post;
-    return $output . '<span class="excerpt-more-btn"><a href="' . get_permalink( $post->ID ) . '">Continue Reading &rarr;</a></span>';
+    return $output . '<span class="excerpt-more-btn"><a href="' . get_permalink( $post->ID ) . '">'.__('Continue Reading &rarr;', 'wpflex').'</a></span>';
   }
   add_filter( 'the_excerpt', 'excerpt_read_more_link' );
 

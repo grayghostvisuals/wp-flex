@@ -20,7 +20,7 @@
     <?php endif; ?>
 
     <?php else : ?>
-      <p><?php echo ( 'Sorry, your search term(s) did not find any matches within our database. Please do try again won\'t you pretty please ?' ); ?></p>
+      <p><?php _e( 'Sorry, your search term(s) did not find any matches within our database. Please do try again won\'t you pretty please ?','wpflex' ); ?></p>
     <?php endif; ?>
 
     <?php if (  $wp_query->max_num_pages > 1 ) : ?>

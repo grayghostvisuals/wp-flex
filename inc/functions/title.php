@@ -23,13 +23,13 @@
       elseif ( is_single() || is_page() ) :
         $new_title .= $sep . ' ' . single_post_title( '', false );
       elseif ( is_search() ) :
-        $new_title .= $sep . ' ' . sprintf( 'Search Results: %s', esc_html( $s ) );
+        $new_title .= $sep . ' ' . sprintf( __('Search Results: %s', 'wpflex'), esc_html( $s ) );
       else :
         $new_title .= $title;
       endif;
 
       if ( $paged || $page ) :
-        $new_title .= ' ' . $sep . ' ' . sprintf( 'Page: %s', max( $paged, $page ) );
+        $new_title .= ' ' . $sep . ' ' . sprintf( __('Page: %s', 'wpflex'), max( $paged, $page ) );
       endif;
 
       $title = $new_title;

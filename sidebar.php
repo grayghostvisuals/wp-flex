@@ -1,12 +1,12 @@
 <?php if ( ! function_exists( 'dynamic_sidebar' ) || ! dynamic_sidebar( 'wpflex sidebar' ) ) : ?>
-  <h3>Default Widgets</h3>
+  <h3><?php _e('Default Widgets','wpflex');?></h3>
 
   <article>
     <?php get_search_form(); ?>
   </article>
 
   <article>
-    <h3>Meta</h3>
+    <h3><?php _e( 'Meta','wpflex' );?></h3>
     <ul>
       <?php wp_register(); ?>
         <li><?php wp_login_form(); ?></li>
@@ -16,7 +16,7 @@
   </article>
 
   <article>
-    <h3>Categories</h3>
+    <h3><?php _e( 'Categories','wpflex' );?></h3>
     <ul>
       <?php wp_list_categories('show_count=1&title_li='); ?>
     </ul>
@@ -27,7 +27,7 @@
   </article>
 
   <article>
-    <h3>Tag Cloud</h3>
+    <h3><?php _e( 'Tag Cloud','wpflex' );?></h3>
     <?php wp_tag_cloud(); ?>
   </article>
 <?php endif; ?>

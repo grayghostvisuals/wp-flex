@@ -31,7 +31,7 @@
       </div>
 
       <!-- pagination  -->
-      <?php wp_link_pages( array( 'before' => '<div class="pagination">' . 'Pages &raquo', 'after'  => '</div>' ) ); //end wp_link_pages ?>
+      <?php wp_link_pages( array( 'before' => '<div class="pagination">' . __('Pages &raquo', 'wpflex'), __('after', 'wpflex')  => '</div>' ) ); //end wp_link_pages ?>
 
       <!-- retrieve and display the custom taxonomies as a list -->
       <?php $caseurl = get_post_meta( $post->ID, 'casestudy_url', true ); ?>
@@ -49,20 +49,20 @@
       <!-- footer -->
       <footer>
         <?php // http://codex.wordpress.org/Function_Reference/get_post_type ?>
-        <?php echo 'The post type is: '.get_post_type( $post->ID ); ?>
+        <?php echo __('The post type is: ','wpflex') . get_post_type( $post->ID ); ?>
       </footer>
 
     </article>
 
     <div id="single-pagination">
-      <span><?php previous_post_link( '%link', '&larr; Previous Category Post'); ?></span>
-      <span><?php next_post_link( '%link', 'Next Category Post &rarr;'); ?></span>
+      <span><?php previous_post_link( '%link', __('&larr; Previous Category Post', 'wpflex')); ?></span>
+      <span><?php next_post_link( '%link', __('Next Category Post &rarr;', 'wpflex')); ?></span>
     </div>
   <?php endwhile; ?>
   <!-- post loop error message -->
 
   <?php else : //if no posts were found do this ?>
-    <p><?php echo ( 'Holy smokes! This is totally crazy. No posts match anything even remotely close to that in our database. Sorry Mon Frere, try again' ); ?></p>
+    <p><?php _e( 'Holy smokes! This is totally crazy. No posts match anything even remotely close to that in our database. Sorry Mon Frere, try again', 'wpflex' ); ?></p>
   <?php endif; //end if have_posts condition ?>
   <!-- end loop -->
 </section>

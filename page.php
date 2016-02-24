@@ -12,7 +12,7 @@
 
     <?php
       wp_link_pages( array( 
-        'before' => '<div>' . 'Pages &rarr;',
+        'before' => '<div>' . __('Pages &rarr;', 'wpflex'),
         'after'  => '</div>'
       ));
     ?>
@@ -29,7 +29,7 @@
 ?>
 
 <?php else : ?>
-<p><?php echo ( 'sorry, this page does not exist' ); ?></p>
+<p><?php  _e( 'sorry, this page does not exist', 'wpflex' ); ?></p>
 <?php endif; ?>
 
 <?php get_template_part( 'inc/widget-sidebar' ); ?>

@@ -16,12 +16,12 @@
           </div>
 
           <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID) ); ?>"><?php printf(__('%1$s | %2$s'), get_comment_date(), get_comment_time()) ?></a>
-          <?php edit_comment_link( 'Edit', ' ', ''); ?>
+          <?php edit_comment_link( __('Edit','wpflex'), ' ', ''); ?>
         </div>
       </div>
 
       <?php if( $comment->comment_approved == '0' ) : ?>
-        <p class="moderating"><b class="ss-icon ss-clock"></b><em><?php echo( 'Your rant, suggestion, or comment is awaiting moderation from our head cheese. Please be patient' ) ?></em></p>
+        <p class="moderating"><b class="ss-icon ss-clock"></b><em><?php _e( 'Your rant, suggestion, or comment is awaiting moderation from our head cheese. Please be patient', 'wpflex' ); ?></em></p>
       <?php endif; ?>
 
       <div class="comment-body">

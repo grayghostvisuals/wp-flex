@@ -13,8 +13,14 @@
       require_once locate_template('/inc/functions/widgets.php');
       require_once locate_template('/inc/functions/editor-styles.php');
       require_once locate_template('/inc/functions/content-width.php');
+	add_action( 'after_setup_theme', 'wpflex_setup' );
     }
   endif;
 
   add_action( 'after_setup_theme', 'wpflex_setup' );
+
+add_action('after_setup_theme', 'setting_text_domain');
+function setting_text_domain(){
+    load_theme_textdomain('wpflex', get_template_directory() . '/languages');
+}
 ?>

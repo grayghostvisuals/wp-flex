@@ -5,7 +5,7 @@
 <?php if ($posttags || $postcats) : ?>
 <ul class="taxonomy">
   <?php if ($posttags) : ?>
-  <li><?php echo ( 'Tagged:' ); ?>
+  <li><?php _e( 'Tagged:', 'wpflex' ); ?>
     <ul class="taxonomy__tagls taxonomy__ls">
       <?php the_tags( '</li><li class="taxonomy__tags">' ); ?>
     </ul>
@@ -13,7 +13,7 @@
   <?php endif ?>
 
   <?php if ($postcats) : ?>
-  <li><?php echo ( 'Filed under:' ); ?>
+  <li><?php _e( 'Filed under:' , 'wpflex' ); ?>
     <ul class="taxonomy__catls taxonomy__ls">
       <li class="taxonomy__cats"><?php the_category( ', ' ) ?></li>
     </ul>
